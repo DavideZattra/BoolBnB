@@ -16,9 +16,9 @@ class CreateApartmentsTable extends Migration
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
             $table->string('descriptive_title', 255);
-            $table->tinyInt('rooms');
-            $table->tinyInt('beds');
-            $table->tinyInt('bathrooms');
+            $table->tinyInteger('rooms');
+            $table->tinyInteger('beds');
+            $table->tinyInteger('bathrooms');
             $table->smallInt('square_meters');
             $table->text('image');
             $table->text('description');
