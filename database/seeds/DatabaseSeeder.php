@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             MessageTableSeeder::class,
             SponsorTableSeeder::class,
             ViewsTableSeeder::class,
+            AmenitiesTableSeeder::class,
         ]);
 
 
