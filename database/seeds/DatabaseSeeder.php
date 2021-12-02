@@ -11,9 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         $this->call([
-            SponsorTableSeeder::class,
             MessageTableSeeder::class,
+            SponsorTableSeeder::class,
+            ViewsTableSeeder::class,
         ]);
+
+
     }
+
 }

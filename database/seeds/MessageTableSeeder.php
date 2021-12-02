@@ -19,9 +19,9 @@ class MessageTableSeeder extends Seeder
         for ($i = 0 ; $i < 10 ; $i++){
             $newMessage = new Message();
             $newMessage->name = $faker->name();
-            $newMessage->email = $faker->email();
-            $newMessage->email = $faker->paragraph(2, false);
-            // $newMessage->body = $bodiesList[$i];
+            $newMessage->email = $faker->safeEmail();
+            $newMessage->body = $faker->paragraph(2, false);
+            // $newMessage->body = '$bodiesList[$i]';
             $newMessage->save();
         }
     }
