@@ -18,7 +18,9 @@ class AmenitiesTableSeeder extends Seeder
         for ($i = 0 ; $i < 15; $i++){
 
             $newAmenity = new Amenity();
+
             $newAmenity->name = $amenitiesNames[$i];
+            
             $newAmenity->save();
         }
     }

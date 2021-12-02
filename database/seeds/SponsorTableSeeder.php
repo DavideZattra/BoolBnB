@@ -17,10 +17,13 @@ class SponsorTableSeeder extends Seeder
         $sponsorDurations = ['1', '3', '6'];
 
         for ($i = 1 ; $i <= 3; $i++){
+
             $newSponsor = new Sponsor();
+            
             $newSponsor->name = $sponsorNames[$i-1];
             $newSponsor->price = $sponsorPrices[$i-1];
             $newSponsor->duration = $sponsorDurations[$i-1];
+
             $newSponsor->save();
         }
     }
