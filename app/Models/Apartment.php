@@ -11,4 +11,8 @@ class Apartment extends Model
     public function address() {
         return $this->hasOne('App\Models\Address');
     }
+    
+        public function messages(){
+        return $this->hasMany('App\Models\Message');
+    }
 }
