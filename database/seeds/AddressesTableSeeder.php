@@ -15,7 +15,7 @@ class AddressesTableSeeder extends Seeder
     {
         for ($i = 0 ; $i < 10; $i++){
             $newAddress = new Address();
-            $newAddress->country = $faker->state();
+            $newAddress->country = 'ciao';
             $newAddress->region = $faker->country();
             $newAddress->province = $faker->secondaryAddress();
             $newAddress->city = $faker->city();
