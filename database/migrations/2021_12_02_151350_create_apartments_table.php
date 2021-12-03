@@ -25,10 +25,6 @@ class CreateApartmentsTable extends Migration
             $table->boolean('visibility')->nullable();
             $table->timestamps();
 
-            $table->foreign('address_id')
-                ->references('id')
-                ->on('addresses')
-                ->onDelete('cascade');
         });
     }
 

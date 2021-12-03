@@ -15,6 +15,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('apartment_id')->nullable();
             $table->string('country', 50);
             $table->string('region', 50);
             $table->string('province', 50);
@@ -39,6 +40,11 @@ class CreateAddressesTable extends Migration
      */
     public function down()
     {
+
+        Schema::table('addresses', function(Blueprint $table) {
+            $table->dropForeign('addresses_apartment_id_foreign');
+        });
+
         Schema::dropIfExists('addresses');
     }
 }
