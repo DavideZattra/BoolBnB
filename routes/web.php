@@ -27,7 +27,7 @@ Route::middleware('auth')
     ->name('user.')
     ->prefix('user')
     ->group(function () {
-        Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/', 'DashboardController@index')->name('dashboard');
         // Route::resource('nomes', NomeController::class);
 });
 
