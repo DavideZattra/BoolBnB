@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('guest.home');
+    return view('guests.home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')
     ->namespace('User')
     ->name('user.')
-    ->prefix('user')
+    // ->prefix('user')
     ->group(function () {
         Route::get('/home', 'HomeController@index')->name('home');
         // Route::resource('nomes', NomeController::class);

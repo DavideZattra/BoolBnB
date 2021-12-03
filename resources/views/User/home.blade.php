@@ -19,5 +19,12 @@
             </div>
         </div>
     </div>
+
+    <div>
+
+        <h1>Questa è la User Home Page</h1>
+
+    </div>
+
 </div>
 @endsection
