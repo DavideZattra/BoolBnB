@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     public function apartment() {
-        return $this->hasOne('App\Models\Apartment');
+        return $this->belongsTo('App\Models\Apartment');
     }
 }
