@@ -8,7 +8,7 @@ class Apartment extends Model
 {
     protected $fillable = ['descriptive_title', 'rooms', 'beds', 'bathrooms', 'square_meters', 'image', 'description', 'visibility'];
 
-    public function address() {
+    public function addresses() {
         return $this->hasOne('App\Models\Address');
     }
     
@@ -16,11 +16,15 @@ class Apartment extends Model
         return $this->hasMany('App\Models\Message');
     }
 
-    public function user(){
+    public function users(){
         return $this->hasOne('App\Models\Users');
     }
 
     public function views(){
         return $this->hasMany('App\Models\view');
+    }
+
+    public function sponsors(){
+        return $this->belongsToMany('App\Models\Sponsor');
     }
 }
