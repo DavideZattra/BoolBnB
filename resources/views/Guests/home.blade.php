@@ -86,5 +86,23 @@
 
         </div>
 
+        <header>
+
+            <h1>Qui ci mettiamo jumbotron</h1>
+
+        </header>
+
+        <section>
+
+            <h1>Questa è la  section 1 o una section</h1>
+
+        </section>
+
+        <section>
+
+            <h1>Questa è la  section 2 o una section</h1>
+
+        </section>   
+
     </body>
 </html>
