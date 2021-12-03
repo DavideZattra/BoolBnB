@@ -9,6 +9,6 @@ class Amenity extends Model
     protected $fillable = ['name'];
 
     public function apartment(){
-        return $this->belongsTo('App\Models\Apartment');
+        return $this->belongsToMany('App\Models\Apartment');
     }
 }
