@@ -17,8 +17,10 @@ class ViewsTableSeeder extends Seeder
         for( $i = 0; $i < 20; $i++ ){
 
             $newView = new View();
+
             $newView->ip_adress = $faker->ipv4();
             $newView->visited_at = $faker->dateTime();
+            
             $newView->save();
         };
     }

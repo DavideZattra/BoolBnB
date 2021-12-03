@@ -22,7 +22,7 @@ class CreateApartmentsTable extends Migration
             $table->smallInteger('square_meters');
             $table->text('image');
             $table->text('description');
-            $table->boolean('visibility');
+            $table->boolean('visibility')->nullable();
             $table->timestamps();
         });
     }
