@@ -24,6 +24,11 @@ class CreateAddressesTable extends Migration
             $table->decimal('lat', 10, 8);
             $table->decimal('lon', 11, 8);
             $table->timestamps();
+
+            $table->foreign('apartment_id')
+                ->references('id')
+                ->on('apartments')
+                ->onDelete('cascade');
         });
     }
 
