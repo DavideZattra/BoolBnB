@@ -14,7 +14,7 @@ class CreateApartmentSponsorTable extends Migration
     public function up()
     {
         Schema::create('apartment_sponsor', function (Blueprint $table) {
-            $table->id();
+            
             $table->id();
             $table->unsignedBigInteger('apartment_id');
             $table->unsignedBigInteger('sponsor_id');
