@@ -15,9 +15,15 @@ class CreateViewsTable extends Migration
     {
         Schema::create('views', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('apartment_id')->nullable();
             $table->dateTime('visited_at');
             $table->char('ip_adress',16);
             $table->timestamps();
+
+            $table->foreign('apartment_id')
+            ->references('id')
+            ->on('apartments')
+            ->onDelete('set null');
         });
     }
 
@@ -28,6 +34,14 @@ class CreateViewsTable extends Migration
      */
     public function down()
     {
+        Schema::table('views', function (Blueprint $table) {
+
+            $table->dropForeign('views_apartment_id_foreign');
+
+            $table->dropColumn('apartment_id');
+        });
+
+
         Schema::dropIfExists('views');
     }
 }
