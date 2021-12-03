@@ -13,9 +13,9 @@ class AmenitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        $amenitiesNames = ['WiFi', 'Balcon', 'Breakfast', 'View', 'Parking', 'Pool', 'Sauna', 'Washing Machine', 'Heating', 'Air conditioning', 'Indoor', 'fireplace', 'Iron', 'TV', 'Self check-in'];
+        $amenitiesNames = ['WiFi', 'Balcony', 'Breakfast', 'View', 'Parking', 'Pool', 'Sauna', 'Washing Machine', 'Heating', 'Air conditioning', 'Indoor', 'fireplace', 'Iron', 'TV', 'Self check-in'];
 
-        for ($i = 0 ; $i < 15; $i++){
+        for ($i = 0 ; $i < count($amenitiesNames); $i++){
 
             $newAmenity = new Amenity();
 
