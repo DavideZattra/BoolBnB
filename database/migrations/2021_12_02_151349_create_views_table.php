@@ -14,10 +14,12 @@ class CreateViewsTable extends Migration
     public function up()
     {
         Schema::create('views', function (Blueprint $table) {
-            $table->id();
+            $table->id();      
             $table->dateTime('visited_at');
             $table->char('ip_adress',16);
             $table->timestamps();
+
+            
         });
     }
 
@@ -27,7 +29,7 @@ class CreateViewsTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {       
         Schema::dropIfExists('views');
     }
 }

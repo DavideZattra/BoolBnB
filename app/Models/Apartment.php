@@ -15,4 +15,12 @@ class Apartment extends Model
         public function messages(){
         return $this->hasMany('App\Models\Message');
     }
+
+    public function user(){
+        return $this->hasOne('App\Models\Users');
+    }
+
+    public function views(){
+        return $this->hasMany('App\Models\view');
+    }
 }
