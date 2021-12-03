@@ -21,7 +21,7 @@ class CreateApartmentAmenityTable extends Migration
             
             // cascade drops the whole row if one element of the two is deleted. (only used in many to many relations)
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
-            $table->foreign('amenity_id')->references('id')->on('amenity')->onDelete('cascade');
+            $table->foreign('amenity_id')->references('id')->on('amenities')->onDelete('cascade');
         });
     }
 
