@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 use App\Models\Apartment;
 use App\User;
+use App\Models\Amenity;
+use App\Models\Sponsor;
 
 class ApartmentsTableSeeder extends Seeder
 {
@@ -18,6 +20,8 @@ class ApartmentsTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         $usersId = User::pluck('id')->toArray();
+        $amenitiesId = Amenity::pluck('id')->toArray();
+        $sponsorsId = Sponsor::pluck('id')->toArray();
 
         for ($i = 0 ; $i < 20 ; $i++){
 
@@ -32,6 +36,17 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->description = $faker->paragraph(3, false);
 
             $newApartment->save();
+
+            //random number of amenities added
+            for($j = 0; $j < random_int(0, count($amenitiesId)); $j++){
+
+                $role = Arr::random($amenitiesId);
+                
+                $newApartment->amenities()->attach($role);
+                
+            }
+
+            $newApartment->sponsors()->attach(Arr::random($sponsorsId));
         }
     }
 }

@@ -16,11 +16,11 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('country', 50);
-            $table->string('region', 50);
+            $table->string('region', 100);
             $table->string('province', 50);
             $table->string('city', 50);
             $table->string('address', 100);
-            $table->string('zip_code', 50);
+            $table->string('zip_code', 10);
             $table->decimal('lat', 10, 8);
             $table->decimal('lon', 11, 8);
             $table->timestamps();
