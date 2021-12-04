@@ -15,7 +15,6 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('apartment_id')->nullable();
             $table->string('country', 50);
             $table->string('region', 50);
             $table->string('province', 50);
@@ -26,10 +25,7 @@ class CreateAddressesTable extends Migration
             $table->decimal('lon', 11, 8);
             $table->timestamps();
 
-            $table->foreign('apartment_id')
-                ->references('id')
-                ->on('apartments')
-                ->onDelete('cascade');
+            
         });
     }
 
@@ -41,9 +37,7 @@ class CreateAddressesTable extends Migration
     public function down()
     {
 
-        Schema::table('addresses', function(Blueprint $table) {
-            $table->dropForeign('addresses_apartment_id_foreign');
-        });
+        
 
         Schema::dropIfExists('addresses');
     }

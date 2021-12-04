@@ -14,8 +14,8 @@ class CreateApartmentsTable extends Migration
     public function up()
     {
         Schema::create('apartments', function (Blueprint $table) {
+            
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('descriptive_title', 255);
             $table->tinyInteger('rooms');
             $table->tinyInteger('beds');
@@ -26,8 +26,6 @@ class CreateApartmentsTable extends Migration
             $table->boolean('visibility')->nullable();
             $table->timestamps();
 
-            $table->foreign('user_id')
-                ->references('id')->on('users');
         });
     }
 
@@ -37,13 +35,7 @@ class CreateApartmentsTable extends Migration
      * @return void
      */
     public function down()
-    {
-        Schema::table('apartments', function (Blueprint $table) {
-
-            $table->dropForeign('apartments_user_id_foreign');
-
-            $table->dropColumn('user_id');
-        });
+    {  
 
         Schema::dropIfExists('apartments');
     }

@@ -14,7 +14,7 @@ class AddApartmentsIdToViewsTable extends Migration
     public function up()
     {
         Schema::table('views', function (Blueprint $table) {
-            $table->unsignedBigInteger('apartment_id')->nullable();
+            $table->unsignedBigInteger('apartment_id')->nullable()->after('id');
 
             $table->foreign('apartment_id')
                 ->references('id')->on('apartments')->onDelete('set null');
