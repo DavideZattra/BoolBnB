@@ -15,7 +15,7 @@ class AddApartmentIdToAdressesTable extends Migration
     {
         Schema::table('addresses', function (Blueprint $table) {
             
-            $table->unsignedBigInteger('apartment_id')->nullable();
+            $table->unsignedBigInteger('apartment_id')->nullable()->after('id');
 
             $table->foreign('apartment_id')
                 ->references('id')

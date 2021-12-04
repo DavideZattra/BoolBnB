@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Arr;
+
 use Faker\Generator as Faker;
 
 use App\Models\Apartment;
+use App\User;
 
 class ApartmentsTableSeeder extends Seeder
 {
@@ -14,9 +17,12 @@ class ApartmentsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0 ; $i < 10 ; $i++){
+        $usersId = User::pluck('id')->toArray();
+
+        for ($i = 0 ; $i < 20 ; $i++){
 
             $newApartment = new Apartment();
+            $newApartment->user_id = Arr::random($usersId);
             $newApartment->descriptive_title = $faker->words(3, true);
             $newApartment->rooms = $faker->randomDigitNotNull();
             $newApartment->beds = $faker->randomDigitNotNull();

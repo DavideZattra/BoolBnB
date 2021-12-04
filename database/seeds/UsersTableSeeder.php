@@ -19,6 +19,7 @@ class UsersTableSeeder extends Seeder
         $admin->name = 'admin';
         $admin->surname = 'admin';
         $admin->email = 'test@test.com';
+        $admin->profile_picture = $faker->imageUrl(640, 480);
         $admin->birth_date = '1994-01-07';
         $admin->password = bcrypt('password');
         $admin->save();
@@ -28,6 +29,7 @@ class UsersTableSeeder extends Seeder
             $newUser->name = $faker->firstName();
             $newUser->surname = $faker->lastName();
             $newUser->email = $faker->safeEmail();
+            $newUser->profile_picture = $faker->imageUrl(640, 480);
             $newUser->birth_date = $faker->date('Y-m-d');;
             $newUser->password = bcrypt($newUser->name . $newUser->surname);
             $newUser->save();

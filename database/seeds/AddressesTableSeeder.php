@@ -1,9 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Address;
+use Illuminate\Support\Arr;
+
 use Faker\Generator as Faker;
 
+use App\Models\Address;
+use App\Models\Apartment;
 class AddressesTableSeeder extends Seeder
 {
     /**
@@ -13,8 +16,13 @@ class AddressesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0 ; $i < 10; $i++){
+        $apartmentsIds = Apartment::pluck('id')->toArray();
+
+        for ($i = 0 ; $i < count($apartmentsIds); $i++){
+
             $newAddress = new Address();
+
+            $newAddress->apartment_id = $apartmentsIds[$i];
             $newAddress->country = $faker->state();
             $newAddress->region = $faker->country();
             $newAddress->province = $faker->secondaryAddress();
