@@ -1,6 +1,12 @@
 // Header
 header{
-    
+    .navbar-custom{
+        background-color: $my_black;
+
+        a{
+            color: $my_white;
+        }
+    }
 }
 
 // Main
