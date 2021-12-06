@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Your Profile') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,17 +14,19 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    Welcome back {{ $user->name . ' ' . $user->surname}}!
+                </div>
+
+                <div class="card-body">
+                    <a href='{{ route('user.edit') }}' class="btn btn-success">
+                        Edit your profile
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div>
-
-        <h1>Questa è la Dashboard</h1>
-
-    </div>
+    
 
 </div>
 @endsection

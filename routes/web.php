@@ -28,6 +28,9 @@ Route::middleware('auth')
     ->prefix('user')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
+        Route::get('/edit', 'DashboardController@edit')->name('edit');
+        Route::get('/', 'DashboardController@update')->name('update');
+
         Route::resource('apartments', ApartmentController::class);
 });
 
