@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('Guests.home');
+    return view('guests.home');
 });
 
 Auth::routes();
@@ -23,11 +23,11 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')
-    ->namespace('User')
+    ->namespace('user')
     ->name('user.')
     ->prefix('user')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
-        // Route::resource('nomes', NomeController::class);
+        Route::resource('apartments', ApartmentController::class);
 });
 
