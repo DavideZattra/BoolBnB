@@ -23,9 +23,9 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')
-    ->namespace('User')
-    ->name('user.')
-    ->prefix('users')
+    ->namespace('User') // this is to call the folder of the controller
+    ->name('users.') // this is to call the folder of the view
+    ->prefix('users') // this is for the URI calls
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::resource('apartments', ApartmentController::class);
