@@ -1,15 +1,16 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-custom shadow-sm">
-        <div class="container">
+        <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
             <a id="logo" class="navbar-brand font-weight-bold" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
+                <span id="my_toggler" class="navbar-toggler-icon">
+                    {{-- <i class="fas fa-bars"></i> --}}
+                </span>
             </button>
-    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">

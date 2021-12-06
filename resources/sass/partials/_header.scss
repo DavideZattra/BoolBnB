@@ -5,5 +5,15 @@ header{
         a{
             color: $my_white;
         }
+
+        button{
+            .navbar-toggler{
+                #my_toggler{
+                    i{
+                        color: $my_white;
+                    }
+                }
+            }
+        }
     }
 }

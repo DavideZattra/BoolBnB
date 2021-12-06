@@ -1,0 +1,18 @@
+.index-wrapper{
+    background-color: $my_darkgrey;
+
+    .row{
+        background-color: $my_black;
+        border-radius: 20px;
+    }
+
+    a{
+        color: $my_red;
+    }
+
+    .card{
+        a{
+            font-size: 20px;
+        }
+    }
+}
