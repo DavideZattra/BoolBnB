@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::middleware('auth')
     ->namespace('User')
-    ->name('user.')
+    ->name('users.')
     ->prefix('user')
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
