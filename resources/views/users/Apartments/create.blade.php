@@ -48,6 +48,11 @@
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" id="description" name="description">{{old('description', $newApartment->description)}}</textarea>
                 </div>
+
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="materialChecked2">
+                    <label class="form-check-label" for="materialChecked2">Visible</label>
+                </div>
                 
                 <button type="submit" class="btn btn-primary">Add your apartment</button>
             </form>
