@@ -23,7 +23,7 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')
-    ->namespace('user')
+    ->namespace('User')
     ->name('user.')
     ->prefix('user')
     ->group(function () {

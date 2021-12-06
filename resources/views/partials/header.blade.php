@@ -3,7 +3,7 @@
         <div class="container">
 
             {{-- logo link to home when clicked --}}
-            <a class="navbar-brand font-weight-bold" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
