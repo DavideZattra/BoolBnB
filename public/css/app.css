@@ -10038,6 +10038,9 @@ header .navbar-custom {
 header .navbar-custom a {
   color: #FFFFFA;
 }
+header .navbar-custom button .navbar-toggler #my_toggler i {
+  color: #FFFFFA;
+}
 
 .index-wrapper {
   background-color: #333138;

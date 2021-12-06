@@ -8,7 +8,7 @@
                 <h3><a href="{{route("users.apartments.create")}}">Insert a new apartment</a></h3>
             </header>
     
-            <div class="row justify-content-center">
+            <div class="row justify-content-center px-3">
                 @forelse ($apartments as $apartment)
                     <div class="card col-12 col-md-5 col-lg-3 m-4 p-0" style="width: 18rem;">
                         <img class="card-img-top" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2FBeautiful-luxury-home-exterior-at-twilight%2F960x0.jpg%3Ffit%3Dscale" alt="">
