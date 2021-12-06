@@ -30,10 +30,6 @@
 
         @include('partials.footer')
     </div>
-
-    <footer>
-
-    </footer>
-    
+    <script src="{{ asset('js/front.js') }}"></script>
 </body>
 </html>
