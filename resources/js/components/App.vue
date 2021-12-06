@@ -1,25 +1,21 @@
 <template>
   <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h3>buongiorno Mr. Vue</h3>
-            </div>
-        </div>
+        <ApartmentsList />
     </div>
 </template>
 
 <script>
-
+import ApartmentsList from './apartments/ApartmentsList.vue';
 
 export default {
     name: "App",
+    components: {
+        ApartmentsList
+    }
 }
 </script>
 
 <style scoped lang="scss">
 
-h3{
-    color: violet;
-}
 
 </style>

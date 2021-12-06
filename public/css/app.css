@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
+=======
+@charset "UTF-8";
+>>>>>>> main_content-layout
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10019,6 +10023,31 @@ h3 {
     border-color: #dee2e6;
   }
 }
+#jumbotron {
+  background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
+  width: 100%;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+#jumbotron .jumbo-title {
+  border-radius: 8px;
+  color: #FFFFFA;
+  font-family: "Dancing Script", cursive;
+  height: 300px;
+  width: 520px;
+  background-color: #0001035b;
+  margin-right: 100px;
+  padding: 25px;
+}
+#jumbotron .jumbo-title h1 {
+  font-size: 3.5rem;
+}
+#jumbotron .jumbo-title button {
+  background-color: #6cb2eb;
+}
+
 .t-ideas {
   width: 100%;
   height: 200px;
@@ -10032,6 +10061,57 @@ h3 {
   border-radius: 8px;
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width: 585px) {
+  #jumbotron {
+    height: 300px;
+  }
+}
+#jumbotron {
+  background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
+  width: 100%;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+#jumbotron .jumbo-title {
+  border-radius: 8px;
+  color: #FFFFFA;
+  font-family: "Dancing Script", cursive;
+  height: 300px;
+  width: 520px;
+  background-color: #0001035b;
+  margin-right: 100px;
+  padding: 25px;
+}
+#jumbotron .jumbo-title h1 {
+  font-size: 3.5rem;
+}
+#jumbotron .jumbo-title button {
+  background-color: #6cb2eb;
+}
+
+.t-ideas {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+}
+.t-ideas img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 585px) {
+  #jumbotron {
+    height: 300px;
+  }
+}
+>>>>>>> main_content-layout
 header .navbar-custom {
   background-color: #000103;
 }

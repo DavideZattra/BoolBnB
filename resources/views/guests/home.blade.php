@@ -4,12 +4,19 @@
 
 
 @section('content')
-    <div class="content">
-        <div class="comics-section">
-            <section id="jumbotron"></section>
-            HOOME
+
+    <section id="jumbotron" class="d-flex justify-content-end align-items-center">
+        <div class="jumbo-title d-none d-lg-block">
+            <h1 class="font-weight-bolb">Dream.Travel.Live</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, itaque a tempore similique blanditiis magni nam neque quis praesentium enim quaerat quo. Explicabo tempore ullam commodi sed pariatur, dignissimos nemo!</p>
+            <div class="jumbo-button">
+                <button type="button" class="btn btn-lg">Push Jose</button>
+                <button type="button" class="btn btn-lg">Push Jose</button>
+            </div>
         </div>
-    </div>
+                    
+    </section>
+
     <div class="container mt-3 mb-3">
         <div class="row mb-4">
             <div class="col-12 mb-3">
