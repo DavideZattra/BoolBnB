@@ -10038,3 +10038,17 @@ header .navbar-custom {
 header .navbar-custom a {
   color: #FFFFFA;
 }
+
+.index-wrapper {
+  background-color: #333138;
+}
+.index-wrapper .row {
+  background-color: #000103;
+  border-radius: 20px;
+}
+.index-wrapper a {
+  color: #FF312E;
+}
+.index-wrapper .card a {
+  font-size: 20px;
+}

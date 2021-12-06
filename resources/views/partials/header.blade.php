@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-custom shadow-sm">
-        <div class="container">
+        <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
             <a id="logo" class="navbar-brand font-weight-bold" href="{{ url('/') }}">BoolBnB</a>

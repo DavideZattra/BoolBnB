@@ -19,7 +19,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Apartment::all();
+        $apartments = Apartment::orderBy('created_at','desc')->simplePaginate(6);
 
         return view('users.apartments.index', compact('apartments'));
     }
