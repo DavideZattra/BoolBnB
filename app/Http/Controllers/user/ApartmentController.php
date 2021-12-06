@@ -21,7 +21,7 @@ class ApartmentController extends Controller
     {
         $apartments = Apartment::all();
 
-        return view('user.apartments.index', compact('apartments'));
+        return view('users.apartments.index', compact('apartments'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ApartmentController extends Controller
     {
         $newApartment = new Apartment();
 
-        return view('user.apartments.create', compact('newApartment'));
+        return view('users.apartments.create', compact('newApartment'));
     }
 
     /**
@@ -52,7 +52,7 @@ class ApartmentController extends Controller
         $newApartment->fill($data);
         $newApartment->save();
 
-        return redirect()->route('user.apartments.show', compact('newApartment'));
+        return redirect()->route('users.apartments.show', compact('newApartment'));
     }
 
     /**
@@ -74,7 +74,7 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('user.apartments.edit', compact('apartment'));
+        return view('users.apartments.edit', compact('apartment'));
     }
 
     /**
@@ -94,7 +94,7 @@ class ApartmentController extends Controller
         $newApartment->fill($data);
         $newApartment->save();
 
-        return redirect()->route('user.apartments.show', compact('newApartment'));
+        return redirect()->route('users.apartments.show', compact('newApartment'));
     }
 
     /**
@@ -107,6 +107,6 @@ class ApartmentController extends Controller
     {
         $apartment->delete();
 
-        return redirect()->route('user.apartments.index')->with('alert-message', " '$apartment->descriptive_title ' has been deleted");
+        return redirect()->route('users.apartments.index')->with('alert-message', " '$apartment->descriptive_title ' has been deleted");
     }
 }
