@@ -15,13 +15,18 @@
                 </div>        
             @endif --}}
 
-            <form action="{{route('users.apartments.store')}}" method="POST">
+            <form action="{{route('users.apartments.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
 
                 <div class="mb-3">
                   <label for="descriptive_title" class="form-label">Descriptive Title</label>
                   <input type="text" class="form-control" id="descriptive_title" name="descriptive_title" value="{{old('title', $newApartment->descriptive_title)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" class="form-control" placeholder="Choose an image" id="image" name="image" value="{{old('image', $newApartment->image)}}">
                 </div>
 
                 <div class="mb-3">

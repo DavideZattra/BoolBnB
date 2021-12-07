@@ -50,13 +50,16 @@ class ApartmentController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
+        $data['image'] = Storage::put('public', $data['image']);
+
         $newApartment = new Apartment();
 
         $newApartment->fill($data);
         $newApartment->save();
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
-        return redirect()->route('users.apartments.show', compact('newApartment'));
+
+        return redirect()->route('users.apartments.create', compact('newApartment'));
     }
 
     /**
