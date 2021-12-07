@@ -7,7 +7,8 @@
             {{-- Titolo e indirizzo --}}
             <div class="col-12">
                 <h3 class="text-uppercase font-weight-bold mb-3 mt-3">{{ $apartment->descriptive_title }}</h3>
-                <div class="map-link">
+                <h3 class="text-uppercase font-weight-bold mb-3 mt-3">{{ $apartment->descriptive_title }}</h3>
+                <div class="map-link mb-3 mt-3">
                     <a href="#">
                         <i class="fas fa-map-marked-alt"></i>
                         {{ $apartment->addresses->country }}, {{ $apartment->addresses->city }}, {{ $apartment->addresses->address }}
@@ -19,7 +20,16 @@
                 <img src="{{ $apartment->image }}" alt="immagine copertina dell'appartamento">
             </div>
             <div class="col-md-4 d-none d-md-block show-img">
-                <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

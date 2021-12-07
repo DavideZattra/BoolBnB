@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Apartment extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['descriptive_title', 'rooms', 'beds', 'bathrooms', 'square_meters', 'image', 'description', 'visibility'];
+    protected $fillable = ['user_id', 'descriptive_title', 'rooms', 'beds', 'bathrooms', 'square_meters', 'image', 'description', 'visibility'];
 
     public function addresses() {
         return $this->hasOne('App\Models\Address');
