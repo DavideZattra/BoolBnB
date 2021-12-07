@@ -10019,6 +10019,31 @@ h3 {
     border-color: #dee2e6;
   }
 }
+#jumbotron {
+  background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
+  width: 100%;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+#jumbotron .jumbo-title {
+  border-radius: 8px;
+  color: #FFFFFA;
+  font-family: "Dancing Script", cursive;
+  height: 300px;
+  width: 520px;
+  background-color: #0001035b;
+  margin-right: 100px;
+  padding: 25px;
+}
+#jumbotron .jumbo-title h1 {
+  font-size: 3.5rem;
+}
+#jumbotron .jumbo-title button {
+  background-color: #6cb2eb;
+}
+
 .t-ideas {
   width: 100%;
   height: 200px;
@@ -10032,22 +10057,13 @@ h3 {
   border-radius: 8px;
 }
 
-header {
-  font-family: "Quicksand", sans-serif;
+@media screen and (max-width: 585px) {
+  #jumbotron {
+    height: 300px;
+  }
 }
 header .navbar-custom {
   background-color: #000103;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-header .navbar-custom #logo {
-  font-family: "Lobster", cursive;
-  font-size: 20px;
-}
-header .navbar-custom .my_search-bar {
-  height: 20px;
-  border-radius: 10px;
 }
 header .navbar-custom a {
   color: #FFFFFA;
@@ -10058,7 +10074,6 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 
 .index-wrapper {
   background-color: #333138;
-  font-family: "Quicksand", sans-serif;
 }
 .index-wrapper .row {
   background-color: #000103;
@@ -10066,9 +10081,6 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 }
 .index-wrapper a {
   color: #FF312E;
-}
-.index-wrapper .card {
-  height: 320px;
 }
 .index-wrapper .card a {
   font-size: 20px;
