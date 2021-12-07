@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Apartment;
+use App\Models\Amenity;
+
 
 class ApartmentController extends Controller
 {
@@ -32,8 +34,9 @@ class ApartmentController extends Controller
     public function create()
     {
         $newApartment = new Apartment();
+        $amenities = Amenity::all();
 
-        return view('users.apartments.create', compact('newApartment'));
+        return view('users.apartments.create', compact('newApartment', 'amenities'));
     }
 
     /**
@@ -52,6 +55,7 @@ class ApartmentController extends Controller
         $newApartment->fill($data);
         $newApartment->save();
 
+        if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
         return redirect()->route('users.apartments.show', compact('newApartment'));
     }
 
