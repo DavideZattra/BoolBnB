@@ -63,7 +63,9 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('users.apartments.show', compact('apartment'));
+        $amenities = $apartment->amenities->pluck('name')->toArray();
+
+        return view('users.apartments.show', compact('apartment', 'amenities'));
     }
 
     /**
