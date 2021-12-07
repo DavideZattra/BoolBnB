@@ -4,15 +4,30 @@
 
     <div class="container">
         <div class="row">
+            {{-- Titolo e indirizzo --}}
             <div class="col-12">
                 <h3 class="text-uppercase font-weight-bold mb-3 mt-3">{{ $apartment->descriptive_title }}</h3>
-                <a href="#" class="map-link">
-                    <i class="fas fa-map-marked-alt"></i>
-                    {{ $apartment->addresses->country }}, {{ $apartment->addresses->city }}, {{ $apartment->addresses->address }}
-                </a>
+                <div class="map-link">
+                    <a href="#">
+                        <i class="fas fa-map-marked-alt"></i>
+                        {{ $apartment->addresses->country }}, {{ $apartment->addresses->city }}, {{ $apartment->addresses->address }}
+                    </a>
+                </div>
+            </div>
+            {{-- Sezione immagini --}}
+            <div class="col-12 col-md-8 show-img">
+                <img src="{{ $apartment->image }}" alt="immagine copertina dell'appartamento">
+            </div>
+            <div class="col-md-4 d-none d-md-block show-img">
+                <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
             </div>
         </div>
     </div>
+
+
+
+
+
     <div class="container">
         <div class="col-12">
             <h3 class="text-right">

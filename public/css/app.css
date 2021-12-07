@@ -10087,6 +10087,14 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 }
 
 .map-link a {
-  color: black;
+  color: #515052;
   text-decoration: none;
+}
+
+.show-img img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
