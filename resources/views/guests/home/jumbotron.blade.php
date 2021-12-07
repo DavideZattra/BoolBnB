@@ -26,9 +26,9 @@
 
             {{-- added route (if user::auth->index/ else->login ) --}}
             @if (Auth::check())
-                <button type="button" class="btn btn-sm"><a href="{{route("login")}}">My apartments</a></button>
+                    <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My profile</a></button>
             @else
-                <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My apartments</a></button>
+                <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
             @endif
         </div>
     </div>

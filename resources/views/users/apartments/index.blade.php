@@ -4,7 +4,7 @@
     <div class="index-wrapper">
         <div class="container px-5">
     
-            <header class="mt-5 py-3">
+            <header class="py-3">
                 <h4><a href="{{route("users.apartments.create")}}">Insert a new apartment</a></h4>
             </header>
 
