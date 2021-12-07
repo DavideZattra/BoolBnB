@@ -10034,6 +10034,13 @@ h3 {
 
 header .navbar-custom {
   background-color: #000103;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header .navbar-custom .my_search-bar {
+  height: 20px;
+  border-radius: 10px;
 }
 header .navbar-custom a {
   color: #FFFFFA;
