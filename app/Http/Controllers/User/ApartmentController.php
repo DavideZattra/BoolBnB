@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Apartment;
+use App\Models\Message;
 
 class ApartmentController extends Controller
 {
@@ -63,7 +64,13 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('users.apartments.show', compact('apartment'));
+        $amenities = $apartment->amenities->pluck('name')->toArray();
+
+        // $messages = Message::where('apartment_id', $apartment->id);
+
+        // dd($messages);
+
+        return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
     }
 
     /**

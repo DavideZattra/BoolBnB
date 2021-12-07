@@ -40,9 +40,29 @@ class DashboardController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|min:3|max:40',
+            'surname' => 'required|string|min:3|max:40',
+            'email' => 'required|email|min:5',
+            'profile_picture' => 'nullable|image',
+            'birth_date' => 'required|date|before:today',
+        ],
+        [
+            'required' => ':attribute is required',
+            'name.min' => 'The name should be at least 3 characters long',
+            'name.max' => 'the name should not exceed 40 characters',
+            'surname.min' => 'The surname should be at least 3 characters long',
+            'surname.max' => 'The surname should not exceed 40 characters',
+            'email.email' => 'The email should be an email',
+            'email.min' => 'The email should be at least 3 characters long',
+            'profile_picture.image' => 'The profile picture should be an image',
+            'birth_date.before' => 'Are you coding from the future?'
 
-        
+
+        ]);
+
         // Get current user
         $userId = Auth::user()->id;
         $user = User::findOrFail($userId);
