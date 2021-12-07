@@ -70,7 +70,7 @@ class ApartmentController extends Controller
 
         // dd($messages);
 
-        return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        return view('users.apartments.show', compact('apartment', 'amenities'));
     }
 
     /**
