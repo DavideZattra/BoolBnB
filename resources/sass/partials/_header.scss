@@ -1,6 +1,21 @@
 header{
+    font-family: 'Quicksand', sans-serif;
+    
     .navbar-custom{
         background-color: $my_black;
+        position: fixed;
+        top: 0;
+        width: 100%;
+
+        #logo{
+            font-family: 'Lobster', cursive;
+            font-size: 20px;
+        }
+
+        .my_search-bar{
+            height: 20px;
+            border-radius: 10px;
+        }
 
         a{
             color: $my_white;
