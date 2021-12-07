@@ -47,6 +47,19 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            
+            'descriptive_title' => 'required|string|max:120',
+            'rooms' => 'numeric',
+            'image' => 'image',
+            'beds' => 'required|numeric',
+            'bathrooms' => 'numeric',
+            'square_meters' => 'numeric',
+            'description' => 'required|max:120',
+            // 'visibility' => 'required'
+        ]);
+
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
@@ -58,6 +71,8 @@ class ApartmentController extends Controller
         $newApartment->save();
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
+
+        @dd($newApartment);
 
         return redirect()->route('users.apartments.create', compact('newApartment'));
     }
