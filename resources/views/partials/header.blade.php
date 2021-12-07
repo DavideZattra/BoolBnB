@@ -8,7 +8,7 @@
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span id="my_toggler" class="navbar-toggler-icon">
-                    {{-- <i class="fas fa-bars"></i> --}}
+                    <i class="fas fa-bars my_bars"></i>
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
