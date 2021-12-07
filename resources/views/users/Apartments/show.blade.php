@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-uppercase font-weight-bold mb-3 mt-3">{{ $apartment->descriptive_title }}</h3>
+                <a href="#" class="map-link">
+                    <i class="fas fa-map-marked-alt"></i>
+                    {{ $apartment->addresses->country }}, {{ $apartment->addresses->city }}, {{ $apartment->addresses->address }}
+                </a>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="col-12">
             <h3 class="text-right">

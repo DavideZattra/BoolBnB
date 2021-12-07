@@ -10085,3 +10085,8 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 .index-wrapper .card a {
   font-size: 20px;
 }
+
+.map-link a {
+  color: black;
+  text-decoration: none;
+}
