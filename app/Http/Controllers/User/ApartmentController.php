@@ -44,9 +44,9 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
         $data['user_id'] = Auth::user()->id;
 
-        $data = $request->all();
         $newApartment = new Apartment();
 
         $newApartment->fill($data);
