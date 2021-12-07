@@ -21,7 +21,7 @@
 
                 <div class="mb-3">
                   <label for="descriptive_title" class="form-label">Descriptive Title</label>
-                  <input type="text" class="form-control" id="descriptive_title" name="descriptive_title" value="{{old('title', $newApartment->descriptive_title)}}">
+                  <input type="text" class="form-control" id="descriptive_title" name="descriptive_title" value="{{old('descriptive_title', $newApartment->descriptive_title)}}">
                 </div>
 
                 <div class="mb-3">

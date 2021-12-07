@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Apartment;
+use App\User;
 use App\Models\Amenity;
 
 
@@ -94,7 +95,8 @@ class ApartmentController extends Controller
      */
     public function edit(Apartment $apartment)
     {
-        return view('users.apartments.edit', compact('apartment'));
+        $amenities = Amenity::all();
+        return view('users.apartments.edit', compact('apartment', 'amenities'));
     }
 
     /**
@@ -104,17 +106,16 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $id, Apartment $apartment)
     {
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
-        $newApartment = new Apartment();
 
-        $newApartment->fill($data);
-        $newApartment->save();
+        $apartment->fill($data);
+        $apartment->update();
 
-        return redirect()->route('users.apartments.show', compact('newApartment'));
+        return redirect()->route('users.apartments.create', compact('apartment'));
     }
 
     /**
