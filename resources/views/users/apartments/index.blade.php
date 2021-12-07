@@ -16,7 +16,7 @@
                         <img class="card-img-top" src="{{ $apartment->image }}" alt="">
                         <div class="card-body">
                             <a class="text-center" href="{{ route('users.apartments.show', $apartment->id ) }}">{{ ucfirst($apartment->descriptive_title) }}</a>
-                            <p>
+                            <p class="m-0">
                                 <span>{{ $apartment->addresses->country }}</span>, 
                                 <span>{{ $apartment->addresses->city }}</span> <br>
                                 <span>{{ $apartment->addresses->address }}</span>
