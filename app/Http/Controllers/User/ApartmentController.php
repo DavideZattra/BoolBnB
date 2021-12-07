@@ -66,9 +66,7 @@ class ApartmentController extends Controller
     {
         $amenities = $apartment->amenities->pluck('name')->toArray();
 
-        // $messages = Message::where('apartment_id', $apartment->id);
-
-        // dd($messages);
+        $messages = $apartment->messages->toArray();
 
         return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
     }
