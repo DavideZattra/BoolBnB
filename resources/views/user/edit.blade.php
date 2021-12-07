@@ -6,7 +6,7 @@
     <form action="{{ route('user.update')}}" method="POST" enctype="multipart/form-data">
         @csrf
         
-        @method('GET')
+        @method('patch')
 
         <div class="form-group">
 

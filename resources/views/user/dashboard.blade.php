@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id='dashboard'>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -13,7 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <div class="profile-picture">
+                        <img src="{{ $user->profile_picture }}" alt="" class="img-fluid">
+                    </div>
                     Welcome back {{ $user->name . ' ' . $user->surname}}!
                 </div>
 
