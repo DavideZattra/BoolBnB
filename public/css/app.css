@@ -10062,8 +10062,22 @@ h3 {
     height: 300px;
   }
 }
+header {
+  font-family: "Quicksand", sans-serif;
+}
 header .navbar-custom {
   background-color: #000103;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header .navbar-custom #logo {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+}
+header .navbar-custom .my_search-bar {
+  height: 20px;
+  border-radius: 10px;
 }
 header .navbar-custom a {
   color: #FFFFFA;
@@ -10074,6 +10088,7 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 
 .index-wrapper {
   background-color: #333138;
+  font-family: "Quicksand", sans-serif;
 }
 .index-wrapper .row {
   background-color: #000103;
@@ -10081,6 +10096,9 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 }
 .index-wrapper a {
   color: #FF312E;
+}
+.index-wrapper .card {
+  height: 320px;
 }
 .index-wrapper .card a {
   font-size: 20px;
