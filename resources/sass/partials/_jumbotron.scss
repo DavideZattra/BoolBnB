@@ -51,27 +51,3 @@
         }
     }
 }
-
-
-
-// Travel Ideas
-
-.t-ideas{
-    width: 100%;
-    height: 200px;
-    border-radius: 8px;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover; 
-        border-radius: 8px;
-    }
-}
-
-// Media query per responsivness cell
-
-@media screen and (max-width: 585px) {
-    #jumbotron{
-        height: 300px;
-    }
-  }
