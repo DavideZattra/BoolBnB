@@ -31,12 +31,7 @@
                     </a>
                 </div>
 
-                {{-- button to see user apartments --}}
-                <div class="card-body">
-                    <a href='{{ route('users.apartments.index') }}' class="btn btn-primary">
-                        My Apartments
-                    </a>
-                </div>
+                
             </div>
         </div>
     </div>
