@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     
     <form action="{{ route('users.update')}}" method="POST" enctype="multipart/form-data">
         @csrf

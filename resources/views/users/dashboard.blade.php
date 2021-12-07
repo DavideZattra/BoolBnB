@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" id='dashboard'>
+<div class="container pt-4" id='dashboard'>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -19,9 +19,17 @@
                     Welcome back {{ $user->name . ' ' . $user->surname}}!
                 </div>
 
+                {{-- Button to edit user data --}}
                 <div class="card-body">
                     <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-success">
                         Edit your profile
+                    </a>
+                </div>
+
+                {{-- button to see user apartments --}}
+                <div class="card-body">
+                    <a href='{{ route('users.Apartments.index') }}' class="btn btn-primary">
+                        My Apartments
                     </a>
                 </div>
             </div>

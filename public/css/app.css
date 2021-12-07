@@ -10064,12 +10064,14 @@ h3 {
 }
 header {
   font-family: "Quicksand", sans-serif;
+  height: 60px;
 }
 header .navbar-custom {
   background-color: #000103;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 60px;
 }
 header .navbar-custom #logo {
   font-family: "Lobster", cursive;
