@@ -27,42 +27,8 @@
                     </p>
                 @endforelse
             </div>
-    
-            {{-- <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col">Image</th>
-                        <th scope="col">Descriptive title</th>
-                        <th scope="col">Charts</th>
-                        <th scope="col">Modify</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($apartments as $apartment)
-                        <tr>
-                            <td><img class="img-fluid" style="width:100px" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F1026205392%2FBeautiful-luxury-home-exterior-at-twilight%2F960x0.jpg%3Ffit%3Dscale" alt=""></td>
-                            <td><a href="{{ route('users.apartments.show', $apartment->id ) }}">{{ ucfirst($apartment->descriptive_title) }}</a></td>
-                            <td>route to charts</td>
-                            <td><a href="{{ route('users.apartments.edit', $apartment ) }}"><button class="btn-sm btn-primary">Edit</button></a></td>
-                        </td>
-                            <td>
-                                <form class="delete-item" action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST" data-post-title="{{ $apartment->descriptive_title }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn-sm btn-primary" type="submit">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="3">You don't have any apartment yet.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-              </table> --}}
             
-              <footer class="footer p-3 mx-2 d-flex justify-content-md-center">
+            <footer class="footer p-3 mx-2 d-flex justify-content-md-center">
                 {{ $apartments->links() }}
             </footer>
     
