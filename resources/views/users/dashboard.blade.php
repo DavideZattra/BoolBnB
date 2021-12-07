@@ -16,7 +16,7 @@
                     <div class="profile-picture">
                         <img src="{{ $user->profile_picture }}" alt="" class="img-fluid">
                     </div>
-                    Welcome back {{ $user->name . ' ' . $user->surname}}!
+                    Welcome back {{ ucfirst($user->name) . ' ' . ucfirst($user->surname)}}!
                 </div>
 
                 <div class="card-body">
