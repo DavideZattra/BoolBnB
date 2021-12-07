@@ -27,10 +27,10 @@ Route::middleware('auth')
     ->name('user.')
     ->prefix('user')
     ->group(function () {
-        Route::get('/', 'DashboardController@index')->name('dashboard');
-        Route::get('/edit', 'DashboardController@edit')->name('edit');
-        Route::get('/', 'DashboardController@update')->name('update');
-
+        // Route::get('/', 'DashboardController@index')->name('dashboard');
+        // Route::get('/edit', 'DashboardController@edit')->name('edit');
+        // Route::get('/update', 'DashboardController@update')->name('update');
+        Route::resource('/', DashboardController::class)->except('create', 'store');
         Route::resource('apartments', ApartmentController::class);
 });
 

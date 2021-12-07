@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="card-body">
-                    <a href='{{ route('user.edit') }}' class="btn btn-success">
+                    <a href='{{ route('user.edit', Auth::user()->id) }}' class="btn btn-success">
                         Edit your profile
                     </a>
                 </div>
