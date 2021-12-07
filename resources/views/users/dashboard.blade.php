@@ -21,8 +21,13 @@
 
                 {{-- Button to edit user data --}}
                 <div class="card-body">
+                    {{-- Button to edit the user profile --}}
                     <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-success">
                         Edit your profile
+                    </a>
+                    {{-- Button that show user apartments --}}
+                    <a href='{{ route('users.apartments.index')}}' class="btn btn-success">
+                        My Apartments
                     </a>
                 </div>
 
