@@ -72,8 +72,6 @@ class ApartmentController extends Controller
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
 
-        @dd($newApartment);
-
         return redirect()->route('users.apartments.create', compact('newApartment'));
     }
 
