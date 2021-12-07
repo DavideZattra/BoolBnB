@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -97,6 +98,9 @@
                             </div>
                         </div>
                     </form>
+                </div>
+                <div class="card-footer pt-4">
+                    <p>Already registered? <a href="{{route("login")}}">Click here.</a></p>
                 </div>
             </div>
         </div>
