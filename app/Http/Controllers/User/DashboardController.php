@@ -30,14 +30,14 @@ class DashboardController extends Controller
         // dd(Auth::user());
         $user = Auth::user();
 
-        return view('user.dashboard', compact('user'));
+        return view('users.dashboard', compact('user'));
     }
 
     public function edit()
     {
         $user = Auth::user();
 
-        return view('user.edit', compact('user'));
+        return view('users.edit', compact('user'));
     }
 
     public function update(Request $request){
@@ -56,7 +56,7 @@ class DashboardController extends Controller
         $user->update();
         
 
-        return redirect()->route('user.dashboard');
+        return redirect()->route('users.dashboard');
 
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     
-    <form action="{{ route('user.update')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('users.update')}}" method="POST" enctype="multipart/form-data">
         @csrf
         
         @method('patch')
