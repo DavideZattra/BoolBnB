@@ -106,6 +106,7 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment, Address $address)
     {
         $amenities = Amenity::all();
+        $address = Address::all()->pluck('id')->where('id', '=', 'apartment_id');
         return view('users.apartments.edit', compact('apartment', 'amenities', 'address'));
     }
 
@@ -133,12 +134,12 @@ class ApartmentController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
-      
-        $address->fill($data); 
-        $address->update();
         
         $apartment->fill($data);
-        $apartment->update();   
+        $apartment->update();
+
+        $address->fill($data); 
+        $address->update();
         
 
         return redirect()->route('users.apartments.create', compact('apartment', 'address'));
