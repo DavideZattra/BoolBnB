@@ -1,14 +1,14 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-custom shadow-sm">
+    <nav class="navbar sticky-top navbar-expand-md navbar-custom shadow-sm">
         <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
-            <a id="logo" class="navbar-brand font-weight-bold" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold mr-0" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span id="my_toggler" class="navbar-toggler-icon">
-                    {{-- <i class="fas fa-bars"></i> --}}
+                    <i class="fas fa-bars my_bars"></i>
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,7 +19,7 @@
 
                 {{-- middle of navbar --}}
                 <ul class="navbar-nav mx-auto">
-                    <li><a class="nav-link" href="{{ url('/') }}">some links to put in the middle</a></li>
+                    <li><input class="form-control my_search-bar pl-3" type="search" placeholder="Search" aria-label="Search"></li>
                 </ul>
     
                 <!-- Right Side Of Navbar -->
@@ -46,6 +46,10 @@
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
+                                </a>
+
+                                <a class="dropdown-item" href="{{ route('users.dashboard') }}">
+                                    {{ __('My Dashboard') }}
                                 </a>
     
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

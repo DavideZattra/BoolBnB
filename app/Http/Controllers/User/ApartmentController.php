@@ -23,7 +23,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $apartments = Apartment::orderBy('created_at','desc')->simplePaginate(6);
+        $apartments = Apartment::where('user_id', Auth::user()->id)->orderBy('created_at','desc')->simplePaginate(6);
 
         return view('users.apartments.index', compact('apartments'));
     }
@@ -90,7 +90,11 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        return view('users.apartments.show', compact('apartment'));
+        $amenities = $apartment->amenities->pluck('name')->toArray();
+
+        $messages = $apartment->messages->toArray();
+
+        return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
     }
 
     /**

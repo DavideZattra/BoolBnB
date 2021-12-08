@@ -1,7 +1,7 @@
 <template>
   <div class="row">
       <div class="col-12">
-          <h1>we we</h1>
+          <h1>Content di vue, apartments/ApartmentsList.vue</h1>
       </div>
   </div>
 </template>

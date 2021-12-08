@@ -1,7 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
@@ -11,9 +10,6 @@
 // General
 @import 'partials/general';
 
-// Home Page
-@import 'partials/homepage';
-
 // Header
 @import 'partials/header';
 
@@ -22,3 +18,12 @@
 
 // Index
 @import 'partials/index';
+
+// Show
+@import 'partials/show';
+
+// Jumbotron
+@import 'partials/jumbotron';
+
+// Jumbotron
+@import 'partials/houses';

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container pt-4" id='dashboard'>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Your Profile') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,18 +13,30 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <div class="profile-picture">
+                        <img src="{{ $user->profile_picture }}" alt="" class="img-fluid">
+                    </div>
+                    Welcome back {{ ucfirst($user->name) . ' ' . ucfirst($user->surname)}}!
                 </div>
+
+                {{-- Button to edit user data --}}
+                <div class="card-body">
+                    {{-- Button to edit the user profile --}}
+                    <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-success">
+                        Edit your profile
+                    </a>
+                    {{-- Button that show user apartments --}}
+                    <a href='{{ route('users.apartments.index')}}' class="btn btn-success">
+                        My Apartments
+                    </a>
+                </div>
+
+                
             </div>
         </div>
     </div>
 
-    <div>
-
-        <h1>Questa è la Dashboard</h1>
-
-    </div>
+    
 
 </div>
 @endsection

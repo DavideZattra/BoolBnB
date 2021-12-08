@@ -28,6 +28,9 @@ Route::middleware('auth')
     ->prefix('users') // this is for the URI calls
     ->group(function () {
         Route::get('/', 'DashboardController@index')->name('dashboard');
+        Route::get('/edit', 'DashboardController@edit')->name('edit');
+        Route::patch('/update', 'DashboardController@update')->name('update');
+        // Route::resource('/', DashboardController::class)->except('create', 'store');
         Route::resource('apartments', ApartmentController::class);
 });
 

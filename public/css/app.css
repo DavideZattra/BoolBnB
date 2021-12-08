@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10019,29 +10019,145 @@ h3 {
     border-color: #dee2e6;
   }
 }
-#jumbotron {
+header {
+  font-family: "Quicksand", sans-serif;
+  height: 60px;
+}
+header .navbar-custom {
+  background-color: #000103;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+header .navbar-custom #logo {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
+}
+header .navbar-custom .my_search-bar {
+  height: 20px;
+  border-radius: 10px;
+}
+header .navbar-custom .my_bars {
+  color: white;
+  font-size: 1.5rem;
+}
+header .navbar-custom a {
+  color: #FFFFFA;
+}
+header .navbar-custom button .navbar-toggler #my_toggler i {
+  color: #FFFFFA;
+}
+
+.index-wrapper {
+  background-color: #333138;
+  font-family: "Quicksand", sans-serif;
+}
+.index-wrapper .row {
+  background-color: #000103;
+  border-radius: 20px;
+}
+.index-wrapper a {
+  color: #FF312E;
+}
+.index-wrapper .card a {
+  font-size: 20px;
+}
+
+.map-link a {
+  color: #515052;
+  text-decoration: none;
+}
+
+.show-img {
+  height: 400px;
+}
+.show-img img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.apartment-modify {
+  margin-top: 70px;
+}
+.apartment-modify i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.apartment-description p {
+  color: #515052;
+}
+.apartment-description i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+.apartment-description ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.hr {
+  width: 100%;
+  height: 2px;
+  background-color: #515052;
+}
+
+.map-show img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#jumbotron #jumbo {
   background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
   width: 100%;
-  height: 700px;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
 }
-#jumbotron .jumbo-title {
+#jumbotron .jumbo-lg {
   border-radius: 8px;
-  color: #FFFFFA;
-  font-family: "Dancing Script", cursive;
-  height: 300px;
   width: 520px;
   background-color: #0001035b;
   margin-right: 100px;
+  height: 300px;
+}
+#jumbotron .jumbo-sm {
+  background-color: #000103;
+}
+#jumbotron .jumbo-text {
+  color: #FFFFFA;
+  font-family: "Quicksand", sans-serif;
   padding: 25px;
 }
-#jumbotron .jumbo-title h1 {
+#jumbotron .jumbo-text h1 {
   font-size: 3.5rem;
+  font-family: "Lobster", cursive;
 }
-#jumbotron .jumbo-title button {
-  background-color: #6cb2eb;
+#jumbotron .jumbo-text button {
+  background-color: #FFFFFA;
+  border: 1px solid #FF312E;
+}
+#jumbotron .jumbo-text button:hover {
+  border: 3px solid #FF312E;
+}
+#jumbotron .jumbo-text button:hover a {
+  text-decoration: none;
+}
+#jumbotron .jumbo-text button a {
+  color: #FF312E;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .t-ideas {
@@ -10055,33 +10171,4 @@ h3 {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
-}
-
-@media screen and (max-width: 585px) {
-  #jumbotron {
-    height: 300px;
-  }
-}
-header .navbar-custom {
-  background-color: #000103;
-}
-header .navbar-custom a {
-  color: #FFFFFA;
-}
-header .navbar-custom button .navbar-toggler #my_toggler i {
-  color: #FFFFFA;
-}
-
-.index-wrapper {
-  background-color: #333138;
-}
-.index-wrapper .row {
-  background-color: #000103;
-  border-radius: 20px;
-}
-.index-wrapper a {
-  color: #FF312E;
-}
-.index-wrapper .card a {
-  font-size: 20px;
 }
