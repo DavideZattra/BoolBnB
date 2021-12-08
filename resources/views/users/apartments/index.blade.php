@@ -25,7 +25,7 @@
                     </div>
                 @empty
                     <p>You don't have any apartment on this website,
-                        <a href="{{ route('users.apartments.create', $apartment ) }}">click this link to create one.</a>
+                        <a href="{{ route('users.apartments.create') }}">click this link to create one.</a>
                     </p>
                 @endforelse
             </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Models\Apartment;
 
 class DashboardController extends Controller
 {
@@ -29,8 +30,10 @@ class DashboardController extends Controller
     {
         // dd(Auth::user());
         $user = Auth::user();
+        $userApartments = $user->apartments->toArray();
+        // dd($userApartments);
 
-        return view('users.dashboard', compact('user'));
+        return view('users.dashboard', compact('user', 'userApartments'));
     }
 
     public function edit()
