@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Models\Apartment;
 
 class DashboardController extends Controller
 {
@@ -29,8 +30,10 @@ class DashboardController extends Controller
     {
         // dd(Auth::user());
         $user = Auth::user();
+        $userApartments = $user->apartments->toArray();
+        // dd($userApartments);
 
-        return view('users.dashboard', compact('user'));
+        return view('users.dashboard', compact('user', 'userApartments'));
     }
 
     public function edit()
@@ -46,7 +49,7 @@ class DashboardController extends Controller
             'name' => 'required|string|min:3|max:40',
             'surname' => 'required|string|min:3|max:40',
             'email' => 'required|email|min:5',
-            'profile_picture' => 'nullable|image',
+            'profile_picture' => 'nullable|image|mimes:jpeg,jpg,png',
             'birth_date' => 'required|date|before:today',
         ],
         [
@@ -58,6 +61,7 @@ class DashboardController extends Controller
             'email.email' => 'The email should be an email',
             'email.min' => 'The email should be at least 3 characters long',
             'profile_picture.image' => 'The profile picture should be an image',
+            'profile_picture.mimes' => 'The image format must be a jpeg,jpg or png',
             'birth_date.before' => 'Are you coding from the future?'
 
 
