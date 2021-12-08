@@ -61,9 +61,8 @@ class ApartmentController extends Controller
             'description' => 'required|max:250'
         ]);
 
-        $data['user_id'] = Auth::user()->id;
-
         $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
         $data['image'] = Storage::put('public', $data['image']);
 
         $newApartment = new Apartment();
