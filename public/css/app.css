@@ -10049,6 +10049,10 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
   color: #FFFFFA;
 }
 
+footer {
+  background-color: #000103;
+}
+
 .index-wrapper {
   background-color: #333138;
   font-family: "Quicksand", sans-serif;
