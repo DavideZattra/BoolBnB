@@ -27,32 +27,32 @@
 
                 <div class="mb-3">
                     <label for="country" class="form-label">Country</label>
-                    <input class="form-control" id="country" name="country">{{old('country', $newAddress->country)}}>
+                    <input class="form-control" id="country" name="country" value="{{old('country', $newAddress->country)}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="region" class="form-label">Region</label>
-                    <input class="form-control" id="region" name="region">{{old('region', $newAddress->region)}}>
+                    <input class="form-control" id="region" name="region" value="{{old('region', $newAddress->region)}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="province" class="form-label">Province</label>
-                    <input class="form-control" id="province" name="province">{{old('province', $newAddress->province)}}>
+                    <input class="form-control" id="province" name="province" value="{{old('province', $newAddress->province)}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="city" class="form-label">City</label>
-                    <input class="form-control" id="city" name="city">{{old('city', $newAddress->city)}}>
+                    <input class="form-control" id="city" name="city" value="{{old('city', $newAddress->city)}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="address" class="form-label">Address</label>
-                    <input class="form-control" id="address" name="address">{{old('address', $newAddress->address)}}>
+                    <input class="form-control" id="address" name="address" value="{{old('address', $newAddress->address)}}">
                 </div>
 
                 <div class="mb-3">
                     <label for="zip_code" class="form-label">Zip Code</label>
-                    <input class="form-control" id="zip_code" name="zip_code">{{old('zip_code', $newAddress->zip_code)}}>
+                    <input class="form-control" id="zip_code" name="zip_code" value="{{old('zip_code', $newAddress->zip_code)}}">
                 </div>
 
                 <div class="mb-3">

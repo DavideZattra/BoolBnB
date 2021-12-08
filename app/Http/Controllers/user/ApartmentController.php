@@ -99,10 +99,10 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment $apartment)
+    public function edit(Apartment $apartment, Address $address)
     {
         $amenities = Amenity::all();
-        return view('users.apartments.edit', compact('apartment', 'amenities'));
+        return view('users.apartments.edit', compact('apartment', 'amenities', 'address'));
     }
 
     /**
@@ -112,7 +112,7 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $id, Apartment $apartment)
+    public function update(Request $request, User $id, Apartment $apartment, Address $address)
     {
 
         $request->validate([
@@ -129,11 +129,15 @@ class ApartmentController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
-
+      
+        $address->fill($data); 
+        $address->update();
+        
         $apartment->fill($data);
-        $apartment->update();
+        $apartment->update();   
+        
 
-        return redirect()->route('users.apartments.create', compact('apartment'));
+        return redirect()->route('users.apartments.create', compact('apartment', 'address'));
     }
 
     /**
