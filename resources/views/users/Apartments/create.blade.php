@@ -15,13 +15,44 @@
                 </div>        
             @endif 
 
-            <form action="{{route('users.apartments.store')}}" method="POST" enctype="multipart/form-data">
+            
+            <form action="{{route('users.apartments.store', $newAddress)}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
 
                 <div class="mb-3">
                   <label for="descriptive_title" class="form-label">Descriptive Title</label>
                   <input type="text" class="form-control" id="descriptive_title" name="descriptive_title" value="{{old('descriptive_title', $newApartment->descriptive_title)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input class="form-control" id="country" name="country">{{old('country', $newAddress->country)}}>
+                </div>
+
+                <div class="mb-3">
+                    <label for="region" class="form-label">Region</label>
+                    <input class="form-control" id="region" name="region">{{old('region', $newAddress->region)}}>
+                </div>
+
+                <div class="mb-3">
+                    <label for="province" class="form-label">Province</label>
+                    <input class="form-control" id="province" name="province">{{old('province', $newAddress->province)}}>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input class="form-control" id="city" name="city">{{old('city', $newAddress->city)}}>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input class="form-control" id="address" name="address">{{old('address', $newAddress->address)}}>
+                </div>
+
+                <div class="mb-3">
+                    <label for="zip_code" class="form-label">Zip Code</label>
+                    <input class="form-control" id="zip_code" name="zip_code">{{old('zip_code', $newAddress->zip_code)}}>
                 </div>
 
                 <div class="mb-3">

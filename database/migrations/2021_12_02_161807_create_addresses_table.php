@@ -21,8 +21,8 @@ class CreateAddressesTable extends Migration
             $table->string('city', 50);
             $table->string('address', 100);
             $table->string('zip_code', 10);
-            $table->decimal('lat', 10, 8);
-            $table->decimal('lon', 11, 8);
+            $table->decimal('lat', 10, 8)->nullable();
+            $table->decimal('lon', 11, 8)->nullable();
             $table->timestamps();
 
             
