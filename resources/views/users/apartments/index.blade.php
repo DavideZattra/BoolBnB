@@ -30,9 +30,9 @@
                 @endforelse
             </div>
             
-            <footer class="footer p-3 mx-2 d-flex justify-content-md-center">
+            <div class="footer p-3 mx-2 d-flex justify-content-md-center">
                 {{ $apartments->links() }}
-            </footer>
+            </div>
     
         </div>
     </div>
