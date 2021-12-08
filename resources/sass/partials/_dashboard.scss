@@ -1,0 +1,33 @@
+#dashboard{
+
+    ul{
+        list-style: none;
+        
+    }
+    .card{
+        height: 400px;
+        
+        .profile-pic{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 5px 5px 15px 5px #000000;
+            img{
+                height: 200px;
+                width: 200px;
+                
+    
+            }
+        }
+        
+        .user-data{
+            display: flex;
+            align-items: center;
+
+            li{
+                padding: 5px 0;
+            }
+        }
+    }
+}

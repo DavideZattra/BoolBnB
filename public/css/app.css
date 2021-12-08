@@ -10172,3 +10172,28 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
      object-fit: cover;
   border-radius: 8px;
 }
+
+#dashboard ul {
+  list-style: none;
+}
+#dashboard .card {
+  height: 400px;
+}
+#dashboard .card .profile-pic {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+#dashboard .card .profile-pic img {
+  height: 200px;
+  width: 200px;
+}
+#dashboard .card .user-data {
+  display: flex;
+  align-items: center;
+}
+#dashboard .card .user-data li {
+  padding: 5px 0;
+}

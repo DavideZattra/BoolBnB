@@ -16,8 +16,14 @@
 
                 <div class="card-body d-md-flex ">
 
-                    <div class="profile-pic col-12 col-md-6">
-                        <img src="{{ $user->profile_picture }}" alt="" class="img-fluid">
+                    <div class="col-12 col-md-6 d-flex align-items-center">
+                        
+                        <div class="profile-pic">
+
+                            <img src="{{ $user->profile_picture }}" alt="" >
+
+                        </div>
+
                     </div>
 
                     <div class="user-data col-12 col-md-6">
@@ -52,19 +58,23 @@
 
                 <div class="card-header">My Apartments</div>
 
-                <ul class="list-group list-group-flush">
+                <div class="card-body">
 
-                    @forelse ($userApartments as $apartment)
-                        
-                    <li class="list-group-item">{{ $apartment['descriptive_title'] }}</li>
-
-                    @empty
-                        
-                    <li class="list-group-item">Insert a new apartment and become a member of our family!</li>
-
-                    @endforelse
-
-                </ul>
+                    <ul class="list-group list-group-flush">
+    
+                        @forelse ($userApartments as $apartment)
+                            
+                        <li class="list-group-item">{{ $apartment['descriptive_title'] }}</li>
+    
+                        @empty
+                            
+                        <li class="list-group-item">Insert a new apartment and become a member of our family!</li>
+    
+                        @endforelse
+    
+                    </ul>
+                    
+                </div>
 
                 <div class="card-footer d-flex justify-content-between">
                     {{-- Button that show user apartments --}}
