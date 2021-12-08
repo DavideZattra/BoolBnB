@@ -26,6 +26,36 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input class="form-control" id="country" name="country" value="{{old('country', $address->country)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="region" class="form-label">Region</label>
+                    <input class="form-control" id="region" name="region" value="{{old('region', $address->region)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="province" class="form-label">Province</label>
+                    <input class="form-control" id="province" name="province" value="{{old('province', $address->province)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input class="form-control" id="city" name="city" value="{{old('city', $address->city)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input class="form-control" id="address" name="address" value="{{old('address', $address->address)}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="zip_code" class="form-label">Zip Code</label>
+                    <input class="form-control" id="zip_code" name="zip_code" value="{{old('zip_code', $address->zip_code)}}">
+                </div>
+                
+                <div class="mb-3">
                     <label for="rooms" class="form-label">Rooms</label>
                     <input type="text" class="form-control" id="rooms" name="rooms" value="{{old('rooms', $apartment->rooms)}}">
                 </div>

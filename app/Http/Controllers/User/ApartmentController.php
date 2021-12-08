@@ -8,8 +8,9 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-use App\Models\Apartment;
 use App\User;
+use App\Models\Apartment;
+use App\Models\Address;
 use App\Models\Amenity;
 
 
@@ -32,12 +33,12 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Address $newAddress)
     {
         $newApartment = new Apartment();
         $amenities = Amenity::all();
 
-        return view('users.apartments.create', compact('newApartment', 'amenities'));
+        return view('users.apartments.create', compact('newApartment', 'amenities', 'newAddress'));
     }
 
     /**
@@ -46,19 +47,18 @@ class ApartmentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Address $newAddress)
     {
 
         $request->validate([
             
-            'descriptive_title' => 'required|string|max:120',
-            'rooms' => 'numeric',
+            'descriptive_title' => 'required|string|max:150',
+            'rooms' => 'required|numeric',
             'image' => 'image',
             'beds' => 'required|numeric',
-            'bathrooms' => 'numeric',
-            'square_meters' => 'numeric',
-            'description' => 'required|max:120',
-            // 'visibility' => 'required'
+            'bathrooms' => 'required|numeric',
+            'square_meters' => 'required|numeric',
+            'description' => 'required|max:250'
         ]);
 
         $data['user_id'] = Auth::user()->id;
@@ -70,10 +70,16 @@ class ApartmentController extends Controller
 
         $newApartment->fill($data);
         $newApartment->save();
+        
+        $newAddress = new Address();
+
+        $newAddress->fill($data);
+        $newAddress['apartment_id'] = $newApartment['id'];
+        $newAddress->save();
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
-
-        return redirect()->route('users.apartments.create', compact('newApartment'));
+        
+        return redirect()->route('users.apartments.create', compact('newApartment', 'newAddress'));
     }
 
     /**
@@ -100,7 +106,9 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         $amenities = Amenity::all();
-        return view('users.apartments.edit', compact('apartment', 'amenities'));
+        $address = $apartment->addresses;
+
+        return view('users.apartments.edit', compact('apartment', 'amenities', 'address'));
     }
 
     /**
@@ -112,14 +120,31 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, User $id, Apartment $apartment)
     {
+
+        $request->validate([
+            
+            'descriptive_title' => 'required|string|max:150',
+            'rooms' => 'required|numeric',
+            'image' => 'image',
+            'beds' => 'required|numeric',
+            'bathrooms' => 'required|numeric',
+            'square_meters' => 'required|numeric',
+            'description' => 'required|string|max:250'
+        ]);
+        
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
-
+        
         $apartment->fill($data);
         $apartment->update();
 
-        return redirect()->route('users.apartments.create', compact('apartment'));
+        $address = $apartment->addresses;
+        $address->fill($data); 
+        $address->update();
+        
+        if(array_key_exists('amenities', $data)) $apartment->amenities()->sync($data['amenities']);
+        return redirect()->route('users.apartments.show', compact('apartment'));
     }
 
     /**
