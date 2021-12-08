@@ -7,6 +7,9 @@
     .card{
         height: 400px;
         
+        .card-body{
+            overflow-y: scroll;
+        }
         .profile-pic{
             width: 200px;
             height: 200px;

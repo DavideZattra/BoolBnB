@@ -10179,6 +10179,9 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 #dashboard .card {
   height: 400px;
 }
+#dashboard .card .card-body {
+  overflow-y: scroll;
+}
 #dashboard .card .profile-pic {
   width: 200px;
   height: 200px;
