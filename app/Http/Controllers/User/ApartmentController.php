@@ -103,10 +103,11 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Apartment $apartment, Address $address)
+    public function edit(Apartment $apartment)
     {
         $amenities = Amenity::all();
-        $address = Address::all()->pluck('id')->where('id', '=', 'apartment_id');
+        $address = $apartment->addresses;
+
         return view('users.apartments.edit', compact('apartment', 'amenities', 'address'));
     }
 
@@ -117,7 +118,7 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $id, Apartment $apartment, Address $address)
+    public function update(Request $request, User $id, Apartment $apartment)
     {
 
         $request->validate([
@@ -138,11 +139,12 @@ class ApartmentController extends Controller
         $apartment->fill($data);
         $apartment->update();
 
+        $address = $apartment->addresses;
         $address->fill($data); 
         $address->update();
         
-
-        return redirect()->route('users.apartments.create', compact('apartment', 'address'));
+        if(array_key_exists('amenities', $data)) $apartment->amenities()->sync($data['amenities']);
+        return redirect()->route('users.apartments.show', compact('apartment'));
     }
 
     /**

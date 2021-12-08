@@ -15,7 +15,7 @@
                 </div>        
             @endif --}}
 
-            <form action="{{route('users.apartments.update', $apartment, $address)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('users.apartments.update', $apartment)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
