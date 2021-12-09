@@ -10019,6 +10019,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 header {
   font-family: "Quicksand", sans-serif;
   height: 60px;
@@ -10053,7 +10058,20 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 }
 
 footer {
+  padding: 30px 0;
   background-color: #000103;
+  color: #FFFFFA;
+}
+footer .yellow {
+  color: #ffdf29;
+}
+footer a {
+  text-decoration: none;
+  color: #FFFFFA;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #ffdf29;
 }
 
 .index-wrapper {
@@ -10103,10 +10121,6 @@ footer {
   font-size: 1.5rem;
   margin-right: 12px;
   vertical-align: middle;
-}
-.apartment-description ul {
-  list-style-type: none;
-  padding-left: 0;
 }
 
 .hr {
