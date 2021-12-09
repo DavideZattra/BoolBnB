@@ -1,13 +1,13 @@
 header{
     font-family: 'Quicksand', sans-serif;
     height: 60px;
+    background-color: $my_black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
     
     .navbar-custom{
-        background-color: $my_black;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 60px;
 
         #logo{
             font-family: 'Lobster', cursive;
