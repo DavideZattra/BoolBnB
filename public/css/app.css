@@ -10039,8 +10039,11 @@ header .navbar-custom .my_search-bar {
   border-radius: 10px;
 }
 header .navbar-custom .my_bars {
-  color: white;
+  color: #FFFFFA;
   font-size: 1.5rem;
+}
+header .navbar-custom .dropdown-menu a {
+  color: #000103;
 }
 header .navbar-custom a {
   color: #FFFFFA;
