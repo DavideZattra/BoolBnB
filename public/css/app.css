@@ -10020,8 +10020,7 @@ h3 {
   }
 }
 main {
-  background-color: #333138;
-  padding: 5vw 0;
+  background-color: #202020;
 }
 
 ul {
@@ -10032,6 +10031,8 @@ ul {
 header {
   font-family: "Quicksand", sans-serif;
   height: 60px;
+}
+header .navbar-custom {
   background-color: #000103;
   position: fixed;
   top: 0;
@@ -10111,7 +10112,6 @@ footer .contacts i {
 }
 
 .index-wrapper {
-  background-color: #515052;
   font-family: "Quicksand", sans-serif;
 }
 .index-wrapper .row {
@@ -10209,9 +10209,6 @@ footer .contacts i {
   width: 24px;
 }
 
-#apartment-form {
-  background-color: #202020;
-}
 #apartment-form .create-edit-wrapper {
   background-color: #000103;
   border-radius: 10px;
@@ -10277,7 +10274,7 @@ footer .contacts i {
 }
 
 .houses {
-  background-color: #333138;
+  background-color: #FFFFFA;
   padding: 30px 0;
 }
 
