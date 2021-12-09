@@ -60,10 +60,17 @@ class ApartmentController extends Controller
             'square_meters' => 'required|numeric',
             'description' => 'required|max:250'
         ]);
-
         $data = $request->all();
+
+        $apiQuery = $data['country'] . '-' .  $data['region'] . '-' .  $data['city'] . '-' .  str_replace(' ', '-', $data['address']) ;
+        $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $apiQuery . '.json?key=NLbGYpRnYCS3jxXsynN2IfGsmEgZJJzB');
+        $response = json_decode($response);
+        
         $data['user_id'] = Auth::user()->id;
         $data['image'] = Storage::put('public', $data['image']);
+        $data['lat'] = $response->results[0]->position->lat;
+        $data['lon'] = $response->results[0]->position->lon;
+        
 
         $newApartment = new Apartment();
 
@@ -74,7 +81,12 @@ class ApartmentController extends Controller
 
         $newAddress->fill($data);
         $newAddress['apartment_id'] = $newApartment['id'];
+
         $newAddress->save();
+
+        
+
+        
 
         $apartment = $newApartment;
 
