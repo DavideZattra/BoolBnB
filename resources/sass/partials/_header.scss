@@ -12,6 +12,10 @@ header{
         #logo{
             font-family: 'DM Serif Display', serif;
             font-size: 1.5rem;
+
+            &:hover{
+                border-bottom: 2px solid white;
+            }
         }
 
         .my_search-bar{
@@ -33,6 +37,10 @@ header{
 
         a{
             color: $my_white;
+
+            &:hover{
+                border-bottom: 2px solid white;
+            }
         }
     }
 }

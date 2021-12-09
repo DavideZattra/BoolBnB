@@ -15,7 +15,12 @@
 
         a{
             font-size: 20px;
+            font-weight: bold;
             color: $my_black;
+        }
+
+        span{
+            color: $my_darkgrey;
         }
     }
 }

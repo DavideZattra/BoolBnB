@@ -10047,6 +10047,9 @@ header .navbar-custom #logo {
   font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
 }
+header .navbar-custom #logo:hover {
+  border-bottom: 2px solid white;
+}
 header .navbar-custom .my_search-bar {
   height: 20px;
   border-radius: 10px;
@@ -10060,6 +10063,9 @@ header .navbar-custom .dropdown-menu a {
 }
 header .navbar-custom a {
   color: #FFFFFA;
+}
+header .navbar-custom a:hover {
+  border-bottom: 2px solid white;
 }
 
 footer {
@@ -10128,7 +10134,11 @@ footer .contacts i {
 }
 .index-wrapper .card a {
   font-size: 20px;
+  font-weight: bold;
   color: #000103;
+}
+.index-wrapper .card span {
+  color: #202020;
 }
 
 .map-link a {
@@ -10273,7 +10283,6 @@ footer .contacts i {
 }
 #jumbotron .jumbo-text button a {
   color: #000103;
-  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
 }
