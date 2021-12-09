@@ -76,9 +76,11 @@ class ApartmentController extends Controller
         $newAddress['apartment_id'] = $newApartment['id'];
         $newAddress->save();
 
+        $apartment = $newApartment;
+
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
         
-        return redirect()->route('users.apartments.create', compact('newApartment', 'newAddress'));
+        return redirect()->route('users.apartments.show', compact('apartment'));
     }
 
     /**
