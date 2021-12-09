@@ -10306,8 +10306,11 @@ footer .contacts i {
   box-shadow: 5px 5px 15px 5px #000000;
 }
 #dashboard .card .profile-pic img {
-  height: 200px;
   width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 #dashboard .card .user-data {
   display: flex;
