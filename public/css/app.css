@@ -10057,7 +10057,7 @@ footer {
 }
 
 .index-wrapper {
-  background-color: #333138;
+  background-color: #515052;
   font-family: "Quicksand", sans-serif;
 }
 .index-wrapper .row {
@@ -10065,10 +10065,14 @@ footer {
   border-radius: 20px;
 }
 .index-wrapper a {
-  color: #FF312E;
+  color: #ffdf29;
+}
+.index-wrapper .card {
+  border: 2px solid #ffdf29;
 }
 .index-wrapper .card a {
   font-size: 20px;
+  color: #ffd900;
 }
 
 .map-link a {

@@ -1,5 +1,5 @@
 .index-wrapper{
-    background-color: $my_darkgrey;
+    background-color: $my_grey;
     font-family: 'Quicksand', sans-serif;
 
     .row{
@@ -8,13 +8,15 @@
     }
 
     a{
-        color: $my_red;
+        color: $my_brightyellow;
     }
 
     .card{
+        border: 2px solid $my_brightyellow;
 
         a{
             font-size: 20px;
+            color: $my_yellow;
         }
     }
 }
