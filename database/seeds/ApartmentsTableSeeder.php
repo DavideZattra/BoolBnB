@@ -34,6 +34,7 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->square_meters = $faker->numberBetween(0, 1000);
             $newApartment->image = $faker->imageUrl(640, 480, 'house', true);
             $newApartment->description = $faker->paragraph(3, false);
+            $newApartment->visibility = true;
 
             $newApartment->save();
 

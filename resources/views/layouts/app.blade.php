@@ -21,6 +21,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- cdn Entrypoint  -->
+    @yield('cdn-entrypoint')
 </head>
 <body>
     <div id="app">
@@ -32,6 +35,8 @@
 
         @include('partials.footer')
     </div>
+    
+    @yield('scripts-entrypoint')
     <script src="{{ asset('js/front.js') }}"></script>
 </body>
 </html>

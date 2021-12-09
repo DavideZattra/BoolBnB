@@ -4,4 +4,3 @@
 @include('guests.home.jumbotron')
 @include('guests.home.houses')
 
-<div id="root"></div>

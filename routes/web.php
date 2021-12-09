@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('guests.home');
 });
 
+Route::get('/search', function () {
+    return view('guests.apartments.advanced_search');
+});
+
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
