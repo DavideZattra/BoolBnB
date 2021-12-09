@@ -1,4 +1,5 @@
-.create-container{
+#apartment-form{
+    background-color: $my_grey;
 
     .create-wrapper{
         background-color: $my_black;
@@ -13,5 +14,9 @@
     .btn-custom{
         background-color: $my_brightyellow;
         border: 1px solid $my_black;
+    }
+    h4{
+        color: $my_brightyellow;
+        margin: 20px 0;
     }
 }
