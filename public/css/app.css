@@ -10019,6 +10019,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
+main {
+  background-color: #333138;
+  padding: 5vw 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -10027,8 +10032,6 @@ ul {
 header {
   font-family: "Quicksand", sans-serif;
   height: 60px;
-}
-header .navbar-custom {
   background-color: #000103;
   position: fixed;
   top: 0;
@@ -10058,7 +10061,6 @@ header .navbar-custom button .navbar-toggler #my_toggler i {
 }
 
 footer {
-  margin-top: 100px;
   padding-top: 6vw;
   background-color: #000103;
   color: #FFFFFA;
@@ -10208,9 +10210,9 @@ footer .contacts i {
 }
 
 #apartment-form {
-  background-color: #515052;
+  background-color: #202020;
 }
-#apartment-form .create-wrapper {
+#apartment-form .create-edit-wrapper {
   background-color: #000103;
   border-radius: 10px;
   color: #FFFFFA;
@@ -10225,6 +10227,9 @@ footer .contacts i {
 #apartment-form h4 {
   color: #ffdf29;
   margin: 20px 0;
+}
+#apartment-form input {
+  border: 2px solid #ffdf29;
 }
 
 #jumbotron #jumbo {
@@ -10269,6 +10274,11 @@ footer .contacts i {
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
+}
+
+.houses {
+  background-color: #333138;
+  padding: 30px 0;
 }
 
 .t-ideas {

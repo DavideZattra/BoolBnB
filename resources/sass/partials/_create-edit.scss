@@ -1,7 +1,7 @@
 #apartment-form{
-    background-color: $my_grey;
+    background-color: $my_darkgrey;
 
-    .create-wrapper{
+    .create-edit-wrapper{
         background-color: $my_black;
         border-radius: 10px;
         color: $my_white;
@@ -15,8 +15,13 @@
         background-color: $my_brightyellow;
         border: 1px solid $my_black;
     }
+
     h4{
         color: $my_brightyellow;
         margin: 20px 0;
+    }
+
+    input{
+        border: 2px solid $my_brightyellow;
     }
 }

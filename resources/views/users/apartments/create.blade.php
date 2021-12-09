@@ -5,7 +5,7 @@
         <div class="container">
             <h4>Insert your apartment's info.</h4>
 
-            <div class="create-wrapper p-3">
+            <div class="create-edit-wrapper p-3">
                 <div class="container create-container">
                     @if ($errors->any())
                         <div class="alert alert-danger">
