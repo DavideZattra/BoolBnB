@@ -10234,7 +10234,7 @@ footer .contacts i {
 #jumbotron #jumbo {
   background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -10262,13 +10262,14 @@ footer .contacts i {
 #jumbotron .jumbo-text button {
   background-color: rgba(255, 255, 255, 0.781);
   border: 1px solid #000103;
-  box-shadow: 1px 1px 5px #000000;
+  box-shadow: 1px 1px 2px #000000;
 }
 #jumbotron .jumbo-text button:hover {
   background-color: #FFFFFA;
 }
 #jumbotron .jumbo-text button:hover a {
   text-decoration: none;
+  font-size: 20px;
 }
 #jumbotron .jumbo-text button a {
   color: #000103;
