@@ -53,7 +53,7 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $message['email'] }}</h5>
                       <p class="card-text">{{ $message['body'] }}</p>
-                      <a href="#" class="btn btn-primary">Answere</a>
+                      <a href="#" class="btn btn-primary">Answer</a>
                     </div>
                 </div>
 
@@ -65,7 +65,7 @@
             </div>
 
             <div class="d-flex col-12 mt-3">
-                <a href="{{ route('users.edit', $apartment) }}" class="btn btn-primary mr-3">Modify your apartment details</a>
+                <a href="{{ route('users.apartments.edit', $apartment) }}" class="btn btn-primary mr-3">Modify your apartment details</a>
                 <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
                     @csrf
                     @method('DELETE')
