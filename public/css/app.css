@@ -10210,9 +10210,9 @@ footer .contacts i {
 }
 
 #apartment-form {
-  background-color: #515052;
+  background-color: #202020;
 }
-#apartment-form .create-wrapper {
+#apartment-form .create-edit-wrapper {
   background-color: #000103;
   border-radius: 10px;
   color: #FFFFFA;
@@ -10227,6 +10227,9 @@ footer .contacts i {
 #apartment-form h4 {
   color: #ffdf29;
   margin: 20px 0;
+}
+#apartment-form input {
+  border: 2px solid #ffdf29;
 }
 
 #jumbotron #jumbo {
