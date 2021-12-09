@@ -144,7 +144,7 @@
                     <button type="submit" class="btn btn-custom mt-5">Add your new apartment</button>
                 </div>
             </div>
-            <a href=""{{ route('users.apartments.index') }}><h4>Back to your apartments</h4></a>
+            <a href="{{ route('users.apartments.index') }}"><h4>Click here to go back to your apartments.</h4></a>
         
         </div>
     </section>
