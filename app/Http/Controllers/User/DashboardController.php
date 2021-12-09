@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\User;
-use App\Models\Apartment;
+// use App\Models\Apartment;
 
 class DashboardController extends Controller
 {
@@ -72,11 +73,12 @@ class DashboardController extends Controller
         $user = User::findOrFail($userId);
 
         
-        
+        $data = $request->all();
+        $data['profile_picture'] = Storage::put('profile-picture', $data['profile_picture']);
         
         // Fill user model
-        $user->fill($request->all());
-
+        $user->fill($data);
+        // dd($user);
         $user->update();
         
 

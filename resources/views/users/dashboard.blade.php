@@ -20,7 +20,7 @@
                         
                         <div class="profile-pic">
 
-                            <img src="{{ $user->profile_picture }}" alt="" >
+                            <img src="{{ asset('storage/'. $user->profile_picture) }}" alt="" >
 
                         </div>
 
