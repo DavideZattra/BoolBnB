@@ -67,7 +67,7 @@ class ApartmentController extends Controller
         $response = json_decode($response);
         
         $data['user_id'] = Auth::user()->id;
-        $data['image'] = Storage::put('public', $data['image']);
+        $data['image'] = Storage::put('apartment-images', $data['image']);
         $data['lat'] = $response->results[0]->position->lat;
         $data['lon'] = $response->results[0]->position->lon;
         
