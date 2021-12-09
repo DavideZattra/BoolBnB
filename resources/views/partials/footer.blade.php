@@ -58,7 +58,7 @@
     </div>
 
     <div class="copyright">
-        <p></p>
+        <p class="text-center mt-1 mb-1">© designed by Jose</p>
     </div>
 
 </footer>
