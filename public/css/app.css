@@ -10127,6 +10127,19 @@ footer {
      object-fit: cover;
 }
 
+.create-container .create-wrapper {
+  background-color: #000103;
+  border-radius: 10px;
+  color: #FFFFFA;
+}
+.create-container .yellow-label {
+  color: #ffdf29;
+}
+.create-container .btn-custom {
+  background-color: #ffdf29;
+  border: 1px solid #000103;
+}
+
 #jumbotron #jumbo {
   background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
   width: 100%;

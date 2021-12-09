@@ -1,0 +1,17 @@
+.create-container{
+
+    .create-wrapper{
+        background-color: $my_black;
+        border-radius: 10px;
+        color: $my_white;
+    }
+
+    .yellow-label{
+        color: $my_brightyellow;
+    }
+
+    .btn-custom{
+        background-color: $my_brightyellow;
+        border: 1px solid $my_black;
+    }
+}
