@@ -37340,13 +37340,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /Users/camillasassoli/Desktop/boolean/final_project/BoolBnB/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/camillasassoli/Desktop/boolean/final_project/BoolBnB/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> a1b5430c175d43216e7d7d459d9f20436470ccef
 
 
 /***/ })
