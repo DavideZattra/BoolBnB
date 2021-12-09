@@ -15,7 +15,7 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        $data = Apartment::with('amenities')->get();
+        $data = Apartment::with('amenities')->with('addresses')->get();
 
         return response()->json($data);
     }
@@ -49,9 +49,10 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        $data = Apartment::where('id', $id)->get();
+        $data = Apartment::where('id', $id)->with('amenities')->with('addresses')->get();
 
-        return response()->json($data);
+        if ($data) return response()->json($data);
+        else return response('', 404);
     }
 
     /**
