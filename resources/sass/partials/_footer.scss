@@ -1,3 +1,23 @@
 footer{
+    padding: 30px 0;
     background-color: $my_black;
+    color: $my_white;
+
+    .yellow{
+        color: $my_brightyellow;
+    }
+
+    .ul{
+        li{
+        }
+      
+    }
+    a{
+        text-decoration: none;
+        color: $my_white;
+    }
+    a:hover{
+        text-decoration: underline;
+        color: $my_brightyellow;
+    }
 }
