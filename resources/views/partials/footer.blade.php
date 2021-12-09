@@ -1,10 +1,10 @@
 <footer>
     <div class="footer-container">
         <div class="row justify-content-between">
-            <div class="col-6 col-lg-4 mt-2">
+            <div class="col-12 col-md-6 col-lg-4 mt-2">
                 <div class="yellow-line"></div>
                 <h2 class="yellow">Dream. Travel. Live.</h2>
-                <h2 class="yellow">BoolB&B</h2>
+                <h3 class="yellow">BoolBnB</h3>
                 <div class="socials-container justify-content-between d-flex">
                     <a href="#">
                         <i class="fab fa-twitter"></i>
@@ -18,7 +18,7 @@
                 </div>
 
             </div>
-            <div class="col-6 col-lg-2 mt-2">
+            <div class="col-12 col-md-6 col-lg-2 mt-2">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Host</h4>
                 <ul>
@@ -32,7 +32,7 @@
                     <li><a href="#">Rules to host</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-lg-2 mt-2">
+            <div class="col-12 col-md-6 col-lg-2 mt-2">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Info</h4>
                 <ul>
@@ -42,7 +42,7 @@
                     <li><a href="#">Informazioni di sicurezza</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-lg-2 mt-2">
+            <div class="col-12 col-md-6 col-lg-2 mt-2">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Contacts</h4>
                 <ul class="contacts">

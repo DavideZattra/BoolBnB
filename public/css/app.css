@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10019,6 +10019,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 main {
   background-color: #202020;
 }
@@ -10040,8 +10044,8 @@ header .navbar-custom {
   height: 60px;
 }
 header .navbar-custom #logo {
-  font-family: "Lobster", cursive;
-  font-size: 20px;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10057,9 +10061,6 @@ header .navbar-custom .dropdown-menu a {
 header .navbar-custom a {
   color: #FFFFFA;
 }
-header .navbar-custom button .navbar-toggler #my_toggler i {
-  color: #FFFFFA;
-}
 
 footer {
   padding-top: 6vw;
@@ -10072,7 +10073,7 @@ footer .footer-container {
 }
 footer .yellow-line {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: #ffdf29;
 }
 footer .yellow {
@@ -10081,7 +10082,7 @@ footer .yellow {
 }
 footer h2 {
   font-size: 2.5rem;
-  font-family: "Lobster", cursive;
+  font-family: "DM Serif Display", serif;
 }
 footer ul li {
   margin-top: 20px;
@@ -10095,7 +10096,7 @@ footer a:hover {
   color: #ffdf29;
 }
 footer .socials-container {
-  width: 50%;
+  width: 30%;
 }
 footer .socials-container i {
   font-size: 25px;
@@ -10244,31 +10245,33 @@ footer .contacts i {
   background-color: #0001035b;
   margin-right: 100px;
   height: 300px;
+  box-shadow: 3px 3px 15px #000000;
 }
 #jumbotron .jumbo-sm {
   background-color: #000103;
 }
 #jumbotron .jumbo-text {
   color: #FFFFFA;
-  font-family: "Quicksand", sans-serif;
   padding: 25px;
 }
 #jumbotron .jumbo-text h1 {
-  font-size: 3.5rem;
-  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  font-family: "DM Serif Display", serif;
+  text-shadow: 2px 2px 4px #000000;
 }
 #jumbotron .jumbo-text button {
-  background-color: #FFFFFA;
-  border: 1px solid #FF312E;
+  background-color: rgba(255, 255, 255, 0.781);
+  border: 1px solid #000103;
+  box-shadow: 1px 1px 5px #000000;
 }
 #jumbotron .jumbo-text button:hover {
-  border: 3px solid #FF312E;
+  background-color: #FFFFFA;
 }
 #jumbotron .jumbo-text button:hover a {
   text-decoration: none;
 }
 #jumbotron .jumbo-text button a {
-  color: #FF312E;
+  color: #000103;
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 1.2rem;

@@ -1,7 +1,7 @@
 header{
     font-family: 'Quicksand', sans-serif;
     height: 60px;
-    
+
     .navbar-custom{
         background-color: $my_black;
         position: fixed;
@@ -10,8 +10,8 @@ header{
         height: 60px;
 
         #logo{
-            font-family: 'Lobster', cursive;
-            font-size: 20px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
         }
 
         .my_search-bar{
@@ -33,16 +33,6 @@ header{
 
         a{
             color: $my_white;
-        }
-
-        button{
-            .navbar-toggler{
-                #my_toggler{
-                    i{
-                        color: $my_white;
-                    }
-                }
-            }
         }
     }
 }
