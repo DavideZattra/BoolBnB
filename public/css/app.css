@@ -10292,6 +10292,9 @@ footer .contacts i {
   border-radius: 8px;
 }
 
+#dashboard {
+  padding: 75px 0;
+}
 #dashboard ul {
   list-style: none;
 }

@@ -5,7 +5,11 @@
 
     <div class="row justify-content-center">
 
-        <div class="col-12 text-center">My Dashboard</div>
+        {{-- <div class="col-12 text-center text-white">
+            <h2 class="">
+                My Dashboard
+            </h2>
+        </div> --}}
 
         {{-- Profile information --}}
         <div class="col-12 col-md-6">
