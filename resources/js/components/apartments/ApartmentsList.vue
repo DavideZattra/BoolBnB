@@ -1,8 +1,16 @@
 <template>
     <div class="container">
-          <div class="row justify-content-center mt-5">
-                <ApartmentCard :v-if="apartments.visible = 1" v-for="apartment in apartments" :key="apartment.id" :apartment="apartment"/>
-          </div>
+        <div class="input-group input-group-sm mt-5">
+            <input v-model.trim="search" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            
+            <div class="input-group-prepend">
+                <button class="btn btn-primary" id="inputGroup-sizing-sm" type="button">Search</button>
+            </div>
+        </div>  
+
+        <div class="row justify-content-center mt-5">
+            <ApartmentCard :v-if="apartments.visible = 1" v-for="apartment in apartments" :key="apartment.id" :apartment="apartment"/>
+        </div>
     </div>
 </template>
 
@@ -22,7 +30,9 @@ export default {
         }
     },
     methods: {
-        // 
+        search(needle) {
+            
+        } 
     },
     created() {
         axios.get(`http://127.0.0.1:8000/api/apartments`)
