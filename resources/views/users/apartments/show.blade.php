@@ -57,29 +57,27 @@
             </div>
         </div>
 
+        <div class="hr"></div>
+
         <h5 class="my-3 pt-3 font-italic">Scroll to see all of your messages.</h5>
 
         <div class="row d-flex align-items-center justify-content-lg-between p-1">
             <div class="col-12 col-md-6 px-0">
                 <div class="col-12 px-0 messages">
                     @forelse ($messages as $message)
-    
-                    <div class="card mb-3">
-                        <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
-                        <div class="card-body">
-                          <p class="card-text">{{ $message['body'] }}</p>
-                          <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                        <div class="card mb-3">
+                            <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
+                            <div class="card-body">
+                            <p class="card-text">{{ $message['body'] }}</p>
+                            <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                            </div>
                         </div>
-                    </div>
-    
                     @empty
-    
-                    <div class="no-messages">
-                        <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
-        
-                        <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
-                    </div>
-                        
+                        <div class="no-messages">
+                            <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
+            
+                            <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                        </div>
                     @endforelse
                 </div>
             </div>

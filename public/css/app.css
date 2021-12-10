@@ -10173,7 +10173,7 @@ footer .contacts i {
   height: calc(100vh - 60px);
 }
 .index-wrapper .row {
-  background-color: #000103;
+  background-color: rgba(0, 0, 0, 0.507);
   border-radius: 20px;
 }
 .index-wrapper a {
@@ -10197,7 +10197,7 @@ footer .contacts i {
 .show-container {
   color: white;
   padding-bottom: 100px;
-  background-color: rgba(0, 0, 0, 0.425);
+  background-color: rgba(0, 0, 0, 0.507);
   border-radius: 10px;
 }
 .show-container i {
@@ -10320,7 +10320,7 @@ footer .contacts i {
 }
 
 .create-edit-wrapper {
-  background-color: #000103;
+  background-color: rgba(0, 0, 0, 0.507);
   border-radius: 10px;
   color: #FFFFFA;
 }
@@ -10426,6 +10426,12 @@ a:hover {
 #dashboard {
   height: calc(100vh - 60px);
   padding-top: 5%;
+  overflow-y: scroll;
+}
+#dashboard .wrapper {
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 40px 40px 50px;
+  border-radius: 10px;
 }
 #dashboard h2 {
   color: #ffdf29;
@@ -10471,20 +10477,9 @@ a:hover {
   border-radius: 50%;
   box-shadow: 5px 5px 15px 5px #000000;
 }
-#dashboard .card .profile-pic .insert-pp {
-  text-align: center;
-  vertical-align: middle;
-  margin: auto;
-  padding-top: 90px;
-}
-#dashboard .card .profile-pic .insert-pp a {
-  color: black;
-}
-#dashboard .card .profile-pic .insert-pp a:hover {
-  font-size: 15px;
-}
 #dashboard .card .profile-pic img {
-  width: 200px;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

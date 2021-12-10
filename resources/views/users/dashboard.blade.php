@@ -3,23 +3,20 @@
 @section('content')
 <div class="container" id='dashboard'>
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center wrapper">
 
         <div class="col-12 pb-4">
             <h2>My Dashboard.</h2>
         </div>
 
         {{-- Profile information --}}
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-12 col-lg-6">
             <div class="card">
 
                 <div class="card-header ">My Profile</div>
                 <div class="card-body d-md-flex align-items-center">
                     <div class="col-12 col-md-6 d-flex align-items-center">
                         <div class="profile-pic">
-                            <div class="insert-pp {{ ($user->profile_picture) ? 'd-none' : '' }}">
-                                <a href="{{ route('users.edit', Auth::user()->id) }}">Insert a profile picture</a>
-                            </div>
                             <img src="{{ asset('storage/'. $user->profile_picture) }}" alt="" >
                         </div>
                     </div>
