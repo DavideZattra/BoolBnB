@@ -139,9 +139,9 @@
                             <input type="text" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-custom mt-5">Edit your apartment.</button>
                 </form>
 
-                <button type="submit" class="btn btn-custom mt-5">Edit your apartment.</button>
             </div>
         </div>
         <a href="{{ route('users.apartments.index') }}"><h4>Click here to go back to your apartments.</h4></a>
