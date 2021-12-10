@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/search', function () {
-    return view('guests.apartments.advanced_search');
+    return view('guests.apartments.advanced_search')->name('search');
 });
 
 Auth::routes();
