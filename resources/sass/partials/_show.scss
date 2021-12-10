@@ -1,38 +1,43 @@
 .show-container{
     color: white;
+    padding-bottom: 100px;
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 10px;
+    
+
     i{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-right: 12px;
         vertical-align: middle;
         color: $my_brightyellow;
     }
+
+    h3{
+        color: $my_brightyellow;
+    }
+
     .card{
-        background-color: $my_black;
-        color: $my_white;
+        background-color: $my_white;
+        color: $my_black;
         border: 2px solid $my_brightyellow;
         .card-header{
             display: inline-block;
+            background-color: $my_white;
+            color: $my_black;
         }
         .mail{
-            color: $my_brightyellow;
+            color: $my_black;
             font-size: 14px;
         }
     }
     .btn-yellow{
         background-color: $my_brightyellow;
-        border-bottom: 1px solid $my_darkgrey;
         color: $my_black;
-        border: 2px solid black;
+        border: 1px solid $my_black;
 
         &:hover{
-            border: 2px solid yellow;
+            border: 1px solid yellow;
         }
-    }
-    .delete-message{
-        color: $my_red;
-    }
-    .edit-message{
-        color: $green;
     }
     .no-messages{
         img{
@@ -43,6 +48,11 @@
             text-decoration: none;
         }
     }
+}
+
+.messages{
+    height: 440px;
+    overflow-y: scroll;
 }
 
 
@@ -84,7 +94,8 @@
     //     object-fit: cover;
     // }
     #map{
-        height: 100%;
+        height: 440px;
+        width: 100%;
         border-radius: 8px;
         border: 3px solid $my_brightyellow;
     }

@@ -6,10 +6,9 @@
 @endsection
 
 @section('content')
-
-    <div class="container show-container">
+<section class="py-5">
+    <div class="container show-container px-5">
         <div class="row">
-            {{-- Titolo e indirizzo --}}
             <div class="col-12 apartment-modify">
                 <h3 class="text-uppercase font-weight-bold">{{ $apartment->descriptive_title }}</h3>
                 <div class="map-link mb-3 mt-3">
@@ -19,14 +18,19 @@
                     </a>
                 </div>
             </div>
+        </div>
 
-            {{-- Sezione immagine --}}
-            <div class="col-12 show-img">
+        <div class="row d-flex align-items-center mb-5">
+            <div class="col-sm-12 col-md-6 show-img mt-">
                 <img src="{{ asset('storage/' . $apartment->image) }}" alt="immagine copertina dell'appartamento">
             </div>
-            <div class="col-12 col-md-7 apartment-description mt-5">
-                <h4>Description of your apartment:</h4>
+
+            <div class="col-12 col-md-6 apartment-description">
+                <h4 class="mt-0">Description of your apartment:</h4>
                 <p>{{ $apartment->description }}</p>
+
+                <div class="hr mb-3"></div>
+
                 <p><i class="fab fa-buromobelexperte"></i> rooms: {{ $apartment->rooms }}</p>
                 <p><i class="fas fa-bed"></i> beds: {{ $apartment->beds }}</p>
                 <p><i class="fas fa-restroom"></i> bathrooms: {{ $apartment->bathrooms }}</p>
@@ -40,70 +44,51 @@
                         <li class="mt-2">{{ $amenitie }}</li>
                     @endforeach
                 </ul>
+
+                <div class="d-flex mt-3 justify-content-between">
+                    <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-yellow edit-message">Modify your apartment details</a>
+                    <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+        
+                        <button class="font-weight-bold btn btn-yellow delete-message" type="submit">Delete this apartment</a>
+                    </form>
+                </div>
             </div>
-            <div class="col-12 col-md-5 mt-5 map-show">
+        </div>
+
+        <h5 class="my-3 pt-3 font-italic">Scroll to see all of your messages.</h5>
+
+        <div class="row d-flex align-items-center justify-content-lg-between p-1">
+            <div class="col-12 col-md-6 px-0">
+                <div class="col-12 px-0 messages">
+                    @forelse ($messages as $message)
+    
+                    <div class="card mb-3">
+                        <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
+                        <div class="card-body">
+                          <p class="card-text">{{ $message['body'] }}</p>
+                          <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                        </div>
+                    </div>
+    
+                    @empty
+    
+                    <div class="no-messages">
+                        <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
+        
+                        <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                    </div>
+                        
+                    @endforelse
+                </div>
+            </div>
+            <div class="col-12 col-md-5 map-show">
                 <div id='map' class='map'></div>
             </div>
-
-            <div class="hr col-9 mt-5 mb-5"></div>
-
-            <div class="col-12">
-                <h3 class="font-weight-bold mb-3">Messages</h3>
-            </div>
-            <div class="col-12">
-                @forelse ($messages as $message)
-
-                <div class="card mt-4">
-                    <h4 class="card-header">{{ $message['name'] }}<span class="mail"> - {{ $message['email'] }}</span></h4>
-                    <div class="card-body">
-                      <p class="card-text">{{ $message['body'] }}</p>
-                      <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
-                    </div>
-                </div>
-
-                @empty
-
-                <div class="no-messages">
-                    <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
-    
-                    <h4 class="mt-5">You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
-                </div>
-                    
-                @endforelse
-            </div>
-
-            <div class="d-flex col-12 mt-5 mb-5">
-                <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-yellow edit-message mr-3">Modify your apartment details</a>
-                <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-
-                    <button class="font-weight-bold btn btn-yellow delete-message" type="submit">Delete this apartment</a>
-                </form>
-            </div>
-
-
-
-
-            {{-- Sezione immagini multiple da attivare se inseriamo più immagini per la show--}}
-            {{-- <div class="col-12 col-md-8 show-img">
-                <img src="{{ $apartment->image }}" alt="immagine copertina dell'appartamento">
-            </div>
-            <div class="col-md-4 d-none d-md-block show-img">
-                <div class="row">
-                    <div class="col-12">
-                        <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-12">
-                        <img src="{{ $apartment->image }}" alt="immagine dell'appartamento">
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
-    
+</section>
 @endsection
 
 @section('scripts-entrypoint')
