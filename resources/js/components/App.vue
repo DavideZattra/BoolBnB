@@ -1,10 +1,13 @@
 <template>
-    <ApartmentsList/>
+    <div id="app">
+        <ApartmentsList/>
+    </div>
 </template>
 
 <script>
 
 import ApartmentsList from './apartments/ApartmentsList.vue';
+
 
 export default {
     name: "App",
