@@ -34,6 +34,10 @@ header{
 
             a{
                 color: $my_black;
+
+                &:hover{
+                    color: $my_black;
+                }
             }
         }
 
