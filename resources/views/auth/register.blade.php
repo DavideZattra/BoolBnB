@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<div class="container auth-container">
+    <div class="row justify-content-center my_row">
+        <div class="col-md-8 my_card">
+            <div class="card col-12">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">

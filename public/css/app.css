@@ -10020,7 +10020,7 @@ h3 {
   }
 }
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 main {
@@ -10120,6 +10120,40 @@ footer .copyright {
 footer .contacts i {
   color: #ffdf29;
   margin-right: 12px;
+}
+
+.auth-container {
+  height: calc(100vh - 60px);
+  position: relative;
+}
+.auth-container .my_row {
+  height: 100%;
+}
+.auth-container .my_card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-container .card {
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+  padding: 0;
+}
+.auth-container .card .card-body {
+  border: 1px solid #ffdf29;
+}
+.auth-container .card .card-body button {
+  background-color: #ffdf29;
+  color: #000103;
+  border: 2px solid black;
+}
+.auth-container .card .card-body button:hover {
+  border: 2px solid yellow;
+}
+.auth-container .card a {
+  color: #ffdf29;
 }
 
 .index-wrapper {
