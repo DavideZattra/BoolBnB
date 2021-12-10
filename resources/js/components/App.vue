@@ -10,6 +10,7 @@
 import ApartmentsList from './apartments/ApartmentsList.vue';
 import Map from './apartments/Map.vue';
 
+
 export default {
     name: "App",
     components: {
