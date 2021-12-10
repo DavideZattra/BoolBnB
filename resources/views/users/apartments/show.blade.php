@@ -108,7 +108,7 @@
     <script type="text/javascript">
         const apartment = {!! json_encode($apartment->toArray(), JSON_HEX_TAG) !!};
         let latitude = apartment.addresses.lat;
-        let longitude = apartment.addresses.lat;
+        let longitude = apartment.addresses.lon;
         let name = apartment.descriptive_title;
         console.log(apartment)
 
@@ -157,7 +157,7 @@
                 .addTo(map);
         }
 
-        createMarker('accident.colors-white.svg', [latitude, Longitude], '#5327c3', name);
+        createMarker('accident.colors-white.svg', [longitude, latitude], '#5327c3', name);
         
 
     </script>
