@@ -207,7 +207,7 @@ class ApartmentController extends Controller
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
-        dd($request);
+        
         if(array_key_exists('image', $data)){
 
             $data['image'] = Storage::put('apartment-images', $data['image']);
