@@ -10024,7 +10024,7 @@ h3 {
 }
 
 main {
-  background-color: #202020;
+  background-color: #1b1b1b;
 }
 
 ul {
@@ -10049,7 +10049,8 @@ header .navbar-custom #logo {
   line-height: 47px;
 }
 header .navbar-custom #logo:hover {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #ffdf29;
+  color: #ffdf29;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10068,7 +10069,8 @@ header .navbar-custom a {
   border-bottom: 3px solid #000103;
 }
 header .navbar-custom a:hover {
-  border-bottom: 3px solid #FFFFFA;
+  border-bottom: 3px solid #ffdf29;
+  color: #ffdf29;
 }
 
 footer {
@@ -10174,7 +10176,7 @@ footer .contacts i {
   color: #000103;
 }
 .index-wrapper .card span {
-  color: #202020;
+  color: #1b1b1b;
 }
 
 .map-link a {
@@ -10343,7 +10345,7 @@ footer .contacts i {
 
 #dashboard {
   height: calc(100vh - 60px);
-  padding-top: 50px;
+  padding-top: 5%;
 }
 #dashboard h2 {
   color: #ffdf29;
@@ -10370,7 +10372,10 @@ footer .contacts i {
   background-color: black;
 }
 #dashboard .card .card-body .apartment-list li {
-  border-bottom: 1px solid #202020;
+  border-bottom: 1px solid #1b1b1b;
+}
+#dashboard .card .card-body .apartment-list li:hover a {
+  color: #FFFFFA;
 }
 #dashboard .card a {
   color: #ffdf29;
@@ -10382,6 +10387,18 @@ footer .contacts i {
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 5px 5px 15px 5px #000000;
+}
+#dashboard .card .profile-pic .insert-pp {
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  padding-top: 90px;
+}
+#dashboard .card .profile-pic .insert-pp a {
+  color: black;
+}
+#dashboard .card .profile-pic .insert-pp a:hover {
+  font-size: 15px;
 }
 #dashboard .card .profile-pic img {
   width: 200px;

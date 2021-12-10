@@ -19,6 +19,9 @@
                 <div class="card-body d-md-flex align-items-center">
                     <div class="col-12 col-md-6 d-flex align-items-center">
                         <div class="profile-pic">
+                            <div class="insert-pp">
+                                <a href="{{ route('users.edit', Auth::user()->id) }}">Insert a profile picture</a>
+                            </div>
                             <img src="{{ asset('storage/'. $user->profile_picture) }}" alt="" >
                         </div>
                     </div>
@@ -49,9 +52,12 @@
 
                 <div class="card-header">My Apartments</div>
                 <div class="card-body">
+
+                    
                     <ul class="apartment-list">
                         @forelse ($userApartments as $apartment)
-                            <li class="list-group-item">{{ $apartment['descriptive_title'] }}</li>
+                        {{-- @dd($apartment) --}}
+                            <li class="list-group-item"><a href="{{ route('users.apartments.show', $apartment['id'] ) }}">{{ ucfirst($apartment['descriptive_title']) }}</a></li>
                         @empty
                             <li class="list-group-item">Insert a new apartment and become a member of our family!</li>
                         @endforelse

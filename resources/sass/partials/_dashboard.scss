@@ -1,6 +1,6 @@
 #dashboard{
     height: calc(100vh - 60px);
-    padding-top: 50px;
+    padding-top: 5%;
 
     h2{
         color: $my_brightyellow;
@@ -33,6 +33,13 @@
             .apartment-list{
                 li{
                     border-bottom: 1px solid $my_darkgrey;
+
+                    &:hover{
+
+                        a{
+                            color: $my_white;
+                        }
+                    }
                 }
             }
         }
@@ -48,6 +55,21 @@
             overflow: hidden;
             border-radius: 50%;
             box-shadow: 5px 5px 15px 5px #000000;
+
+            .insert-pp{
+                text-align: center;
+                vertical-align: middle;
+                margin: auto;
+                padding-top: 90px;
+
+                a{
+                    color: black;
+
+                    &:hover{
+                        font-size: 15px;
+                    }
+                }
+            }
 
             img{
                 width: 200px;
