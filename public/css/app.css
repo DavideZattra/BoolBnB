@@ -10124,7 +10124,6 @@ footer .contacts i {
 
 .auth-container {
   height: calc(100vh - 60px);
-  position: relative;
 }
 .auth-container .my_row {
   height: 100%;
@@ -10343,15 +10342,41 @@ footer .contacts i {
 }
 
 #dashboard {
-  padding: 75px 0;
+  height: calc(100vh - 60px);
+  padding-top: 50px;
+}
+#dashboard h2 {
+  color: #ffdf29;
 }
 #dashboard ul {
   list-style: none;
 }
 #dashboard .card {
-  height: 400px;
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+  padding: 0;
+  height: 100%;
+}
+#dashboard .card .card-header {
+  color: #ffdf29;
+  font-size: 20px;
+}
+#dashboard .card .card-body {
+  border: 1px solid #ffdf29;
+  overflow: scroll;
+}
+#dashboard .card .card-body .list-group-item {
+  background-color: black;
+}
+#dashboard .card .card-body .apartment-list li {
+  border-bottom: 1px solid #202020;
+}
+#dashboard .card a {
+  color: #ffdf29;
 }
 #dashboard .card .profile-pic {
+  background-color: white;
   width: 200px;
   height: 200px;
   overflow: hidden;
@@ -10365,10 +10390,17 @@ footer .contacts i {
   -o-object-position: center;
      object-position: center;
 }
-#dashboard .card .user-data {
-  display: flex;
-  align-items: center;
-}
 #dashboard .card .user-data li {
-  padding: 5px 0;
+  line-height: 40px;
+}
+#dashboard .card .user-data li span {
+  color: #ffdf29;
+}
+#dashboard .card .card-footer .btn {
+  background-color: #ffdf29;
+  color: #000103;
+  border: 2px solid black;
+}
+#dashboard .card .card-footer .btn:hover {
+  border: 2px solid yellow;
 }
