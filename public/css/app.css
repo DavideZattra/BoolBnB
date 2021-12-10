@@ -10024,7 +10024,7 @@ h3 {
 }
 
 main {
-  background-color: #1b1b1b;
+  background-color: #141414;
 }
 
 ul {
@@ -10049,7 +10049,8 @@ header .navbar-custom #logo {
   line-height: 47px;
 }
 header .navbar-custom #logo:hover {
-  border-bottom: 3px solid #ffdf29;
+  border-bottom: 3px solid #000103;
+  color: #ffdf29;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10069,6 +10070,13 @@ header .navbar-custom a {
 }
 header .navbar-custom a:hover {
   border-bottom: 3px solid #ffdf29;
+}
+header .navbar-custom .no-border {
+  border-bottom: 3px solid transparent;
+}
+header .navbar-custom .no-border:hover {
+  border-bottom: 3px solid transparent;
+  color: #ffdf29;
 }
 
 footer {
@@ -10156,7 +10164,7 @@ footer .contacts i {
 }
 
 .index-wrapper {
-  font-family: "Quicksand", sans-serif;
+  height: calc(100vh - 60px);
 }
 .index-wrapper .row {
   background-color: #000103;
@@ -10164,6 +10172,9 @@ footer .contacts i {
 }
 .index-wrapper a {
   color: #ffdf29;
+}
+.index-wrapper a:hover {
+  color: white;
 }
 .index-wrapper .card {
   border: 3px solid #ffdf29;
@@ -10174,7 +10185,7 @@ footer .contacts i {
   color: #000103;
 }
 .index-wrapper .card span {
-  color: #1b1b1b;
+  color: #141414;
 }
 
 .map-link a {
@@ -10276,16 +10287,32 @@ footer .contacts i {
 
 .btn-custom {
   background-color: #ffdf29;
-  border: 1px solid #000103;
+  color: #000103;
+  border: 2px solid black;
+}
+.btn-custom:hover {
+  border: 2px solid yellow;
 }
 
-h4 {
+h4,
+h5 {
   color: #ffdf29;
   margin: 20px 0;
+}
+h4:hover a,
+h5:hover a {
+  color: #FFFFFA;
 }
 
 input {
   border: 2px solid #ffdf29;
+}
+
+a {
+  color: #ffdf29;
+}
+a:hover {
+  text-decoration: none;
 }
 
 #jumbotron #jumbo {
@@ -10381,7 +10408,7 @@ input {
   background-color: black;
 }
 #dashboard .card .card-body .apartment-list li {
-  border-bottom: 1px solid #1b1b1b;
+  border-bottom: 1px solid #141414;
 }
 #dashboard .card .card-body .apartment-list li:hover a {
   color: #FFFFFA;

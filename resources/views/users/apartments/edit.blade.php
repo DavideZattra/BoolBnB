@@ -146,7 +146,7 @@
 
             </div>
         </div>
-        <a href="{{ route('users.apartments.index') }}"><h4>Click here to go back to your apartments.</h4></a>
+        <h5><a href="{{ route('users.apartments.index') }}" class="font-italic">Click here to go back to your apartments.</a></h5>
     
     </div>
 </section>

@@ -38,7 +38,7 @@
 
                 <div class="card-footer">
                     {{-- Button to edit the user profile --}}
-                    <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-dark">
+                    <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-custom">
                         Edit your profile
                     </a>
                 </div>
@@ -74,28 +74,8 @@
                         Insert new apartment
                     </a>
                 </div>
-
             </div>
-
         </div>
-        
     </div>
-
 </div>
 @endsection
-
-
-
-        {{--<div class="card-body">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
-            <div class="profile-picture">
-                <img src="{{ $user->profile_picture }}" alt="" class="img-fluid">
-            </div>
-            Welcome back {{ ucfirst($user->name) . ' ' . ucfirst($user->surname)}}!
-        </div> --}}
-
-        
