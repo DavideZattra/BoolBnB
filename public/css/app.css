@@ -10063,6 +10063,9 @@ header .navbar-custom .my_bars {
 header .navbar-custom .dropdown-menu a {
   color: #000103;
 }
+header .navbar-custom .dropdown-menu a:hover {
+  color: #000103;
+}
 header .navbar-custom a {
   color: #FFFFFA;
   line-height: 41px;
@@ -10124,10 +10127,13 @@ footer .copyright {
   color: #ffdf29;
   background-color: #242424;
   font-size: 12px;
+  padding: 10px;
 }
 footer .contacts i {
   color: #ffdf29;
   margin-right: 12px;
+  font-size: 25px;
+  align-items: center;
 }
 
 .auth-container {
@@ -10188,8 +10194,52 @@ footer .contacts i {
   color: #141414;
 }
 
+.show-container {
+  color: white;
+}
+.show-container i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  vertical-align: middle;
+  color: #ffdf29;
+}
+.show-container .card {
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+}
+.show-container .card .card-header {
+  display: inline-block;
+}
+.show-container .card .mail {
+  color: #ffdf29;
+  font-size: 14px;
+}
+.show-container .btn-yellow {
+  background-color: #ffdf29;
+  border-bottom: 1px solid #141414;
+  color: #000103;
+  border: 2px solid black;
+}
+.show-container .btn-yellow:hover {
+  border: 2px solid yellow;
+}
+.show-container .delete-message {
+  color: #FF312E;
+}
+.show-container .edit-message {
+  color: #38c172;
+}
+.show-container .no-messages img {
+  width: 50%;
+}
+.show-container .no-messages a {
+  color: #ffdf29;
+  text-decoration: none;
+}
+
 .map-link a {
-  color: #515052;
+  color: #FFFFFA;
   text-decoration: none;
 }
 
@@ -10207,30 +10257,17 @@ footer .contacts i {
 .apartment-modify {
   margin-top: 70px;
 }
-.apartment-modify i {
-  font-size: 1.5rem;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-
-.apartment-description p {
-  color: #515052;
-}
-.apartment-description i {
-  font-size: 1.5rem;
-  margin-right: 12px;
-  vertical-align: middle;
-}
 
 .hr {
   width: 100%;
   height: 2px;
-  background-color: #515052;
+  background-color: #ffdf29;
 }
 
 .map-show #map {
   height: 100%;
   border-radius: 8px;
+  border: 3px solid #ffdf29;
 }
 .map-show .marker-icon {
   background-position: center;
@@ -10397,7 +10434,7 @@ a:hover {
   height: 100%;
 }
 #dashboard .card .card-header {
-  color: #ffdf29;
+  color: #FFFFFA;
   font-size: 20px;
 }
 #dashboard .card .card-body {
@@ -10410,8 +10447,11 @@ a:hover {
 #dashboard .card .card-body .apartment-list li {
   border-bottom: 1px solid #141414;
 }
-#dashboard .card .card-body .apartment-list li:hover a {
+#dashboard .card .card-body .apartment-list li a {
   color: #FFFFFA;
+}
+#dashboard .card .card-body .apartment-list li:hover a {
+  color: #ffdf29;
 }
 #dashboard .card a {
   color: #ffdf29;
