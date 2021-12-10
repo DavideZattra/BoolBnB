@@ -118,7 +118,7 @@
             key: 'NLbGYpRnYCS3jxXsynN2IfGsmEgZJJzB',
             container: 'map',
             dragPan: !isMobileOrTablet(),
-            center: [8.905637901540159, 45.87046993195745],
+            center: [longitude, latitude],
             zoom: 3
         });
         
