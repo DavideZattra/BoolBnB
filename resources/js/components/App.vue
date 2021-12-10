@@ -1,18 +1,15 @@
 <template>
-  <section>
-    <h1>ciao</h1>
-  </section>
+    <ApartmentsList/>
 </template>
 
 <script>
-// import Jumbotron from './apartments/Jumbotron.vue';
-// import FakeHouses from './apartments/FakeHouses.vue';
-// import ApartmentsList from './apartments/ApartmentsList.vue';
+
+import ApartmentsList from './apartments/ApartmentsList.vue';
 
 export default {
     name: "App",
     components: {
-        
+        ApartmentsList,
     },
 }
 </script>
