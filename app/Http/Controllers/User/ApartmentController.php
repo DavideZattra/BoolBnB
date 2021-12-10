@@ -52,14 +52,45 @@ class ApartmentController extends Controller
 
         $request->validate([
             
-            'descriptive_title' => 'required|string|max:150',
-            'rooms' => 'required|numeric',
-            'image' => 'image',
-            'beds' => 'required|numeric',
-            'bathrooms' => 'required|numeric',
-            'square_meters' => 'required|numeric',
-            'description' => 'required|max:250'
+            'descriptive_title' => 'required|string|min:15|max:150',
+            'rooms' => 'required|numeric|min:1',
+            'image' => 'image|mimes:jpeg,jpg,png',
+            'beds' => 'required|numeric|min:1',
+            'bathrooms' => 'required|numeric|min:1',
+            'square_meters' => 'required|numeric|min:9',
+            'description' => 'required|min:50|max:255',
+            'country' => 'required|string|min:4',
+            'region' => 'required|string|min:4',
+            'province' => 'required|string|min:4',
+            'city' => 'required|string|min:2',
+            'address' => 'required|string|min:4',
+            'zip_code' => 'required|numeric|min:3|max:10',
+
+        ],
+        [
+            'required' => ':attribute is required',
+            'numeric' => ':attribute should be a number',
+            'descriptive_title.min' => 'Descriptive title must be longer than 15 characters',
+            'descriptive_title.max' => 'Descriptive title should not exceed 150 characters',
+            'rooms.min' => 'The apartment should have at least 1 room ',
+            'image.image' => 'the apartment image should be an image',
+            'image.mimes' => 'Image file format should be a .jpeg, .jpg or a .png',
+            'beds:min' => 'The apartment should have at least 1 bed ',
+            'bathrooms.min' => 'The apartment should have at least 1 bathroom ',
+            'square_meters' => 'The apartment should be bigger than 9 meters ', 
+            'description.min' => 'apartment description should be longer than 50 characters to increase attractiveness',
+            'description.max' => 'apartment description should not be longer than 255 characters ',
+            'country.min' => 'Country attribute should be long at least 4 characters',
+            'region.min' => 'Region attribute should be long at least 4 characters',
+            'province.min' => 'Province attribute should be long at least 4 characters',
+            'city.min' => 'City attribute should be long at least 2 characters',
+            'address.min' => 'Address attribute should be long at least 4 characters',
+            'zip_code.min' => 'Zip code attribute should be at least a 3 digit number',
+            'zip_code.max' => 'Zip code attribute shouldn\'t be more than 10 digit'
+
+
         ]);
+
         $data = $request->all();
 
         $apiQuery = $data['country'] . '-' .  $data['region'] . '-' .  $data['city'] . '-' .  str_replace(' ', '-', $data['address']) ;
@@ -136,20 +167,56 @@ class ApartmentController extends Controller
 
         $request->validate([
             
-            'descriptive_title' => 'required|string|max:150',
-            'rooms' => 'required|numeric',
-            'image' => 'image',
-            'beds' => 'required|numeric',
-            'bathrooms' => 'required|numeric',
-            'square_meters' => 'required|numeric',
-            'description' => 'required|string|max:250'
+            'descriptive_title' => 'required|string|min:15|max:150',
+            'rooms' => 'required|numeric|min:1',
+            'image' => 'image|mimes:jpeg,jpg,png',
+            'beds' => 'required|numeric|min:1',
+            'bathrooms' => 'required|numeric|min:1',
+            'square_meters' => 'required|numeric|min:9',
+            'description' => 'required|min:50|max:255',
+            'country' => 'required|string|min:4',
+            'region' => 'required|string|min:4',
+            'province' => 'required|string|min:4',
+            'city' => 'required|string|min:2',
+            'address' => 'required|string|min:4',
+            'zip_code' => 'required|numeric|min:3|max:10',
+
+        ],
+        [
+            'required' => ':attribute is required',
+            'numeric' => ':attribute should be a number',
+            'descriptive_title.min' => 'Descriptive title must be longer than 15 characters',
+            'descriptive_title.max' => 'Descriptive title should not exceed 150 characters',
+            'rooms.min' => 'The apartment should have at least 1 room ',
+            'image.image' => 'the apartment image should be an image',
+            'image.mimes' => 'Image file format should be a .jpeg, .jpg or a .png',
+            'beds:min' => 'The apartment should have at least 1 bed ',
+            'bathrooms.min' => 'The apartment should have at least 1 bathroom ',
+            'square_meters' => 'The apartment should be bigger than 9 meters ', 
+            'description.min' => 'apartment description should be longer than 50 characters to increase attractiveness',
+            'description.max' => 'apartment description should not be longer than 255 characters ',
+            'country.min' => 'Country attribute should be long at least 4 characters',
+            'region.min' => 'Region attribute should be long at least 4 characters',
+            'province.min' => 'Province attribute should be long at least 4 characters',
+            'city.min' => 'City attribute should be long at least 2 characters',
+            'address.min' => 'Address attribute should be long at least 4 characters',
+            'zip_code.min' => 'Zip code attribute should be at least a 3 digit number',
+            'zip_code.max' => 'Zip code attribute shouldn\'t be more than 10 digit'
+
+
         ]);
         
         $data['user_id'] = Auth::user()->id;
 
         $data = $request->all();
+        dd($request);
+        if(array_key_exists('image', $data)){
+
+            $data['image'] = Storage::put('apartment-images', $data['image']);
+        }
         
         $apartment->fill($data);
+
         $apartment->update();
 
         $address = $apartment->addresses;
