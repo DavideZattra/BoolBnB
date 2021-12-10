@@ -37,9 +37,11 @@ header{
 
         a{
             color: $my_white;
+            line-height: 43px;
+            border-bottom: 2px solid $my_black;
 
             &:hover{
-                border-bottom: 2px solid white;
+                border-bottom: 2px solid $my_white;
             }
         }
     }
