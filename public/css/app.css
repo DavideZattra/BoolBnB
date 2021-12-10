@@ -10050,7 +10050,6 @@ header .navbar-custom #logo {
 }
 header .navbar-custom #logo:hover {
   border-bottom: 3px solid #ffdf29;
-  color: #ffdf29;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10070,7 +10069,6 @@ header .navbar-custom a {
 }
 header .navbar-custom a:hover {
   border-bottom: 3px solid #ffdf29;
-  color: #ffdf29;
 }
 
 footer {
@@ -10221,6 +10219,7 @@ footer .contacts i {
 
 .map-show #map {
   height: 100%;
+  border-radius: 8px;
 }
 .map-show .marker-icon {
   background-position: center;
@@ -10259,23 +10258,33 @@ footer .contacts i {
   width: 24px;
 }
 
-#apartment-form .create-edit-wrapper {
+.user-edit-container {
+  height: calc(100vh - 60px);
+  padding-top: 2%;
+  overflow: scroll;
+}
+
+.create-edit-wrapper {
   background-color: #000103;
   border-radius: 10px;
   color: #FFFFFA;
 }
-#apartment-form .yellow-label {
+
+.yellow-label {
   color: #ffdf29;
 }
-#apartment-form .btn-custom {
+
+.btn-custom {
   background-color: #ffdf29;
   border: 1px solid #000103;
 }
-#apartment-form h4 {
+
+h4 {
   color: #ffdf29;
   margin: 20px 0;
 }
-#apartment-form input {
+
+input {
   border: 2px solid #ffdf29;
 }
 
