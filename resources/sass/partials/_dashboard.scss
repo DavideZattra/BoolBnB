@@ -1,5 +1,5 @@
 #dashboard{
-
+    padding: 75px 0;
     ul{
         list-style: none;
         
@@ -14,9 +14,10 @@
             border-radius: 50%;
             box-shadow: 5px 5px 15px 5px #000000;
             img{
-                height: 200px;
-                width: 200px;
                 
+                width: 200px;
+                object-fit: cover;
+                object-position: center;
     
             }
         }

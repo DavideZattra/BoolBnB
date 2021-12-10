@@ -22,7 +22,7 @@
 
             {{-- Sezione immagine --}}
             <div class="col-12 show-img">
-                <img src="{{ $apartment->image }}" alt="immagine copertina dell'appartamento">
+                <img src="{{ asset('storage/' . $apartment->image) }}" alt="immagine copertina dell'appartamento">
             </div>
             <div class="col-12 col-md-7 apartment-description mt-5">
                 <h4>Description of your apartment:</h4>
