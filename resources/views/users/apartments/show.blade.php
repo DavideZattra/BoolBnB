@@ -69,7 +69,7 @@
                 @endforelse
             </div>
 
-            <div class="d-flex col-12 mt-3">
+            <div class="d-flex col-12 mt-3 mb-5">
                 <a href="{{ route('users.apartments.edit', $apartment) }}" class="btn btn-primary mr-3">Modify your apartment details</a>
                 <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
                     @csrf
