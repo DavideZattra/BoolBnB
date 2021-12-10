@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container show-container">
         <div class="row">
             {{-- Titolo e indirizzo --}}
             <div class="col-12 apartment-modify">
@@ -53,12 +53,11 @@
             <div class="col-12">
                 @forelse ($messages as $message)
 
-                <div class="card mt-3">
-                    <h5 class="card-header">{{ $message['name'] }}</h5>
+                <div class="card mt-4">
+                    <h4 class="card-header">{{ $message['name'] }}<span class="mail"> - {{ $message['email'] }}</span></h4>
                     <div class="card-body">
-                      <h5 class="card-title">{{ $message['email'] }}</h5>
                       <p class="card-text">{{ $message['body'] }}</p>
-                      <a href="#" class="btn btn-primary">Answer</a>
+                      <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
                     </div>
                 </div>
 
@@ -69,13 +68,13 @@
                 @endforelse
             </div>
 
-            <div class="d-flex col-12 mt-3 mb-5">
-                <a href="{{ route('users.apartments.edit', $apartment) }}" class="btn btn-primary mr-3">Modify your apartment details</a>
+            <div class="d-flex col-12 mt-5 mb-5">
+                <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-yellow edit-message mr-3">Modify your apartment details</a>
                 <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
                     @csrf
                     @method('DELETE')
 
-                    <button class="btn btn-danger" type="submit">Delete this apartment</a>
+                    <button class="font-weight-bold btn btn-yellow delete-message" type="submit">Delete this apartment</a>
                 </form>
             </div>
 
