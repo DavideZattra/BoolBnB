@@ -21,7 +21,7 @@
                 <ul class="navbar-nav mx-auto">
                     {{-- <li><input class="form-control my_search-bar pl-3" type="search" placeholder="Search" aria-label="Search"></li> --}}
                     <li class="mx-3"><a class="nav-link"  href="#">Find a house</a></li>
-                    <li class="mx-3"><a class="nav-link"  href="#">Dashboard</a></li>
+                    <li class="mx-3"><a class="nav-link"  href="{{route('users.dashboard')}}">Dashboard</a></li>
                     <li class="mx-3"><a class="nav-link"  href="#">Host</a></li>
                 </ul>
     
