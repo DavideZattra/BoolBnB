@@ -34,10 +34,14 @@
                 li{
                     border-bottom: 1px solid $my_darkgrey;
 
+                    a{
+                        color: $my_white;
+                    }
+
                     &:hover{
 
                         a{
-                            color: $my_white;
+                            color: $my_brightyellow;
                         }
                     }
                 }
