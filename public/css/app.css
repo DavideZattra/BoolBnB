@@ -10046,9 +10046,10 @@ header .navbar-custom {
 header .navbar-custom #logo {
   font-family: "DM Serif Display", serif;
   font-size: 1.5rem;
+  line-height: 47px;
 }
 header .navbar-custom #logo:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid white;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10063,9 +10064,11 @@ header .navbar-custom .dropdown-menu a {
 }
 header .navbar-custom a {
   color: #FFFFFA;
+  line-height: 41px;
+  border-bottom: 3px solid #000103;
 }
 header .navbar-custom a:hover {
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid #FFFFFA;
 }
 
 footer {
