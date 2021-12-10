@@ -34,6 +34,15 @@
     .edit-message{
         color: $green;
     }
+    .no-messages{
+        img{
+            width: 50%;
+        }
+        a{
+            color: $my_brightyellow;
+            text-decoration: none;
+        }
+    }
 }
 
 

@@ -48,7 +48,7 @@
             <div class="hr col-9 mt-5 mb-5"></div>
 
             <div class="col-12">
-                <h3>Messages</h3>
+                <h3 class="font-weight-bold mb-3">Messages</h3>
             </div>
             <div class="col-12">
                 @forelse ($messages as $message)
@@ -63,7 +63,11 @@
 
                 @empty
 
-                <h4>Non hai ricevuto messaggi mentre eri via.. forse dovresti provare <a href="#">link per promuovere account</a></h4>
+                <div class="no-messages">
+                    <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
+    
+                    <h4 class="mt-5">You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                </div>
                     
                 @endforelse
             </div>
