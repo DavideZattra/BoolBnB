@@ -31,7 +31,7 @@ export default {
             searchLon: 0,
             errors: [],
             needle: '',
-            searchRange: 20
+            searchRange: 20 
         }
     },
 
@@ -44,10 +44,10 @@ export default {
                 this.searchLat = response.data.results[0].position.lat;
                 this.searchLon = response.data.results[0].position.lon;
                 console.log(this.searchLat, this.searchLon)
-            }).then(
-
+            }).then( () => {
+                this.searchedApartments = [];
                 console.log(this.geoFiltering())
-            );
+            });
 
         },
 

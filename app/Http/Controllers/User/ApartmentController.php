@@ -64,7 +64,7 @@ class ApartmentController extends Controller
             'province' => 'required|string|min:4',
             'city' => 'required|string|min:2',
             'address' => 'required|string|min:4',
-            'zip_code' => 'required|numeric|min:3|max:10',
+            'zip_code' => 'required|numeric|min:3',
 
         ],
         [
