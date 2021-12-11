@@ -8,6 +8,7 @@
         <div class="row justify-content-center mt-5">
             <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
         </div>
+        <div id='map'></div>
     </div>
 </template>
 
@@ -101,11 +102,77 @@ export default {
 
         .catch(e => {
         this.errors.push(e);
+        }).then(()=>{
+            var lat = 45.87162000;
+            var lon = 8.91306000;
+            var coordinates = [lon, lat];
+            var map = tt.map({
+                container: 'map',
+                key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                style: 'tomtom://vector/1/basic-main',
+                center: coordinates,
+                zoom: 10
+            });
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+            this.filteredApartments.forEach((apartment)=>{
+                 let marker;
+                 marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+            })
+            var popupOffsets = {
+                top: [0, 0],
+                bottom: [0, -40],
+                'bottom-right': [0, -70],
+                'bottom-left': [0, -70],
+                left: [25, -35],
+                right: [-25, -35]
+            }
+            var popup = new tt.Popup({
+                offset: popupOffsets
+            }).setHTML(`${this.name}<br>${this.address}`);
+            marker.setPopup(popup).togglePopup();
+            
         })
-  }
+    },
+
+    // mounted: function() {
+    //     this.$nextTick(function(){
+
+    //         var lat = 45.87162000;
+    //         var lon = 8.91306000;
+    //         var coordinates = [lon, lat];
+    //         var map = tt.map({
+    //             container: 'map',
+    //             key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+    //             style: 'tomtom://vector/1/basic-main',
+    //             center: coordinates,
+    //             zoom: 10
+    //         });
+    //         var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
+    //         map.addControl(new tt.FullscreenControl());
+    //         map.addControl(new tt.NavigationControl());
+    //         var popupOffsets = {
+    //             top: [0, 0],
+    //             bottom: [0, -40],
+    //             'bottom-right': [0, -70],
+    //             'bottom-left': [0, -70],
+    //             left: [25, -35],
+    //             right: [-25, -35]
+    //         }
+    //         var popup = new tt.Popup({
+    //             offset: popupOffsets
+    //         }).setHTML(`${this.name}<br>${this.address}`);
+    //         marker.setPopup(popup).togglePopup();
+    //         console.log('hello there')
+    //     })
+    // }
 }
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+#map{
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+}
 </style>
