@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <div class="jumbo-text jumbo-lg d-none d-md-block text-center col-lg-5 black-block">
+        <div class="jumbo-text jumbo-lg d-none d-md-block text-center col-md-12 col-lg-6 black-block">
 
             <h3>BoolBnb</h3>
             <h2>Dream. Travel. Live.</h2>
