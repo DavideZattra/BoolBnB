@@ -44,7 +44,11 @@ export default {
                 this.searchLat = response.data.results[0].position.lat;
                 this.searchLon = response.data.results[0].position.lon;
                 console.log(this.searchLat, this.searchLon)
-            })
+            }).then(
+
+                console.log(this.geoFiltering())
+            );
+
         },
 
         deg2rad(deg) {
@@ -53,11 +57,11 @@ export default {
 
         getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
             let R = 6371; // Radius of the earth in km
-            let dLat = deg2rad(lat2 - lat1); // deg2rad below
-            let dLon = deg2rad(lon2 - lon1);
+            let dLat = this.deg2rad(lat2 - lat1); // deg2rad below
+            let dLon = this.deg2rad(lon2 - lon1);
             let a =
             Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) *
+            Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
             Math.sin(dLon / 2) * Math.sin(dLon / 2);
             let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             let d = R * c; // Distance in km
@@ -66,10 +70,11 @@ export default {
 
         geoFiltering() {
             this.filteredApartments.forEach((apartment) => {
-                if (getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
+                if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
                     this.searchedApartments.push(apartment);
                 }
             });
+            console.log(this.searchedApartments);
         }
     },
 
