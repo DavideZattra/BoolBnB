@@ -6,7 +6,7 @@
         </div>
 
         <div class="row justify-content-center mt-5">
-            <ApartmentCard v-for="searchedApartment in searchedApartments" :key="searchedApartment.id" :apartment="searchedApartment"/>
+            <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
         </div>
     </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     },
     data() {
         return {
-            filteredApartments: [],
+            apartments: [],
             searchedApartments: [],
             searchLat: 0,
             searchLon: 0,
@@ -55,10 +55,12 @@ export default {
 
         getRooms(rooms) {
             this.rooms = rooms;
+            console.log(this.rooms)
         },
 
         getBathrooms(bathrooms) {
             this.bathrooms = bathrooms;
+              console.log(this.bathrooms)
         },
 
         deg2rad(deg) {
@@ -79,7 +81,7 @@ export default {
         },
 
         geoFiltering() {
-            this.filteredApartments.forEach((apartment) => {
+            this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
                     this.searchedApartments.push(apartment);
                 }
@@ -90,13 +92,13 @@ export default {
 
 
     computed: {
-        searchedApartments: function() {
-            if (this.bathrooms || this.rooms) {
+        filteredApartments: function() {
+            if (this.rooms || this.bathrooms) {
                 return this.searchedApartments.filter(item => {
-                    return item.bathrooms >= this.bathrooms || item.rooms >= this.rooms;
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
                 });
             } else {
-                return this.filteredApartments;
+                return this.apartments;
             } 
         }
     },
@@ -104,9 +106,9 @@ export default {
     created() {
         axios.get(`http://127.0.0.1:8000/api/apartments`)
             .then(response => {
-                this.filteredApartments = [...response.data];
-                console.log(this.filteredApartments)
-                this.searchedApartments = [...this.filteredApartments];
+                this.apartments = [...response.data];
+                console.log(this.apartments)
+                this.searchedApartments = [...this.apartments];
             })
 
         .catch(e => {

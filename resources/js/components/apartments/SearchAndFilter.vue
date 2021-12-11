@@ -6,13 +6,11 @@
     </div>
 
     <div class="input-group input-group-sm mt-5">
-        <input v-model.trim="rooms" placeholder="Minimum number of rooms" @keyup.enter="$emit('getRooms', rooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
+        <input v-model.number="rooms" @change="$emit('getRooms', rooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
 
-        <input v-model.trim="bathrooms" placeholder="Minimum number of bathrooms" @keyup.enter="$emit('getBathrooms', bathrooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
+        <input v-model.number="bathrooms" @change="$emit('getBathrooms', bathrooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
              
     </div>    
-
-
 
     <!-- <div class="dropdown show">
         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,7 +36,7 @@ export default {
         return {
             needle: '',
             rooms: 0,
-            bathrooms: 0
+            bathrooms: 0 
         }
     }
 }
