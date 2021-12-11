@@ -1,17 +1,34 @@
 <section id="jumbotron">
-    <div id="jumbo" class="d-flex justify-content-end align-items-center">
+    <div id="jumbo" class="d-flex justify-content-end align-items-center align-items-md-start">
+        <div class="jumbo-text jumbo-lg d-block d-md-none text-center col-12 d-flex align-items-center justify-content-center white-block">
+            <div>
+                <h3>BoolBnb</h3>
+                <h2>Dream. Travel. Live.</h2>
+    
+                <div class="jumbo-button">
+    
+                    {{-- added route (if user auth->index/ else->login ) --}}
+                    @if (Auth::check())
+                        <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My profile</a></button>
+                    @else
+                        <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
+                    @endif
+                </div>
+            </div>
+        </div>
 
-        {{-- div only visible when > sm --}}
-        <div class="jumbo-text jumbo-lg d-none d-lg-block text-center">
-            <h1>Dream. Travel. Live.</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, itaque a tempore similique blanditiis magni nam neque quis praesentium enim quaerat quo. Explicabo tempore ullam commodi sed pariatur, dignissimos nemo!</p>
+        <div class="jumbo-text jumbo-lg d-none d-md-block text-center col-lg-5 black-block">
+
+            <h3>BoolBnb</h3>
+            <h2>Dream. Travel. Live.</h2>
+
             <div class="jumbo-button">
 
                 {{-- added route (if user auth->index/ else->login ) --}}
                 @if (Auth::check())
                     <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My profile</a></button>
                 @else
-                <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
+                    <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
                 @endif
             </div>
         </div>

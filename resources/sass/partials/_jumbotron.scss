@@ -1,52 +1,70 @@
 #jumbotron{
 
     #jumbo{
-        background-image: url('https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg');
+        background-image: url('https://www.isplora.com/media_gallery/1200xX/54.jpg');
         width: 100%;
         height: calc(100vh - 60px);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: bottom;
-    }
 
-    .jumbo-lg{
-        border-radius: 8px;
-        width: 520px;
-        margin-right: 100px;
-        height: 300px;
-    }
+        .jumbo-text{
 
-    .jumbo-text{
-        color: $my_brightyellow;
-        padding: 25px;
-
-        h1{
-            font-size: 4rem;
-            font-family: 'DM Serif Display', serif;
-            text-shadow: 2px 2px 4px #000000;
-        }
-        p{
-            text-shadow: 2px 2px 4px #000000;
+            h2{
+                font-size: 3rem;
+                font-family: 'DM Serif Display', serif;
+            }
         }
 
-        button{
-            background-color: $my_brightyellow;
-            border: 1px solid $my_white;
-            box-shadow: 1px 1px 2px #000000;
+        .white-block{
+            color: white;
+            margin-top: 0;
+            background-color: black;
+            height: calc(100vh - 60px);
 
-            &:hover{
-                background-color: rgb(253, 253, 30);
-
+            button{
+                background-color: $my_white;
+                border: 1px solid $my_black;
+                margin: 20px;
+    
+                &:hover{
+    
+                    a{
+                        text-decoration: none;
+                        font-size: 20px;
+                    }
+                }
+    
                 a{
-                    text-decoration: none;
-                    font-size: 20px;
+                    color: $my_black;
+                    font-weight: 600;
+                    font-size: 1.2rem;
                 }
             }
+        }
 
-            a{
-                color: $my_black;
-                font-weight: 600;
-                font-size: 1.2rem;
+        .black-block{
+            color: $my_black;
+            margin-top: 100px;
+
+            button{
+                background-color: $my_black;
+                border: 1px solid $my_white;
+                margin: 20px;
+    
+                &:hover{
+    
+                    a{
+                        text-decoration: none;
+                        font-size: 20px;
+                    }
+                }
+    
+                a{
+                    color: $my_white;
+                    font-weight: 600;
+                    font-size: 1.2rem;
+                }
             }
         }
     }
