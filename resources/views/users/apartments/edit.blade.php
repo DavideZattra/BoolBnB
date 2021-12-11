@@ -27,13 +27,13 @@
                     </div>
     
                     <div class="row mt-4 ml-2">
-                        <div class="form-check col-6">
+                        <div class="form-check col-sm-12 col-lg-6 mb-3">
                             <input class="form-check-input" type="hidden" value="0" id="visibility" name="visibility">
                             <input class="form-check-input" type="checkbox" value="1" id="visibility" name="visibility">
                             <label class="form-check-label yellow-label" for="visibility">Check this if you want your apartment to be visibile</label>
                         </div>
                 
-                        <div class="form-group col-6">
+                        <div class="form-group col-sm-12 col-lg-6">
                             <div class="dropdown">
     
                                 <button class="btn btn-custom dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,72 +69,72 @@
                     </div>
     
                     <div class="row mt-3">
-                        <div class="col-6">
+                        <div class="col-sm-12 col-lg-6">
                             <label for="image" class="form-label">Image</label>
                             <input type="file" class="form-control" placeholder="Choose an image" id="image" name="image" value="{{old('image', $apartment->image)}}">
                         </div>
                         
-                        <div class="col-6">
+                        <div class="col-sm-12 col-lg-6">
                             <label for="description" class="form-label">Description</label>
                             <textarea class="form-control" id="description" name="description">{{old('description', $apartment->description)}}</textarea>
                         </div>
                     </div>
     
                     <div class="row mt-3">
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="country" class="form-label">Country</label>
                             <input class="form-control" id="country" name="country" value="{{old('country', $address->country)}}">
                         </div>
     
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="region" class="form-label">Region</label>
                             <input class="form-control" id="region" name="region" value="{{old('region', $address->region)}}">
                         </div>
                     </div>
     
                     <div class="row mt-3">
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="province" class="form-label">Province</label>
                             <input class="form-control" id="province" name="province" value="{{old('province', $address->province)}}">
                         </div>
         
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="city" class="form-label">City</label>
                             <input class="form-control" id="city" name="city" value="{{old('city', $address->city)}}">
                         </div>
                     </div>
     
                     <div class="row mt-3">
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="address" class="form-label">Address</label>
                             <input class="form-control" id="address" name="address" value="{{old('address', $address->address)}}">
                         </div>
         
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="zip_code" class="form-label">Zip Code</label>
                             <input class="form-control" id="zip_code" name="zip_code" value="{{old('zip_code', $address->zip_code)}}">
                         </div>
                     </div>
     
                     <div class="row mt-3">
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="rooms" class="form-label">Rooms</label>
                             <input type="text" class="form-control" id="rooms" name="rooms" value="{{old('rooms', $apartment->rooms)}}">
                         </div>
         
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="beds" class="form-label">Beds</label>
                             <input type="text" class="form-control" id="beds" name="beds" value="{{old('beds', $apartment->beds)}}">
                         </div>
                     </div>
     
                     <div class="row mt-3">
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="bathrooms" class="form-label">Bathrooms</label>
                             <input type="text" class="form-control" id="bathrooms" name="bathrooms" value="{{old('bathrooms', $apartment->bathrooms)}}">
                         </div>
         
-                        <div class=" col-6">
+                        <div class=" col-sm-12 col-lg-6">
                             <label for="square_meters" class="form-label">Square Meters</label>
                             <input type="text" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                         </div>

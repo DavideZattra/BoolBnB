@@ -10,7 +10,7 @@
         </div>
 
         {{-- Profile information --}}
-        <div class="col-12 col-md-12 col-lg-6">
+        <div class="col-12 col-md-12 col-lg-6 mb-3">
             <div class="card">
 
                 <div class="card-header ">My Profile</div>
@@ -42,7 +42,7 @@
         </div>
 
         {{-- apartments information --}}
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-12 col-lg-6">
             <div class="card">
 
                 <div class="card-header">My Apartments</div>

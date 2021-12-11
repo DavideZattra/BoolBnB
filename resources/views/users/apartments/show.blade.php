@@ -21,7 +21,7 @@
         </div>
 
         <div class="row d-flex align-items-center mb-5">
-            <div class="col-sm-12 col-md-6 show-img mt-">
+            <div class="col-sm-12 col-md-6 show-img mb-5">
                 <img src="{{ asset('storage/' . $apartment->image) }}" alt="immagine copertina dell'appartamento">
             </div>
 
@@ -46,12 +46,12 @@
                 </ul>
 
                 <div class="d-flex mt-3 justify-content-between">
-                    <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-yellow edit-message">Modify your apartment details</a>
+                    <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
                     <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
                         @csrf
                         @method('DELETE')
         
-                        <button class="font-weight-bold btn btn-yellow delete-message" type="submit">Delete this apartment</a>
+                        <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
                     </form>
                 </div>
             </div>
@@ -62,7 +62,7 @@
         <h5 class="my-3 pt-3 font-italic">Scroll to see all of your messages.</h5>
 
         <div class="row d-flex align-items-center justify-content-lg-between p-1">
-            <div class="col-12 col-md-6 px-0">
+            <div class="col-12 col-md-12 col-lg-6 px-0 my-3">
                 <div class="col-12 px-0 messages">
                     @forelse ($messages as $message)
                         <div class="card mb-3">
@@ -81,7 +81,7 @@
                     @endforelse
                 </div>
             </div>
-            <div class="col-12 col-md-5 map-show">
+            <div class="col-12 col-md-12 col-lg-6 map-show">
                 <div id='map' class='map'></div>
             </div>
         </div>
