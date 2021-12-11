@@ -1,5 +1,5 @@
 .index-wrapper{
-    font-family: 'Quicksand', sans-serif;
+    height: calc(100vh - 60px);
 
     .row{
         background-color: $my_black;
@@ -8,6 +8,10 @@
 
     a{
         color: $my_brightyellow;
+
+        &:hover{
+            color: white;
+        }
     }
 
     .card{

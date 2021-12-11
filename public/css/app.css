@@ -10020,11 +10020,11 @@ h3 {
   }
 }
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 main {
-  background-color: #202020;
+  background-color: #141414;
 }
 
 ul {
@@ -10049,7 +10049,8 @@ header .navbar-custom #logo {
   line-height: 47px;
 }
 header .navbar-custom #logo:hover {
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #000103;
+  color: #ffdf29;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10068,7 +10069,14 @@ header .navbar-custom a {
   border-bottom: 3px solid #000103;
 }
 header .navbar-custom a:hover {
-  border-bottom: 3px solid #FFFFFA;
+  border-bottom: 3px solid #ffdf29;
+}
+header .navbar-custom .no-border {
+  border-bottom: 3px solid transparent;
+}
+header .navbar-custom .no-border:hover {
+  border-bottom: 3px solid transparent;
+  color: #ffdf29;
 }
 
 footer {
@@ -10116,14 +10124,50 @@ footer .copyright {
   color: #ffdf29;
   background-color: #242424;
   font-size: 12px;
+  padding: 10px;
 }
 footer .contacts i {
   color: #ffdf29;
   margin-right: 12px;
+  font-size: 25px;
+  align-items: center;
+}
+
+.auth-container {
+  height: calc(100vh - 60px);
+}
+.auth-container .my_row {
+  height: 100%;
+}
+.auth-container .my_card {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.auth-container .card {
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+  padding: 0;
+}
+.auth-container .card .card-body {
+  border: 1px solid #ffdf29;
+}
+.auth-container .card .card-body button {
+  background-color: #ffdf29;
+  color: #000103;
+  border: 2px solid black;
+}
+.auth-container .card .card-body button:hover {
+  border: 2px solid yellow;
+}
+.auth-container .card a {
+  color: #ffdf29;
 }
 
 .index-wrapper {
-  font-family: "Quicksand", sans-serif;
+  height: calc(100vh - 60px);
 }
 .index-wrapper .row {
   background-color: #000103;
@@ -10131,6 +10175,9 @@ footer .contacts i {
 }
 .index-wrapper a {
   color: #ffdf29;
+}
+.index-wrapper a:hover {
+  color: white;
 }
 .index-wrapper .card {
   border: 3px solid #ffdf29;
@@ -10141,11 +10188,55 @@ footer .contacts i {
   color: #000103;
 }
 .index-wrapper .card span {
-  color: #202020;
+  color: #141414;
+}
+
+.show-container {
+  color: white;
+}
+.show-container i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  vertical-align: middle;
+  color: #ffdf29;
+}
+.show-container .card {
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+}
+.show-container .card .card-header {
+  display: inline-block;
+}
+.show-container .card .mail {
+  color: #ffdf29;
+  font-size: 14px;
+}
+.show-container .btn-yellow {
+  background-color: #ffdf29;
+  border-bottom: 1px solid #141414;
+  color: #000103;
+  border: 2px solid black;
+}
+.show-container .btn-yellow:hover {
+  border: 2px solid yellow;
+}
+.show-container .delete-message {
+  color: #FF312E;
+}
+.show-container .edit-message {
+  color: #38c172;
+}
+.show-container .no-messages img {
+  width: 50%;
+}
+.show-container .no-messages a {
+  color: #ffdf29;
+  text-decoration: none;
 }
 
 .map-link a {
-  color: #515052;
+  color: #FFFFFA;
   text-decoration: none;
 }
 
@@ -10163,29 +10254,17 @@ footer .contacts i {
 .apartment-modify {
   margin-top: 70px;
 }
-.apartment-modify i {
-  font-size: 1.5rem;
-  margin-right: 12px;
-  vertical-align: middle;
-}
-
-.apartment-description p {
-  color: #515052;
-}
-.apartment-description i {
-  font-size: 1.5rem;
-  margin-right: 12px;
-  vertical-align: middle;
-}
 
 .hr {
   width: 100%;
   height: 2px;
-  background-color: #515052;
+  background-color: #ffdf29;
 }
 
 .map-show #map {
   height: 100%;
+  border-radius: 8px;
+  border: 3px solid #ffdf29;
 }
 .map-show .marker-icon {
   background-position: center;
@@ -10224,24 +10303,50 @@ footer .contacts i {
   width: 24px;
 }
 
-#apartment-form .create-edit-wrapper {
+.user-edit-container {
+  height: calc(100vh - 60px);
+  padding-top: 2%;
+  overflow: scroll;
+}
+
+.create-edit-wrapper {
   background-color: #000103;
   border-radius: 10px;
   color: #FFFFFA;
 }
-#apartment-form .yellow-label {
+
+.yellow-label {
   color: #ffdf29;
 }
-#apartment-form .btn-custom {
+
+.btn-custom {
   background-color: #ffdf29;
-  border: 1px solid #000103;
+  color: #000103;
+  border: 2px solid black;
 }
-#apartment-form h4 {
+.btn-custom:hover {
+  border: 2px solid yellow;
+}
+
+h4,
+h5 {
   color: #ffdf29;
   margin: 20px 0;
 }
-#apartment-form input {
+h4:hover a,
+h5:hover a {
+  color: #FFFFFA;
+}
+
+input {
   border: 2px solid #ffdf29;
+}
+
+a {
+  color: #ffdf29;
+}
+a:hover {
+  text-decoration: none;
 }
 
 #jumbotron #jumbo {
@@ -10309,20 +10414,64 @@ footer .contacts i {
 }
 
 #dashboard {
-  padding: 75px 0;
+  height: calc(100vh - 60px);
+  padding-top: 5%;
+}
+#dashboard h2 {
+  color: #ffdf29;
 }
 #dashboard ul {
   list-style: none;
 }
 #dashboard .card {
-  height: 400px;
+  background-color: #000103;
+  color: #FFFFFA;
+  border: 2px solid #ffdf29;
+  padding: 0;
+  height: 100%;
+}
+#dashboard .card .card-header {
+  color: #FFFFFA;
+  font-size: 20px;
+}
+#dashboard .card .card-body {
+  border: 1px solid #ffdf29;
+  overflow: scroll;
+}
+#dashboard .card .card-body .list-group-item {
+  background-color: black;
+}
+#dashboard .card .card-body .apartment-list li {
+  border-bottom: 1px solid #141414;
+}
+#dashboard .card .card-body .apartment-list li a {
+  color: #FFFFFA;
+}
+#dashboard .card .card-body .apartment-list li:hover a {
+  color: #ffdf29;
+}
+#dashboard .card a {
+  color: #ffdf29;
 }
 #dashboard .card .profile-pic {
+  background-color: white;
   width: 200px;
   height: 200px;
   overflow: hidden;
   border-radius: 50%;
   box-shadow: 5px 5px 15px 5px #000000;
+}
+#dashboard .card .profile-pic .insert-pp {
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  padding-top: 90px;
+}
+#dashboard .card .profile-pic .insert-pp a {
+  color: black;
+}
+#dashboard .card .profile-pic .insert-pp a:hover {
+  font-size: 15px;
 }
 #dashboard .card .profile-pic img {
   width: 200px;
@@ -10331,10 +10480,17 @@ footer .contacts i {
   -o-object-position: center;
      object-position: center;
 }
-#dashboard .card .user-data {
-  display: flex;
-  align-items: center;
-}
 #dashboard .card .user-data li {
-  padding: 5px 0;
+  line-height: 40px;
+}
+#dashboard .card .user-data li span {
+  color: #ffdf29;
+}
+#dashboard .card .card-footer .btn {
+  background-color: #ffdf29;
+  color: #000103;
+  border: 2px solid black;
+}
+#dashboard .card .card-footer .btn:hover {
+  border: 2px solid yellow;
 }

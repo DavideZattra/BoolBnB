@@ -4,8 +4,8 @@
     <div class="index-wrapper">
         <div class="container px-5">
     
-            <header class="py-3">
-                <h4><a href="{{route("users.apartments.create")}}">Insert a new apartment</a></h4>
+            <header class="py-3 mb-5">
+                <h4>Your apartments.</h4>
             </header>
 
             <div class="row justify-content-center px-3">
@@ -29,11 +29,14 @@
                     </p>
                 @endforelse
             </div>
-            
-            <div class="footer p-3 mx-2 d-flex justify-content-md-center">
+
+            <div class="p-3 mx-2 d-flex justify-content-md-center">
                 {{ $apartments->links() }}
             </div>
-    
+
+            <div class="py-3 mb-5">
+                <h5><a href="{{route("users.apartments.create")}}" class="font-italic">Click here to insert a new apartment</a></h5>
+            </div>
         </div>
     </div>
 @endsection

@@ -58,7 +58,7 @@
     </div>
 
     <div class="copyright">
-        <p class="text-center mt-1 mb-1">© designed by Jose</p>
+        <p class="text-center mt-1 mb-1">Copyright © 2021-2021 Affiliate Marketing Corp.   |  Designed by Davide - Eugenio - Camilla - Giovanni   |   Team 5, class #41.   |   All Rights Reserved.   |   Special credits by Jose</p>
     </div>
 
 </footer>

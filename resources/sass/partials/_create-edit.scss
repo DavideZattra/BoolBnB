@@ -1,26 +1,50 @@
-#apartment-form{
+.user-edit-container{
+    height: calc(100vh - 60px);
+    padding-top: 2%;
+    overflow: scroll;
+}
 
-    .create-edit-wrapper{
-        background-color: $my_black;
-        border-radius: 10px;
-        color: $my_white;
+.create-edit-wrapper{
+    background-color: $my_black;
+    border-radius: 10px;
+    color: $my_white;
+}
+
+.yellow-label{
+    color: $my_brightyellow;
+}
+
+.btn-custom{
+    background-color: $my_brightyellow;
+    color: $my_black;
+    border: 2px solid black;
+
+    &:hover{
+        border: 2px solid yellow;
     }
+}
 
-    .yellow-label{
-        color: $my_brightyellow;
+h4,
+h5{
+    color: $my_brightyellow;
+    margin: 20px 0;
+
+    &:hover{
+
+        a{
+            color: $my_white;
+        }
     }
+}
 
-    .btn-custom{
-        background-color: $my_brightyellow;
-        border: 1px solid $my_black;
-    }
+input{
+    border: 2px solid $my_brightyellow;
+}
 
-    h4{
-        color: $my_brightyellow;
-        margin: 20px 0;
-    }
-
-    input{
-        border: 2px solid $my_brightyellow;
+a{
+    color: $my_brightyellow;
+    
+    &:hover{
+        text-decoration: none;
     }
 }

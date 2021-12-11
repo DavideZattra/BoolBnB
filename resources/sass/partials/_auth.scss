@@ -1,0 +1,40 @@
+.auth-container{
+    height: calc(100vh - 60px);
+
+    .my_row{
+        height: 100%;
+    }
+
+    .my_card{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card{
+        background-color: $my_black;
+        color: $my_white;
+        border: 2px solid $my_brightyellow;
+        padding: 0;
+
+
+        .card-body{
+            border: 1px solid $my_brightyellow;
+
+            button{
+                background-color: $my_brightyellow;
+                color: $my_black;
+                border: 2px solid black;
+
+                &:hover{
+                    border: 2px solid yellow;
+                }
+            }
+        }
+
+        a{
+            color: $my_brightyellow;
+        }
+    }
+}

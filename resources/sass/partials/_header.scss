@@ -15,7 +15,8 @@ header{
             line-height: 47px;
 
             &:hover{
-                border-bottom: 3px solid white;
+                border-bottom: 3px solid $my_black;
+                color: $my_brightyellow;
             }
         }
 
@@ -42,7 +43,16 @@ header{
             border-bottom: 3px solid $my_black;
 
             &:hover{
-                border-bottom: 3px solid $my_white;
+                border-bottom: 3px solid $my_brightyellow;
+            }
+        }
+
+        .no-border{
+            border-bottom: 3px solid transparent;
+            
+            &:hover{
+                border-bottom: 3px solid transparent;
+                color: $my_brightyellow;
             }
         }
     }

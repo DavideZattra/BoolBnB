@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="apartment-form" class="p-3">
+<section class="p-3">
     <div class="container">
         <h4>Insert your apartment's info.</h4>
 
@@ -19,7 +19,7 @@
 
                 <form action="{{route('users.apartments.update', $apartment)}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
+                    @method('patch')
     
                     <div>
                         <label for="descriptive_title" class="form-label">Descriptive Title</label>
@@ -139,12 +139,14 @@
                             <input type="text" class="form-control" id="square_meters" name="square_meters" value="{{old('square_meters', $apartment->square_meters)}}">
                         </div>
                     </div>
+
                     <button type="submit" class="btn btn-custom mt-5">Edit your apartment.</button>
+               
                 </form>
 
             </div>
         </div>
-        <a href="{{ route('users.apartments.index') }}"><h4>Click here to go back to your apartments.</h4></a>
+        <h5><a href="{{ route('users.apartments.index') }}" class="font-italic">Click here to go back to your apartments.</a></h5>
     
     </div>
 </section>

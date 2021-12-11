@@ -1,33 +1,107 @@
 #dashboard{
-    padding: 75px 0;
+    height: calc(100vh - 60px);
+    padding-top: 5%;
+
+    h2{
+        color: $my_brightyellow;
+    }
+    
     ul{
         list-style: none;
-        
     }
+
     .card{
-        height: 400px;
-        
+        background-color: $my_black;
+        color: $my_white;
+        border: 2px solid $my_brightyellow;
+        padding: 0;
+        height: 100%;
+
+        .card-header{
+            color: $my_white;
+            font-size: 20px;
+        }
+
+        .card-body{
+            border: 1px solid $my_brightyellow;
+            overflow: scroll;
+
+            .list-group-item{
+                background-color: black;
+            }
+
+            .apartment-list{
+                li{
+                    border-bottom: 1px solid $my_darkgrey;
+
+                    a{
+                        color: $my_white;
+                    }
+
+                    &:hover{
+
+                        a{
+                            color: $my_brightyellow;
+                        }
+                    }
+                }
+            }
+        }
+
+        a{
+            color: $my_brightyellow;
+        }
+
         .profile-pic{
+            background-color: white;
             width: 200px;
             height: 200px;
             overflow: hidden;
             border-radius: 50%;
             box-shadow: 5px 5px 15px 5px #000000;
+
+            .insert-pp{
+                text-align: center;
+                vertical-align: middle;
+                margin: auto;
+                padding-top: 90px;
+
+                a{
+                    color: black;
+
+                    &:hover{
+                        font-size: 15px;
+                    }
+                }
+            }
+
             img{
-                
                 width: 200px;
                 object-fit: cover;
                 object-position: center;
-    
             }
         }
-        
+
         .user-data{
-            display: flex;
-            align-items: center;
 
             li{
-                padding: 5px 0;
+                line-height: 40px;
+
+                span{
+                    color: $my_brightyellow;
+                }
+            }
+        }
+
+        .card-footer{
+            .btn{
+                background-color: $my_brightyellow;
+                color: $my_black;
+                border: 2px solid black;
+
+                &:hover{
+                    border: 2px solid yellow;
+                }
             }
         }
     }

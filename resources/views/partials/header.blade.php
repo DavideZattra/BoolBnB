@@ -3,7 +3,7 @@
         <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
-            <a id="logo" class="navbar-brand font-weight-bold mr-0" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold mr-0 no-border" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -21,7 +21,7 @@
                 <ul class="navbar-nav mx-auto">
                     {{-- <li><input class="form-control my_search-bar pl-3" type="search" placeholder="Search" aria-label="Search"></li> --}}
                     <li class="mx-3"><a class="nav-link"  href="#">Find a house</a></li>
-                    <li class="mx-3"><a class="nav-link"  href="#">Dashboard</a></li>
+                    <li class="mx-3"><a class="nav-link"  href="{{route('users.dashboard')}}">Dashboard</a></li>
                     <li class="mx-3"><a class="nav-link"  href="#">Host</a></li>
                 </ul>
     
@@ -40,18 +40,18 @@
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle no-border" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
     
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                <a class="dropdown-item no-border" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('users.dashboard') }}">
+                                <a class="dropdown-item no-border" href="{{ route('users.dashboard') }}">
                                     {{ __('My Dashboard') }}
                                 </a>
     
