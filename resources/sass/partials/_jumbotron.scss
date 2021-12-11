@@ -12,33 +12,30 @@
     .jumbo-lg{
         border-radius: 8px;
         width: 520px;
-        background-color: #0001035b;
         margin-right: 100px;
         height: 300px;
-        box-shadow: 3px 3px 15px #000000;
-    }
-
-    .jumbo-sm{
-        background-color: $my_black;
     }
 
     .jumbo-text{
-        color: $my_white;
+        color: $my_brightyellow;
         padding: 25px;
 
         h1{
-            font-size: 3.0rem;
+            font-size: 4rem;
             font-family: 'DM Serif Display', serif;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        p{
             text-shadow: 2px 2px 4px #000000;
         }
 
         button{
-            background-color: rgba(255, 255, 255, 0.781);
-            border: 1px solid $my_black;
+            background-color: $my_brightyellow;
+            border: 1px solid $my_white;
             box-shadow: 1px 1px 2px #000000;
 
             &:hover{
-                background-color: $my_white;
+                background-color: rgb(253, 253, 30);
 
                 a{
                     text-decoration: none;

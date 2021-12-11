@@ -10370,30 +10370,28 @@ a:hover {
 #jumbotron .jumbo-lg {
   border-radius: 8px;
   width: 520px;
-  background-color: #0001035b;
   margin-right: 100px;
   height: 300px;
-  box-shadow: 3px 3px 15px #000000;
-}
-#jumbotron .jumbo-sm {
-  background-color: #000103;
 }
 #jumbotron .jumbo-text {
-  color: #FFFFFA;
+  color: #ffdf29;
   padding: 25px;
 }
 #jumbotron .jumbo-text h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: "DM Serif Display", serif;
   text-shadow: 2px 2px 4px #000000;
 }
+#jumbotron .jumbo-text p {
+  text-shadow: 2px 2px 4px #000000;
+}
 #jumbotron .jumbo-text button {
-  background-color: rgba(255, 255, 255, 0.781);
-  border: 1px solid #000103;
+  background-color: #ffdf29;
+  border: 1px solid #FFFFFA;
   box-shadow: 1px 1px 2px #000000;
 }
 #jumbotron .jumbo-text button:hover {
-  background-color: #FFFFFA;
+  background-color: #fdfd1e;
 }
 #jumbotron .jumbo-text button:hover a {
   text-decoration: none;
