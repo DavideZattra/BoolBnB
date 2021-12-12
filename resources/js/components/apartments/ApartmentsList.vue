@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getRadius='getRadius'/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -26,6 +26,8 @@ export default {
     data() {
         return {
             apartments: [],
+            amenities: [],
+            checkedAmenities: [],
             searchedApartments: [],
             searchLat: 0,
             searchLon: 0,
@@ -68,6 +70,11 @@ export default {
             console.log(this.radius)
         },
 
+        getAmenities(checkedAmenities) {
+            this.checkedAmenities = checkedAmenities;
+            console.log(this.checkedAmenities)
+        },
+
         deg2rad(deg) {
             return deg * (Math.PI / 180);
         },
@@ -89,7 +96,7 @@ export default {
             this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.radius) {
                     this.searchedApartments.push(apartment);
-                    this.apartments = [...this.searchedApartments]
+                    this.apartments = [...this.searchedApartments];
                 }
             });
             console.log(this.searchedApartments);
@@ -102,6 +109,12 @@ export default {
             if (this.rooms || this.bathrooms) {
                 return this.searchedApartments.filter(item => {
                     return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
+                });
+            } if (this.checkedAmenities.length) {
+                return this.searchedApartments.filter(item => {
+                    console.log(item.amenities)
+                    return forEach(item)
+                    this.checkedAmenities.includes(item.amenities.id)
                 });
             } else {
                 return this.apartments;
@@ -117,10 +130,17 @@ export default {
                 this.searchedApartments = [...this.apartments];
             })
 
-        .catch(e => {
-        this.errors.push(e);
-        })
-  }
+        axios.get(`http://127.0.0.1:8000/api/amenities`)
+            .then(response => {
+                this.amenities = [...response.data]
+
+                console.log(this.amenities)
+            })
+
+            .catch(e => {
+            this.errors.push(e);
+            })
+    }
 }
 </script>
 
