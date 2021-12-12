@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery'/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms'/>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -25,12 +25,14 @@ export default {
     },
     data() {
         return {
-            filteredApartments: [],
+            apartments: [],
             searchedApartments: [],
             searchLat: 0,
             searchLon: 0,
             errors: [],
             needle: '',
+            rooms: 0,
+            bathrooms: 0,
             searchRange: 20 
         }
     },
@@ -51,6 +53,16 @@ export default {
 
         },
 
+        getRooms(rooms) {
+            this.rooms = rooms;
+            console.log(this.rooms)
+        },
+
+        getBathrooms(bathrooms) {
+            this.bathrooms = bathrooms;
+              console.log(this.bathrooms)
+        },
+
         deg2rad(deg) {
             return deg * (Math.PI / 180);
         },
@@ -69,7 +81,7 @@ export default {
         },
 
         geoFiltering() {
-            this.filteredApartments.forEach((apartment) => {
+            this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
                     this.searchedApartments.push(apartment);
                 }
@@ -79,24 +91,24 @@ export default {
     },
 
 
-    // computed: {
-    //     searchedApartments: function() {
-    //         if (this.needle) {
-    //             return this.apartments.filter(item => {
-    //                 return item.addresses['address'].toLowerCase().match(this.needle) || item.addresses['city'].toLowerCase().match(this.needle)
-    //             });
-    //         } else {
-    //             return this.apartments;
-    //         } 
-    //     }
-    // },
+    computed: {
+        filteredApartments: function() {
+            if (this.rooms || this.bathrooms) {
+                return this.searchedApartments.filter(item => {
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
+                });
+            } else {
+                return this.apartments;
+            } 
+        }
+    },
     
     created() {
         axios.get(`http://127.0.0.1:8000/api/apartments`)
             .then(response => {
-                this.filteredApartments = [...response.data];
-                console.log(this.filteredApartments)
-
+                this.apartments = [...response.data];
+                console.log(this.apartments)
+                this.searchedApartments = [...this.apartments];
             })
 
         .catch(e => {
