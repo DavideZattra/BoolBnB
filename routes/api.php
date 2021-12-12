@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Amenity;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->name("api.")->group(function(){
     
     Route::resource('apartments', 'ApartmentController')->only('index', 'show');
+});
+
+Route::get('/amenities', function () {
+    $data = Amenity::all();
+    return response()->json($data);
 });

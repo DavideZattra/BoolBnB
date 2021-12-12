@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms'/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getRadius='getRadius'/>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -33,7 +33,7 @@ export default {
             needle: '',
             rooms: 0,
             bathrooms: 0,
-            searchRange: 20 
+            radius: 20 
         }
     },
 
@@ -62,6 +62,11 @@ export default {
             this.bathrooms = bathrooms;
               console.log(this.bathrooms)
         },
+        
+        getRadius(radius){
+            this.radius = radius;
+            console.log(this.radius)
+        },
 
         deg2rad(deg) {
             return deg * (Math.PI / 180);
@@ -82,8 +87,9 @@ export default {
 
         geoFiltering() {
             this.apartments.forEach((apartment) => {
-                if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
+                if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.radius) {
                     this.searchedApartments.push(apartment);
+                    this.apartments = [...this.searchedApartments]
                 }
             });
             console.log(this.searchedApartments);
