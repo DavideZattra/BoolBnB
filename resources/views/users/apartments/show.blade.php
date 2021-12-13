@@ -21,7 +21,7 @@
         </div>
 
         <div class="row d-flex align-items-center mb-5">
-            <div class="col-sm-12 col-md-6 show-img mb-5">
+            <div class="col-sm-12 col-md-6 show-img">
                 <img src="{{ asset('storage/' . $apartment->image) }}" alt="immagine copertina dell'appartamento">
             </div>
 
