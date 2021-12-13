@@ -8,15 +8,10 @@
     <div class="input-group input-group-sm mt-5">
         <input v-model.number="rooms" @change="$emit('getRooms', rooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" min="1" max="10" >  
 
-<<<<<<< HEAD
         <input v-model.number="bathrooms" @change="$emit('getBathrooms', bathrooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" min="1" max="10"> 
 
         <input v-model.number="radius" @change="$emit('getRadius', radius)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" min="1" max="550" > 
  
-=======
-        <input v-model.number="bathrooms" @change="$emit('getBathrooms', bathrooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
-   
->>>>>>> origin/guests_search
     </div>    
 
     <div class="amenities text-white" v-for="amenity in amenities" :key="amenity.id">
@@ -41,8 +36,9 @@ export default {
     data() {
         return {
             needle: '',
-            rooms: 0,
-            bathrooms: 0,
+            rooms: 1,
+            bathrooms: 1,
+            radius: 20,
             checkedAmenities: [],
         }
     },

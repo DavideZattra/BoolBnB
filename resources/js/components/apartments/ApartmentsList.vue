@@ -110,12 +110,12 @@ export default {
                 return this.searchedApartments.filter(item => {
                     return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
                 });
-            } if (this.checkedAmenities.length) {
-                return this.searchedApartments.filter(item => {
-                    console.log(item.amenities)
-                    return forEach(item)
-                    this.checkedAmenities.includes(item.amenities.id)
-                });
+            // } if (this.checkedAmenities.length) {
+            //     return this.searchedApartments.filter(item => {
+            //         console.log(item.amenities)
+            //         return forEach(item)
+            //         this.checkedAmenities.includes(item.amenities.id)
+            //     });
             } else {
                 return this.apartments;
             } 
