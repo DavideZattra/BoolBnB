@@ -45,41 +45,74 @@
                     @endforeach
                 </ul>
 
-                <div class="d-flex mt-3 justify-content-between">
-                    <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
-                    <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-        
-                        <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
-                    </form>
-                </div>
+                @if (Auth::user())
+                    <div class="d-flex mt-3 justify-content-between">
+                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
+                        <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+            
+                            <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
+                        </form>
+                    </div>
+                @else
+                    <div class="d-flex mt-3 justify-content-between">
+                        <a href="#" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Rent apartment</a>
+                    </div>
+                @endif
             </div>
         </div>
 
-        <div class="hr"></div>
-
-        <h5 class="my-3 pt-3 font-italic">Scroll to see all of your messages.</h5>
+        <div class="hr mb-5"></div>
 
         <div class="row d-flex align-items-center justify-content-lg-between p-1">
             <div class="col-12 col-md-12 col-lg-6 px-0 my-3">
-                <div class="col-12 px-0 messages">
-                    @forelse ($messages as $message)
-                        <div class="card mb-3">
-                            <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
-                            <div class="card-body">
-                            <p class="card-text">{{ $message['body'] }}</p>
-                            <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+
+                @if (Auth::user())
+
+                <h2>Your messages</h2>
+
+                    <div class="col-12 px-0 messages">
+                        @forelse ($messages as $message)
+                            <div class="card mb-3">
+                                <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
+                                <div class="card-body">
+                                <p class="card-text">{{ $message['body'] }}</p>
+                                <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                                </div>
                             </div>
+                        @empty
+                            <div class="no-messages">
+                                <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
+                
+                                <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                            </div>
+                        @endforelse
+                    </div> 
+                @else
+
+                    <h2>Write a message to this host</h2>
+
+                    <form class="p-2 my_form" action="#" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input type="email" class="form-control" id="email" placeholder="name@example.com">
                         </div>
-                    @empty
-                        <div class="no-messages">
-                            <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
-            
-                            <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name">
                         </div>
-                    @endforelse
-                </div>
+                        
+                        <div class="form-group">
+                          <label for="body">Ask anything you need to the host</label>
+                          <textarea class="form-control" id="body" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom mt-3">Send message</button>
+                      </form>
+                    
+                @endif
             </div>
             <div class="col-12 col-md-12 col-lg-6 map-show">
                 <div id='map' class='map'></div>
