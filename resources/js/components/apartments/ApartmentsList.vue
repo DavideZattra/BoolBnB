@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery'/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -25,12 +25,16 @@ export default {
     },
     data() {
         return {
-            filteredApartments: [],
+            apartments: [],
+            amenities: [],
+            checkedAmenities: [],
             searchedApartments: [],
             searchLat: 0,
             searchLon: 0,
             errors: [],
             needle: '',
+            rooms: 0,
+            bathrooms: 0,
             searchRange: 20 
         }
     },
@@ -51,6 +55,21 @@ export default {
 
         },
 
+        getRooms(rooms) {
+            this.rooms = rooms;
+            console.log(this.rooms)
+        },
+
+        getBathrooms(bathrooms) {
+            this.bathrooms = bathrooms;
+              console.log(this.bathrooms)
+        },
+
+        getAmenities(checkedAmenities) {
+            this.checkedAmenities = checkedAmenities;
+            console.log(this.checkedAmenities)
+        },
+
         deg2rad(deg) {
             return deg * (Math.PI / 180);
         },
@@ -69,40 +88,66 @@ export default {
         },
 
         geoFiltering() {
-            this.filteredApartments.forEach((apartment) => {
+            this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
                     this.searchedApartments.push(apartment);
+                    this.apartments = [...this.searchedApartments];
                 }
             });
             console.log(this.searchedApartments);
+        },
+
+        compareAmenities(arr1, arr2) {
+            let apartmentsAmenitiesId = [];
+
+            arr1.forEach((object) => {
+            apartmentsAmenitiesId.push(object.id)
+            
+            });
+
+            const filteredArray = arr2.filter(value => apartmentsAmenitiesId.includes(value));
+
+            if (filteredArray.length == arr2.length) {
+                return true;
+            }  else {
+                return false
+            }
+
         }
     },
 
 
-    // computed: {
-    //     searchedApartments: function() {
-    //         if (this.needle) {
-    //             return this.apartments.filter(item => {
-    //                 return item.addresses['address'].toLowerCase().match(this.needle) || item.addresses['city'].toLowerCase().match(this.needle)
-    //             });
-    //         } else {
-    //             return this.apartments;
-    //         } 
-    //     }
-    // },
+    computed: {
+        filteredApartments: function() {
+            if (this.rooms || this.bathrooms || this.checkedAmenities) {
+                return this.searchedApartments.filter(item => {
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms && this.compareAmenities(item.amenities, this.checkedAmenities);
+                });
+            } else {
+                return this.apartments;
+            } 
+        }
+    },
     
     created() {
         axios.get(`http://127.0.0.1:8000/api/apartments`)
             .then(response => {
-                this.filteredApartments = [...response.data];
-                console.log(this.filteredApartments)
-
+                this.apartments = [...response.data];
+                console.log(this.apartments)
+                this.searchedApartments = [...this.apartments];
             })
 
-        .catch(e => {
-        this.errors.push(e);
-        })
-  }
+        axios.get(`http://127.0.0.1:8000/api/amenities`)
+            .then(response => {
+                this.amenities = [...response.data]
+
+                console.log(this.amenities)
+            })
+
+            .catch(e => {
+            this.errors.push(e);
+            })
+    }
 }
 </script>
 
