@@ -1,6 +1,7 @@
 <template>
     <div class="container">
 
+        <div id='map'></div>
         <div class="row justify-content-center">
             <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
         </div>
@@ -8,7 +9,7 @@
         <div class="row justify-content-center mt-5">
             <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
         </div>
-        <div id='map'></div>
+        <button class="btn btn-primary" @click="newMarkerDisplay(this.apartments)">ohibò</button>
     </div>
 </template>
 
@@ -30,8 +31,8 @@ export default {
             amenities: [],
             checkedAmenities: [],
             searchedApartments: [],
-            searchLat: 0,
-            searchLon: 0,
+            searchLat: 41.89056,
+            searchLon: 12.49427,
             errors: [],
             needle: '',
             rooms: 0,
@@ -100,7 +101,36 @@ export default {
                     this.apartments = [...this.searchedApartments];
                 }
             });
-            console.log(this.searchedApartments);
+            
+            
+            var coordinates = [this.searchLon, this.searchLat];
+            var map = tt.map({
+                container: 'map',
+                key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                style: 'tomtom://vector/1/basic-main',
+                center: coordinates,
+                zoom: 10
+            });
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+            
+            this.filteredApartments.forEach((apartment)=>{
+                let marker;
+                marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                marker.setPopup(popup).togglePopup();
+            })
+            
         },
 
         compareAmenities(arr1, arr2) {
@@ -119,20 +149,46 @@ export default {
                 return false
             }
 
+        },
+
+        newMarkerDisplay(apartments){
+            
+            
+            apartments.forEach((apartment)=>{
+                let marker;
+                marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                marker.setPopup(popup).togglePopup();
+            })
+            
         }
     },
 
 
     computed: {
         filteredApartments: function() {
+            // this.newMarkerDisplay(); 
             if (this.rooms || this.bathrooms || this.checkedAmenities) {
                 return this.searchedApartments.filter(item => {
                     return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms && this.compareAmenities(item.amenities, this.checkedAmenities);
                 });
             } else {
+                // this.newMarkerDisplay(this.apartments);
                 return this.apartments;
-            } 
-        }
+            }
+        },
+
+        
     },
     
     created() {
@@ -144,36 +200,33 @@ export default {
             }).catch(e => {
             this.errors.push(e);
             }).then(()=>{
-                var lat = 45.87162000;
-                var lon = 8.91306000;
-                var coordinates = [lon, lat];
+                var coordinates = [this.searchLon, this.searchLat];
                 var map = tt.map({
                     container: 'map',
                     key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
                     style: 'tomtom://vector/1/basic-main',
                     center: coordinates,
-                    zoom: 10
+                    zoom: 3
                 });
                 map.addControl(new tt.FullscreenControl());
                 map.addControl(new tt.NavigationControl());
                 this.filteredApartments.forEach((apartment)=>{
                     let marker;
                     marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                    var popupOffsets = {
+                        top: [0, 0],
+                        bottom: [0, -40],
+                        'bottom-right': [0, -70],
+                        'bottom-left': [0, -70],
+                        left: [25, -35],
+                        right: [-25, -35]
+                    }
+                    var popup = new tt.Popup({
+                        offset: popupOffsets
+                    }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                    marker.setPopup(popup).togglePopup();
                 })
-                var popupOffsets = {
-                    top: [0, 0],
-                    bottom: [0, -40],
-                    'bottom-right': [0, -70],
-                    'bottom-left': [0, -70],
-                    left: [25, -35],
-                    right: [-25, -35]
-                }
-                var popup = new tt.Popup({
-                    offset: popupOffsets
-                }).setHTML(`${this.name}<br>${this.address}`);
-                marker.setPopup(popup).togglePopup();
-                
-            });
+            })
 
         axios.get(`http://127.0.0.1:8000/api/amenities`)
             .then(response => {
@@ -192,5 +245,6 @@ export default {
     height: 500px;
     width: 800px;
     margin: 0 auto;
+    border-radius: 15px;
 }
 </style>

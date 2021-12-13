@@ -38,3 +38,13 @@ Route::middleware('auth')
         Route::resource('apartments', ApartmentController::class);
 });
 
+Route::namespace('User') // this is to call the folder of the controller
+    ->name('users.') // this is to call the folder of the view
+    ->prefix('users') // this is for the URI calls
+    ->group(function () {
+        
+        // Route::resource('/', DashboardController::class)->except('create', 'store');
+        Route::resource('apartments', ApartmentController::class)->only('show');
+        Route::post('message', 'MessageController@store')->name('store');
+});
+
