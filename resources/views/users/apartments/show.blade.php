@@ -45,7 +45,7 @@
                     @endforeach
                 </ul>
 
-                @if (Auth::user())
+                @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                     <div class="d-flex mt-3 justify-content-between">
                         <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
                         <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
@@ -68,7 +68,7 @@
         <div class="row d-flex align-items-center justify-content-lg-between p-1">
             <div class="col-12 col-md-12 col-lg-6 px-0 my-3">
 
-                @if (Auth::user())
+                @if (Auth::user() && Auth::user()->id == $apartment->user_id)
 
                 <h2>Your messages</h2>
 
@@ -93,7 +93,7 @@
 
                     <h2>Write a message to this host</h2>
 
-                    <form class="p-2 my_form" action="{{ route('users.store', $apartment->id) }}" method="POST">
+                    <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->user_id]) }}" method="POST">
                         @csrf
 
                         <div class="form-group">

@@ -16,15 +16,18 @@ class MessageController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Apartment $apartment)
+    public function store(Request $request)
     {
-        $data = $request;
-
+        $data = $request->all();
+       
         $message = new Message();
 
         $message = Message::create($data);
 
         $message->save();
-        dd($message);
+
+        $id = $data['apartment_id'];
+
+        return redirect()->route('users.apartments.show', $id);
     }
 }
