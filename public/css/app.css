@@ -10072,9 +10072,6 @@ header .navbar-custom .dropdown-menu a:hover {
 header .navbar-custom .navbar-collapse {
   background-color: #000103;
 }
-header .navbar-custom .navbar-collapse a {
-  color: #FFFFFA;
-}
 header .navbar-custom a {
   color: #FFFFFA;
   line-height: 41px;

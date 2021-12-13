@@ -3,7 +3,7 @@
         <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
-            <a id="logo" class="navbar-brand font-weight-bold mr-0 no-border" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold mr-3 no-border" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -30,11 +30,11 @@
 
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item mx-3">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
-                            <li class="nav-item mx-3">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
