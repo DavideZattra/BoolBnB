@@ -74,7 +74,7 @@
                                     false-value="no">
                                 <label class="form-check-label" :for="amenity.name">{{amenity.name}}</label>    
                             </div>
-                            <button class="btn btn-primary" @click="$emit('getAmenities', checkedAmenities)">Submit</button>
+                            <button class="btn btn-custom m-2" @click="$emit('getAmenities', checkedAmenities)">Submit</button>
                         </button>
                     </div>
                 </div>
@@ -85,13 +85,14 @@
                             <input 
                                 type="checkbox" 
                                 class="form-check-input" 
-                                :id="amenity.name" :value="amenity.id" 
+                                :id="amenity.name" 
+                                :value="amenity.id" 
                                 v-model="checkedAmenities" 
                                 true-value="yes" 
                                 false-value="no">
                             <label class="form-check-label" :for="amenity.name">{{amenity.name}}</label>    
                         </div>
-                        <button class="btn btn-primary" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
+                        <button class="btn btn-custom" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
                     </div>
                 </div>
             </div>
