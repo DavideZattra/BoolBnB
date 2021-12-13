@@ -10235,7 +10235,7 @@ footer .contacts i {
   border: 1px solid #000103;
 }
 .show-container .btn-yellow:hover {
-  border: 1px solid yellow;
+  border: 1px solid #899ba5;
 }
 .show-container .no-messages img {
   width: 50%;
@@ -10517,5 +10517,5 @@ a:hover {
   border: 2px solid black;
 }
 #dashboard .card .card-footer .btn:hover {
-  border: 2px solid yellow;
+  border: 2px solid #899ba5;
 }
