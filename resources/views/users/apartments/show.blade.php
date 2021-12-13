@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('cdn-entrypoint')
 <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.16.0/maps/maps.css'>
@@ -138,7 +138,7 @@
             container: 'map',
             dragPan: !isMobileOrTablet(),
             center: [longitude, latitude],
-            zoom: 3
+            zoom: 10
         });
         
         map.addControl(new tt.FullscreenControl());
@@ -176,7 +176,7 @@
                 .addTo(map);
         }
 
-        createMarker('accident.colors-white.svg', [longitude, latitude], '#5327c3', name);
+        createMarker('', [longitude, latitude], '#5327c3', name);
         
 
     </script>

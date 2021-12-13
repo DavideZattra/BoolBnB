@@ -26,7 +26,7 @@
     @yield('cdn-entrypoint')
 </head>
 <body>
-    <div id="">
+    <div id="app">
         @include('partials.header')
 
         <main>
@@ -37,6 +37,6 @@
     </div>
     
     @yield('scripts-entrypoint')
-    <script src="{{ asset('js/front.js') }}"></script>
+    {{-- <script src="{{ asset('js/front.js') }}"></script> --}}
 </body>
 </html>
