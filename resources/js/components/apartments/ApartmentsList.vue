@@ -95,21 +95,33 @@ export default {
                 }
             });
             console.log(this.searchedApartments);
+        },
+
+        compareAmenities(arr1, arr2) {
+            let apartmentsAmenitiesId = [];
+
+            arr1.forEach((object) => {
+            apartmentsAmenitiesId.push(object.id)
+            
+            });
+
+            const filteredArray = arr2.filter(value => apartmentsAmenitiesId.includes(value));
+
+            if (filteredArray.length == arr2.length) {
+                return true;
+            }  else {
+                return false
+            }
+
         }
     },
 
 
     computed: {
         filteredApartments: function() {
-            if (this.rooms || this.bathrooms) {
+            if (this.rooms || this.bathrooms || this.checkedAmenities) {
                 return this.searchedApartments.filter(item => {
-                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
-                });
-            } if (this.checkedAmenities.length) {
-                return this.searchedApartments.filter(item => {
-                    console.log(item.amenities)
-                    return forEach(item)
-                    this.checkedAmenities.includes(item.amenities.id)
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms && this.compareAmenities(item.amenities, this.checkedAmenities);
                 });
             } else {
                 return this.apartments;

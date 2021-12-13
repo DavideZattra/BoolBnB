@@ -34,8 +34,8 @@ export default {
     data() {
         return {
             needle: '',
-            rooms: 0,
-            bathrooms: 0,
+            rooms: 1,
+            bathrooms: 1,
             checkedAmenities: [],
         }
     },
