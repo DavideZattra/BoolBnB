@@ -45,5 +45,6 @@ Route::namespace('User') // this is to call the folder of the controller
         
         // Route::resource('/', DashboardController::class)->except('create', 'store');
         Route::resource('apartments', ApartmentController::class)->only('show');
+        Route::post('message', 'MessageController@store')->name('store');
 });
 

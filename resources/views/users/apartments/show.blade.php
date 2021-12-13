@@ -93,23 +93,26 @@
 
                     <h2>Write a message to this host</h2>
 
-                    <form class="p-2 my_form" action="#" method="POST" enctype="multipart/form-data">
+                    <form class="p-2 my_form" action="{{ route('users.store', $apartment->id) }}" method="POST">
                         @csrf
 
                         <div class="form-group">
                           <label for="email">Email address</label>
-                          <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                          <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
                         </div>
+
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
                         </div>
                         
                         <div class="form-group">
                           <label for="body">Ask anything you need to the host</label>
-                          <textarea class="form-control" id="body" rows="3"></textarea>
+                          <textarea name="body" class="form-control" id="body" rows="3"></textarea>
                         </div>
+
                         <button type="submit" class="btn btn-custom mt-3">Send message</button>
+                        
                       </form>
                     
                 @endif
