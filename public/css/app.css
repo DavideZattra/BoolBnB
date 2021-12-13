@@ -10270,6 +10270,15 @@ footer .contacts i {
   margin-top: 70px;
 }
 
+.my_message {
+  background-color: #899ba5;
+  padding: 10px;
+  border-radius: 10px;
+}
+.my_message h3 {
+  color: black;
+}
+
 .hr {
   width: 100%;
   height: 2px;

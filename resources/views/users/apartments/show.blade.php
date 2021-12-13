@@ -90,12 +90,13 @@
                         @endforelse
                     </div> 
                 @else
+                    @if (session('thankMessage'))
+                        <div class="my_message">
+                            <h3>{{session('thankMessage')}}</h3>
+                        </div>
+                    @endif
 
                     <h2>Write a message to this host</h2>
-                    @if (session('thankMessage'))
-                        
-                        <h1>{{session('thankMessage')}}</h1>
-                    @endif
 
                     <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->id]) }}" method="POST">
                         @csrf
