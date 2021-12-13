@@ -1,5 +1,11 @@
 <template>
-<div id='map'></div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <div id='map'></div>
+            </div>
+        </div>
+    </div>
 </template>
 <script>
 export default {
@@ -38,5 +44,6 @@ export default {
 #map {
     height: 500px;
     width: 500px;
+    border-radius: 8px;
 }
 </style>
