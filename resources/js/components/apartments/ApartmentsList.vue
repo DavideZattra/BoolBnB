@@ -2,12 +2,13 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' :amenities="amenities"/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
             <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
         </div>
+        <div id='map'></div>
     </div>
 </template>
 
@@ -35,7 +36,7 @@ export default {
             needle: '',
             rooms: 0,
             bathrooms: 0,
-            searchRange: 20 
+            radius: 20 
         }
     },
 
@@ -64,6 +65,11 @@ export default {
             this.bathrooms = bathrooms;
               console.log(this.bathrooms)
         },
+        
+        getRadius(radius){
+            this.radius = radius;
+            console.log(this.radius)
+        },
 
         getAmenities(checkedAmenities) {
             this.checkedAmenities = checkedAmenities;
@@ -89,7 +95,7 @@ export default {
 
         geoFiltering() {
             this.apartments.forEach((apartment) => {
-                if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.searchRange) {
+                if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.radius) {
                     this.searchedApartments.push(apartment);
                     this.apartments = [...this.searchedApartments];
                 }
@@ -135,22 +141,56 @@ export default {
                 this.apartments = [...response.data];
                 console.log(this.apartments)
                 this.searchedApartments = [...this.apartments];
-            })
+            }).catch(e => {
+            this.errors.push(e);
+            }).then(()=>{
+                var lat = 45.87162000;
+                var lon = 8.91306000;
+                var coordinates = [lon, lat];
+                var map = tt.map({
+                    container: 'map',
+                    key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                    style: 'tomtom://vector/1/basic-main',
+                    center: coordinates,
+                    zoom: 10
+                });
+                map.addControl(new tt.FullscreenControl());
+                map.addControl(new tt.NavigationControl());
+                this.filteredApartments.forEach((apartment)=>{
+                    let marker;
+                    marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                })
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${this.name}<br>${this.address}`);
+                marker.setPopup(popup).togglePopup();
+                
+            });
 
         axios.get(`http://127.0.0.1:8000/api/amenities`)
             .then(response => {
                 this.amenities = [...response.data]
 
                 console.log(this.amenities)
-            })
-
-            .catch(e => {
+            }).catch(e => {
             this.errors.push(e);
-            })
+            });
     }
 }
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+#map{
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+}
 </style>
