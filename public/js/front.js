@@ -1949,6 +1949,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentCard",
   props: ["apartment"]
@@ -1981,6 +1983,15 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2195,6 +2206,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchAndFilter",
   props: ['amenities'],
@@ -2208,6 +2292,25 @@ __webpack_require__.r(__webpack_exports__);
     };
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\nmain[data-v-4662a702] {\n  background-color: #141414;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.row[data-v-4662a702] {\n  background-color: rgba(0, 0, 0, 0.507);\n  border-radius: 20px;\n}\na[data-v-4662a702] {\n  color: #899ba5;\n}\na[data-v-4662a702]:hover {\n  color: white;\n}\n.card[data-v-4662a702] {\n  border: 3px solid #899ba5;\n}\n.card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -2707,6 +2810,36 @@ process.umask = function() { return 0; };
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../process/browser.js */ "./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -3363,33 +3496,38 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card col-3 m-3" }, [
-    _c("div", { staticClass: "card-body" }, [
+  return _c(
+    "div",
+    {
+      staticClass: "card col-12 col-md-5 col-lg-3 m-4 p-0",
+      staticStyle: { width: "18rem" },
+    },
+    [
       _c("img", {
-        staticClass: "img-fluid",
+        staticClass: "card-img-top",
         attrs: {
-          src: _vm.apartment.image,
+          src: "/storage/" + _vm.apartment.image,
           alt: _vm.apartment.descriptive_title,
         },
       }),
       _vm._v(" "),
-      _c("h4", { staticClass: "card-title" }, [
-        _vm._v(_vm._s(_vm.apartment.descriptive_title)),
+      _c("div", { staticClass: "card-body" }, [
+        _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
+          _vm._v(_vm._s(_vm.apartment.descriptive_title)),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "m-0" }, [
+          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
+          _vm._v(", \n        "),
+          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+        ]),
       ]),
-      _vm._v(" "),
-      _c("h5", { staticClass: "card-title" }, [
-        _vm._v(_vm._s(_vm.apartment.addresses.country)),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "card-title" }, [
-        _vm._v(_vm._s(_vm.apartment.addresses.city)),
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "card-title" }, [
-        _vm._v(_vm._s(_vm.apartment.addresses.address)),
-      ]),
-    ]),
-  ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3469,248 +3607,397 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.trim",
-              value: _vm.needle,
-              expression: "needle",
-              modifiers: { trim: true },
+  return _c("div", { staticClass: "container" }, [
+    _c("form", { attrs: { action: "" } }, [
+      _c("div", { staticClass: "row mt-4 ml-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.needle,
+                expression: "needle",
+                modifiers: { trim: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              placeholder: "Choose an address or a city",
+              type: "text",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
             },
-          ],
-          staticClass: "form-control",
-          attrs: {
-            placeholder: "Address or city",
-            type: "text",
-            "aria-label": "Small",
-            "aria-describedby": "inputGroup-sizing-sm",
-          },
-          domProps: { value: _vm.needle },
-          on: {
-            keyup: function ($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.$emit("getQuery", _vm.needle)
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.needle = $event.target.value.trim()
-            },
-            blur: function ($event) {
-              return _vm.$forceUpdate()
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { type: "button" },
+            domProps: { value: _vm.needle },
             on: {
-              click: function ($event) {
+              keyup: function ($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
                 return _vm.$emit("getQuery", _vm.needle)
               },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.needle = $event.target.value.trim()
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
             },
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button" },
+              on: {
+                click: function ($event) {
+                  return _vm.$emit("getQuery", _vm.needle)
+                },
+              },
+            },
+            [_vm._v("Search")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of km radius from chosen location."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.radius,
+                expression: "radius",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "550",
+            },
+            domProps: { value: _vm.radius },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getRadius", _vm.radius)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.radius = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-4 ml-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of needed rooms."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.rooms,
+                expression: "rooms",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "10",
+            },
+            domProps: { value: _vm.rooms },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getRooms", _vm.rooms)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.rooms = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of needed bathrooms."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.bathrooms,
+                expression: "bathrooms",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "10",
+            },
+            domProps: { value: _vm.bathrooms },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getBathrooms", _vm.bathrooms)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.bathrooms = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group col-sm-12 col-lg-6 p-0" }, [
+        _c("div", { staticClass: "dropdown" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-custom dropdown-toggle",
+              attrs: {
+                type: "button",
+                id: "dropdownMenu2",
+                "data-toggle": "dropdown",
+                "aria-haspopup": "true",
+                "aria-expanded": "false",
+              },
+            },
+            [
+              _vm._v(
+                "\n                    Choose your amenities.\n                "
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropdown-menu",
+              attrs: { "aria-labelledby": "dropdownMenu2" },
+            },
+            [
+              _c(
+                "button",
+                { staticClass: "dropdown-item", attrs: { type: "button" } },
+                [
+                  _vm._l(_vm.amenities, function (amenity) {
+                    return _c("div", { key: amenity.id }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checkedAmenities,
+                            expression: "checkedAmenities",
+                          },
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: amenity.name,
+                          "true-value": "yes",
+                          "false-value": "no",
+                        },
+                        domProps: {
+                          value: amenity.id,
+                          checked: Array.isArray(_vm.checkedAmenities)
+                            ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                            : _vm._q(_vm.checkedAmenities, "yes"),
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.checkedAmenities,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? "yes" : "no"
+                            if (Array.isArray($$a)) {
+                              var $$v = amenity.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  (_vm.checkedAmenities = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.checkedAmenities = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.checkedAmenities = $$c
+                            }
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: amenity.name },
+                        },
+                        [_vm._v(_vm._s(amenity.name))]
+                      ),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function ($event) {
+                          return _vm.$emit("getAmenities", _vm.checkedAmenities)
+                        },
+                      },
+                    },
+                    [_vm._v("Submit")]
+                  ),
+                ],
+                2
+              ),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "dropdown-menu dropdown-menu-right",
+            attrs: { "aria-labelledby": "navbarDropdown" },
           },
-          [_vm._v("Search")]
+          [
+            _c(
+              "div",
+              { staticClass: "form-check form-check-inline" },
+              [
+                _vm._l(_vm.amenities, function (amenity) {
+                  return _c("div", { key: amenity.id }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.checkedAmenities,
+                          expression: "checkedAmenities",
+                        },
+                      ],
+                      staticClass: "form-check-input",
+                      attrs: {
+                        type: "checkbox",
+                        id: amenity.name,
+                        "true-value": "yes",
+                        "false-value": "no",
+                      },
+                      domProps: {
+                        value: amenity.id,
+                        checked: Array.isArray(_vm.checkedAmenities)
+                          ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                          : _vm._q(_vm.checkedAmenities, "yes"),
+                      },
+                      on: {
+                        change: function ($event) {
+                          var $$a = _vm.checkedAmenities,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? "yes" : "no"
+                          if (Array.isArray($$a)) {
+                            var $$v = amenity.id,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                (_vm.checkedAmenities = $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                (_vm.checkedAmenities = $$a
+                                  .slice(0, $$i)
+                                  .concat($$a.slice($$i + 1)))
+                            }
+                          } else {
+                            _vm.checkedAmenities = $$c
+                          }
+                        },
+                      },
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      {
+                        staticClass: "form-check-label",
+                        attrs: { for: amenity.name },
+                      },
+                      [_vm._v(_vm._s(amenity.name))]
+                    ),
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.$emit("getAmenities", _vm.checkedAmenities)
+                      },
+                    },
+                  },
+                  [_vm._v("Choose amenities")]
+                ),
+              ],
+              2
+            ),
+          ]
         ),
       ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.number",
-              value: _vm.rooms,
-              expression: "rooms",
-              modifiers: { number: true },
-            },
-          ],
-          staticClass: "form-control",
-          attrs: {
-            type: "number",
-            "aria-label": "Small",
-            "aria-describedby": "inputGroup-sizing-sm",
-            min: "1",
-            max: "10",
-          },
-          domProps: { value: _vm.rooms },
-          on: {
-            change: function ($event) {
-              return _vm.$emit("getRooms", _vm.rooms)
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.rooms = _vm._n($event.target.value)
-            },
-            blur: function ($event) {
-              return _vm.$forceUpdate()
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.number",
-              value: _vm.bathrooms,
-              expression: "bathrooms",
-              modifiers: { number: true },
-            },
-          ],
-          staticClass: "form-control",
-          attrs: {
-            type: "number",
-            "aria-label": "Small",
-            "aria-describedby": "inputGroup-sizing-sm",
-            min: "1",
-            max: "10",
-          },
-          domProps: { value: _vm.bathrooms },
-          on: {
-            change: function ($event) {
-              return _vm.$emit("getBathrooms", _vm.bathrooms)
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.bathrooms = _vm._n($event.target.value)
-            },
-            blur: function ($event) {
-              return _vm.$forceUpdate()
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.number",
-              value: _vm.radius,
-              expression: "radius",
-              modifiers: { number: true },
-            },
-          ],
-          staticClass: "form-control",
-          attrs: {
-            type: "number",
-            "aria-label": "Small",
-            "aria-describedby": "inputGroup-sizing-sm",
-            min: "1",
-            max: "550",
-          },
-          domProps: { value: _vm.radius },
-          on: {
-            change: function ($event) {
-              return _vm.$emit("getRadius", _vm.radius)
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.radius = _vm._n($event.target.value)
-            },
-            blur: function ($event) {
-              return _vm.$forceUpdate()
-            },
-          },
-        }),
-      ]),
-      _vm._v(" "),
-      _vm._l(_vm.amenities, function (amenity) {
-        return _c(
-          "div",
-          { key: amenity.id, staticClass: "amenities text-white" },
-          [
-            _c("label", { attrs: { for: amenity.name } }, [
-              _vm._v(_vm._s(amenity.name)),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.checkedAmenities,
-                  expression: "checkedAmenities",
-                },
-              ],
-              attrs: {
-                type: "checkbox",
-                id: amenity.name,
-                "true-value": "yes",
-                "false-value": "no",
-              },
-              domProps: {
-                value: amenity.id,
-                checked: Array.isArray(_vm.checkedAmenities)
-                  ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
-                  : _vm._q(_vm.checkedAmenities, "yes"),
-              },
-              on: {
-                change: function ($event) {
-                  var $$a = _vm.checkedAmenities,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? "yes" : "no"
-                  if (Array.isArray($$a)) {
-                    var $$v = amenity.id,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.checkedAmenities = $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        (_vm.checkedAmenities = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
-                    }
-                  } else {
-                    _vm.checkedAmenities = $$c
-                  }
-                },
-              },
-            }),
-          ]
-        )
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          on: {
-            click: function ($event) {
-              return _vm.$emit("getAmenities", _vm.checkedAmenities)
-            },
-          },
-        },
-        [_vm._v("Choose amenities")]
+    ]),
+    _vm._v(" "),
+    _c("h6", { staticClass: "text-white" }, [
+      _vm._v(
+        "Available apartments with your needs: " + _vm._s(_vm.checkedAmenities)
       ),
-      _vm._v(" "),
-      _c("h1", { staticClass: "text-white" }, [
-        _vm._v("Checked: " + _vm._s(_vm.checkedAmenities)),
-      ]),
-    ],
-    2
-  )
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -15977,7 +16264,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ApartmentCard_vue_vue_type_template_id_4662a702_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ApartmentCard.vue?vue&type=template&id=4662a702&scoped=true& */ "./resources/js/components/apartments/ApartmentCard.vue?vue&type=template&id=4662a702&scoped=true&");
 /* harmony import */ var _ApartmentCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ApartmentCard.vue?vue&type=script&lang=js& */ "./resources/js/components/apartments/ApartmentCard.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& */ "./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -15985,7 +16274,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _ApartmentCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ApartmentCard_vue_vue_type_template_id_4662a702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ApartmentCard_vue_vue_type_template_id_4662a702_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -16014,6 +16303,22 @@ component.options.__file = "resources/js/components/apartments/ApartmentCard.vue
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ApartmentCard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentCard.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentCard.vue?vue&type=style&index=0&id=4662a702&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_ApartmentCard_vue_vue_type_style_index_0_id_4662a702_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
