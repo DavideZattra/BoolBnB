@@ -92,8 +92,12 @@
                 @else
 
                     <h2>Write a message to this host</h2>
+                    @if (session('thankMessage'))
+                        
+                        <h1>{{session('thankMessage')}}</h1>
+                    @endif
 
-                    <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->user_id]) }}" method="POST">
+                    <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->id]) }}" method="POST">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -187,6 +191,7 @@
                 .setPopup(popup)
                 .addTo(map);
         }
+        
 
         createMarker('', [longitude, latitude], '#5327c3', name);
         

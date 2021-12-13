@@ -41,6 +41,8 @@ class MessageController extends Controller
 
         $id = $data['apartment_id'];
 
-        return redirect()->route('users.apartments.show', $id);
+        $thankMessage = 'Thank you for sending the message, the owner will reply as soon as possible';
+
+        return redirect()->route('users.apartments.show', $id)->with("thankMessage", $thankMessage);
     }
 }
