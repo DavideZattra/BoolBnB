@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getRadius='getRadius'/>
+            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -27,6 +27,8 @@ export default {
     data() {
         return {
             apartments: [],
+            amenities: [],
+            checkedAmenities: [],
             searchedApartments: [],
             searchLat: 0,
             searchLon: 0,
@@ -69,6 +71,11 @@ export default {
             console.log(this.radius)
         },
 
+        getAmenities(checkedAmenities) {
+            this.checkedAmenities = checkedAmenities;
+            console.log(this.checkedAmenities)
+        },
+
         deg2rad(deg) {
             return deg * (Math.PI / 180);
         },
@@ -90,19 +97,37 @@ export default {
             this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.radius) {
                     this.searchedApartments.push(apartment);
-                    this.apartments = [...this.searchedApartments]
+                    this.apartments = [...this.searchedApartments];
                 }
             });
             console.log(this.searchedApartments);
+        },
+
+        compareAmenities(arr1, arr2) {
+            let apartmentsAmenitiesId = [];
+
+            arr1.forEach((object) => {
+            apartmentsAmenitiesId.push(object.id)
+            
+            });
+
+            const filteredArray = arr2.filter(value => apartmentsAmenitiesId.includes(value));
+
+            if (filteredArray.length == arr2.length) {
+                return true;
+            }  else {
+                return false
+            }
+
         }
     },
 
 
     computed: {
         filteredApartments: function() {
-            if (this.rooms || this.bathrooms) {
+            if (this.rooms || this.bathrooms || this.checkedAmenities) {
                 return this.searchedApartments.filter(item => {
-                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms && this.compareAmenities(item.amenities, this.checkedAmenities);
                 });
             } else {
                 return this.apartments;
@@ -116,74 +141,49 @@ export default {
                 this.apartments = [...response.data];
                 console.log(this.apartments)
                 this.searchedApartments = [...this.apartments];
-            })
-
-        .catch(e => {
-        this.errors.push(e);
-        }).then(()=>{
-            var lat = 45.87162000;
-            var lon = 8.91306000;
-            var coordinates = [lon, lat];
-            var map = tt.map({
-                container: 'map',
-                key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
-                style: 'tomtom://vector/1/basic-main',
-                center: coordinates,
-                zoom: 10
+            }).catch(e => {
+            this.errors.push(e);
+            }).then(()=>{
+                var lat = 45.87162000;
+                var lon = 8.91306000;
+                var coordinates = [lon, lat];
+                var map = tt.map({
+                    container: 'map',
+                    key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                    style: 'tomtom://vector/1/basic-main',
+                    center: coordinates,
+                    zoom: 10
+                });
+                map.addControl(new tt.FullscreenControl());
+                map.addControl(new tt.NavigationControl());
+                this.filteredApartments.forEach((apartment)=>{
+                    let marker;
+                    marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                })
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${this.name}<br>${this.address}`);
+                marker.setPopup(popup).togglePopup();
+                
             });
-            map.addControl(new tt.FullscreenControl());
-            map.addControl(new tt.NavigationControl());
-            this.filteredApartments.forEach((apartment)=>{
-                 let marker;
-                 marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
-            })
-            var popupOffsets = {
-                top: [0, 0],
-                bottom: [0, -40],
-                'bottom-right': [0, -70],
-                'bottom-left': [0, -70],
-                left: [25, -35],
-                right: [-25, -35]
-            }
-            var popup = new tt.Popup({
-                offset: popupOffsets
-            }).setHTML(`${this.name}<br>${this.address}`);
-            marker.setPopup(popup).togglePopup();
-            
-        })
-    },
 
-    // mounted: function() {
-    //     this.$nextTick(function(){
+        axios.get(`http://127.0.0.1:8000/api/amenities`)
+            .then(response => {
+                this.amenities = [...response.data]
 
-    //         var lat = 45.87162000;
-    //         var lon = 8.91306000;
-    //         var coordinates = [lon, lat];
-    //         var map = tt.map({
-    //             container: 'map',
-    //             key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
-    //             style: 'tomtom://vector/1/basic-main',
-    //             center: coordinates,
-    //             zoom: 10
-    //         });
-    //         var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
-    //         map.addControl(new tt.FullscreenControl());
-    //         map.addControl(new tt.NavigationControl());
-    //         var popupOffsets = {
-    //             top: [0, 0],
-    //             bottom: [0, -40],
-    //             'bottom-right': [0, -70],
-    //             'bottom-left': [0, -70],
-    //             left: [25, -35],
-    //             right: [-25, -35]
-    //         }
-    //         var popup = new tt.Popup({
-    //             offset: popupOffsets
-    //         }).setHTML(`${this.name}<br>${this.address}`);
-    //         marker.setPopup(popup).togglePopup();
-    //         console.log('hello there')
-    //     })
-    // }
+                console.log(this.amenities)
+            }).catch(e => {
+            this.errors.push(e);
+            });
+    }
 }
 </script>
 

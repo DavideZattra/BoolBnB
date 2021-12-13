@@ -10050,7 +10050,7 @@ header .navbar-custom #logo {
 }
 header .navbar-custom #logo:hover {
   border-bottom: 3px solid #000103;
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10072,14 +10072,14 @@ header .navbar-custom a {
   border-bottom: 3px solid #000103;
 }
 header .navbar-custom a:hover {
-  border-bottom: 3px solid #ffdf29;
+  border-bottom: 3px solid #d4c4ff;
 }
 header .navbar-custom .no-border {
   border-bottom: 3px solid transparent;
 }
 header .navbar-custom .no-border:hover {
   border-bottom: 3px solid transparent;
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 
 footer {
@@ -10094,10 +10094,10 @@ footer .footer-container {
 footer .yellow-line {
   width: 100%;
   height: 3px;
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
 }
 footer .yellow {
-  color: #ffdf29;
+  color: #d4c4ff;
   margin: 25px 0;
 }
 footer h2 {
@@ -10113,7 +10113,7 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 footer .socials-container {
   width: 30%;
@@ -10124,13 +10124,13 @@ footer .socials-container i {
 footer .copyright {
   margin-top: 6vw;
   width: 100%;
-  color: #ffdf29;
+  color: #d4c4ff;
   background-color: #242424;
   font-size: 12px;
   padding: 10px;
 }
 footer .contacts i {
-  color: #ffdf29;
+  color: #d4c4ff;
   margin-right: 12px;
   font-size: 25px;
   align-items: center;
@@ -10151,14 +10151,14 @@ footer .contacts i {
 .auth-container .card {
   background-color: #000103;
   color: #FFFFFA;
-  border: 2px solid #ffdf29;
+  border: 2px solid #d4c4ff;
   padding: 0;
 }
 .auth-container .card .card-body {
-  border: 1px solid #ffdf29;
+  border: 1px solid #d4c4ff;
 }
 .auth-container .card .card-body button {
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
   color: #000103;
   border: 2px solid black;
 }
@@ -10166,7 +10166,7 @@ footer .contacts i {
   border: 2px solid yellow;
 }
 .auth-container .card a {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 
 .index-wrapper {
@@ -10177,13 +10177,13 @@ footer .contacts i {
   border-radius: 20px;
 }
 .index-wrapper a {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 .index-wrapper a:hover {
   color: white;
 }
 .index-wrapper .card {
-  border: 3px solid #ffdf29;
+  border: 3px solid #d4c4ff;
 }
 .index-wrapper .card a {
   font-size: 20px;
@@ -10204,15 +10204,15 @@ footer .contacts i {
   font-size: 1.2rem;
   margin-right: 12px;
   vertical-align: middle;
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 .show-container h3 {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 .show-container .card {
   background-color: #FFFFFA;
   color: #000103;
-  border: 2px solid #ffdf29;
+  border: 2px solid #d4c4ff;
 }
 .show-container .card .card-header {
   display: inline-block;
@@ -10224,7 +10224,7 @@ footer .contacts i {
   font-size: 14px;
 }
 .show-container .btn-yellow {
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
   color: #000103;
   border: 1px solid #000103;
 }
@@ -10235,7 +10235,7 @@ footer .contacts i {
   width: 50%;
 }
 .show-container .no-messages a {
-  color: #ffdf29;
+  color: #d4c4ff;
   text-decoration: none;
 }
 
@@ -10267,14 +10267,14 @@ footer .contacts i {
 .hr {
   width: 100%;
   height: 2px;
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
 }
 
 .map-show #map {
   height: 440px;
   width: 100%;
   border-radius: 8px;
-  border: 3px solid #ffdf29;
+  border: 3px solid #d4c4ff;
 }
 .map-show .marker-icon {
   background-position: center;
@@ -10326,11 +10326,11 @@ footer .contacts i {
 }
 
 .yellow-label {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 
 .btn-custom {
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
   color: #000103;
   border: 2px solid black;
 }
@@ -10340,7 +10340,7 @@ footer .contacts i {
 
 h4,
 h5 {
-  color: #ffdf29;
+  color: #d4c4ff;
   margin: 20px 0;
 }
 h4:hover a,
@@ -10349,56 +10349,63 @@ h5:hover a {
 }
 
 input {
-  border: 2px solid #ffdf29;
+  border: 2px solid #d4c4ff;
 }
 
 a {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 a:hover {
   text-decoration: none;
 }
 
 #jumbotron #jumbo {
-  background-image: url("https://1.bp.blogspot.com/-gxiZqDZQoP8/Xm-jHO83F5I/AAAAAAAAD6w/uLu0pTsymHMOQ-POqXtKw2utMzyND_XUgCLcBGAsYHQ/s1600/10668917_986206874725810_8729407800697591212_o.jpg");
+  background-image: url("https://www.isplora.com/media_gallery/1200xX/54.jpg");
   width: 100%;
   height: calc(100vh - 60px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
 }
-#jumbotron .jumbo-lg {
-  border-radius: 8px;
-  width: 520px;
-  margin-right: 100px;
-  height: 300px;
-}
-#jumbotron .jumbo-text {
-  color: #ffdf29;
-  padding: 25px;
-}
-#jumbotron .jumbo-text h1 {
-  font-size: 4rem;
+#jumbotron #jumbo .jumbo-text h2 {
+  font-size: 3rem;
   font-family: "DM Serif Display", serif;
-  text-shadow: 2px 2px 4px #000000;
 }
-#jumbotron .jumbo-text p {
-  text-shadow: 2px 2px 4px #000000;
+#jumbotron #jumbo .white-block {
+  color: white;
+  margin-top: 0;
+  background-color: black;
+  height: calc(100vh - 60px);
 }
-#jumbotron .jumbo-text button {
-  background-color: #ffdf29;
-  border: 1px solid #FFFFFA;
-  box-shadow: 1px 1px 2px #000000;
+#jumbotron #jumbo .white-block button {
+  background-color: #FFFFFA;
+  border: 1px solid #000103;
+  margin: 20px;
 }
-#jumbotron .jumbo-text button:hover {
-  background-color: #fdfd1e;
-}
-#jumbotron .jumbo-text button:hover a {
+#jumbotron #jumbo .white-block button:hover a {
   text-decoration: none;
   font-size: 20px;
 }
-#jumbotron .jumbo-text button a {
+#jumbotron #jumbo .white-block button a {
   color: #000103;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+#jumbotron #jumbo .black-block {
+  color: #000103;
+  margin-top: 100px;
+}
+#jumbotron #jumbo .black-block button {
+  background-color: #000103;
+  border: 1px solid #FFFFFA;
+  margin: 20px;
+}
+#jumbotron #jumbo .black-block button:hover a {
+  text-decoration: none;
+  font-size: 20px;
+}
+#jumbotron #jumbo .black-block button a {
+  color: #FFFFFA;
   font-weight: 600;
   font-size: 1.2rem;
 }
@@ -10432,7 +10439,7 @@ a:hover {
   border-radius: 10px;
 }
 #dashboard h2 {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 #dashboard ul {
   list-style: none;
@@ -10440,7 +10447,7 @@ a:hover {
 #dashboard .card {
   background-color: #000103;
   color: #FFFFFA;
-  border: 2px solid #ffdf29;
+  border: 2px solid #d4c4ff;
   padding: 0;
   height: 100%;
 }
@@ -10449,7 +10456,7 @@ a:hover {
   font-size: 20px;
 }
 #dashboard .card .card-body {
-  border: 1px solid #ffdf29;
+  border: 1px solid #d4c4ff;
   overflow: scroll;
 }
 #dashboard .card .card-body .list-group-item {
@@ -10462,10 +10469,10 @@ a:hover {
   color: #FFFFFA;
 }
 #dashboard .card .card-body .apartment-list li:hover a {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 #dashboard .card a {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 #dashboard .card .profile-pic {
   background-color: white;
@@ -10487,10 +10494,10 @@ a:hover {
   line-height: 40px;
 }
 #dashboard .card .user-data li span {
-  color: #ffdf29;
+  color: #d4c4ff;
 }
 #dashboard .card .card-footer .btn {
-  background-color: #ffdf29;
+  background-color: #d4c4ff;
   color: #000103;
   border: 2px solid black;
 }

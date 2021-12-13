@@ -14,17 +14,15 @@
  
     </div>    
 
-    <!-- <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-        </a>
+    <div class="amenities text-white" v-for="amenity in amenities" :key="amenity.id">
+        <label :for="amenity.name">{{amenity.name}}</label>
+        <input type="checkbox" :id="amenity.name" :value="amenity.id" v-model="checkedAmenities" true-value="yes" false-value="no">
+    </div>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </div> -->
+    <button class="btn btn-primary" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
+
+    <h1 class="text-white">Checked: {{ checkedAmenities }}</h1>
+    
 </div>
 
 </template>
@@ -34,13 +32,17 @@
 
 export default {
     name: "SearchAndFilter",
+    props: ['amenities'],
     data() {
         return {
             needle: '',
-            rooms: 0,
-            bathrooms: 0 
+            rooms: 1,
+            bathrooms: 1,
+            radius: 20,
+            checkedAmenities: [],
         }
-    }
+    },
+    
 }
 
 </script>

@@ -2335,13 +2335,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   data: function data() {
     return {
-      filteredApartments: [],
+      apartments: [],
+      amenities: [],
+      checkedAmenities: [],
       searchedApartments: [],
       searchLat: 0,
       searchLon: 0,
       errors: [],
       needle: '',
-      searchRange: 20
+      rooms: 0,
+      bathrooms: 0,
+      radius: 20
     };
   },
   methods: {
@@ -2357,6 +2361,22 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _this.searchedApartments = [];
         console.log(_this.geoFiltering());
       });
+    },
+    getRooms: function getRooms(rooms) {
+      this.rooms = rooms;
+      console.log(this.rooms);
+    },
+    getBathrooms: function getBathrooms(bathrooms) {
+      this.bathrooms = bathrooms;
+      console.log(this.bathrooms);
+    },
+    getRadius: function getRadius(radius) {
+      this.radius = radius;
+      console.log(this.radius);
+    },
+    getAmenities: function getAmenities(checkedAmenities) {
+      this.checkedAmenities = checkedAmenities;
+      console.log(this.checkedAmenities);
     },
     deg2rad: function deg2rad(deg) {
       return deg * (Math.PI / 180);
@@ -2376,33 +2396,53 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     geoFiltering: function geoFiltering() {
       var _this2 = this;
 
-      this.filteredApartments.forEach(function (apartment) {
-        if (_this2.getDistanceFromLatLonInKm(_this2.searchLat, _this2.searchLon, apartment.addresses.lat, apartment.addresses.lon) < _this2.searchRange) {
+      this.apartments.forEach(function (apartment) {
+        if (_this2.getDistanceFromLatLonInKm(_this2.searchLat, _this2.searchLon, apartment.addresses.lat, apartment.addresses.lon) < _this2.radius) {
           _this2.searchedApartments.push(apartment);
+
+          _this2.apartments = _toConsumableArray(_this2.searchedApartments);
         }
       });
       console.log(this.searchedApartments);
+    },
+    compareAmenities: function compareAmenities(arr1, arr2) {
+      var apartmentsAmenitiesId = [];
+      arr1.forEach(function (object) {
+        apartmentsAmenitiesId.push(object.id);
+      });
+      var filteredArray = arr2.filter(function (value) {
+        return apartmentsAmenitiesId.includes(value);
+      });
+
+      if (filteredArray.length == arr2.length) {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
-  // computed: {
-  //     searchedApartments: function() {
-  //         if (this.needle) {
-  //             return this.apartments.filter(item => {
-  //                 return item.addresses['address'].toLowerCase().match(this.needle) || item.addresses['city'].toLowerCase().match(this.needle)
-  //             });
-  //         } else {
-  //             return this.apartments;
-  //         } 
-  //     }
-  // },
+  computed: {
+    filteredApartments: function filteredApartments() {
+      var _this3 = this;
+
+      if (this.rooms || this.bathrooms || this.checkedAmenities) {
+        return this.searchedApartments.filter(function (item) {
+          return item.rooms >= _this3.rooms && item.bathrooms >= _this3.bathrooms && _this3.compareAmenities(item.amenities, _this3.checkedAmenities);
+        });
+      } else {
+        return this.apartments;
+      }
+    }
+  },
   created: function created() {
-    var _this3 = this;
+    var _this4 = this;
 
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/apartments").then(function (response) {
-      _this3.filteredApartments = _toConsumableArray(response.data);
-      console.log(_this3.filteredApartments);
+      _this4.apartments = _toConsumableArray(response.data);
+      console.log(_this4.apartments);
+      _this4.searchedApartments = _toConsumableArray(_this4.apartments);
     })["catch"](function (e) {
-      _this3.errors.push(e);
+      _this4.errors.push(e);
     }).then(function () {
       var lat = 45.87162000;
       var lon = 8.91306000;
@@ -2417,7 +2457,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       map.addControl(new tt.FullscreenControl());
       map.addControl(new tt.NavigationControl());
 
-      _this3.filteredApartments.forEach(function (apartment) {
+      _this4.filteredApartments.forEach(function (apartment) {
         var marker;
         marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
       });
@@ -2432,40 +2472,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       };
       var popup = new tt.Popup({
         offset: popupOffsets
-      }).setHTML("".concat(_this3.name, "<br>").concat(_this3.address));
+      }).setHTML("".concat(_this4.name, "<br>").concat(_this4.address));
       marker.setPopup(popup).togglePopup();
     });
-  } // mounted: function() {
-  //     this.$nextTick(function(){
-  //         var lat = 45.87162000;
-  //         var lon = 8.91306000;
-  //         var coordinates = [lon, lat];
-  //         var map = tt.map({
-  //             container: 'map',
-  //             key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
-  //             style: 'tomtom://vector/1/basic-main',
-  //             center: coordinates,
-  //             zoom: 10
-  //         });
-  //         var marker = new tt.Marker().setLngLat(coordinates).addTo(map);
-  //         map.addControl(new tt.FullscreenControl());
-  //         map.addControl(new tt.NavigationControl());
-  //         var popupOffsets = {
-  //             top: [0, 0],
-  //             bottom: [0, -40],
-  //             'bottom-right': [0, -70],
-  //             'bottom-left': [0, -70],
-  //             left: [25, -35],
-  //             right: [-25, -35]
-  //         }
-  //         var popup = new tt.Popup({
-  //             offset: popupOffsets
-  //         }).setHTML(`${this.name}<br>${this.address}`);
-  //         marker.setPopup(popup).togglePopup();
-  //         console.log('hello there')
-  //     })
-  // }
-
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/amenities").then(function (response) {
+      _this4.amenities = _toConsumableArray(response.data);
+      console.log(_this4.amenities);
+    })["catch"](function (e) {
+      _this4.errors.push(e);
+    });
+  }
 });
 
 /***/ }),
@@ -2481,9 +2497,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchAndFilter",
+  props: ['amenities'],
   data: function data() {
     return {
-      needle: ''
+      needle: '',
+      rooms: 1,
+      bathrooms: 1,
+      radius: 20,
+      checkedAmenities: []
     };
   }
 });
@@ -2689,7 +2710,18 @@ var render = function () {
     _c(
       "div",
       { staticClass: "row justify-content-center" },
-      [_c("SearchAndFilter", { on: { getQuery: _vm.getQuery } })],
+      [
+        _c("SearchAndFilter", {
+          attrs: { amenities: _vm.amenities },
+          on: {
+            getQuery: _vm.getQuery,
+            getRooms: _vm.getRooms,
+            getBathrooms: _vm.getBathrooms,
+            getAmenities: _vm.getAmenities,
+            getRadius: _vm.getRadius,
+          },
+        }),
+      ],
       1
     ),
     _vm._v(" "),
@@ -2730,63 +2762,248 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
-      _c("input", {
-        directives: [
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.trim",
+              value: _vm.needle,
+              expression: "needle",
+              modifiers: { trim: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            placeholder: "Address or city",
+            type: "text",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+          },
+          domProps: { value: _vm.needle },
+          on: {
+            keyup: function ($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.$emit("getQuery", _vm.needle)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.needle = $event.target.value.trim()
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
           {
-            name: "model",
-            rawName: "v-model.trim",
-            value: _vm.needle,
-            expression: "needle",
-            modifiers: { trim: true },
+            staticClass: "btn btn-success",
+            attrs: { type: "button" },
+            on: {
+              click: function ($event) {
+                return _vm.$emit("getQuery", _vm.needle)
+              },
+            },
           },
-        ],
-        staticClass: "form-control",
-        attrs: {
-          placeholder: "Address or city",
-          type: "text",
-          "aria-label": "Small",
-          "aria-describedby": "inputGroup-sizing-sm",
-        },
-        domProps: { value: _vm.needle },
-        on: {
-          keyup: function ($event) {
-            if (
-              !$event.type.indexOf("key") &&
-              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-            ) {
-              return null
-            }
-            return _vm.$emit("getQuery", _vm.needle)
+          [_vm._v("Search")]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.rooms,
+              expression: "rooms",
+              modifiers: { number: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "10",
           },
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.needle = $event.target.value.trim()
+          domProps: { value: _vm.rooms },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getRooms", _vm.rooms)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.rooms = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
           },
-          blur: function ($event) {
-            return _vm.$forceUpdate()
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.bathrooms,
+              expression: "bathrooms",
+              modifiers: { number: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "10",
           },
-        },
+          domProps: { value: _vm.bathrooms },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getBathrooms", _vm.bathrooms)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.bathrooms = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.radius,
+              expression: "radius",
+              modifiers: { number: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "550",
+          },
+          domProps: { value: _vm.radius },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getRadius", _vm.radius)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.radius = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.amenities, function (amenity) {
+        return _c(
+          "div",
+          { key: amenity.id, staticClass: "amenities text-white" },
+          [
+            _c("label", { attrs: { for: amenity.name } }, [
+              _vm._v(_vm._s(amenity.name)),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.checkedAmenities,
+                  expression: "checkedAmenities",
+                },
+              ],
+              attrs: {
+                type: "checkbox",
+                id: amenity.name,
+                "true-value": "yes",
+                "false-value": "no",
+              },
+              domProps: {
+                value: amenity.id,
+                checked: Array.isArray(_vm.checkedAmenities)
+                  ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                  : _vm._q(_vm.checkedAmenities, "yes"),
+              },
+              on: {
+                change: function ($event) {
+                  var $$a = _vm.checkedAmenities,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? "yes" : "no"
+                  if (Array.isArray($$a)) {
+                    var $$v = amenity.id,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 && (_vm.checkedAmenities = $$a.concat([$$v]))
+                    } else {
+                      $$i > -1 &&
+                        (_vm.checkedAmenities = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
+                    }
+                  } else {
+                    _vm.checkedAmenities = $$c
+                  }
+                },
+              },
+            }),
+          ]
+        )
       }),
       _vm._v(" "),
       _c(
         "button",
         {
-          staticClass: "btn btn-success",
-          attrs: { type: "button" },
+          staticClass: "btn btn-primary",
           on: {
             click: function ($event) {
-              return _vm.$emit("getQuery", _vm.needle)
+              return _vm.$emit("getAmenities", _vm.checkedAmenities)
             },
           },
         },
-        [_vm._v("Search")]
+        [_vm._v("Choose amenities")]
       ),
-    ]),
-  ])
+      _vm._v(" "),
+      _c("h1", { staticClass: "text-white" }, [
+        _vm._v("Checked: " + _vm._s(_vm.checkedAmenities)),
+      ]),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
