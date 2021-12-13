@@ -95,6 +95,15 @@
 
                     <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->user_id]) }}" method="POST">
                         @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>        
+                        @endif
 
                         <div class="form-group">
                           <label for="email">Email address</label>
