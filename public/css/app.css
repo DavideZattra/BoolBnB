@@ -10200,6 +10200,12 @@ footer .contacts i {
   background-color: rgba(0, 0, 0, 0.507);
   border-radius: 10px;
 }
+.show-container .my_li:after {
+  content: ", ";
+}
+.show-container .my_li:last-child:after {
+  content: ".";
+}
 .show-container i {
   font-size: 1.2rem;
   margin-right: 12px;

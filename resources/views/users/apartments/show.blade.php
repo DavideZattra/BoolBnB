@@ -38,10 +38,10 @@
 
                 <div class="hr"></div>
 
-                <h3 class="mt-3">Servicies</h3>
+                <h3 class="mt-3">Services</h3>
                 <ul>
-                    @foreach ($amenities as $amenitie)
-                        <li class="mt-2">{{ $amenitie }}</li>
+                    @foreach ($amenities as $amenity)
+                        <li class="d-inline my_li">{{ $amenity }}</li>
                     @endforeach
                 </ul>
 
