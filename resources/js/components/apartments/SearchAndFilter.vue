@@ -1,9 +1,9 @@
 <template>
 <div class="container">
-    <h6 class="text-white">Available apartments with your needs: {{ checkedAmenities }}</h6>
+    <h5 class="text-white pt-5">Available apartments with your needs: {{ checkedAmenities }}</h5>
     
     <form class="p-3">
-        <div class="row mt-4 ml-2">
+        <div class="row mt-4 ml-2 d-flex align-items-center">
             <div class="col-sm-12 col-lg-6 d-flex">
                 <input 
                     v-model.trim="needle" 
@@ -13,10 +13,10 @@
                     class="form-control" 
                     aria-label="Small" 
                     aria-describedby="inputGroup-sizing-sm"> 
-                <button type="button" class="btn btn-custom" @click="$emit('getQuery', needle)">Search</button>       
+                <button type="button" class="btn btn-custom my_btn form-control-sm" @click="$emit('getQuery', needle)">Search</button>       
             </div>
 
-            <div class="col-sm-12 col-lg-6">
+            <div class="col-sm-12 col-lg-6 pb-4">
                 <label class="form-check-label text-white">Choose the number of km radius from chosen location.</label>
                 <input 
                     v-model.number="radius" 
@@ -121,7 +121,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    .my_btn{
+        height: 80%;
+    }
 
 </style>
 
