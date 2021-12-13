@@ -3,20 +3,24 @@
     <div class="input-group input-group-sm mt-5">
         <input v-model.trim="needle" placeholder="Address or city" @keyup.enter="$emit('getQuery', needle)" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
         <button type="button" class="btn btn-success" @click="$emit('getQuery', needle)">Search</button>       
-    </div>  
+    </div>
 
+    <div class="input-group input-group-sm mt-5">
+        <input v-model.number="rooms" @change="$emit('getRooms', rooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
 
-    <!-- <div class="dropdown show">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-        </a>
+        <input v-model.number="bathrooms" @change="$emit('getBathrooms', bathrooms)" type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
+   
+    </div>    
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </div> -->
+    <div class="amenities text-white" v-for="amenity in amenities" :key="amenity.id">
+        <label :for="amenity.name">{{amenity.name}}</label>
+        <input type="checkbox" :id="amenity.name" :value="amenity.id" v-model="checkedAmenities" true-value="yes" false-value="no">
+    </div>
+
+    <button class="btn btn-primary" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
+
+    <h1 class="text-white">Checked: {{ checkedAmenities }}</h1>
+    
 </div>
 
 </template>
@@ -26,11 +30,16 @@
 
 export default {
     name: "SearchAndFilter",
+    props: ['amenities'],
     data() {
         return {
-            needle: ''
+            needle: '',
+            rooms: 1,
+            bathrooms: 1,
+            checkedAmenities: [],
         }
-    }
+    },
+    
 }
 
 </script>
