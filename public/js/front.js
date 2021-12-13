@@ -1997,6 +1997,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2168,6 +2177,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -3596,60 +3609,187 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("form", { attrs: { action: "" } }, [
-      _c("div", { staticClass: "input-group input-group-sm mt-5" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model.trim",
-              value: _vm.needle,
-              expression: "needle",
-              modifiers: { trim: true },
+      _c("div", { staticClass: "row mt-4 ml-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.trim",
+                value: _vm.needle,
+                expression: "needle",
+                modifiers: { trim: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              placeholder: "Choose an address or a city",
+              type: "text",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
             },
-          ],
-          staticClass: "form-control",
-          attrs: {
-            placeholder: "Choose an address or a city",
-            type: "text",
-            "aria-label": "Small",
-            "aria-describedby": "inputGroup-sizing-sm",
-          },
-          domProps: { value: _vm.needle },
-          on: {
-            keyup: function ($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.$emit("getQuery", _vm.needle)
-            },
-            input: function ($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.needle = $event.target.value.trim()
-            },
-            blur: function ($event) {
-              return _vm.$forceUpdate()
-            },
-          },
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-success",
-            attrs: { type: "button" },
+            domProps: { value: _vm.needle },
             on: {
-              click: function ($event) {
+              keyup: function ($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
                 return _vm.$emit("getQuery", _vm.needle)
               },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.needle = $event.target.value.trim()
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
             },
-          },
-          [_vm._v("Search")]
-        ),
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-success",
+              attrs: { type: "button" },
+              on: {
+                click: function ($event) {
+                  return _vm.$emit("getQuery", _vm.needle)
+                },
+              },
+            },
+            [_vm._v("Search")]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of km radius from chosen location."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.radius,
+                expression: "radius",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "550",
+            },
+            domProps: { value: _vm.radius },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getRadius", _vm.radius)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.radius = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-4 ml-2" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of needed rooms."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.rooms,
+                expression: "rooms",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "10",
+            },
+            domProps: { value: _vm.rooms },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getRooms", _vm.rooms)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.rooms = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+          _c("label", { staticClass: "form-check-label text-white" }, [
+            _vm._v("Choose the number of needed bathrooms."),
+          ]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.bathrooms,
+                expression: "bathrooms",
+                modifiers: { number: true },
+              },
+            ],
+            staticClass: "form-control",
+            attrs: {
+              type: "number",
+              "aria-label": "Small",
+              "aria-describedby": "inputGroup-sizing-sm",
+              min: "1",
+              max: "10",
+            },
+            domProps: { value: _vm.bathrooms },
+            on: {
+              change: function ($event) {
+                return _vm.$emit("getBathrooms", _vm.bathrooms)
+              },
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.bathrooms = _vm._n($event.target.value)
+              },
+              blur: function ($event) {
+                return _vm.$forceUpdate()
+              },
+            },
+          }),
+        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "form-group col-sm-12 col-lg-6 p-0" }, [
@@ -3849,131 +3989,6 @@ var render = function () {
             ),
           ]
         ),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "input-group input-group-sm" }, [
-        _c("div", { staticClass: "col-12" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of needed rooms."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.rooms,
-                expression: "rooms",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "10",
-            },
-            domProps: { value: _vm.rooms },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getRooms", _vm.rooms)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.rooms = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-12" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of needed bathrooms."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.bathrooms,
-                expression: "bathrooms",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "10",
-            },
-            domProps: { value: _vm.bathrooms },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getBathrooms", _vm.bathrooms)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.bathrooms = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-12" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of km radius from chosen location."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.radius,
-                expression: "radius",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "550",
-            },
-            domProps: { value: _vm.radius },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getRadius", _vm.radius)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.radius = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
-            },
-          }),
-        ]),
       ]),
     ]),
     _vm._v(" "),

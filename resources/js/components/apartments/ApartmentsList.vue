@@ -2,11 +2,20 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
+            <SearchAndFilter 
+                @getQuery='getQuery' 
+                @getRooms='getRooms' 
+                @getBathrooms='getBathrooms' 
+                @getAmenities='getAmenities' 
+                @getRadius='getRadius' 
+                :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
-            <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
+            <ApartmentCard 
+                v-for="filteredApartment in filteredApartments" 
+                :key="filteredApartment.id" 
+                :apartment="filteredApartment"/>
         </div>
         <div id='map'></div>
     </div>

@@ -2,16 +2,55 @@
 <div class="container">
 
     <form action="">
-        <div class="input-group input-group-sm mt-5">
-            <input 
-                v-model.trim="needle" 
-                placeholder="Choose an address or a city" 
-                @keyup.enter="$emit('getQuery', needle)" 
-                type="text" 
-                class="form-control" 
-                aria-label="Small" 
-                aria-describedby="inputGroup-sizing-sm"> 
-            <button type="button" class="btn btn-success" @click="$emit('getQuery', needle)">Search</button>       
+        <div class="row mt-4 ml-2">
+            <div class="col-sm-12 col-lg-6">
+                <input 
+                    v-model.trim="needle" 
+                    placeholder="Choose an address or a city" 
+                    @keyup.enter="$emit('getQuery', needle)" 
+                    type="text" 
+                    class="form-control" 
+                    aria-label="Small" 
+                    aria-describedby="inputGroup-sizing-sm"> 
+                <button type="button" class="btn btn-success" @click="$emit('getQuery', needle)">Search</button>       
+            </div>
+
+            <div class="col-sm-12 col-lg-6">
+                <label class="form-check-label text-white">Choose the number of km radius from chosen location.</label>
+                <input 
+                    v-model.number="radius" 
+                    @change="$emit('getRadius', radius)" 
+                    type="number" class="form-control" 
+                    aria-label="Small" 
+                    aria-describedby="inputGroup-sizing-sm" 
+                    min="1" max="550" >             
+            </div>
+        </div>
+
+        <div class="row mt-4 ml-2">
+            <div class="col-sm-12 col-lg-6">
+                <label class="form-check-label text-white">Choose the number of needed rooms.</label>
+                <input 
+                    v-model.number="rooms" 
+                    @change="$emit('getRooms', rooms)" 
+                    type="number" 
+                    class="form-control" 
+                    aria-label="Small" 
+                    aria-describedby="inputGroup-sizing-sm" 
+                    min="1" max="10">
+                </div>
+            
+            <div class="col-sm-12 col-lg-6">
+                <label class="form-check-label text-white">Choose the number of needed bathrooms.</label>
+                <input 
+                    v-model.number="bathrooms" 
+                    @change="$emit('getBathrooms', bathrooms)" 
+                    type="number" 
+                    class="form-control" 
+                    aria-label="Small" 
+                    aria-describedby="inputGroup-sizing-sm" 
+                    min="1" max="10">
+            </div>
         </div>
         
         <div class="form-group col-sm-12 col-lg-6 p-0">
@@ -52,41 +91,6 @@
                     </div>
                     <button class="btn btn-primary" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
                 </div>
-            </div>
-        </div>
-
-        <div class="input-group input-group-sm">
-            <div class="col-12">
-                <label class="form-check-label text-white">Choose the number of needed rooms.</label>
-                <input 
-                    v-model.number="rooms" 
-                    @change="$emit('getRooms', rooms)" 
-                    type="number" 
-                    class="form-control" 
-                    aria-label="Small" 
-                    aria-describedby="inputGroup-sizing-sm" 
-                    min="1" max="10">            
-            </div>
-            <div class="col-12">
-                <label class="form-check-label text-white">Choose the number of needed bathrooms.</label>
-                <input 
-                    v-model.number="bathrooms" 
-                    @change="$emit('getBathrooms', bathrooms)" 
-                    type="number" 
-                    class="form-control" 
-                    aria-label="Small" 
-                    aria-describedby="inputGroup-sizing-sm" 
-                    min="1" max="10">             
-            </div>
-            <div class="col-12">
-                <label class="form-check-label text-white">Choose the number of km radius from chosen location.</label>
-                <input 
-                    v-model.number="radius" 
-                    @change="$emit('getRadius', radius)" 
-                    type="number" class="form-control" 
-                    aria-label="Small" 
-                    aria-describedby="inputGroup-sizing-sm" 
-                    min="1" max="550" >             
             </div>
         </div>
     </form>
