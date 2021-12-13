@@ -10050,7 +10050,7 @@ header .navbar-custom #logo {
 }
 header .navbar-custom #logo:hover {
   border-bottom: 3px solid #000103;
-  color: #d4c4ff;
+  color: #899ba5;
 }
 header .navbar-custom .my_search-bar {
   height: 20px;
@@ -10072,14 +10072,14 @@ header .navbar-custom a {
   border-bottom: 3px solid #000103;
 }
 header .navbar-custom a:hover {
-  border-bottom: 3px solid #d4c4ff;
+  border-bottom: 3px solid #899ba5;
 }
 header .navbar-custom .no-border {
   border-bottom: 3px solid transparent;
 }
 header .navbar-custom .no-border:hover {
   border-bottom: 3px solid transparent;
-  color: #d4c4ff;
+  color: #899ba5;
 }
 
 footer {
@@ -10094,10 +10094,10 @@ footer .footer-container {
 footer .yellow-line {
   width: 100%;
   height: 3px;
-  background-color: #d4c4ff;
+  background-color: #899ba5;
 }
 footer .yellow {
-  color: #d4c4ff;
+  color: #899ba5;
   margin: 25px 0;
 }
 footer h2 {
@@ -10113,7 +10113,7 @@ footer a {
 }
 footer a:hover {
   text-decoration: underline;
-  color: #d4c4ff;
+  color: #899ba5;
 }
 footer .socials-container {
   width: 30%;
@@ -10124,13 +10124,13 @@ footer .socials-container i {
 footer .copyright {
   margin-top: 6vw;
   width: 100%;
-  color: #d4c4ff;
+  color: #899ba5;
   background-color: #242424;
   font-size: 12px;
   padding: 10px;
 }
 footer .contacts i {
-  color: #d4c4ff;
+  color: #899ba5;
   margin-right: 12px;
   font-size: 25px;
   align-items: center;
@@ -10151,14 +10151,14 @@ footer .contacts i {
 .auth-container .card {
   background-color: #000103;
   color: #FFFFFA;
-  border: 2px solid #d4c4ff;
+  border: 2px solid #899ba5;
   padding: 0;
 }
 .auth-container .card .card-body {
-  border: 1px solid #d4c4ff;
+  border: 1px solid #899ba5;
 }
 .auth-container .card .card-body button {
-  background-color: #d4c4ff;
+  background-color: #899ba5;
   color: #000103;
   border: 2px solid black;
 }
@@ -10166,7 +10166,7 @@ footer .contacts i {
   border: 2px solid yellow;
 }
 .auth-container .card a {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 
 .index-wrapper {
@@ -10177,13 +10177,13 @@ footer .contacts i {
   border-radius: 20px;
 }
 .index-wrapper a {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 .index-wrapper a:hover {
   color: white;
 }
 .index-wrapper .card {
-  border: 3px solid #d4c4ff;
+  border: 3px solid #899ba5;
 }
 .index-wrapper .card a {
   font-size: 20px;
@@ -10204,15 +10204,15 @@ footer .contacts i {
   font-size: 1.2rem;
   margin-right: 12px;
   vertical-align: middle;
-  color: #d4c4ff;
+  color: #899ba5;
 }
 .show-container h3 {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 .show-container .card {
   background-color: #FFFFFA;
   color: #000103;
-  border: 2px solid #d4c4ff;
+  border: 2px solid #899ba5;
 }
 .show-container .card .card-header {
   display: inline-block;
@@ -10224,7 +10224,7 @@ footer .contacts i {
   font-size: 14px;
 }
 .show-container .btn-yellow {
-  background-color: #d4c4ff;
+  background-color: #899ba5;
   color: #000103;
   border: 1px solid #000103;
 }
@@ -10235,7 +10235,7 @@ footer .contacts i {
   width: 50%;
 }
 .show-container .no-messages a {
-  color: #d4c4ff;
+  color: #899ba5;
   text-decoration: none;
 }
 
@@ -10267,14 +10267,14 @@ footer .contacts i {
 .hr {
   width: 100%;
   height: 2px;
-  background-color: #d4c4ff;
+  background-color: #899ba5;
 }
 
 .map-show #map {
   height: 440px;
   width: 100%;
   border-radius: 8px;
-  border: 3px solid #d4c4ff;
+  border: 3px solid #899ba5;
 }
 .map-show .marker-icon {
   background-position: center;
@@ -10326,21 +10326,21 @@ footer .contacts i {
 }
 
 .yellow-label {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 
 .btn-custom {
-  background-color: #d4c4ff;
+  background-color: #899ba5;
   color: #000103;
   border: 2px solid black;
 }
 .btn-custom:hover {
-  border: 2px solid yellow;
+  border: 2px solid #899ba5;
 }
 
 h4,
 h5 {
-  color: #d4c4ff;
+  color: #899ba5;
   margin: 20px 0;
 }
 h4:hover a,
@@ -10349,11 +10349,11 @@ h5:hover a {
 }
 
 input {
-  border: 2px solid #d4c4ff;
+  border: 2px solid #899ba5;
 }
 
 a {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 a:hover {
   text-decoration: none;
@@ -10439,7 +10439,7 @@ a:hover {
   border-radius: 10px;
 }
 #dashboard h2 {
-  color: #d4c4ff;
+  color: #FFFFFA;
 }
 #dashboard ul {
   list-style: none;
@@ -10447,7 +10447,7 @@ a:hover {
 #dashboard .card {
   background-color: #000103;
   color: #FFFFFA;
-  border: 2px solid #d4c4ff;
+  border: 2px solid #899ba5;
   padding: 0;
   height: 100%;
 }
@@ -10456,7 +10456,7 @@ a:hover {
   font-size: 20px;
 }
 #dashboard .card .card-body {
-  border: 1px solid #d4c4ff;
+  border: 1px solid #899ba5;
   overflow: scroll;
 }
 #dashboard .card .card-body .list-group-item {
@@ -10469,10 +10469,10 @@ a:hover {
   color: #FFFFFA;
 }
 #dashboard .card .card-body .apartment-list li:hover a {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 #dashboard .card a {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 #dashboard .card .profile-pic {
   background-color: white;
@@ -10494,10 +10494,10 @@ a:hover {
   line-height: 40px;
 }
 #dashboard .card .user-data li span {
-  color: #d4c4ff;
+  color: #899ba5;
 }
 #dashboard .card .card-footer .btn {
-  background-color: #d4c4ff;
+  background-color: #899ba5;
   color: #000103;
   border: 2px solid black;
 }
