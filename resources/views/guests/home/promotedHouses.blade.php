@@ -4,7 +4,9 @@
 @endsection
 
 <section id="promoted-houses">
-    <h2>The best houses you will find today</h2>
+    <div class="container">
+        <h2 class="text-center font-weight-bold">The best houses you will find today</h2>
+    </div>
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
         <div class="carousel-cell">
             <a href="#"><img src="{{ asset('img/example-house_1.jpeg') }}" alt="House image"></a>
