@@ -1,13 +1,18 @@
 <template>
     <div class="container">
 
+        <div id='map'></div>
         <div class="row justify-content-center">
             <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
         </div>
 
         <div class="row justify-content-center mt-5">
-            <ApartmentCard v-for="filteredApartment in filteredApartments" :key="filteredApartment.id" :apartment="filteredApartment"/>
+            <ApartmentCard 
+                v-for="filteredApartment in filteredApartments" 
+                :key="filteredApartment.id" 
+                :apartment="filteredApartment"/>
         </div>
+        <button class="btn btn-primary" @click="newMarkerDisplay(this.apartments)">ohibò</button>
     </div>
 </template>
 
@@ -29,8 +34,8 @@ export default {
             amenities: [],
             checkedAmenities: [],
             searchedApartments: [],
-            searchLat: 0,
-            searchLon: 0,
+            searchLat: 41.89056,
+            searchLon: 12.49427,
             errors: [],
             needle: '',
             rooms: 0,
@@ -99,27 +104,94 @@ export default {
                     this.apartments = [...this.searchedApartments];
                 }
             });
-            console.log(this.searchedApartments);
+            
+            
+            var coordinates = [this.searchLon, this.searchLat];
+            var map = tt.map({
+                container: 'map',
+                key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                style: 'tomtom://vector/1/basic-main',
+                center: coordinates,
+                zoom: 10
+            });
+            map.addControl(new tt.FullscreenControl());
+            map.addControl(new tt.NavigationControl());
+            
+            this.filteredApartments.forEach((apartment)=>{
+                let marker;
+                marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                marker.setPopup(popup).togglePopup();
+            })
+            
+        },
+
+        compareAmenities(arr1, arr2) {
+            let apartmentsAmenitiesId = [];
+
+            arr1.forEach((object) => {
+            apartmentsAmenitiesId.push(object.id)
+            
+            });
+
+            const filteredArray = arr2.filter(value => apartmentsAmenitiesId.includes(value));
+
+            if (filteredArray.length == arr2.length) {
+                return true;
+            }  else {
+                return false
+            }
+
+        },
+
+        newMarkerDisplay(apartments){
+            
+            
+            apartments.forEach((apartment)=>{
+                let marker;
+                marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                var popupOffsets = {
+                    top: [0, 0],
+                    bottom: [0, -40],
+                    'bottom-right': [0, -70],
+                    'bottom-left': [0, -70],
+                    left: [25, -35],
+                    right: [-25, -35]
+                }
+                var popup = new tt.Popup({
+                    offset: popupOffsets
+                }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                marker.setPopup(popup).togglePopup();
+            })
+            
         }
     },
 
 
     computed: {
         filteredApartments: function() {
-            if (this.rooms || this.bathrooms) {
+            // this.newMarkerDisplay(); 
+            if (this.rooms || this.bathrooms || this.checkedAmenities) {
                 return this.searchedApartments.filter(item => {
-                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms;
+                    return item.rooms >= this.rooms &&  item.bathrooms >= this.bathrooms && this.compareAmenities(item.amenities, this.checkedAmenities);
                 });
-            // } if (this.checkedAmenities.length) {
-            //     return this.searchedApartments.filter(item => {
-            //         console.log(item.amenities)
-            //         return forEach(item)
-            //         this.checkedAmenities.includes(item.amenities.id)
-            //     });
             } else {
+                // this.newMarkerDisplay(this.apartments);
                 return this.apartments;
-            } 
-        }
+            }
+        },
+
+        
     },
     
     created() {
@@ -128,6 +200,35 @@ export default {
                 this.apartments = [...response.data];
                 console.log(this.apartments)
                 this.searchedApartments = [...this.apartments];
+            }).catch(e => {
+            this.errors.push(e);
+            }).then(()=>{
+                var coordinates = [this.searchLon, this.searchLat];
+                var map = tt.map({
+                    container: 'map',
+                    key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+                    style: 'tomtom://vector/1/basic-main',
+                    center: coordinates,
+                    zoom: 3
+                });
+                map.addControl(new tt.FullscreenControl());
+                map.addControl(new tt.NavigationControl());
+                this.filteredApartments.forEach((apartment)=>{
+                    let marker;
+                    marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+                    var popupOffsets = {
+                        top: [0, 0],
+                        bottom: [0, -40],
+                        'bottom-right': [0, -70],
+                        'bottom-left': [0, -70],
+                        left: [25, -35],
+                        right: [-25, -35]
+                    }
+                    var popup = new tt.Popup({
+                        offset: popupOffsets
+                    }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
+                    marker.setPopup(popup).togglePopup();
+                })
             })
 
         axios.get(`http://127.0.0.1:8000/api/amenities`)
@@ -135,15 +236,18 @@ export default {
                 this.amenities = [...response.data]
 
                 console.log(this.amenities)
-            })
-
-            .catch(e => {
+            }).catch(e => {
             this.errors.push(e);
-            })
+            });
     }
 }
 </script>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+#map{
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
 </style>

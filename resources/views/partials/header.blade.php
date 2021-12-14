@@ -3,7 +3,7 @@
         <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
-            <a id="logo" class="navbar-brand font-weight-bold mr-0 no-border" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold mr-3 no-border" href="{{ url('/') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -39,7 +39,7 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown ml-3">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle no-border" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>

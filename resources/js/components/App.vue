@@ -1,21 +1,21 @@
 <template>
-    <div>
+    <div class="pb-5">
         <ApartmentsList/>
-        <Map/>
+        <!-- <Map/> -->
     </div>
 </template>
 
 <script>
 
 import ApartmentsList from './apartments/ApartmentsList.vue';
-import Map from './apartments/Map.vue';
+// import Map from './apartments/Map.vue';
 
 
 export default {
     name: "App",
     components: {
         ApartmentsList,
-        Map
+        // Map
     },
 }
 </script>

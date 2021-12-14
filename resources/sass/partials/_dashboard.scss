@@ -10,7 +10,7 @@
     }
 
     h2{
-        color: $my_brightyellow;
+        color: $my_white;
     }
     
     ul{
@@ -93,7 +93,7 @@
                 border: 2px solid black;
 
                 &:hover{
-                    border: 2px solid yellow;
+                    border: 2px solid $my_brightyellow;
                 }
             }
         }

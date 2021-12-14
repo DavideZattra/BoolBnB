@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('cdn-entrypoint')
 <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.16.0/maps/maps.css'>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="row d-flex align-items-center mb-5">
-            <div class="col-sm-12 col-md-6 show-img mb-5">
+            <div class="col-sm-12 col-md-6 show-img">
                 <img src="{{ asset('storage/' . $apartment->image) }}" alt="immagine copertina dell'appartamento">
             </div>
 
@@ -38,48 +38,98 @@
 
                 <div class="hr"></div>
 
-                <h3 class="mt-3">Servicies</h3>
+                <h3 class="mt-3">Services</h3>
                 <ul>
-                    @foreach ($amenities as $amenitie)
-                        <li class="mt-2">{{ $amenitie }}</li>
+                    @foreach ($amenities as $amenity)
+                        <li class="d-inline my_li">{{ $amenity }}</li>
                     @endforeach
                 </ul>
 
-                <div class="d-flex mt-3 justify-content-between">
-                    <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
-                    <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-        
-                        <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
-                    </form>
-                </div>
+                @if (Auth::user() && Auth::user()->id == $apartment->user_id)
+                    <div class="d-flex mt-3 justify-content-between">
+                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
+                        <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+            
+                            <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
+                        </form>
+                    </div>
+                @else
+                    <div class="d-flex mt-3 justify-content-between">
+                        <a href="#" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Rent apartment</a>
+                    </div>
+                @endif
             </div>
         </div>
 
-        <div class="hr"></div>
-
-        <h5 class="my-3 pt-3 font-italic">Scroll to see all of your messages.</h5>
+        <div class="hr mb-5"></div>
 
         <div class="row d-flex align-items-center justify-content-lg-between p-1">
             <div class="col-12 col-md-12 col-lg-6 px-0 my-3">
-                <div class="col-12 px-0 messages">
-                    @forelse ($messages as $message)
-                        <div class="card mb-3">
-                            <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
-                            <div class="card-body">
-                            <p class="card-text">{{ $message['body'] }}</p>
-                            <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+
+                @if (Auth::user() && Auth::user()->id == $apartment->user_id)
+
+                <h2>Your messages</h2>
+
+                    <div class="col-12 px-0 messages">
+                        @forelse ($messages as $message)
+                            <div class="card mb-3">
+                                <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
+                                <div class="card-body">
+                                <p class="card-text">{{ $message['body'] }}</p>
+                                <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                                </div>
                             </div>
+                        @empty
+                            <div class="no-messages">
+                                <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
+                
+                                <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                            </div>
+                        @endforelse
+                    </div> 
+                @else
+                    @if (session('thankMessage'))
+                        <div class="my_message">
+                            <h3>{{session('thankMessage')}}</h3>
                         </div>
-                    @empty
-                        <div class="no-messages">
-                            <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
-            
-                            <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                    @endif
+
+                    <h2>Write a message to this host</h2>
+
+                    <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->id]) }}" method="POST">
+                        @csrf
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>        
+                        @endif
+
+                        <div class="form-group">
+                          <label for="email">Email address</label>
+                          <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
                         </div>
-                    @endforelse
-                </div>
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        
+                        <div class="form-group">
+                          <label for="body">Ask anything you need to the host</label>
+                          <textarea name="body" class="form-control" id="body" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom mt-3">Send message</button>
+                        
+                      </form>
+                    
+                @endif
             </div>
             <div class="col-12 col-md-12 col-lg-6 map-show">
                 <div id='map' class='map'></div>
@@ -105,7 +155,7 @@
             container: 'map',
             dragPan: !isMobileOrTablet(),
             center: [longitude, latitude],
-            zoom: 3
+            zoom: 10
         });
         
         map.addControl(new tt.FullscreenControl());
@@ -142,8 +192,9 @@
                 .setPopup(popup)
                 .addTo(map);
         }
+        
 
-        createMarker('accident.colors-white.svg', [longitude, latitude], '#5327c3', name);
+        createMarker('', [longitude, latitude], '#5327c3', name);
         
 
     </script>
