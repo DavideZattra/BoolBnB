@@ -2006,6 +2006,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 
 
 
@@ -2021,8 +2022,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       amenities: [],
       checkedAmenities: [],
       searchedApartments: [],
-      searchLat: 0,
-      searchLon: 0,
+      searchLat: 41.89056,
+      searchLon: 12.49427,
       errors: [],
       needle: '',
       rooms: 0,
@@ -2085,7 +2086,32 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           _this2.apartments = _toConsumableArray(_this2.searchedApartments);
         }
       });
-      console.log(this.searchedApartments);
+      var coordinates = [this.searchLon, this.searchLat];
+      var map = tt.map({
+        container: 'map',
+        key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
+        style: 'tomtom://vector/1/basic-main',
+        center: coordinates,
+        zoom: 10
+      });
+      map.addControl(new tt.FullscreenControl());
+      map.addControl(new tt.NavigationControl());
+      this.filteredApartments.forEach(function (apartment) {
+        var marker;
+        marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+        var popupOffsets = {
+          top: [0, 0],
+          bottom: [0, -40],
+          'bottom-right': [0, -70],
+          'bottom-left': [0, -70],
+          left: [25, -35],
+          right: [-25, -35]
+        };
+        var popup = new tt.Popup({
+          offset: popupOffsets
+        }).setHTML("".concat(apartment.descriptive_title, "<br>").concat(apartment.addresses.city));
+        marker.setPopup(popup).togglePopup();
+      });
     },
     compareAmenities: function compareAmenities(arr1, arr2) {
       var apartmentsAmenitiesId = [];
@@ -2101,17 +2127,37 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       } else {
         return false;
       }
+    },
+    newMarkerDisplay: function newMarkerDisplay(apartments) {
+      apartments.forEach(function (apartment) {
+        var marker;
+        marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+        var popupOffsets = {
+          top: [0, 0],
+          bottom: [0, -40],
+          'bottom-right': [0, -70],
+          'bottom-left': [0, -70],
+          left: [25, -35],
+          right: [-25, -35]
+        };
+        var popup = new tt.Popup({
+          offset: popupOffsets
+        }).setHTML("".concat(apartment.descriptive_title, "<br>").concat(apartment.addresses.city));
+        marker.setPopup(popup).togglePopup();
+      });
     }
   },
   computed: {
     filteredApartments: function filteredApartments() {
       var _this3 = this;
 
+      // this.newMarkerDisplay(); 
       if (this.rooms || this.bathrooms || this.checkedAmenities) {
         return this.searchedApartments.filter(function (item) {
           return item.rooms >= _this3.rooms && item.bathrooms >= _this3.bathrooms && _this3.compareAmenities(item.amenities, _this3.checkedAmenities);
         });
       } else {
+        // this.newMarkerDisplay(this.apartments);
         return this.apartments;
       }
     }
@@ -2126,15 +2172,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     })["catch"](function (e) {
       _this4.errors.push(e);
     }).then(function () {
-      var lat = 45.87162000;
-      var lon = 8.91306000;
-      var coordinates = [lon, lat];
+      var coordinates = [_this4.searchLon, _this4.searchLat];
       var map = tt.map({
         container: 'map',
         key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
         style: 'tomtom://vector/1/basic-main',
         center: coordinates,
-        zoom: 10
+        zoom: 3
       });
       map.addControl(new tt.FullscreenControl());
       map.addControl(new tt.NavigationControl());
@@ -2142,20 +2186,19 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _this4.filteredApartments.forEach(function (apartment) {
         var marker;
         marker = new tt.Marker().setLngLat([apartment.addresses.lon, apartment.addresses.lat]).addTo(map);
+        var popupOffsets = {
+          top: [0, 0],
+          bottom: [0, -40],
+          'bottom-right': [0, -70],
+          'bottom-left': [0, -70],
+          left: [25, -35],
+          right: [-25, -35]
+        };
+        var popup = new tt.Popup({
+          offset: popupOffsets
+        }).setHTML("".concat(apartment.descriptive_title, "<br>").concat(apartment.addresses.city));
+        marker.setPopup(popup).togglePopup();
       });
-
-      var popupOffsets = {
-        top: [0, 0],
-        bottom: [0, -40],
-        'bottom-right': [0, -70],
-        'bottom-left': [0, -70],
-        left: [25, -35],
-        right: [-25, -35]
-      };
-      var popup = new tt.Popup({
-        offset: popupOffsets
-      }).setHTML("".concat(_this4.name, "<br>").concat(_this4.address));
-      marker.setPopup(popup).togglePopup();
     });
     axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/amenities").then(function (response) {
       _this4.amenities = _toConsumableArray(response.data);
@@ -2177,6 +2220,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2326,7 +2371,26 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#map {\n  height: 500px;\n  width: 800px;\n  margin: 0 auto;\n}", ""]);
+exports.push([module.i, "#map {\n  height: 500px;\n  width: 800px;\n  margin: 0 auto;\n  border-radius: 15px;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".my_btn[data-v-698b42c4] {\n  height: 80%;\n}", ""]);
 
 // exports
 
@@ -2852,6 +2916,36 @@ if(false) {}
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./ApartmentsList.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/ApartmentsList.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -3552,6 +3646,8 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { attrs: { id: "map" } }),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row justify-content-center" },
@@ -3582,7 +3678,18 @@ var render = function () {
       1
     ),
     _vm._v(" "),
-    _c("div", { attrs: { id: "map" } }),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        on: {
+          click: function ($event) {
+            return _vm.newMarkerDisplay(this.apartments)
+          },
+        },
+      },
+      [_vm._v("ohibò")]
+    ),
   ])
 }
 var staticRenderFns = []
@@ -3608,9 +3715,15 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("form", { attrs: { action: "" } }, [
-      _c("div", { staticClass: "row mt-4 ml-2" }, [
-        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+    _c("h5", { staticClass: "text-white pt-5" }, [
+      _vm._v(
+        "Available apartments with your needs: " + _vm._s(_vm.checkedAmenities)
+      ),
+    ]),
+    _vm._v(" "),
+    _c("form", { staticClass: "p-3" }, [
+      _c("div", { staticClass: "row mt-4 ml-2 d-flex align-items-center" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6 d-flex" }, [
           _c("input", {
             directives: [
               {
@@ -3654,7 +3767,7 @@ var render = function () {
           _c(
             "button",
             {
-              staticClass: "btn btn-success",
+              staticClass: "btn btn-custom my_btn form-control-sm",
               attrs: { type: "button" },
               on: {
                 click: function ($event) {
@@ -3666,7 +3779,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
+        _c("div", { staticClass: "col-sm-12 col-lg-6 pb-4" }, [
           _c("label", { staticClass: "form-check-label text-white" }, [
             _vm._v("Choose the number of km radius from chosen location."),
           ]),
@@ -3792,37 +3905,130 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "form-group col-sm-12 col-lg-6 p-0" }, [
-        _c("div", { staticClass: "dropdown" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-custom dropdown-toggle",
-              attrs: {
-                type: "button",
-                id: "dropdownMenu2",
-                "data-toggle": "dropdown",
-                "aria-haspopup": "true",
-                "aria-expanded": "false",
+      _c("div", { staticClass: "row mt-4 ml-2" }, [
+        _c("div", { staticClass: "form-group col-sm-12 col-lg-6" }, [
+          _c("div", { staticClass: "dropdown" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-custom dropdown-toggle",
+                attrs: {
+                  type: "button",
+                  id: "dropdownMenu2",
+                  "data-toggle": "dropdown",
+                  "aria-haspopup": "true",
+                  "aria-expanded": "false",
+                },
               },
-            },
-            [
-              _vm._v(
-                "\n                    Choose your amenities.\n                "
-              ),
-            ]
-          ),
+              [
+                _vm._v(
+                  "\n                        Choose your amenities.\n                    "
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "dropdown-menu",
+                attrs: { "aria-labelledby": "dropdownMenu2" },
+              },
+              [
+                _c(
+                  "button",
+                  { staticClass: "dropdown-item", attrs: { type: "button" } },
+                  [
+                    _vm._l(_vm.amenities, function (amenity) {
+                      return _c("div", { key: amenity.id }, [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.checkedAmenities,
+                              expression: "checkedAmenities",
+                            },
+                          ],
+                          staticClass: "form-check-input",
+                          attrs: {
+                            type: "checkbox",
+                            id: amenity.name,
+                            "true-value": "yes",
+                            "false-value": "no",
+                          },
+                          domProps: {
+                            value: amenity.id,
+                            checked: Array.isArray(_vm.checkedAmenities)
+                              ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                              : _vm._q(_vm.checkedAmenities, "yes"),
+                          },
+                          on: {
+                            change: function ($event) {
+                              var $$a = _vm.checkedAmenities,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? "yes" : "no"
+                              if (Array.isArray($$a)) {
+                                var $$v = amenity.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.checkedAmenities = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.checkedAmenities = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.checkedAmenities = $$c
+                              }
+                            },
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-check-label",
+                            attrs: { for: amenity.name },
+                          },
+                          [_vm._v(_vm._s(amenity.name))]
+                        ),
+                      ])
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-custom m-2",
+                        on: {
+                          click: function ($event) {
+                            return _vm.$emit(
+                              "getAmenities",
+                              _vm.checkedAmenities
+                            )
+                          },
+                        },
+                      },
+                      [_vm._v("Submit")]
+                    ),
+                  ],
+                  2
+                ),
+              ]
+            ),
+          ]),
           _vm._v(" "),
           _c(
             "div",
             {
-              staticClass: "dropdown-menu",
-              attrs: { "aria-labelledby": "dropdownMenu2" },
+              staticClass: "dropdown-menu dropdown-menu-right",
+              attrs: { "aria-labelledby": "navbarDropdown" },
             },
             [
               _c(
-                "button",
-                { staticClass: "dropdown-item", attrs: { type: "button" } },
+                "div",
+                { staticClass: "form-check form-check-inline" },
                 [
                   _vm._l(_vm.amenities, function (amenity) {
                     return _c("div", { key: amenity.id }, [
@@ -3886,14 +4092,14 @@ var render = function () {
                   _c(
                     "button",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-custom",
                       on: {
                         click: function ($event) {
                           return _vm.$emit("getAmenities", _vm.checkedAmenities)
                         },
                       },
                     },
-                    [_vm._v("Submit")]
+                    [_vm._v("Choose amenities")]
                   ),
                 ],
                 2
@@ -3901,101 +4107,7 @@ var render = function () {
             ]
           ),
         ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "dropdown-menu dropdown-menu-right",
-            attrs: { "aria-labelledby": "navbarDropdown" },
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "form-check form-check-inline" },
-              [
-                _vm._l(_vm.amenities, function (amenity) {
-                  return _c("div", { key: amenity.id }, [
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.checkedAmenities,
-                          expression: "checkedAmenities",
-                        },
-                      ],
-                      staticClass: "form-check-input",
-                      attrs: {
-                        type: "checkbox",
-                        id: amenity.name,
-                        "true-value": "yes",
-                        "false-value": "no",
-                      },
-                      domProps: {
-                        value: amenity.id,
-                        checked: Array.isArray(_vm.checkedAmenities)
-                          ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
-                          : _vm._q(_vm.checkedAmenities, "yes"),
-                      },
-                      on: {
-                        change: function ($event) {
-                          var $$a = _vm.checkedAmenities,
-                            $$el = $event.target,
-                            $$c = $$el.checked ? "yes" : "no"
-                          if (Array.isArray($$a)) {
-                            var $$v = amenity.id,
-                              $$i = _vm._i($$a, $$v)
-                            if ($$el.checked) {
-                              $$i < 0 &&
-                                (_vm.checkedAmenities = $$a.concat([$$v]))
-                            } else {
-                              $$i > -1 &&
-                                (_vm.checkedAmenities = $$a
-                                  .slice(0, $$i)
-                                  .concat($$a.slice($$i + 1)))
-                            }
-                          } else {
-                            _vm.checkedAmenities = $$c
-                          }
-                        },
-                      },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "form-check-label",
-                        attrs: { for: amenity.name },
-                      },
-                      [_vm._v(_vm._s(amenity.name))]
-                    ),
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    on: {
-                      click: function ($event) {
-                        return _vm.$emit("getAmenities", _vm.checkedAmenities)
-                      },
-                    },
-                  },
-                  [_vm._v("Choose amenities")]
-                ),
-              ],
-              2
-            ),
-          ]
-        ),
       ]),
-    ]),
-    _vm._v(" "),
-    _c("h6", { staticClass: "text-white" }, [
-      _vm._v(
-        "Available apartments with your needs: " + _vm._s(_vm.checkedAmenities)
-      ),
     ]),
   ])
 }
@@ -16438,7 +16550,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchAndFilter_vue_vue_type_template_id_698b42c4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchAndFilter.vue?vue&type=template&id=698b42c4&scoped=true& */ "./resources/js/components/apartments/SearchAndFilter.vue?vue&type=template&id=698b42c4&scoped=true&");
 /* harmony import */ var _SearchAndFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchAndFilter.vue?vue&type=script&lang=js& */ "./resources/js/components/apartments/SearchAndFilter.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& */ "./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -16446,7 +16560,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _SearchAndFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _SearchAndFilter_vue_vue_type_template_id_698b42c4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _SearchAndFilter_vue_vue_type_template_id_698b42c4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -16475,6 +16589,22 @@ component.options.__file = "resources/js/components/apartments/SearchAndFilter.v
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchAndFilter.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--7-2!../../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../../node_modules/vue-loader/lib??vue-loader-options!./SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/apartments/SearchAndFilter.vue?vue&type=style&index=0&id=698b42c4&scoped=true&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchAndFilter_vue_vue_type_style_index_0_id_698b42c4_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
