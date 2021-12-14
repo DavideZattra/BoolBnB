@@ -2686,6 +2686,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchAndFilter",
   props: ['amenities'],
@@ -4098,6 +4099,7 @@ var render = function () {
             ],
             staticClass: "form-control",
             attrs: {
+              value: "",
               placeholder: "Choose an address or a city",
               type: "text",
               "aria-label": "Small",
