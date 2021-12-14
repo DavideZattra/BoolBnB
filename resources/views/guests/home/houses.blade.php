@@ -1,6 +1,6 @@
 <section class="houses">
     <div class="container">
-        <a href="{{ url('/search') }}">
+        <a href="{{ route('advancedSearch', ['city'=>'Milano'])}}">
             <div class="row mb-4">
                 <div class="col-6 col-md-4 t-ideas"><img src="https://www.lidimare.com/images/00950/venditacaselidiferraresi_large.jpeg" alt=""></div>
                 <div class="col-6 col-md-5 t-ideas"><img src="https://www.lignius.it/fileadmin/_processed_/b/8/csm_suedtirolhaus_MirrorHouses_5cbac.0_a556da6959.jpg" alt=""></div>

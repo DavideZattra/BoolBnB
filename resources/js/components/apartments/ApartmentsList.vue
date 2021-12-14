@@ -9,7 +9,8 @@
                 @getBathrooms='getBathrooms' 
                 @getAmenities='getAmenities' 
                 @getRadius='getRadius' 
-                :amenities="amenities"/>
+                :amenities="amenities"
+                :location="location"/>
         </div>
 
         <div class="row justify-content-center mt-5">

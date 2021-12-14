@@ -5,3 +5,5 @@
  */
 
 require('./bootstrap');
+
+Vue.component('laraveldata-component', require('./components/laraveldata').default);

@@ -6,6 +6,9 @@
 
  window.Vue = require('vue');
  window.axios = require('axios');
+
+
+ Vue.component('laraveldata-component', require('./components/laraveldata').default);
  
  /**
   * Next, we will create a fresh Vue application instance and attach it to

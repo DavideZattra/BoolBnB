@@ -7,7 +7,9 @@
 @section('content')
 
     {{-- Vue container --}}
-    <div id="root"></div>
+    <div id="root">
+        <laraveldata-component :location="'location'"></laraveldata-component>
+    </div>
     
 @endsection
     
