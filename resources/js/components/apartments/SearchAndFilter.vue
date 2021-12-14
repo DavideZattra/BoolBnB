@@ -1,8 +1,7 @@
 <template>
 <div class="container">
-    <h5 class="text-white pt-5">Available apartments with your needs: {{ checkedAmenities }}</h5>
-    
-    <form class="p-3">
+        
+    <div class="p-3">
         <div class="row mt-4 ml-2 d-flex align-items-center">
             <div class="col-sm-12 col-lg-6 d-flex">
                 <input 
@@ -78,26 +77,10 @@
                         </button>
                     </div>
                 </div>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <div class="form-check form-check-inline">
-                        <div v-for="amenity in amenities" :key="amenity.id">
-                            <input 
-                                type="checkbox" 
-                                class="form-check-input" 
-                                :id="amenity.name" 
-                                :value="amenity.id" 
-                                v-model="checkedAmenities" 
-                                true-value="yes" 
-                                false-value="no">
-                            <label class="form-check-label" :for="amenity.name">{{amenity.name}}</label>    
-                        </div>
-                        <button class="btn btn-custom" @click="$emit('getAmenities', checkedAmenities)">Choose amenities</button>
-                    </div>
-                </div>
+               
             </div>
         </div>
-    </form>
+    </div>
 </div>
 
 </template>
