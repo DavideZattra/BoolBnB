@@ -10366,7 +10366,7 @@ a:hover {
 }
 
 #jumbotron #jumbo {
-  background-image: url("https://www.isplora.com/media_gallery/1200xX/54.jpg");
+  background-image: url("../img/jumbo.jpg");
   width: 100%;
   height: calc(100vh - 60px);
   background-repeat: no-repeat;
