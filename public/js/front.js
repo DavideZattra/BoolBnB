@@ -627,6 +627,7 @@ Axios.prototype.request = function request(config) {
   }
 
   var transitional = config.transitional;
+<<<<<<< HEAD
 
   if (transitional !== undefined) {
     validator.assertOptions(transitional, {
@@ -636,6 +637,17 @@ Axios.prototype.request = function request(config) {
     }, false);
   }
 
+=======
+
+  if (transitional !== undefined) {
+    validator.assertOptions(transitional, {
+      silentJSONParsing: validators.transitional(validators.boolean),
+      forcedJSONParsing: validators.transitional(validators.boolean),
+      clarifyTimeoutError: validators.transitional(validators.boolean)
+    }, false);
+  }
+
+>>>>>>> AddingHomeContent
   // filter out skipped interceptors
   var requestInterceptorChain = [];
   var synchronousRequestInterceptors = true;
@@ -2669,6 +2681,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+=======
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+>>>>>>> AddingHomeContent
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchAndFilter",
   props: ['amenities'],
@@ -2716,7 +2748,11 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
+<<<<<<< HEAD
 exports.push([module.i, "#map {\n  height: 300px;\n  width: 100%;\n  margin: 0 auto;\n  border-radius: 15px;\n}", ""]);
+=======
+exports.push([module.i, "#map {\n  height: 500px;\n  width: 800px;\n  margin: 0 auto;\n  border-radius: 15px;\n}", ""]);
+>>>>>>> AddingHomeContent
 
 // exports
 
@@ -4060,7 +4096,17 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+<<<<<<< HEAD
     _c("div", { staticClass: "p-3" }, [
+=======
+    _c("h5", { staticClass: "text-white pt-5" }, [
+      _vm._v(
+        "Available apartments with your needs: " + _vm._s(_vm.checkedAmenities)
+      ),
+    ]),
+    _vm._v(" "),
+    _c("form", { staticClass: "p-3" }, [
+>>>>>>> AddingHomeContent
       _c("div", { staticClass: "row mt-4 ml-2 d-flex align-items-center" }, [
         _c("div", { staticClass: "col-sm-12 col-lg-6 d-flex" }, [
           _c("input", {
@@ -4294,6 +4340,8 @@ var render = function () {
                             id: amenity.name,
                             "true-value": "yes",
                             "false-value": "no",
+<<<<<<< HEAD
+=======
                           },
                           domProps: {
                             value: amenity.id,
@@ -4357,6 +4405,125 @@ var render = function () {
               ]
             ),
           ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropdown-menu dropdown-menu-right",
+              attrs: { "aria-labelledby": "navbarDropdown" },
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "form-check form-check-inline" },
+                [
+                  _vm._l(_vm.amenities, function (amenity) {
+                    return _c("div", { key: amenity.id }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checkedAmenities,
+                            expression: "checkedAmenities",
+>>>>>>> AddingHomeContent
+                          },
+                          domProps: {
+                            value: amenity.id,
+                            checked: Array.isArray(_vm.checkedAmenities)
+                              ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                              : _vm._q(_vm.checkedAmenities, "yes"),
+                          },
+                          on: {
+                            change: function ($event) {
+                              var $$a = _vm.checkedAmenities,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? "yes" : "no"
+                              if (Array.isArray($$a)) {
+                                var $$v = amenity.id,
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    (_vm.checkedAmenities = $$a.concat([$$v]))
+                                } else {
+                                  $$i > -1 &&
+                                    (_vm.checkedAmenities = $$a
+                                      .slice(0, $$i)
+                                      .concat($$a.slice($$i + 1)))
+                                }
+                              } else {
+                                _vm.checkedAmenities = $$c
+                              }
+                            },
+                          },
+<<<<<<< HEAD
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-check-label",
+                            attrs: { for: amenity.name },
+                          },
+                          [_vm._v(_vm._s(amenity.name))]
+                        ),
+                      ])
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-custom m-2",
+                        on: {
+                          click: function ($event) {
+                            return _vm.$emit(
+                              "getAmenities",
+                              _vm.checkedAmenities
+                            )
+                          },
+                        },
+                      },
+                      [_vm._v("Submit")]
+                    ),
+                  ],
+                  2
+                ),
+              ]
+            ),
+          ]),
+=======
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: amenity.name },
+                        },
+                        [_vm._v(_vm._s(amenity.name))]
+                      ),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-custom",
+                      on: {
+                        click: function ($event) {
+                          return _vm.$emit("getAmenities", _vm.checkedAmenities)
+                        },
+                      },
+                    },
+                    [_vm._v("Choose amenities")]
+                  ),
+                ],
+                2
+              ),
+            ]
+          ),
+>>>>>>> AddingHomeContent
         ]),
       ]),
     ]),

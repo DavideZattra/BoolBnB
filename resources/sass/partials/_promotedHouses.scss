@@ -1,0 +1,25 @@
+#promoted-houses{
+    background-color: $my_white;
+    padding: 100px 0;
+    .main-carousel{
+        padding: 50px;
+    }
+    .carousel-cell{
+        height: 350px;
+        width: 350px;
+        margin: 0 20px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        a{
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+        }
+    }
+    .carousel-cell:hover{
+        border-color: gold;
+    }
+}
