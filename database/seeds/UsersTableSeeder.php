@@ -31,7 +31,8 @@ class UsersTableSeeder extends Seeder
             $newUser->surname = $faker->lastName();
             $newUser->email = $faker->safeEmail();
             $newUser->profile_picture = $faker->imageUrl(640, 480);
-            $newUser->birth_date = $faker->date('Y-m-d');;
+            $newUser->birth_date = $faker->date('Y-m-d');
+            // $newUser->password = bycript('password');
             $newUser->password = bcrypt($newUser->name . $newUser->surname);
             $newUser->save();
         }

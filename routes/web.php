@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +23,9 @@ Route::get('/search', function () {
     return view('guests.apartments.advanced_search');
 });
 
-Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
 
 Route::middleware('auth')
     ->namespace('User') // this is to call the folder of the controller
