@@ -6,6 +6,7 @@
         <div class="row mt-4 ml-2 d-flex align-items-center">
             <div class="col-sm-12 col-lg-6 d-flex">
                 <input 
+                    value=""
                     v-model.trim="needle" 
                     placeholder="Choose an address or a city" 
                     @keyup.enter="$emit('getQuery', needle)" 
