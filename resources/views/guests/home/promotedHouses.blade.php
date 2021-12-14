@@ -9,31 +9,31 @@
     </div>
     <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_1.jpeg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_1.jpeg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_2.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_2.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_3.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_3.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_4.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_4.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_5.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_5.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_6.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_6.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_7.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_7.jpg') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/example-house_8.webp') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_8.webp') }}" alt="House image"></a>
         </div>
         <div class="carousel-cell">
-            <a href="#"><img src="{{ asset('img/Jose-Jose.jpg') }}" alt="House image"></a>
+            <a href="#"><img class="animation-img" src="{{ asset('img/Jose-Jose.jpg') }}" alt="House image"></a>
         </div>
     </div>
 </section>
