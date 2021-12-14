@@ -3,7 +3,8 @@
         
     <div class="p-3">
         <div class="row mt-4 ml-2 d-flex align-items-center">
-            <div class="col-sm-12 col-lg-6 d-flex">
+            
+            <div class="col-sm-12 col-lg-6 input-group">
                 <input 
                     v-model.trim="needle" 
                     placeholder="Choose an address or a city" 
@@ -12,7 +13,9 @@
                     class="form-control" 
                     aria-label="Small" 
                     aria-describedby="inputGroup-sizing-sm"> 
-                <button type="button" class="btn btn-custom my_btn form-control-sm" @click="$emit('getQuery', needle)">Search</button>       
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary " @click="$emit('getQuery', needle)">Search</button>       
+                </div>
             </div>
 
             <div class="col-sm-12 col-lg-6 pb-4">
@@ -105,9 +108,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .my_btn{
-        height: 80%;
-    }
+    
 
 </style>
 
