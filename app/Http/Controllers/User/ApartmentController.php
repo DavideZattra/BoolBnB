@@ -12,6 +12,8 @@ use App\User;
 use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
+use App\Models\View;
+
 
 
 class ApartmentController extends Controller
@@ -131,13 +133,34 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment)
+    public function show(Request $request, Apartment $apartment)
     {
-        $amenities = $apartment->amenities->pluck('name')->toArray();
+        
+        
+        if((Auth::user() && Auth::user()->id == $apartment->user_id)){
+            $amenities = $apartment->amenities->pluck('name')->toArray();
 
-        $messages = $apartment->messages->toArray();
+            $messages = $apartment->messages->toArray();
 
-        return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        } else{
+            $data['ip_address'] = $request->ip();
+            $data['apartment_id'] = $apartment->id;
+            $data['visited_at'] = date("Y-m-d H:i:s");
+
+            $newView = new View();
+            $newView->fill($data);
+            
+            $newView->save();
+            
+            $amenities = $apartment->amenities->pluck('name')->toArray();
+    
+            $messages = $apartment->messages->toArray();
+    
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        }
+
+        
     }
 
     /**

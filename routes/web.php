@@ -23,7 +23,7 @@ Route::get('/search', function () {
     return view('guests.apartments.advanced_search');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Guest\HomeController@index')->name('home');
 
 Auth::routes();
 

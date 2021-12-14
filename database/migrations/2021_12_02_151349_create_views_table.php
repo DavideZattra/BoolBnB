@@ -14,9 +14,9 @@ class CreateViewsTable extends Migration
     public function up()
     {
         Schema::create('views', function (Blueprint $table) {
-            $table->id();      
+            $table->id();        
             $table->dateTime('visited_at');
-            $table->char('ip_adress',16);
+            $table->char('ip_address',16);
             $table->timestamps();
 
             

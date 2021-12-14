@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             ApartmentsTableSeeder::class,
             MessageTableSeeder::class,
             AddressesTableSeeder::class,
-            ViewsTableSeeder::class,
+            // ViewsTableSeeder::class,
         ]);
 
 
