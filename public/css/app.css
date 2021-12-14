@@ -10060,11 +10060,17 @@ header .navbar-custom .my_bars {
   color: #FFFFFA;
   font-size: 1.5rem;
 }
+header .navbar-custom .dropdown-menu {
+  background-color: #FFFFFA;
+}
 header .navbar-custom .dropdown-menu a {
   color: #000103;
 }
 header .navbar-custom .dropdown-menu a:hover {
   color: #000103;
+}
+header .navbar-custom .navbar-collapse {
+  background-color: #000103;
 }
 header .navbar-custom a {
   color: #FFFFFA;
@@ -10235,7 +10241,7 @@ footer .contacts i {
   border: 1px solid #000103;
 }
 .show-container .btn-yellow:hover {
-  border: 1px solid yellow;
+  border: 1px solid #899ba5;
 }
 .show-container .no-messages img {
   width: 50%;
@@ -10268,6 +10274,15 @@ footer .contacts i {
 
 .apartment-modify {
   margin-top: 70px;
+}
+
+.my_message {
+  background-color: #899ba5;
+  padding: 10px;
+  border-radius: 10px;
+}
+.my_message h3 {
+  color: black;
 }
 
 .hr {
@@ -10508,5 +10523,5 @@ a:hover {
   border: 2px solid black;
 }
 #dashboard .card .card-footer .btn:hover {
-  border: 2px solid yellow;
+  border: 2px solid #899ba5;
 }

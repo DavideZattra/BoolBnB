@@ -31,6 +31,7 @@ header{
         }
 
         .dropdown-menu{
+            background-color: $my_white;
 
             a{
                 color: $my_black;
@@ -39,6 +40,10 @@ header{
                     color: $my_black;
                 }
             }
+        }
+
+        .navbar-collapse{
+            background-color: $my_black;
         }
 
         a{

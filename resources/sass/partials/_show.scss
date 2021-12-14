@@ -43,7 +43,7 @@
         border: 1px solid $my_black;
 
         &:hover{
-            border: 1px solid yellow;
+            border: 1px solid $my_brightyellow;
         }
     }
     .no-messages{
@@ -82,6 +82,16 @@
 
 .apartment-modify{
     margin-top: 70px;
+}
+
+.my_message{
+    background-color: $my_brightyellow;
+    padding: 10px;
+    border-radius: 10px;
+
+    h3{
+        color: black;
+    }
 }
 
 .hr{

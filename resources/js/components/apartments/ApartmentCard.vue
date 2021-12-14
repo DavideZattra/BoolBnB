@@ -1,12 +1,14 @@
 <template>
-      <div class="card col-3 m-3">
-        <div class="card-body">
-            <img class="img-fluid" :src="apartment.image" :alt="apartment.descriptive_title">
-            <h4 class="card-title">{{apartment.descriptive_title}}</h4>
-            <h5 class="card-title">{{apartment.addresses.country}}</h5>
-            <span class="card-title">{{apartment.addresses.city}}</span>
-            <span class="card-title">{{apartment.addresses.address}}</span>
-        </div>
+  <div class="card col-12 col-md-5 col-lg-3 m-4 p-0" style="width: 18rem;">
+    <img class="card-img-top" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
+    <div class="card-body">
+        <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
+        <p class="m-0">
+          <span>{{ apartment.addresses.country }}</span>, 
+          <span>{{ apartment.addresses.city }}</span> <br>
+          <span>{{ apartment.addresses.address }}</span>
+        </p> 
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,33 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import "../../../sass/partials/variables";
+  @import "../../../sass/partials/general";
+    .row{
+        background-color: $my_new-black;
+        border-radius: 20px;
+    }
+
+    a{
+        color: $my_brightyellow;
+
+        &:hover{
+            color: white;
+        }
+    }
+
+    .card{
+        border: 3px solid $my_brightyellow;
+
+        a{
+            font-size: 20px;
+            font-weight: bold;
+            color: $my_black;
+        }
+
+        span{
+            color: $my_darkgrey;
+        }
+    }
 
 </style>
