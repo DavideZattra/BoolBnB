@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+    
     @if (session('success_message'))
         <div class="alert alert-success">
             {{ session('success_message') }}
         </div>
     @endif
-
+      
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
@@ -19,7 +19,7 @@
     @endif
 
     <div class="content">
-        <form method="post" id="payment-form" action="{{route('users.braintree.checkout')}}">
+        <form method="post" id="payment-form" action="{{route('users.braintree.checkout', $apartment)}}">
             @csrf
             
             <section>
@@ -47,9 +47,9 @@
         braintree.dropin.create({
           authorization: client_token,
           selector: '#bt-dropin',
-          paypal: {
-            flow: 'vault'
-          }
+          // paypal: {
+          //   flow: 'vault'
+          // }
         }, function (createErr, instance) {
           if (createErr) {
             console.log('Create Error', createErr);

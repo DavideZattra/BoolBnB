@@ -13,11 +13,14 @@ class CreateApartmentSponsorTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartment_sponsor', function (Blueprint $table) {
+        Schema::create('sponsor_apartments', function (Blueprint $table) {
             
             $table->id();
             $table->unsignedBigInteger('apartment_id');
             $table->unsignedBigInteger('sponsor_id');
+            $table->string('transaction_id');
+            $table->dateTime('start');
+            $table->dateTime('end');
             
             // cascade drops the whole row if one element of the two is deleted. (only used in many to many relations)
             $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
@@ -32,6 +35,6 @@ class CreateApartmentSponsorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartment_sponsor');
+        Schema::dropIfExists('sponsor_apartments');
     }
 }

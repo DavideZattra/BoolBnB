@@ -39,9 +39,9 @@ Route::middleware('auth')
 
         Route::resource('apartments', ApartmentController::class);
         
-        Route::get('/payment', 'PaymentController@payment')->name('braintree.payment');
+        Route::get('/{apartment}/payment', 'PaymentController@payment')->name('braintree.payment');
 
-        Route::post('payment/checkout', 'PaymentController@checkout')->name('braintree.checkout');
+        Route::post('payment/checkout/{apartment}', 'PaymentController@checkout')->name('braintree.checkout');
 });
 
 Route::namespace('User') // this is to call the folder of the controller

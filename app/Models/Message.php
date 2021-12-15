@@ -8,7 +8,7 @@ class Message extends Model
 {
     protected $fillable = ['name', 'email', 'body', 'apartment_id'];
 
-    public function apartment(){
+    public function SponsorApartments(){
         return $this->belongsTo('App\Models\Apartment');
     }
 }
