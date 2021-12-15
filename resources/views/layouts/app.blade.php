@@ -22,6 +22,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
     <!-- cdn Entrypoint  -->
     @yield('cdn-entrypoint')
 </head>
@@ -38,6 +41,8 @@
     
     @yield('scripts-entrypoint')
     <script src="{{ asset('js/front.js') }}"></script>
+    {{-- Scroll reveal --}}
+    <script>ScrollReveal().reveal('.scroll',{ distance: '80px', duration: 2500 });</script>
     {{-- Flickity per slider appartamenti in promozione --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js" integrity="sha512-cA8gcgtYJ+JYqUe+j2JXl6J3jbamcMQfPe0JOmQGDescd+zqXwwgneDzniOd3k8PcO7EtTW6jA7L4Bhx03SXoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
