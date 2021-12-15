@@ -24,7 +24,7 @@ class ViewsTableSeeder extends Seeder
             $newView = new View();
 
             $newView->apartment_id = Arr::random($apartmentIds);
-            $newView->ip_adress = $faker->ipv4();
+            $newView->ip_address = $faker->ipv4();
             $newView->visited_at = $faker->dateTime();
             
             $newView->save();
