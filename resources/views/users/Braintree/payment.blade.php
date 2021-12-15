@@ -19,7 +19,7 @@
         </div>
     @endif
 
-    <form method="post" id="payment-form" action="{{ route('users.braintree.checkout') }}">
+    {{-- <form method="post" id="payment-form" action="{{ route('users.braintree.checkout') }}">
         @csrf
         <section>
             <label for="amount">
@@ -36,6 +36,21 @@
 
         <input id="nonce" name="payment_method_nonce" type="hidden" />
         <button class="button" type="submit"><span>Test Transaction</span></button>
+    </form> --}}
+
+    <form method="post" id="payment-form" action="{{ route('users.braintree.checkout') }}">
+        @csrf
+        <label for="amount">
+            <span class="input-label">Amount</span>
+            <div class="input-wrapper amount-wrapper">
+                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+                <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="10">
+            </div>
+        </label>
+        <div id="dropin-container"></div>
+        <input type="submit" />
+        <input type="hidden" id="nonce" name="payment_method_nonce"/>
     </form>
 </div>
 
@@ -46,14 +61,11 @@
 @section('scripts-entrypoint')
 
 <script>
-    var form = document.querySelector('#payment-form');
-    var client_token = "{{ $clientToken }}";
+    let form = document.querySelector('#payment-form');
+    let client_token = "{{ $clientToken }}";
     braintree.dropin.create({
       authorization: client_token,
-      selector: '#bt-dropin',
-      paypal: {
-        flow: 'vault'
-      }
+      selector: '#dropin-container'
     }, function (createErr, instance) {
       if (createErr) {
         console.log('Create Error', createErr);
