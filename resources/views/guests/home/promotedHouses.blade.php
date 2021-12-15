@@ -7,7 +7,7 @@
     <div class="container">
         <h2 class="text-center font-weight-bold">The best houses you will find today</h2>
     </div>
-    <div class="main-carousel" data-flickity='{ "cellAlign": "left", "contain": true }'>
+    <div class="main-carousel scroll" data-flickity='{ "cellAlign": "left", "contain": true }'>
         <div class="carousel-cell">
             <a href="#"><img class="animation-img" src="{{ asset('img/example-house_1.jpeg') }}" alt="House image"></a>
         </div>
