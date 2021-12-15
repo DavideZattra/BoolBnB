@@ -245,8 +245,8 @@ export default {
 
 <style lang="scss">
 #map{
-    height: 500px;
-    width: 800px;
+    height: 300px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 15px;
 }

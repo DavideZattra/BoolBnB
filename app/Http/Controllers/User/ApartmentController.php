@@ -94,7 +94,7 @@ class ApartmentController extends Controller
 
         $data = $request->all();
 
-        $apiQuery = $data['country'] . '-' .  $data['region'] . '-' .  $data['city'] . '-' .  str_replace(' ', '-', $data['address']) ;
+        $apiQuery = str_replace(' ', '-', $data['country']) . '-' .  str_replace(' ', '-', $data['region']) . '-' .  str_replace(' ', '-', $data['city']) . '-' .  str_replace(' ', '-', $data['address']) ;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $apiQuery . '.json?key=NLbGYpRnYCS3jxXsynN2IfGsmEgZJJzB');
         $response = json_decode($response);
         
@@ -203,7 +203,7 @@ class ApartmentController extends Controller
             'description' => 'required|min:50|max:255',
             'country' => 'required|string|min:4',
             'region' => 'required|string|min:4',
-            'province' => 'required|string|min:4',
+            'province' => 'required|string|min:2',
             'city' => 'required|string|min:2',
             'address' => 'required|string|min:4',
             'zip_code' => 'required|numeric|min:3',

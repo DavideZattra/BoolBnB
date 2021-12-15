@@ -10191,6 +10191,12 @@ footer .contacts i {
 .index-wrapper .card {
   border: 3px solid #899ba5;
 }
+.index-wrapper .card img {
+  width: 100%;
+  height: 45%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .index-wrapper .card a {
   font-size: 20px;
   font-weight: bold;
@@ -10447,6 +10453,37 @@ a:hover {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
+}
+
+#promoted-houses {
+  background-color: #FFFFFA;
+  padding: 100px 0;
+  overflow-x: hidden;
+}
+#promoted-houses .main-carousel {
+  padding: 60px;
+}
+#promoted-houses .carousel-cell {
+  height: 350px;
+  width: 350px;
+  margin: 0 20px;
+  border-radius: 8px;
+}
+#promoted-houses .carousel-cell a img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+#promoted-houses .carousel-cell a .animation-img {
+  transition: all 3s;
+}
+#promoted-houses .carousel-cell a .animation-img:hover {
+  border-radius: 20px;
+  filter: sepia(0.8);
+  filter: saturate(1.7);
+  transform: scale(0.9);
 }
 
 #dashboard {
