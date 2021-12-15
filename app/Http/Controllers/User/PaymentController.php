@@ -8,30 +8,69 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Sponsor;
-use App\User;
 
 class PaymentController extends Controller
 {
-    public function process(User $user)
+    public function payment()
+    {
+
+        $gateway = new \Braintree\Gateway([
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+
+        $token = $gateway->ClientToken()->generate();
+
+        return view('users.braintree.payment', [
+            'token' => $token
+        ]);
+
+    }
+
+    public function checkout(Request $request)
     {
         $gateway = new \Braintree\Gateway([
-            'environment' => 'sandbox',
-            'merchantId' => 'xtb6mz33jvnv7kz4',
-            'publicKey' => 'vyj99b6yqhnwsgcs',
-            'privateKey' => '5950ef3e257855ac1bcdf4a0c64ea5c2'
+            'environment' => config('services.braintree.environment'),
+            'merchantId' => config('services.braintree.merchantId'),
+            'publicKey' => config('services.braintree.publicKey'),
+            'privateKey' => config('services.braintree.privateKey')
+        ]);
+        
+        $amount = $request->amount;
+        $nonce = $request->payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => 'Tony',
+                'lastName' => 'Stark',
+                'email' => 'tony@avengers.com',
+            ],
+            'options' => [
+                'submitForSettlement' => true
+            ]
         ]);
 
-        // pass $clientToken to your front-end
-        $clientToken = $gateway->clientToken()->generate([
-            // 'customerId' => User::Pluck('id')->where('id', $user->id)
-        ]);
+        if ($result->success) {
+            $transaction = $result->transaction;
+            // header("Location: transaction.php?id=" . $transaction->id);
 
-        return view("users.braintree.payment", compact('clientToken'));
-    }
+            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+          
+        } else {
+            $errorString = "";
 
-    public function checkout()
-    {
+            foreach ($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
 
-    }
+            // $_SESSION["errors"] = $errorString;
+            // header("Location: index.php");
+            return back()->withErrors('An error occurred with the message: '.$result->message);
+        }
+        }
 
 }

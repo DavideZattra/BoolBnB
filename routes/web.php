@@ -36,7 +36,8 @@ Route::middleware('auth')
 
         Route::resource('apartments', ApartmentController::class);
         
-        Route::get('/payment', 'PaymentController@process')->name('braintree.payment');
+        Route::get('/payment', 'PaymentController@payment')->name('braintree.payment');
+
         Route::post('payment/checkout', 'PaymentController@checkout')->name('braintree.checkout');
 });
 
