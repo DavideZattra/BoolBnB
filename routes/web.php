@@ -37,7 +37,7 @@ Route::middleware('auth')
         Route::patch('/update', 'DashboardController@update')->name('update');
         // Route::resource('/', DashboardController::class)->except('create', 'store');
         Route::resource('apartments', ApartmentController::class);
-        Route::get('apartment/{apartment}/statistics', 'StatisticsController@apartmentStats')->name('apartments.stats');
+        Route::get('{apartment}/statistics', 'StatisticsController@apartmentStats')->name('apartments.stats');
 });
 
 Route::namespace('User') // this is to call the folder of the controller

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
 use App\Models\Apartment;
 use App\Models\View;
 
@@ -12,14 +13,17 @@ class StatisticsController extends Controller
 {
     public function apartmentStats(Apartment $apartment){
 
+        $monthlyVisit = View::where('apartment_id', $apartment->id)
+            ->select(
+                DB::raw('YEAR(visited_at) as year'),
+                DB::raw('MONTH(visited_at) as month')                
+            )->selectRaw('count(id) as views')
+            ->groupBy('year', 'month')
+            ->get(); 
+        
         $totalViews = View::where('apartment_id', $apartment->id)->get();
-        $yearViews = View::where('apartment_id', $apartment->id)->get();
-        $monthViews = View::where('apartment_id', $apartment->id)->get();
-        $weekViews = View::where('apartment_id', $apartment->id)->get();
-        $dayViews = View::where('apartment_id', $apartment->id)->get();
+        
 
-        // dd($views);
-
-        return view('users.apartments.statistics.statistics', compact('totalViews', 'yearViews', 'monthViews', 'weekViews', 'dayViews'));
+        return view('users.statistics.apartment-statistics', compact('monthlyVisit'));
     }
 }
