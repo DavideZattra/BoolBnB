@@ -13,8 +13,8 @@ use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
 use App\Models\View;
-
-
+use DateTime;
+use Illuminate\Support\Carbon;
 
 class ApartmentController extends Controller
 {
@@ -135,15 +135,21 @@ class ApartmentController extends Controller
      */
     public function show(Request $request, Apartment $apartment)
     {
+        // data to get the array of view il the last 8 hours
+        $clientView = View::where('apartment_id', $apartment->id)
+        ->where('ip_address', $request->ip())
+        ->where('created_at', '>', Carbon::now()->subHours(8)->toDateTimeString())->get(); 
         
+        $amenities = $apartment->amenities->pluck('name')->toArray();
         
-        if((Auth::user() && Auth::user()->id == $apartment->user_id)){
-            $amenities = $apartment->amenities->pluck('name')->toArray();
+        $messages = $apartment->messages->toArray();
 
-            $messages = $apartment->messages->toArray();
+        if (Auth::user() && Auth::user()->id == $apartment->user_id):
 
             return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
-        } else{
+
+        elseif (!count($clientView) ): 
+
             $data['ip_address'] = $request->ip();
             $data['apartment_id'] = $apartment->id;
             $data['visited_at'] = date("Y-m-d H:i:s");
@@ -152,14 +158,13 @@ class ApartmentController extends Controller
             $newView->fill($data);
             
             $newView->save();
-            
-            $amenities = $apartment->amenities->pluck('name')->toArray();
-    
-            $messages = $apartment->messages->toArray();
-    
-            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
-        }
 
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+
+        else:
+            
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        endif;
         
     }
 
