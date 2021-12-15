@@ -1,5 +1,5 @@
 <template>
-  <div class="card col-12 col-md-5 col-lg-3 m-4 p-0" style="width: 18rem;">
+  <div class="card col-12 col-md-5 col-lg-3 m-4 p-0" @click="goToThisHouse" style="width: 18rem;">
     <img class="card-img-top" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
     <div class="card-body">
         <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
@@ -17,6 +17,19 @@
 export default {
     name: "ApartmentCard",
     props: ["apartment"],
+    data(){
+      return {
+          baseUri : 'http://127.0.0.1:8000',
+      }
+    },
+    methods: {
+        goToThisHouse() {
+                axios.get(`${this.baseUri}/users/apartments/${this.apartment.id}`)
+                    .finally( err => {
+                        window.location = '/users/apartments/' + this.apartment.id;
+                    })
+            },
+    }
 }
 </script>
 
@@ -38,6 +51,7 @@ export default {
 
     .card{
         border: 3px solid $my_brightyellow;
+        cursor: pointer;
 
         a{
             font-size: 20px;
