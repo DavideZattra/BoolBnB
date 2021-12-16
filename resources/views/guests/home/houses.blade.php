@@ -1,5 +1,6 @@
-<section class="houses">
-    <div class="container">
+<section class="houses bg-home-section">
+    <h2 class="text-center font-weight-bold mb-5">Some city you must visit once in your life...</h2>
+    <div class="container scroll">
         <a href="{{ url('/search') }}">
             <div class="row mb-4">
                 <div class="col-6 col-md-4 t-ideas"><img src="https://www.lidimare.com/images/00950/venditacaselidiferraresi_large.jpeg" alt=""></div>
