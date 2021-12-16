@@ -3,7 +3,7 @@
         <div class="container px-5">
 
             {{-- logo link to home when clicked --}}
-            <a id="logo" class="navbar-brand font-weight-bold mr-3 no-border" href="{{ url('/') }}">BoolBnB</a>
+            <a id="logo" class="navbar-brand font-weight-bold mr-3 no-border" href="{{ route('home') }}">BoolBnB</a>
 
             {{-- toggle when in sm (login and register replace) --}}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -19,10 +19,19 @@
 
                 {{-- middle of navbar --}}
                 <ul class="navbar-nav mx-auto">
-                    {{-- <li><input class="form-control my_search-bar pl-3" type="search" placeholder="Search" aria-label="Search"></li> --}}
-                    <li class="mx-3"><a class="nav-link"  href="{{ url('/search') }}">Find a house</a></li>
-                    <li class="mx-3"><a class="nav-link"  href="{{route('users.dashboard')}}">Dashboard</a></li>
-                    <li class="mx-3"><a class="nav-link"  href="#">Host</a></li>
+
+                    <li class="mx-3"><a class="nav-link"  href="{{ route('apartments.search') }}">Find a house</a></li>
+                    @if (Auth::user())
+
+                        <li class="mx-3"><a class="nav-link"  href="{{ route('users.profile') }}">Dashboard</a></li>
+                        
+                    @else
+                        
+                        <li class="mx-3"><a class="nav-link"  href="{{ route('users.profile') }}">Host</a></li>
+
+                    @endif
+
+
                 </ul>
     
                 <!-- Right Side Of Navbar -->
@@ -51,7 +60,7 @@
                                     {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item no-border" href="{{ route('users.dashboard') }}">
+                                <a class="dropdown-item no-border" href="{{ route('users.profile') }}">
                                     {{ __('My Dashboard') }}
                                 </a>
     

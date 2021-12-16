@@ -2327,8 +2327,8 @@ __webpack_require__.r(__webpack_exports__);
     goToThisHouse: function goToThisHouse() {
       var _this = this;
 
-      axios.get("".concat(this.baseUri, "/users/apartments/").concat(this.apartment.id))["finally"](function (err) {
-        window.location = '/users/apartments/' + _this.apartment.id;
+      axios.get("".concat(this.baseUri, "/apartment/").concat(this.apartment.id))["finally"](function (err) {
+        window.location = '/apartment/' + _this.apartment.id;
       });
     }
   }
@@ -4245,7 +4245,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\r\n                    Choose your amenities.\r\n                "
+                "\n                    Choose your amenities.\n                "
               ),
             ]
           ),
@@ -16879,7 +16879,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/davide/Documents/Repository/BoolBnB/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

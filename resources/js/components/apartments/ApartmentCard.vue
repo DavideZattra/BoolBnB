@@ -26,9 +26,9 @@ export default {
     },
     methods: {
         goToThisHouse() {
-                axios.get(`${this.baseUri}/users/apartments/${this.apartment.id}`)
+                axios.get(`${this.baseUri}/apartment/${this.apartment.id}`)
                     .finally( err => {
-                        window.location = '/users/apartments/' + this.apartment.id;
+                        window.location = '/apartment/' + this.apartment.id;
                     })
             },
     }
