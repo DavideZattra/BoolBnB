@@ -10023,7 +10023,7 @@ h3 {
   font-family: "Quicksand", sans-serif;
 }
 
-main {
+.bg-container {
   background-color: #141414;
 }
 
@@ -10343,7 +10343,6 @@ footer .contacts i {
 .user-edit-container {
   height: calc(100vh - 60px);
   padding-top: 2%;
-  overflow: scroll;
 }
 
 .create-edit-wrapper {
@@ -10494,7 +10493,6 @@ a:hover {
 #dashboard {
   height: calc(100vh - 60px);
   padding-top: 5%;
-  overflow-y: scroll;
 }
 #dashboard .wrapper {
   background-color: rgba(0, 0, 0, 0.507);
@@ -10520,7 +10518,7 @@ a:hover {
 }
 #dashboard .card .card-body {
   border: 1px solid #899ba5;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 #dashboard .card .card-body .list-group-item {
   background-color: black;
