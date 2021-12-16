@@ -25,7 +25,7 @@ class StatisticsController extends Controller
             ->get(); 
         
             // dd($monthlyVisit);
-        $daylyVisit = View::where('apartment_id', $apartment->id)
+        $dailyVisit = View::where('apartment_id', $apartment->id)
             ->where('visited_at', '>', Carbon::now()->subMonth()->toDateTimeString())
             ->select(
                 
@@ -35,10 +35,10 @@ class StatisticsController extends Controller
             )->selectRaw('count(id) as views')
             ->groupBy('month', 'day')
             ->get();
-        // dd($daylyVisit);
+        // dd($dailyVisit);
         $totalViews = View::where('apartment_id', $apartment->id)->get();
         
 
-        return view('users.statistics.apartment-statistics', compact('monthlyVisit', 'daylyVisit'));
+        return view('users.statistics.apartment-statistics', compact('monthlyVisit', 'dailyVisit'));
     }
 }
