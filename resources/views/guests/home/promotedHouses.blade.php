@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css" integrity="sha512-BiFZ6oflftBIwm6lYCQtQ5DIRQ6tm02svznor2GYQOfAlT3pnVJ10xCrU3XuXnUrWQ4EG8GKxntXnYEdKY0Ugg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
-<section id="promoted-houses">
+<section id="promoted-houses" class="bg-home-section">
     <div class="container">
         <h2 class="text-center font-weight-bold">The best houses you will find today</h2>
     </div>

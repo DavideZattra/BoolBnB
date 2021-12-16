@@ -10490,13 +10490,18 @@ a:hover {
 }
 
 @media screen and (max-width: 700px) {
+  #promoted-houses {
+    background-color: #FFFFFA;
+    margin: 35px 0;
+  }
+
   .flickity-page-dots {
     display: none;
   }
 
   .carousel-cell {
-    height: 250px;
-    width: 250px;
+    height: 250px !important;
+    width: 250px !important;
   }
 }
 #dashboard {
