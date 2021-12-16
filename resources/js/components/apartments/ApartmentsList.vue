@@ -1,5 +1,5 @@
 <template>
-    <div class="search-wrapper p-5">
+    <div class="search-wrapper px-5 py-4">
         <div class="fluid-container">
             <div class="row">
 
@@ -262,12 +262,12 @@ export default {
     height: calc(100vh - 60px);
 
     #apartment-list{
-        height: calc(100vh - 60px);
+        height: calc(100vh - 110px);
         overflow-y: scroll;
     }
 }
     #map{
-        height: 300px;
+        height: 270px;
         width: 100%;
         border-radius: 15px;
     }

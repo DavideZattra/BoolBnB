@@ -61,7 +61,7 @@
         <div class="form-group col-12">
             <div class="dropdown">
                 <button class="btn btn-custom dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Choose your amenities.
+                    Click here to choose your amenities.
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
