@@ -8,32 +8,16 @@
         <h2 class="text-center font-weight-bold">The best houses you will find today</h2>
     </div>
     <div class="main-carousel scroll" data-flickity='{ "cellAlign": "left", "contain": true }'>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_1.jpeg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_2.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_3.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_4.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_5.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_6.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_7.jpg') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/example-house_8.webp') }}" alt="House image"></a>
-        </div>
-        <div class="carousel-cell">
-            <a href="#"><img class="animation-img" src="{{ asset('img/Jose-Jose.jpg') }}" alt="House image"></a>
-        </div>
+
+        @forelse ($sponsorApartments as $sponsorApartment)
+            <div class="carousel-cell">
+                <a href="{{ route('users.apartments.show', $sponsorApartment->apartment->id) }}"><img class="animation-img" src="{{ asset('storage/'.$sponsorApartments[0]->apartment->image) }}" alt="House image"></a>
+            </div> 
+        @empty
+
+            <h2>no tengo dinero</h2>
+            
+        @endforelse
+        
     </div>
 </section>

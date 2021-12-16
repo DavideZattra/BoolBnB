@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\SponsorApartment;
+use Illuminate\Support\Carbon;
 
 
 /*
@@ -16,7 +18,8 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('guests.home');
+    $sponsorApartments = SponsorApartment::where('end', '>', Carbon::now())->with('apartment')->get();
+    return view('guests.home', compact('sponsorApartments'));
 });
 
 Route::get('/search', function () {
