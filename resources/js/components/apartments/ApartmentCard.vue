@@ -1,15 +1,15 @@
 <template>
-  <div class="card col-12 col-md-5 col-lg-3 m-4 p-0" @click="goToThisHouse" style="width: 18rem;">
-    <img class="card-img-top" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
-    <div class="card-body">
-        <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
-        <p class="m-0">
-          <span>{{ apartment.addresses.country }}</span>, 
-          <span>{{ apartment.addresses.city }}</span> <br>
-          <span>{{ apartment.addresses.address }}</span>
-        </p> 
+    <div class="card col-3 mx-4 mb-4 p-0" @click="goToThisHouse" style="width: 18rem;">
+        <img class="card-img-top" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
+        <div class="card-body">
+            <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
+            <p class="m-0">
+            <span>{{ apartment.addresses.country }}</span>, 
+            <span>{{ apartment.addresses.city }}</span> <br>
+            <span>{{ apartment.addresses.address }}</span>
+            </p> 
+        </div>
     </div>
-  </div>
 </template>
 
 <script>

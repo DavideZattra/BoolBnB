@@ -1,18 +1,32 @@
 <template>
-    <div class="container">
+    <div class="search-wrapper p-3">
+        <div class="fluid-container">
+            <div class="row">
 
-        <div id='map'></div>
-        <div class="row justify-content-center">
-            <SearchAndFilter @getQuery='getQuery' @getRooms='getRooms' @getBathrooms='getBathrooms' @getAmenities='getAmenities' @getRadius='getRadius' :amenities="amenities"/>
-        </div>
+                <div class="col-4">
+                    <div id='map'></div>
 
-        <div class="row justify-content-center mt-5">
-            <ApartmentCard 
-                v-for="filteredApartment in filteredApartments" 
-                :key="filteredApartment.id" 
-                :apartment="filteredApartment"/>
+                    <SearchAndFilter 
+                        @getQuery='getQuery' 
+                        @getRooms='getRooms' 
+                        @getBathrooms='getBathrooms' 
+                        @getAmenities='getAmenities' 
+                        @getRadius='getRadius' 
+                        :amenities="amenities"/>
+                </div>
+
+                <div class="justify-content-center col-8 pl-5">
+                    <div class="fluid-container">
+                        <div id="apartment-list" class="row justify-content-between">
+                            <ApartmentCard 
+                                v-for="filteredApartment in filteredApartments" 
+                                :key="filteredApartment.id" 
+                                :apartment="filteredApartment"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-primary" @click="newMarkerDisplay(this.apartments)">ohibò</button>
     </div>
 </template>
 
@@ -244,10 +258,17 @@ export default {
 </script>
 
 <style lang="scss">
-#map{
-    height: 300px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 15px;
+.search-wrapper{
+    height: calc(100vh - 60px);
+
+    #apartment-list{
+        height: calc(100vh - 60px);
+        overflow-y: scroll;
+    }
 }
+    #map{
+        height: 300px;
+        width: 100%;
+        border-radius: 15px;
+    }
 </style>
