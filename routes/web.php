@@ -32,11 +32,16 @@ Route::middleware('auth')
     ->name('users.') // this is to call the folder of the view
     ->prefix('users') // this is for the URI calls
     ->group(function () {
+
         Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::get('/edit', 'DashboardController@edit')->name('edit');
         Route::patch('/update', 'DashboardController@update')->name('update');
-        // Route::resource('/', DashboardController::class)->except('create', 'store');
+
         Route::resource('apartments', ApartmentController::class);
+        
+        Route::get('/{apartment}/payment', 'PaymentController@payment')->name('braintree.payment');
+
+        Route::post('payment/checkout/{apartment}', 'PaymentController@checkout')->name('braintree.checkout');
 });
 
 Route::namespace('User') // this is to call the folder of the controller
@@ -48,4 +53,3 @@ Route::namespace('User') // this is to call the folder of the controller
         Route::resource('apartments', ApartmentController::class)->only('show');
         Route::post('message', 'MessageController@store')->name('store');
 });
-

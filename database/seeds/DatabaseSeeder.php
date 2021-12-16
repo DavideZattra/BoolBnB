@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SponsorApartment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,10 +17,11 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             AmenitiesTableSeeder::class,
             SponsorTableSeeder::class,
-            // ApartmentsTableSeeder::class,
-            // MessageTableSeeder::class,
-            // AddressesTableSeeder::class,
-            // ViewsTableSeeder::class,
+            ApartmentsTableSeeder::class,
+            MessageTableSeeder::class,
+            AddressesTableSeeder::class,
+            ViewsTableSeeder::class,
+            SponsorApartmentsTableSeeder::class,
         ]);
 
 

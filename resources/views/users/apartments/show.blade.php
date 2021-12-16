@@ -46,6 +46,11 @@
                 </ul>
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
+                    <a class="text-white" href="{{ route('users.braintree.payment', $apartment) }}">sponsorizza</a>
+                @endif
+                    
+
+                @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                     <div class="d-flex mt-3 justify-content-between">
                         <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
                         <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">

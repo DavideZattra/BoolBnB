@@ -8,7 +8,7 @@ class Sponsor extends Model
 {
     protected $fillable = ['name', 'duration', 'price'];
 
-    public function apartment(){
-        return $this->belongsToMany('App\Models\Apartment');
+    public function SponsorApartment(){
+        return $this->hasMany('App\Models\SponsorApartment');
     }
 }

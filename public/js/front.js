@@ -2363,12 +2363,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -4219,7 +4213,7 @@ var render = function () {
               },
               [
                 _vm._v(
-                  "\r\n                        Choose your amenities.\r\n                    "
+                  "\n                        Choose your amenities.\n                    "
                 ),
               ]
             ),
@@ -16857,7 +16851,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /home/davide/Documents/Repository/BoolBnB/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
