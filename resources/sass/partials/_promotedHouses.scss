@@ -36,6 +36,10 @@
 }
 
 @media screen and (max-width: 700px) {
+    #promoted-houses{
+        background-color: $my_white;
+        margin: 35px 0;
+    }
     .flickity-page-dots {
       display: none;
     }
