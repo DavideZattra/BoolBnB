@@ -1,5 +1,5 @@
 <template>
-    <div class="pb-5">
+    <div>
         <ApartmentsList/>
         <!-- <Map/> -->
     </div>
