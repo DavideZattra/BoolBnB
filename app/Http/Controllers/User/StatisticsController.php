@@ -18,9 +18,10 @@ class StatisticsController extends Controller
             ->where('visited_at', '>', Carbon::now()->subYear()->toDateTimeString())
             ->select(
                 DB::raw('YEAR(visited_at) as year'),
-                DB::raw('MONTH(visited_at) as month')                
+                DB::raw('MONTHNAME(visited_at) as monthname'),
+                DB::raw('MONTH(visited_at) as monthnumber')                
             )->selectRaw('count(id) as views')
-            ->groupBy('year', 'month')
+            ->groupBy('year', 'monthnumber')
             ->get(); 
         
             // dd($monthlyVisit);

@@ -11,16 +11,16 @@
       <div class="col-6">
         <div class="row pt-5 pb-5 mb-5">
           
-          @foreach ($monthlyVisit as $item)
+          {{-- @foreach ($monthlyVisit as $item)
               <div class="text-white col-2">
                 <p>Year : {{$item->year}}</p>
                 <p>Month : {{$item->month}}</p>
                 <p>Total Views : {{$item->views}}</p>
               </div>
-          @endforeach
+          @endforeach --}}
         </div>
 
-      </div>EUGENIO ONE LOVE
+      </div>
 
       <div class="col-6">
         <canvas id="myChart"></canvas>
@@ -41,7 +41,7 @@ const monthlyVisit = {!! json_encode($monthlyVisit, JSON_HEX_TAG) !!};
 
 console.log(monthlyVisit);
 
-const labels = monthlyVisit.slice(1,13).map(element => element.month);
+const labels = monthlyVisit.slice(1,13).map(element => element.monthname);
 const data = {
   labels: labels,
   datasets: [{
@@ -62,5 +62,11 @@ const myChart = new Chart(
     document.getElementById('myChart'),
     config
   );
+
+  // Functions
+
+  function monthsNumberConverter() {
+
+  }
 </script>
 @endsection
