@@ -15,15 +15,28 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('guests.home');
-});
+Route::namespace('Guest') // this is to call the folder of the controller
+    // ->name('users.') // this is to call the folder of the view
+     // this is for the URI calls
+    ->group(function () {
+        
+        // Route::resource('/', DashboardController::class)->except('create', 'store');
+        // Route::resource('apartments', ApartmentController::class)->only('show');
+        Route::get('/', 'HomeController@home')->name('home');
+        Route::get('/home', 'HomeController@home')->name('home');
+        Route::post('message', 'MessageController@store')->name('store');
+        Route::get('/search', 'HomeController@search' )->name('apartments.search');
+    });
+    
 
-Route::get('/search', function () {
-    return view('guests.apartments.advanced_search');
-});
+// Route::get('/', function () {
+//     return view('guests.home');
+// });
 
-Route::get('/home', 'Guest\HomeController@index')->name('home');
+// Route::get('/search', function () {
+//     return view('guests.apartments.advanced_search');
+// });
+
 
 Auth::routes();
 
@@ -42,15 +55,15 @@ Route::middleware('auth')
         Route::get('/{apartment}/payment', 'PaymentController@payment')->name('braintree.payment');
 
         Route::post('payment/checkout/{apartment}', 'PaymentController@checkout')->name('braintree.checkout');
-        Route::get('{apartment}/statistics', 'StatisticsController@apartmentStats')->name('apartments.stats');
+        Route::get('statistics/{apartment}', 'StatisticsController@apartmentStats')->name('apartments.stats');
 });
 
-Route::namespace('User') // this is to call the folder of the controller
-    ->name('users.') // this is to call the folder of the view
-    ->prefix('users') // this is for the URI calls
-    ->group(function () {
+// Route::namespace('User') // this is to call the folder of the controller
+//     ->name('users.') // this is to call the folder of the view
+//     ->prefix('users') // this is for the URI calls
+//     ->group(function () {
         
-        // Route::resource('/', DashboardController::class)->except('create', 'store');
-        Route::resource('apartments', ApartmentController::class)->only('show');
-        Route::post('message', 'MessageController@store')->name('store');
-});
+//         // Route::resource('/', DashboardController::class)->except('create', 'store');
+//         Route::resource('apartments', ApartmentController::class)->only('show');
+//         Route::post('message', 'MessageController@store')->name('store');
+// });
