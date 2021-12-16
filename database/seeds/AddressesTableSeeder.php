@@ -33,17 +33,17 @@ class AddressesTableSeeder extends Seeder
             $newAddress->lon = $faker->longitude($min = -180, $max = 180);
             $newAddress->save();
         }
-    //         $newAddress = new Address();
+            // $newAddress = new Address();
 
-    //         $newAddress->apartment_id = 1;
-    //         $newAddress->country = 'Italy';
-    //         $newAddress->region = 'Piemonte';
-    //         $newAddress->province = 'To';
-    //         $newAddress->city = 'Torino';
-    //         $newAddress->address = 'via Oulx 8';
-    //         $newAddress->zip_code = 10139;
-    //         $newAddress->lat = 45.07285541135327;
-    //         $newAddress->lon = 7.637151598397863;
-    //         $newAddress->save();
+            // $newAddress->apartment_id = 1;
+            // $newAddress->country = 'Italy';
+            // $newAddress->region = 'Piemonte';
+            // $newAddress->province = 'To';
+            // $newAddress->city = 'Torino';
+            // $newAddress->address = 'via Oulx 8';
+            // $newAddress->zip_code = 10139;
+            // $newAddress->lat = 45.07285541135327;
+            // $newAddress->lon = 7.637151598397863;
+            // $newAddress->save();
     }
 }
