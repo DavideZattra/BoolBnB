@@ -13,8 +13,8 @@ class SponsorTableSeeder extends Seeder
     public function run()
     {
         $sponsorNames = ['Standard', 'Gold', 'Platinum'];
-        $sponsorPrices = ['19.99', '24.99', '29.99'];
-        $sponsorDurations = ['1', '3', '6'];
+        $sponsorPrices = ['2.99', '5.99', '9.99'];
+        $sponsorDurations = ['24', '72', '144'];
 
         for ($i = 0 ; $i < count($sponsorNames); $i++){
             $newSponsor = new Sponsor();

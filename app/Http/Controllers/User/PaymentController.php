@@ -14,8 +14,13 @@ use App\Models\SponsorApartment;
 
 class PaymentController extends Controller
 {
-    public function payment($apartment)
+    public function payment(Apartment $apartment)
     {
+        if(Auth::user() && Auth::user()->id != $apartment->user_id){
+            
+            return redirect()->route('users.apartments.show', $apartment );
+        }
+
         $sponsors = Sponsor::all();
         
 
