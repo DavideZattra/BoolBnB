@@ -26,6 +26,10 @@
         <canvas id="myChart"></canvas>
       </div>
 
+      <div class="col-6">
+        <canvas id="myOtherChart"></canvas>
+      </div>
+
     </div>
 
     <div>
@@ -37,31 +41,67 @@
 @section('scripts-entrypoint')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+  
 const monthlyVisit = {!! json_encode($monthlyVisit, JSON_HEX_TAG) !!};
+const dailyVisit = {!! json_encode($dailyVisit, JSON_HEX_TAG) !!};
 
 console.log(monthlyVisit);
+console.log(dailyVisit);
 
-const labels = monthlyVisit.slice(1,13).map(element => element.monthname);
-const data = {
-  labels: labels,
-  datasets: [{
-    label: 'Visits',
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: monthlyVisit.slice(1,13).map(element => element.views),
-  }]
-};
+monthlyVisits();
+dailyVisits();
 
-const config = {
-  type: 'bar',
-  data: data,
-  options: {}
-};
 
-const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-  
+// Functions
+
+function monthlyVisits() {
+  const labels = monthlyVisit.slice(1,13).map(element => element.monthname);
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Monthly Visits',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: monthlyVisit.slice(1,13).map(element => element.views),
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+}
+
+function dailyVisits() {
+  const labels = dailyVisit.slice(1,13).map(element => element.day);
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Daily Visits',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: monthlyVisit.slice(1,13).map(element => element.views),
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+      document.getElementById('myOtherChart'),
+      config
+    );
+}
+
+
 </script>
 @endsection

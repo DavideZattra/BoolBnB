@@ -26,7 +26,7 @@ class StatisticsController extends Controller
         
             // dd($monthlyVisit);
         $dailyVisit = View::where('apartment_id', $apartment->id)
-            ->where('visited_at', '>', Carbon::now()->subMonth()->toDateTimeString())
+            ->where('visited_at', '>', Carbon::now()->subDays(30)->toDateTimeString())
             ->select(
                 
                 DB::raw('MONTH(visited_at) as month'),
