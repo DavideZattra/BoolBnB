@@ -21,7 +21,7 @@ class ViewsTableSeeder extends Seeder
 
         foreach ($apartmentIds as $item) {
             
-            for( $i = 0; $i < rand(1000, 3500); $i++ ){
+            for( $i = 0; $i < rand(2500, 5000); $i++ ){
     
                 $newView = new View();
     
