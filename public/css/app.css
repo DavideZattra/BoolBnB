@@ -10023,8 +10023,12 @@ h3 {
   font-family: "Quicksand", sans-serif;
 }
 
-main {
+.bg-container {
   background-color: #141414;
+}
+
+.bg-home-section {
+  background-color: #d8d8d8;
 }
 
 ul {
@@ -10343,7 +10347,6 @@ footer .contacts i {
 .user-edit-container {
   height: calc(100vh - 60px);
   padding-top: 2%;
-  overflow: scroll;
 }
 
 .create-edit-wrapper {
@@ -10438,8 +10441,8 @@ a:hover {
 }
 
 .houses {
-  background-color: #FFFFFA;
-  padding: 30px 0;
+  padding: 100px 0;
+  margin: 50px 0;
 }
 
 .t-ideas {
@@ -10457,8 +10460,7 @@ a:hover {
 
 #promoted-houses {
   background-color: #FFFFFA;
-  padding: 100px 0;
-  overflow-x: hidden;
+  margin: 100px 0;
 }
 #promoted-houses .main-carousel {
   padding: 60px;
@@ -10494,7 +10496,6 @@ a:hover {
 #dashboard {
   height: calc(100vh - 60px);
   padding-top: 5%;
-  overflow-y: scroll;
 }
 #dashboard .wrapper {
   background-color: rgba(0, 0, 0, 0.507);
@@ -10520,7 +10521,7 @@ a:hover {
 }
 #dashboard .card .card-body {
   border: 1px solid #899ba5;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 #dashboard .card .card-body .list-group-item {
   background-color: black;
@@ -10569,8 +10570,8 @@ a:hover {
 }
 
 #dtl {
-  background-color: #ffffffe8;
   padding: 100px 0;
+  margin: 100px 0;
 }
 #dtl .container-fluid, #dtl .container-sm, #dtl .container-md, #dtl .container-lg, #dtl .container-xl {
   padding: 0 10%;
