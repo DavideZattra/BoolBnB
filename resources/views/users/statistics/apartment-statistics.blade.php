@@ -41,27 +41,14 @@ const monthlyVisit = {!! json_encode($monthlyVisit, JSON_HEX_TAG) !!};
 
 console.log(monthlyVisit);
 
-const labels = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-  ];
+const labels = monthlyVisit.slice(1,13).map(element => element.month);
 const data = {
   labels: labels,
   datasets: [{
     label: 'Visits',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
+    data: monthlyVisit.slice(1,13).map(element => element.views),
   }]
 };
 
