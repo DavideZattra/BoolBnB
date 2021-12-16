@@ -6,36 +6,41 @@
 
 @section('content')
 
+<section class="bg-container pb-5">
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        <div class="row pt-5 pb-5 mb-5">
-          
-          {{-- @foreach ($monthlyVisit as $item)
-              <div class="text-white col-2">
-                <p>Year : {{$item->year}}</p>
-                <p>Month : {{$item->month}}</p>
-                <p>Total Views : {{$item->views}}</p>
-              </div>
-          @endforeach --}}
+        <div class="col-12">
+          <h1 class="text-white text-center pt-5 pb-5">Up-to-date statistics of your apartments</h1>
         </div>
 
+        <div class="col-12 d-flex align-items-center mt-5 mb-5">
+          <div class="col-6 float-left">
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <div class="col-6 float-right text-center ">
+            <h2 class="text-white">Monthly visits</h2>
+          </div>
+        </div>
+
+        <div class="col-12 d-flex align-items-center mt-5 mb-5">
+          <div class="col-6 float-left text-center ">
+            <h2 class="text-white">Daily Visits</h2>
+          </div>
+
+          <div class="col-6 float-right">
+            <canvas id="myOtherChart"></canvas>
+          </div>
+        </div>
       </div>
-
-      <div class="col-6">
-        <canvas id="myChart"></canvas>
+      <div class="col-12 text-center">
+        <h1 class="text-white text-center pt-5 pb-5">Want to improve your statistics?</h1>
+        <a class="btn btn-primary" href="{{route('users.braintree.payment', $apartment)}}">To sponsorships</a>
       </div>
-
-      <div class="col-6">
-        <canvas id="myOtherChart"></canvas>
-      </div>
-
-    </div>
-
-    <div>
     </div>
   </div>
-
+</section>
+  
 @endsection
 
 @section('scripts-entrypoint')
