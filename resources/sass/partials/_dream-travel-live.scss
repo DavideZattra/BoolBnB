@@ -1,5 +1,5 @@
 #dtl{
-    background-color: #c7c7c7;
+    background-color: #ffffffe8;
     padding: 100px 0;
 
     .container-fluid{
@@ -10,7 +10,6 @@
         height: 550px;
         width: 100%;
         padding: 10px;
-        border: 1px solid red;
 
         img{
             width: 100%;
@@ -21,7 +20,6 @@
     }
 
     .right-side{
-        border: 1px solid red;
         width: 80%;
     }
     
@@ -31,7 +29,7 @@
             font-weight: bold;
         }
         p{
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
     }
 }
