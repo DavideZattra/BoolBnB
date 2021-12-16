@@ -5,20 +5,42 @@
 @endsection
 
 @section('content')
-    @foreach ($monthlyVisit as $item)
-        <div class="text-white">
-          <p>Year : {{$item->year}}</p>
-          <p>Month : {{$item->month}}</p>
-          <p>Total Views : {{$item->views}}</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="row pt-5 pb-5 mb-5">
+          
+          @foreach ($monthlyVisit as $item)
+              <div class="text-white col-2">
+                <p>Year : {{$item->year}}</p>
+                <p>Month : {{$item->month}}</p>
+                <p>Total Views : {{$item->views}}</p>
+              </div>
+          @endforeach
         </div>
-    @endforeach
-    <canvas id="myChart"></canvas>
+
+      </div>
+
+      <div class="col-6">
+        <canvas id="myChart"></canvas>
+      </div>
+
+    </div>
+
+    <div>
+    </div>
+  </div>
 
 @endsection
 
 @section('scripts-entrypoint')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+const monthlyVisit = {!! json_encode($monthlyVisit, JSON_HEX_TAG) !!};
+
+console.log(monthlyVisit);
+
 const labels = [
   'January',
   'February',
