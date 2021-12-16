@@ -6,7 +6,7 @@
 
 @section('content')
 
-<section class="bg-container ">
+<section class="bg-container pb-5">
   <div class="container">
     <div class="row">
         <div class="col-12">
@@ -33,8 +33,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <h1 class="text-white text-center pt-5 pb-5">Improve your Statistics</h1>
+      <div class="col-12 text-center">
+        <h1 class="text-white text-center pt-5 pb-5">Want to improve your statistics?</h1>
+        <a class="btn btn-primary" href="{{route('users.braintree.payment', $apartment)}}">To sponsorships</a>
       </div>
     </div>
   </div>

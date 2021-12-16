@@ -17,7 +17,6 @@ class PaymentController extends Controller
     public function payment($apartment)
     {
         $sponsors = Sponsor::all();
-        
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
