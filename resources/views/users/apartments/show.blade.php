@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<section class="py-5">
+<section class="py-5 bg-container">
     <div class="container show-container px-5">
         <div class="row">
             <div class="col-12 apartment-modify">

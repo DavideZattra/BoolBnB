@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="p-3">
+<section class="p-3 bg-container">
     <div class="container">
         <h4>Insert your apartment's info.</h4>
 

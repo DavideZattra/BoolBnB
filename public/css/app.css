@@ -10486,6 +10486,11 @@ a:hover {
   transform: scale(0.9);
 }
 
+@media screen and (max-width: 700px) {
+  .flickity-page-dots {
+    display: none;
+  }
+}
 #dashboard {
   height: calc(100vh - 60px);
   padding-top: 5%;
@@ -10561,4 +10566,40 @@ a:hover {
 }
 #dashboard .card .card-footer .btn:hover {
   border: 2px solid #899ba5;
+}
+
+#dtl {
+  background-color: #ffffffe8;
+  padding: 100px 0;
+}
+#dtl .container-fluid, #dtl .container-sm, #dtl .container-md, #dtl .container-lg, #dtl .container-xl {
+  padding: 0 10%;
+}
+#dtl .dtl-container {
+  height: 550px;
+  width: 100%;
+  padding: 10px;
+}
+#dtl .dtl-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+#dtl .right-side {
+  width: 80%;
+}
+#dtl .dtl-text__content h2 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+#dtl .dtl-text__content p {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 975px) {
+  .dtl-text__content {
+    display: none !important;
+  }
 }

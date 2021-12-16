@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="index-wrapper">
+    <div class="index-wrapper bg-container">
         <div class="container px-5">
     
             <header class="py-3 mb-5">
