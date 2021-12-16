@@ -2313,9 +2313,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ApartmentCard",
-  props: ["apartment"]
+  props: ["apartment"],
+  data: function data() {
+    return {
+      baseUri: 'http://127.0.0.1:8000'
+    };
+  },
+  methods: {
+    goToThisHouse: function goToThisHouse() {
+      var _this = this;
+
+      axios.get("".concat(this.baseUri, "/users/apartments/").concat(this.apartment.id))["finally"](function (err) {
+        window.location = '/users/apartments/' + _this.apartment.id;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2345,6 +2361,20 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2665,8 +2695,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchAndFilter",
   props: ['amenities'],
@@ -2695,7 +2723,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\nmain[data-v-4662a702] {\n  background-color: #141414;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.row[data-v-4662a702] {\n  background-color: rgba(0, 0, 0, 0.507);\n  border-radius: 20px;\n}\na[data-v-4662a702] {\n  color: #899ba5;\n}\na[data-v-4662a702]:hover {\n  color: white;\n}\n.card[data-v-4662a702] {\n  border: 3px solid #899ba5;\n}\n.card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
+exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #d8d8d8;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  height: 170px;\n  border: 3px solid #899ba5;\n  cursor: pointer;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
 
 // exports
 
@@ -2714,7 +2742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "#map {\n  height: 300px;\n  width: 100%;\n  margin: 0 auto;\n  border-radius: 15px;\n}", ""]);
+exports.push([module.i, ".search-wrapper {\n  height: calc(100vh - 60px);\n}\n.search-wrapper #apartment-list {\n  height: calc(100vh - 60px);\n  overflow-y: scroll;\n}\n#map {\n  height: 300px;\n  width: 100%;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -3884,38 +3912,41 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "card col-12 col-md-5 col-lg-3 m-4 p-0",
-      staticStyle: { width: "18rem" },
-    },
-    [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: {
-          src: "/storage/" + _vm.apartment.image,
-          alt: _vm.apartment.descriptive_title,
-        },
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
-          _vm._v(_vm._s(_vm.apartment.descriptive_title)),
-        ]),
+  return _c("div", { staticClass: "col-4 card-wrapper" }, [
+    _c(
+      "div",
+      {
+        staticClass: "card col-12 p-0",
+        staticStyle: { width: "18rem" },
+        on: { click: _vm.goToThisHouse },
+      },
+      [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: {
+            src: "/storage/" + _vm.apartment.image,
+            alt: _vm.apartment.descriptive_title,
+          },
+        }),
         _vm._v(" "),
-        _c("p", { staticClass: "m-0" }, [
-          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
-          _vm._v(", \n        "),
-          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+        _c("div", { staticClass: "card-body" }, [
+          _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
+            _vm._v(_vm._s(_vm.apartment.descriptive_title)),
+          ]),
           _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+          _c("p", { staticClass: "m-0" }, [
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
+            _vm._v(", \n            "),
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+          ]),
         ]),
-      ]),
-    ]
-  )
+      ]
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3939,51 +3970,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { attrs: { id: "map" } }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      [
-        _c("SearchAndFilter", {
-          attrs: { amenities: _vm.amenities },
-          on: {
-            getQuery: _vm.getQuery,
-            getRooms: _vm.getRooms,
-            getBathrooms: _vm.getBathrooms,
-            getAmenities: _vm.getAmenities,
-            getRadius: _vm.getRadius,
-          },
-        }),
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "row justify-content-center mt-5" },
-      _vm._l(_vm.filteredApartments, function (filteredApartment) {
-        return _c("ApartmentCard", {
-          key: filteredApartment.id,
-          attrs: { apartment: filteredApartment },
-        })
-      }),
-      1
-    ),
-    _vm._v(" "),
-    _c(
-      "button",
-      {
-        staticClass: "btn btn-primary",
-        on: {
-          click: function ($event) {
-            return _vm.newMarkerDisplay(this.apartments)
-          },
-        },
-      },
-      [_vm._v("ohibò")]
-    ),
+  return _c("div", { staticClass: "search-wrapper p-5" }, [
+    _c("div", { staticClass: "fluid-container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-4" },
+          [
+            _c("div", { attrs: { id: "map" } }),
+            _vm._v(" "),
+            _c("SearchAndFilter", {
+              attrs: { amenities: _vm.amenities },
+              on: {
+                getQuery: _vm.getQuery,
+                getRooms: _vm.getRooms,
+                getBathrooms: _vm.getBathrooms,
+                getAmenities: _vm.getAmenities,
+                getRadius: _vm.getRadius,
+              },
+            }),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "justify-content-center col-8 pl-4" }, [
+          _c("div", { staticClass: "fluid-container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "row justify-content-center",
+                attrs: { id: "apartment-list" },
+              },
+              _vm._l(_vm.filteredApartments, function (filteredApartment) {
+                return _c("ApartmentCard", {
+                  key: filteredApartment.id,
+                  attrs: { apartment: filteredApartment },
+                })
+              }),
+              1
+            ),
+          ]),
+        ]),
+      ]),
+    ]),
   ])
 }
 var staticRenderFns = []
@@ -4008,307 +4037,306 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "p-3" }, [
-      _c("div", { staticClass: "row mt-4 ml-2 d-flex align-items-center" }, [
-        _c("div", { staticClass: "col-sm-12 col-lg-6 input-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.trim",
-                value: _vm.needle,
-                expression: "needle",
-                modifiers: { trim: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              value: "",
-              placeholder: "Choose an address or a city",
-              type: "text",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
+  return _c("div", [
+    _c("div", { staticClass: "row mt-4" }, [
+      _c("div", { staticClass: "col-12 input-group" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.trim",
+              value: _vm.needle,
+              expression: "needle",
+              modifiers: { trim: true },
             },
-            domProps: { value: _vm.needle },
-            on: {
-              keyup: function ($event) {
-                if (
-                  !$event.type.indexOf("key") &&
-                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-                ) {
-                  return null
-                }
-                return _vm.$emit("getQuery", _vm.needle)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.needle = $event.target.value.trim()
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            value: "",
+            placeholder: "Choose an address or a city",
+            type: "text",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+          },
+          domProps: { value: _vm.needle },
+          on: {
+            keyup: function ($event) {
+              if (
+                !$event.type.indexOf("key") &&
+                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+              ) {
+                return null
+              }
+              return _vm.$emit("getQuery", _vm.needle)
             },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group-append" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-secondary ",
-                attrs: { type: "button" },
-                on: {
-                  click: function ($event) {
-                    return _vm.$emit("getQuery", _vm.needle)
-                  },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.needle = $event.target.value.trim()
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group-append" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary ",
+              attrs: { type: "button" },
+              on: {
+                click: function ($event) {
+                  return _vm.$emit("getQuery", _vm.needle)
                 },
               },
-              [_vm._v("Search")]
-            ),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-lg-6 pb-4" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of km radius from chosen location."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.radius,
-                expression: "radius",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "550",
             },
-            domProps: { value: _vm.radius },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getRadius", _vm.radius)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.radius = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
-            },
-          }),
+            [_vm._v("Search")]
+          ),
         ]),
       ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-4 ml-2" }, [
-        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of needed rooms."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.rooms,
-                expression: "rooms",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "10",
-            },
-            domProps: { value: _vm.rooms },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getRooms", _vm.rooms)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.rooms = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
-            },
-          }),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row mt-4" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("label", { staticClass: "form-check-label text-white" }, [
+          _vm._v("Choose the number of km radius from chosen location."),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-lg-6" }, [
-          _c("label", { staticClass: "form-check-label text-white" }, [
-            _vm._v("Choose the number of needed bathrooms."),
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.bathrooms,
-                expression: "bathrooms",
-                modifiers: { number: true },
-              },
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "number",
-              "aria-label": "Small",
-              "aria-describedby": "inputGroup-sizing-sm",
-              min: "1",
-              max: "10",
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.radius,
+              expression: "radius",
+              modifiers: { number: true },
             },
-            domProps: { value: _vm.bathrooms },
-            on: {
-              change: function ($event) {
-                return _vm.$emit("getBathrooms", _vm.bathrooms)
-              },
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.bathrooms = _vm._n($event.target.value)
-              },
-              blur: function ($event) {
-                return _vm.$forceUpdate()
-              },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "550",
+          },
+          domProps: { value: _vm.radius },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getRadius", _vm.radius)
             },
-          }),
-        ]),
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.radius = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
       ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row mt-4 ml-2" }, [
-        _c("div", { staticClass: "form-group col-sm-12 col-lg-6" }, [
-          _c("div", { staticClass: "dropdown" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-custom dropdown-toggle",
-                attrs: {
-                  type: "button",
-                  id: "dropdownMenu2",
-                  "data-toggle": "dropdown",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false",
-                },
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row mt-4" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("label", { staticClass: "form-check-label text-white" }, [
+          _vm._v("Choose the number of needed rooms."),
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.rooms,
+              expression: "rooms",
+              modifiers: { number: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "10",
+          },
+          domProps: { value: _vm.rooms },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getRooms", _vm.rooms)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.rooms = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row mt-4" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("label", { staticClass: "form-check-label text-white" }, [
+          _vm._v("Choose the number of needed bathrooms."),
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.bathrooms,
+              expression: "bathrooms",
+              modifiers: { number: true },
+            },
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "number",
+            "aria-label": "Small",
+            "aria-describedby": "inputGroup-sizing-sm",
+            min: "1",
+            max: "10",
+          },
+          domProps: { value: _vm.bathrooms },
+          on: {
+            change: function ($event) {
+              return _vm.$emit("getBathrooms", _vm.bathrooms)
+            },
+            input: function ($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.bathrooms = _vm._n($event.target.value)
+            },
+            blur: function ($event) {
+              return _vm.$forceUpdate()
+            },
+          },
+        }),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "row mt-4 p-0" }, [
+      _c("div", { staticClass: "form-group col-12" }, [
+        _c("div", { staticClass: "dropdown" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-custom dropdown-toggle",
+              attrs: {
+                type: "button",
+                id: "dropdownMenu2",
+                "data-toggle": "dropdown",
+                "aria-haspopup": "true",
+                "aria-expanded": "false",
               },
-              [
-                _vm._v(
-                  "\n                        Choose your amenities.\n                    "
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "dropdown-menu",
-                attrs: { "aria-labelledby": "dropdownMenu2" },
-              },
-              [
-                _c(
-                  "button",
-                  { staticClass: "dropdown-item", attrs: { type: "button" } },
-                  [
-                    _vm._l(_vm.amenities, function (amenity) {
-                      return _c("div", { key: amenity.id }, [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.checkedAmenities,
-                              expression: "checkedAmenities",
-                            },
-                          ],
-                          staticClass: "form-check-input",
-                          attrs: {
-                            type: "checkbox",
-                            id: amenity.name,
-                            "true-value": "yes",
-                            "false-value": "no",
-                          },
-                          domProps: {
-                            value: amenity.id,
-                            checked: Array.isArray(_vm.checkedAmenities)
-                              ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
-                              : _vm._q(_vm.checkedAmenities, "yes"),
-                          },
-                          on: {
-                            change: function ($event) {
-                              var $$a = _vm.checkedAmenities,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? "yes" : "no"
-                              if (Array.isArray($$a)) {
-                                var $$v = amenity.id,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    (_vm.checkedAmenities = $$a.concat([$$v]))
-                                } else {
-                                  $$i > -1 &&
-                                    (_vm.checkedAmenities = $$a
-                                      .slice(0, $$i)
-                                      .concat($$a.slice($$i + 1)))
-                                }
-                              } else {
-                                _vm.checkedAmenities = $$c
-                              }
-                            },
-                          },
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "label",
+            },
+            [
+              _vm._v(
+                "\r\n                    Choose your amenities.\r\n                "
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropdown-menu",
+              attrs: { "aria-labelledby": "dropdownMenu2" },
+            },
+            [
+              _c(
+                "button",
+                { staticClass: "dropdown-item", attrs: { type: "button" } },
+                [
+                  _vm._l(_vm.amenities, function (amenity) {
+                    return _c("div", { key: amenity.id }, [
+                      _c("input", {
+                        directives: [
                           {
-                            staticClass: "form-check-label",
-                            attrs: { for: amenity.name },
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.checkedAmenities,
+                            expression: "checkedAmenities",
                           },
-                          [_vm._v(_vm._s(amenity.name))]
-                        ),
-                      ])
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-custom m-2",
+                        ],
+                        staticClass: "form-check-input",
+                        attrs: {
+                          type: "checkbox",
+                          id: amenity.name,
+                          "true-value": "yes",
+                          "false-value": "no",
+                        },
+                        domProps: {
+                          value: amenity.id,
+                          checked: Array.isArray(_vm.checkedAmenities)
+                            ? _vm._i(_vm.checkedAmenities, amenity.id) > -1
+                            : _vm._q(_vm.checkedAmenities, "yes"),
+                        },
                         on: {
-                          click: function ($event) {
-                            return _vm.$emit(
-                              "getAmenities",
-                              _vm.checkedAmenities
-                            )
+                          change: function ($event) {
+                            var $$a = _vm.checkedAmenities,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? "yes" : "no"
+                            if (Array.isArray($$a)) {
+                              var $$v = amenity.id,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  (_vm.checkedAmenities = $$a.concat([$$v]))
+                              } else {
+                                $$i > -1 &&
+                                  (_vm.checkedAmenities = $$a
+                                    .slice(0, $$i)
+                                    .concat($$a.slice($$i + 1)))
+                              }
+                            } else {
+                              _vm.checkedAmenities = $$c
+                            }
                           },
                         },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "label",
+                        {
+                          staticClass: "form-check-label",
+                          attrs: { for: amenity.name },
+                        },
+                        [_vm._v(_vm._s(amenity.name))]
+                      ),
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-custom m-2",
+                      on: {
+                        click: function ($event) {
+                          return _vm.$emit("getAmenities", _vm.checkedAmenities)
+                        },
                       },
-                      [_vm._v("Submit")]
-                    ),
-                  ],
-                  2
-                ),
-              ]
-            ),
-          ]),
+                    },
+                    [_vm._v("Submit")]
+                  ),
+                ],
+                2
+              ),
+            ]
+          ),
         ]),
       ]),
     ]),
@@ -16851,7 +16879,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/davide/Documents/Repository/BoolBnB/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

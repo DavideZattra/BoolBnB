@@ -6,8 +6,8 @@
         padding: 60px;
     }
     .carousel-cell{
-        height: 350px;
-        width: 350px;
+        height: 450px;
+        width: 450px;
         margin: 0 20px;
         border-radius: 8px;
         a{
@@ -30,8 +30,17 @@
         }
     }
 }
+
+.flickity-page-dots{
+    width: 90% !important;
+}
+
 @media screen and (max-width: 700px) {
     .flickity-page-dots {
       display: none;
+    }
+    .carousel-cell{
+        height: 250px !important;
+        width: 250px !important;
     }
   }

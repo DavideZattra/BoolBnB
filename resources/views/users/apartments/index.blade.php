@@ -33,7 +33,7 @@
                 {{ $apartments->links() }}
             </div>
 
-            <div class="py-3 mb-5">
+            <div class="py-3">
                 <h5><a href="{{route("users.apartments.create")}}" class="font-italic">Click here to insert a new apartment</a></h5>
             </div>
         </div>
