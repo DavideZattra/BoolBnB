@@ -10456,8 +10456,8 @@ a:hover {
 }
 
 #promoted-houses {
-  background-color: #FFFFFA;
   margin: 100px 0;
+  padding: 100px 0;
 }
 #promoted-houses .main-carousel {
   padding: 60px;
