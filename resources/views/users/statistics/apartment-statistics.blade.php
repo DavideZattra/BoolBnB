@@ -20,7 +20,7 @@
           @endforeach
         </div>
 
-      </div>
+      </div>EUGENIO ONE LOVE
 
       <div class="col-6">
         <canvas id="myChart"></canvas>
