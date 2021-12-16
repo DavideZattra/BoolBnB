@@ -30,3 +30,8 @@
         }
     }
 }
+@media screen and (max-width: 700px) {
+    .flickity-page-dots {
+      display: none;
+    }
+  }
