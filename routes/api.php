@@ -15,16 +15,16 @@ use App\Models\Amenity;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::namespace('Api')->name("api.")->group(function(){
     
-    Route::resource('apartments', 'ApartmentController')->only('index', 'show');
-});
-
-Route::get('/amenities', function () {
-    $data = Amenity::all();
-    return response()->json($data);
+    Route::get('apartments', 'ApartmentController@index');
+    Route::get('apartments/sponsored', 'ApartmentController@sponsored');
+    Route::get('amenities', function () {
+        $data = Amenity::all();
+        return response()->json($data);
+    });
 });

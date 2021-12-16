@@ -10027,6 +10027,10 @@ h3 {
   background-color: #141414;
 }
 
+.bg-home-section {
+  background-color: #d8d8d8;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -10175,9 +10179,6 @@ footer .contacts i {
   color: #899ba5;
 }
 
-.index-wrapper {
-  height: calc(100vh - 60px);
-}
 .index-wrapper .row {
   background-color: rgba(0, 0, 0, 0.507);
   border-radius: 20px;
@@ -10437,8 +10438,8 @@ a:hover {
 }
 
 .houses {
-  background-color: #FFFFFA;
-  padding: 30px 0;
+  padding: 100px 0;
+  margin: 50px 0;
 }
 
 .t-ideas {
@@ -10456,15 +10457,14 @@ a:hover {
 
 #promoted-houses {
   background-color: #FFFFFA;
-  padding: 100px 0;
-  overflow-x: hidden;
+  margin: 100px 0;
 }
 #promoted-houses .main-carousel {
   padding: 60px;
 }
 #promoted-houses .carousel-cell {
-  height: 350px;
-  width: 350px;
+  height: 450px;
+  width: 450px;
   margin: 0 20px;
   border-radius: 8px;
 }
@@ -10485,13 +10485,26 @@ a:hover {
   transform: scale(0.9);
 }
 
+.flickity-page-dots {
+  width: 90% !important;
+}
+
 @media screen and (max-width: 700px) {
+  #promoted-houses {
+    background-color: #FFFFFA;
+    margin: 35px 0;
+  }
+
   .flickity-page-dots {
     display: none;
   }
+
+  .carousel-cell {
+    height: 250px !important;
+    width: 250px !important;
+  }
 }
 #dashboard {
-  height: calc(100vh - 60px);
   padding-top: 5%;
 }
 #dashboard .wrapper {
@@ -10567,8 +10580,8 @@ a:hover {
 }
 
 #dtl {
-  background-color: #ffffffe8;
   padding: 100px 0;
+  margin: 100px 0;
 }
 #dtl .container-fluid, #dtl .container-sm, #dtl .container-md, #dtl .container-lg, #dtl .container-xl {
   padding: 0 10%;
