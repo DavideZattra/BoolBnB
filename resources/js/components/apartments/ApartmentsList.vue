@@ -1,5 +1,5 @@
 <template>
-    <div class="search-wrapper p-3">
+    <div class="search-wrapper p-5">
         <div class="fluid-container">
             <div class="row">
 
@@ -15,9 +15,9 @@
                         :amenities="amenities"/>
                 </div>
 
-                <div class="justify-content-center col-8 pl-5">
+                <div class="justify-content-center col-8 pl-4">
                     <div class="fluid-container">
-                        <div id="apartment-list" class="row justify-content-between">
+                        <div id="apartment-list" class="row justify-content-center">
                             <ApartmentCard 
                                 v-for="filteredApartment in filteredApartments" 
                                 :key="filteredApartment.id" 
