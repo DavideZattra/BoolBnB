@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SponsorApartment;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder

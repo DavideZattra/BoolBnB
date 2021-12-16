@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-container">
         <div class="row justify-content-between">
-            <div class="col-12 col-md-6 col-lg-4 mt-2">
+            <div class="col-12 col-md-6 col-lg-4 mt-2 scroll">
                 <div class="yellow-line"></div>
                 <h2 class="yellow">Dream. Travel. Live.</h2>
                 <h3 class="yellow">BoolBnB</h3>
@@ -16,9 +16,9 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
-
             </div>
-            <div class="col-12 col-md-6 col-lg-2 mt-2">
+
+            <div class="col-12 col-md-6 col-lg-2 mt-2 scroll">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Host</h4>
                 <ul>
@@ -32,7 +32,8 @@
                     <li><a href="#">Rules to host</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-6 col-lg-2 mt-2">
+
+            <div class="col-12 col-md-6 col-lg-2 mt-2 scroll">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Info</h4>
                 <ul>
@@ -42,14 +43,13 @@
                     <li><a href="#">Informazioni di sicurezza</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-md-6 col-lg-2 mt-2">
+
+            <div class="col-12 col-md-6 col-lg-2 mt-2 scroll">
                 <div class="yellow-line"></div>
                 <h4 class="yellow">Contacts</h4>
                 <ul class="contacts">
                     <li><i class="fas fa-phone"></i>055/123456</li>
-                    
                     <li><i class="fab fa-whatsapp"></i>Live chat</li>
-
                     <li><i class="fas fa-at"></i>bool@bnb.com</li>
                 </ul>
             </div>

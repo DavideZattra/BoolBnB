@@ -19,13 +19,15 @@ class ViewsTableSeeder extends Seeder
     {
         $apartmentIds = Apartment::pluck('id')->toArray();
 
-        for( $i = 0; $i < 20; $i++ ){
+        for( $i = 0; $i < 1000; $i++ ){
 
             $newView = new View();
 
-            $newView->apartment_id = Arr::random($apartmentIds);
-            $newView->ip_adress = $faker->ipv4();
-            $newView->visited_at = $faker->dateTime();
+            $newView->apartment_id = 1;
+
+            // $newView->apartment_id = Arr::random($apartmentIds);
+            $newView->ip_address = $faker->ipv4();
+            $newView->visited_at = $faker->dateTimeBetween('-1 years', '+1 week');
             
             $newView->save();
         };

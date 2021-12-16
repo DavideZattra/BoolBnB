@@ -47,7 +47,7 @@ class ApartmentsTableSeeder extends Seeder
                 
             }
 
-            $newApartment->sponsors()->attach(Arr::random($sponsorsId));
+            // $newApartment->sponsors()->attach(Arr::random($sponsorsId));
         }
     }
 }

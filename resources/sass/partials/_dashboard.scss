@@ -1,7 +1,6 @@
 #dashboard{
     height: calc(100vh - 60px);
     padding-top: 5%;
-    overflow-y: scroll;
     
     .wrapper{
         background-color: $my_new-black;
@@ -31,7 +30,7 @@
 
         .card-body{
             border: 1px solid $my_brightyellow;
-            overflow: scroll;
+            overflow-y: scroll;
 
             .list-group-item{
                 background-color: black;

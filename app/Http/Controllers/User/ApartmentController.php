@@ -12,7 +12,9 @@ use App\User;
 use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
-
+use App\Models\View;
+use DateTime;
+use Illuminate\Support\Carbon;
 
 class ApartmentController extends Controller
 {
@@ -92,7 +94,7 @@ class ApartmentController extends Controller
 
         $data = $request->all();
 
-        $apiQuery = $data['country'] . '-' .  $data['region'] . '-' .  $data['city'] . '-' .  str_replace(' ', '-', $data['address']) ;
+        $apiQuery = str_replace(' ', '-', $data['country']) . '-' .  str_replace(' ', '-', $data['region']) . '-' .  str_replace(' ', '-', $data['city']) . '-' .  str_replace(' ', '-', $data['address']) ;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $apiQuery . '.json?key=NLbGYpRnYCS3jxXsynN2IfGsmEgZJJzB');
         $response = json_decode($response);
         
@@ -131,13 +133,39 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment)
+    public function show(Request $request, Apartment $apartment)
     {
+        // data to get the array of view il the last 8 hours
+        $clientView = View::where('apartment_id', $apartment->id)
+        ->where('ip_address', $request->ip())
+        ->where('created_at', '>', Carbon::now()->subHours(8)->toDateTimeString())->get(); 
+        
         $amenities = $apartment->amenities->pluck('name')->toArray();
-
+        
         $messages = $apartment->messages->toArray();
 
-        return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        if (Auth::user() && Auth::user()->id == $apartment->user_id):
+
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+
+        elseif (!count($clientView) ): 
+
+            $data['ip_address'] = $request->ip();
+            $data['apartment_id'] = $apartment->id;
+            $data['visited_at'] = date("Y-m-d H:i:s");
+
+            $newView = new View();
+            $newView->fill($data);
+            
+            $newView->save();
+
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+
+        else:
+            
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+        endif;
+        
     }
 
     /**
@@ -175,7 +203,7 @@ class ApartmentController extends Controller
             'description' => 'required|min:50|max:255',
             'country' => 'required|string|min:4',
             'region' => 'required|string|min:4',
-            'province' => 'required|string|min:4',
+            'province' => 'required|string|min:2',
             'city' => 'required|string|min:2',
             'address' => 'required|string|min:4',
             'zip_code' => 'required|numeric|min:3',
