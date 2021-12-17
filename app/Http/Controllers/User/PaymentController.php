@@ -16,7 +16,11 @@ use App\Models\Sponsor;
 class PaymentController extends Controller
 {
     public function payment($apartment)
-    {
+    {   
+        if(Auth::user()->id != Apartment::findOrFail($apartment)->user_id){
+            return redirect()->route('users.apartments.index');
+        }
+
         $sponsors = Sponsor::all();
 
         $gateway = new \Braintree\Gateway([
