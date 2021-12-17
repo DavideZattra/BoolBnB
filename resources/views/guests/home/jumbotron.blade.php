@@ -2,7 +2,7 @@
     <div id="jumbo" class="d-flex justify-content-end align-items-center align-items-md-start">
         <div class="jumbo-text jumbo-lg d-block d-md-none text-center col-12 d-flex align-items-center justify-content-center white-block">
             <div>
-                <h3>BoolBnb</h3>
+                <img src="{{ asset('/img/logo-white.png') }}" alt="logo">
                 <h2>Dream. Travel. Live.</h2>
     
                 <div class="jumbo-button">
@@ -19,7 +19,7 @@
 
         <div class="jumbo-text jumbo-lg d-none d-md-block text-center col-md-12 col-lg-6 black-block scroll">
 
-            <h3>BoolBnb</h3>
+            <img src="{{ asset('/img/logo-black.png') }}" alt="logo">
             <h2>Dream. Travel. Live.</h2>
 
             <div class="jumbo-button">

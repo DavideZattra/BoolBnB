@@ -3,6 +3,11 @@ footer{
     background-color: $my_black;
     color: $my_white;
 
+    #footer-logo{
+        width: 110px;
+        padding-bottom: 40px;
+    }
+
     .footer-container{
         width: 80%;
         margin: 0 auto;

@@ -1,13 +1,13 @@
 <template>
-    <div class="col-6 col-md-12 col-lg-4 card-wrapper">
+    <div class="col-12 col-sm-6 col-md-12 col-lg-4 card-wrapper">
         <div class="card col-12 p-0 d-flex" @click="goToThisHouse" style="width: 18rem;">
             <img class="card-img-top img-fluid" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
             <div class="card-body">
                 <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
                 <p class="m-0">
-                <span>{{ apartment.addresses.country }}</span>, 
-                <span>{{ apartment.addresses.city }}</span> <br>
-                <span>{{ apartment.addresses.address }}</span>
+                    <span>{{ apartment.addresses.country }}</span>, 
+                    <span>{{ apartment.addresses.city }}</span> <br>
+                    <span>{{ apartment.addresses.address }}</span>
                 </p> 
             </div>
         </div>
@@ -26,9 +26,9 @@ export default {
     },
     methods: {
         goToThisHouse() {
-                axios.get(`${this.baseUri}/users/apartments/${this.apartment.id}`)
+                axios.get(`${this.baseUri}/apartment/${this.apartment.id}`)
                     .finally( err => {
-                        window.location = '/users/apartments/' + this.apartment.id;
+                        window.location = '/apartment/' + this.apartment.id;
                     })
             },
     }
@@ -43,6 +43,7 @@ export default {
 
         a{
             color: $my_brightyellow;
+            font-weight: 100;
 
             &:hover{
                 color: white;
@@ -52,6 +53,7 @@ export default {
         .card{
             // height: 300px;
             border: 3px solid $my_brightyellow;
+            border-radius: 5px;
             cursor: pointer;
 
             .card-img-top{

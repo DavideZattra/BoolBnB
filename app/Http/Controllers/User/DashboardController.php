@@ -29,10 +29,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        // dd(Auth::user());
+        
         $user = Auth::user();
         $userApartments = $user->apartments->toArray();
-        // dd($userApartments);
+        
 
         return view('users.dashboard', compact('user', 'userApartments'));
     }
@@ -74,15 +74,20 @@ class DashboardController extends Controller
 
         
         $data = $request->all();
-        $data['profile_picture'] = Storage::put('profile-picture', $data['profile_picture']);
+        
+        if (array_key_exists('profile_picture', $data)) {
+            
+            $data['profile_picture'] = Storage::put('profile-picture', $data['profile_picture']);
+        }
+        
         
         // Fill user model
         $user->fill($data);
-        // dd($user);
+        
         $user->update();
         
 
-        return redirect()->route('users.dashboard');
+        return redirect()->route('users.profile');
 
     }
 }

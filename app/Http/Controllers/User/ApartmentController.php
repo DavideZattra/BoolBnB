@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 use App\User;
 use App\Models\Apartment;
@@ -116,10 +117,6 @@ class ApartmentController extends Controller
 
         $newAddress->save();
 
-        
-
-        
-
         $apartment = $newApartment;
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
@@ -133,8 +130,11 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, Apartment $apartment)
+    public function show(Request $request, $apartment)
     {
+        $apartment = Apartment::findOrFail($apartment);
+        // dd($apartment);
+        
         // data to get the array of view il the last 8 hours
         $clientView = View::where('apartment_id', $apartment->id)
         ->where('ip_address', $request->ip())
