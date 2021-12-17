@@ -2723,7 +2723,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #d8d8d8;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  height: 170px;\n  border: 3px solid #899ba5;\n  cursor: pointer;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
+exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Roboto Slab\", serif;\n  font-weight: 100;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #f5f7fe;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.btn-custom[data-v-4662a702] {\n  background-color: #899ba5;\n  color: #000103;\n  border: 2px solid black;\n}\n.btn-custom[data-v-4662a702]:hover {\n  border: 2px solid #899ba5;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n  font-weight: 100;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  border: 3px solid #899ba5;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.card-wrapper .card .card-img-top[data-v-4662a702] {\n  height: 150px;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
 
 // exports
 
@@ -2742,7 +2742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search-wrapper {\n  height: calc(100vh - 60px);\n}\n.search-wrapper #apartment-list {\n  height: calc(100vh - 60px);\n  overflow-y: scroll;\n}\n#map {\n  height: 300px;\n  width: 100%;\n  border-radius: 15px;\n}", ""]);
+exports.push([module.i, ".search-wrapper #apartment-list {\n  height: calc(100vh - 110px);\n  overflow-y: scroll;\n}\n#map {\n  height: 270px;\n  width: 100%;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -3888,7 +3888,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "pb-5" }, [_c("ApartmentsList")], 1)
+  return _c("div", { staticClass: "bg-container" }, [_c("ApartmentsList")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3912,41 +3912,45 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-4 card-wrapper" }, [
-    _c(
-      "div",
-      {
-        staticClass: "card col-12 p-0",
-        staticStyle: { width: "18rem" },
-        on: { click: _vm.goToThisHouse },
-      },
-      [
-        _c("img", {
-          staticClass: "card-img-top",
-          attrs: {
-            src: "/storage/" + _vm.apartment.image,
-            alt: _vm.apartment.descriptive_title,
-          },
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
-            _vm._v(_vm._s(_vm.apartment.descriptive_title)),
-          ]),
+  return _c(
+    "div",
+    { staticClass: "col-12 col-sm-6 col-md-12 col-lg-4 card-wrapper" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "card col-12 p-0 d-flex",
+          staticStyle: { width: "18rem" },
+          on: { click: _vm.goToThisHouse },
+        },
+        [
+          _c("img", {
+            staticClass: "card-img-top img-fluid",
+            attrs: {
+              src: "/storage/" + _vm.apartment.image,
+              alt: _vm.apartment.descriptive_title,
+            },
+          }),
           _vm._v(" "),
-          _c("p", { staticClass: "m-0" }, [
-            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
-            _vm._v(", \n            "),
-            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+          _c("div", { staticClass: "card-body" }, [
+            _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
+              _vm._v(_vm._s(_vm.apartment.descriptive_title)),
+            ]),
             _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+            _c("p", { staticClass: "m-0" }, [
+              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
+              _vm._v(", \n                "),
+              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+            ]),
           ]),
-        ]),
-      ]
-    ),
-  ])
+        ]
+      ),
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3970,12 +3974,12 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "search-wrapper p-5" }, [
+  return _c("div", { staticClass: "search-wrapper px-5 py-4" }, [
     _c("div", { staticClass: "fluid-container" }, [
       _c("div", { staticClass: "row" }, [
         _c(
           "div",
-          { staticClass: "col-4" },
+          { staticClass: "col-12 col-md-6 col-lg-4" },
           [
             _c("div", { attrs: { id: "map" } }),
             _vm._v(" "),
@@ -3993,24 +3997,31 @@ var render = function () {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "justify-content-center col-8 pl-4" }, [
-          _c("div", { staticClass: "fluid-container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "row justify-content-center",
-                attrs: { id: "apartment-list" },
-              },
-              _vm._l(_vm.filteredApartments, function (filteredApartment) {
-                return _c("ApartmentCard", {
-                  key: filteredApartment.id,
-                  attrs: { apartment: filteredApartment },
-                })
-              }),
-              1
-            ),
-          ]),
-        ]),
+        _c(
+          "div",
+          {
+            staticClass: "justify-content-center col-12 col-md-6 col-lg-8 pl-4",
+          },
+          [
+            _c("div", { staticClass: "fluid-container" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "d-flex align-content-stretch flex-wrap justify-content-center",
+                  attrs: { id: "apartment-list" },
+                },
+                _vm._l(_vm.filteredApartments, function (filteredApartment) {
+                  return _c("ApartmentCard", {
+                    key: filteredApartment.id,
+                    attrs: { apartment: filteredApartment },
+                  })
+                }),
+                1
+              ),
+            ]),
+          ]
+        ),
       ]),
     ]),
   ])
@@ -4245,7 +4256,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\n                    Choose your amenities.\n                "
+                "\n                    Click here to choose your amenities.\n                "
               ),
             ]
           ),
@@ -16879,7 +16890,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/davide/Documents/Repository/BoolBnB/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/eugenio/Desktop/Coding/Boolean Careers/Final Project/BoolBnB/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
