@@ -10460,18 +10460,61 @@ a:hover {
   padding: 100px 0;
   margin: 50px 0;
 }
-
-.t-ideas {
+.houses .t-ideas {
   width: 100%;
   height: 200px;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 8px;
 }
-.t-ideas img {
-  width: 100%;
+.houses .city-filter {
+  transition: all 3s;
+}
+.houses .city-filter:hover {
+  filter: sepia(0.8);
+}
+.houses .city-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 8px;
+}
+.houses .city-title a {
+  display: none;
+}
+.houses .city-title a h1 {
+  font-size: 2rem;
+  color: #FFFFFA;
+}
+.houses .city-title:hover a {
+  display: block;
+}
+.houses .roma {
+  background-image: url("../img/roma.jpeg");
+}
+.houses .dubai {
+  background-image: url("../img/dubai.jpg");
+}
+.houses .bruxelles {
+  background-image: url("../img/bruxelles.jpg");
+}
+.houses .amsterdam {
+  background-image: url("../img/amsterdam.jpg");
+}
+.houses .copenaghen {
+  background-image: url("../img/copenaghen.jpg");
+}
+.houses .venezia {
+  background-image: url("../img/venezia.jpg");
+}
+.houses .tokyo {
+  background-image: url("../img/tokyo.jpg");
+}
+.houses .vienna {
+  background-image: url("../img/vienna.jpg");
+}
+.houses .barcellona {
+  background-image: url("../img/barcellona.jpg");
 }
 
 #promoted-houses {
@@ -10521,25 +10564,6 @@ a:hover {
   .carousel-cell {
     height: 250px !important;
     width: 250px !important;
-  }
-
-  .mobile-title {
-    margin: 10px auto 30px auto;
-  }
-  .mobile-title h2 {
-    font-weight: bold;
-    font-size: 1.8rem;
-    text-align: center;
-  }
-  .mobile-title p {
-    font-style: italic;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-}
-@media screen and (min-width: 700px) {
-  .mobile-title {
-    display: none;
   }
 }
 #dashboard {
