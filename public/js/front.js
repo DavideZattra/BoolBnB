@@ -2361,7 +2361,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Roboto Slab\", serif;\n  font-weight: 100;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #d8d8d8;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n  font-weight: 100;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  border: 3px solid #899ba5;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.card-wrapper .card .card-img-top[data-v-4662a702] {\n  height: 150px;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
+exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #d8d8d8;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  border: 3px solid #899ba5;\n  border-radius: 5px;\n  cursor: pointer;\n}\n.card-wrapper .card .card-img-top[data-v-4662a702] {\n  height: 150px;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
 
 // exports
 
@@ -3550,45 +3550,41 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "col-12 col-sm-6 col-md-12 col-lg-4 card-wrapper" },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "card col-12 p-0 d-flex",
-          staticStyle: { width: "18rem" },
-          on: { click: _vm.goToThisHouse },
-        },
-        [
-          _c("img", {
-            staticClass: "card-img-top img-fluid",
-            attrs: {
-              src: "/storage/" + _vm.apartment.image,
-              alt: _vm.apartment.descriptive_title,
-            },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
-              _vm._v(_vm._s(_vm.apartment.descriptive_title)),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "m-0" }, [
-              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
-              _vm._v(", \n                "),
-              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
-              _vm._v(" "),
-              _c("br"),
-              _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
-            ]),
+  return _c("div", { staticClass: "col-6 col-md-12 col-lg-4 card-wrapper" }, [
+    _c(
+      "div",
+      {
+        staticClass: "card col-12 p-0 d-flex",
+        staticStyle: { width: "18rem" },
+        on: { click: _vm.goToThisHouse },
+      },
+      [
+        _c("img", {
+          staticClass: "card-img-top img-fluid",
+          attrs: {
+            src: "/storage/" + _vm.apartment.image,
+            alt: _vm.apartment.descriptive_title,
+          },
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("a", { staticClass: "text-center", attrs: { href: "#" } }, [
+            _vm._v(_vm._s(_vm.apartment.descriptive_title)),
           ]),
-        ]
-      ),
-    ]
-  )
+          _vm._v(" "),
+          _c("p", { staticClass: "m-0" }, [
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.country))]),
+            _vm._v(", \n            "),
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.city))]),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.apartment.addresses.address))]),
+          ]),
+        ]),
+      ]
+    ),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
