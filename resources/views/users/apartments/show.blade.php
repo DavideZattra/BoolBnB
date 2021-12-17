@@ -38,7 +38,7 @@
 
                 <div class="hr"></div>
 
-                <h3 class="mt-3">Services</h3>
+                <h4 class="mt-3">Services</h4>
                 <ul>
                     @foreach ($amenities as $amenity)
                         <li class="d-inline my_li">{{ $amenity }}</li>
@@ -46,19 +46,21 @@
                 </ul>
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
-                    <a class="text-white" href="{{ route('users.braintree.payment', $apartment) }}">sponsorizza</a>
-                    <a href="{{ route('users.apartment.stats', $apartment) }}">vedi i tuoi grafici</a>
+                <div class="d-flex mt-3 justify-content-between">
+                        <a href="{{ route('users.braintree.payment', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Promote this apartment</a>
+                        <a href="{{ route('users.apartment.stats', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Statistics of this apartment</a>
+                    </div>
                 @endif
                     
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                     <div class="d-flex mt-3 justify-content-between">
-                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Modify your apartment details</a>
+                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom edit-message">Modify your apartment details</a>
                         <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
                             @csrf
                             @method('DELETE')
             
-                            <button class="font-weight-bold btn btn-md-sm btn-yellow delete-message" type="submit">Delete this apartment</a>
+                            <button class="font-weight-bold btn btn-md-sm btn-custom delete-message" type="submit">Delete this apartment</a>
                         </form>
                     </div>
                 @else
@@ -84,14 +86,14 @@
                                 <h4 class="card-header m-0">{{ $message['name'] }}<span class="mail font-italic"> - {{ $message['email'] }}</span></h4>
                                 <div class="card-body">
                                 <p class="card-text">{{ $message['body'] }}</p>
-                                <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a>
+                                {{-- <a href="#" class="btn btn-yellow">Reply to {{ $message['name'] }}</a> --}}
                                 </div>
                             </div>
                         @empty
                             <div class="no-messages">
                                 <img src="https://lh3.googleusercontent.com/proxy/x0WPVPLvYu9vOy21IaumDGHQLYpd562PFRdw2EmbsBtFtqXXCMvOm9wqEay9Pt6OAPqh2UrBqKvb-TVsRYhg1dxQ4Ncu0GltYKDCSLQISTaNHgh8XNXbht-Mrem7WbHJ6uYb5StsPy3x52ff73sW99IQLfv-dKX0bDc" alt="">
                 
-                                <h4>You have no messagges.. I suggest you to try this <a href="#">link per promuovere account</a></h4>
+                                <h4>You have no messagges.. I suggest you to try this <a href="{{route("users.braintree.payment", $apartment) }}">link to promote your account.</a></h4>
                             </div>
                         @endforelse
                     </div> 

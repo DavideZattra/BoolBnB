@@ -10145,7 +10145,7 @@ footer a {
   color: #FFFFFA;
 }
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: #899ba5;
 }
 footer .socials-container {
@@ -10214,6 +10214,7 @@ footer .contacts i {
 }
 .index-wrapper .card {
   border: 3px solid #899ba5;
+  height: 300px;
 }
 .index-wrapper .card img {
   width: 100%;
