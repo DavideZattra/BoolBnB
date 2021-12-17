@@ -3,7 +3,7 @@
         <div class="fluid-container">
             <div class="row">
 
-                <div class="col-4">
+                <div class="col-12 col-md-6 col-lg-4">
                     <div id='map'></div>
 
                     <SearchAndFilter 
@@ -15,9 +15,9 @@
                         :amenities="amenities"/>
                 </div>
 
-                <div class="justify-content-center col-8 pl-4">
+                <div class="justify-content-center col-12 col-md-6 col-lg-8 pl-4">
                     <div class="fluid-container">
-                        <div id="apartment-list" class="row justify-content-center">
+                        <div id="apartment-list" class="d-flex align-content-stretch flex-wrap justify-content-center">
                             <ApartmentCard 
                                 v-for="filteredApartment in filteredApartments" 
                                 :key="filteredApartment.id" 
@@ -259,7 +259,7 @@ export default {
 
 <style lang="scss">
 .search-wrapper{
-    height: calc(100vh - 60px);
+    // height: calc(100vh - 60px);
 
     #apartment-list{
         height: calc(100vh - 110px);

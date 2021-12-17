@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-container">
         <ApartmentsList/>
         <!-- <Map/> -->
     </div>
