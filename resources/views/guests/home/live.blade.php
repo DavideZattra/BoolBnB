@@ -1,7 +1,7 @@
 <section id="dtl">
     <div class="container-fluid">
         <div class="row">
-            <div class="mobile-title">
+            <div class="mobile-title scroll">
                 <h2>Live.</h2>
                 <p>Sleep in fantastic locations where you can admire wonderful landscapes, placed on the edge of your most beautiful dreams.</p>
             </div>
