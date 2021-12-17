@@ -1,7 +1,7 @@
 <template>
-    <div class="col-4 card-wrapper">
-        <div class="card col-12 p-0" @click="goToThisHouse" style="width: 18rem;">
-            <img class="card-img-top" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
+    <div class="col-6 col-md-12 col-lg-4 card-wrapper">
+        <div class="card col-12 p-0 d-flex" @click="goToThisHouse" style="width: 18rem;">
+            <img class="card-img-top img-fluid" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
             <div class="card-body">
                 <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
                 <p class="m-0">
@@ -50,9 +50,13 @@ export default {
         }
 
         .card{
-            height: 170px;
+            // height: 300px;
             border: 3px solid $my_brightyellow;
             cursor: pointer;
+
+            .card-img-top{
+                height: 150px;
+            }
 
             a{
                 font-size: 20px;

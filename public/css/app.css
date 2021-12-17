@@ -10456,8 +10456,8 @@ a:hover {
 }
 
 #promoted-houses {
-  background-color: #FFFFFA;
   margin: 100px 0;
+  padding: 100px 0;
 }
 #promoted-houses .main-carousel {
   padding: 60px;
@@ -10490,6 +10490,11 @@ a:hover {
 }
 
 @media screen and (max-width: 700px) {
+  #promoted-houses {
+    background-color: #FFFFFA;
+    margin: 35px 0;
+  }
+
   .flickity-page-dots {
     display: none;
   }
