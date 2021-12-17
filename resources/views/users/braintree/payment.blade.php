@@ -27,7 +27,7 @@
                 <div class="form-check mt-4 row w-100 d-flex justify-content-between">
                     
                     <div class="input-wrapper amount-wrapper col-4 text-center">
-
+                        
                         <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="2.99" checked>
                         <label class="form-check-label text-white" for="amount">
                             Standard - $2.99
