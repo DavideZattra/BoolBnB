@@ -37,8 +37,8 @@
 
 @media screen and (max-width: 700px) {
     #promoted-houses{
-        background-color: $my_white;
-        margin: 35px 0;
+        margin: 40px 0;
+        padding: 40px 0;
     }
     .flickity-page-dots {
       display: none;
@@ -46,5 +46,24 @@
     .carousel-cell{
         height: 250px !important;
         width: 250px !important;
+    }
+    .mobile-title{
+        margin: 10px auto 30px auto;
+        h2{
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        p{
+            font-style: italic;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .mobile-title{
+        display: none;
     }
   }
