@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
 use App\Models\View;
-use DateTime;
-use Illuminate\Support\Carbon;
+use App\User;
 
 class ApartmentController extends Controller
 {

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Apartment;
-use App\Models\SponsorApartment;
 use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
+
+use App\Models\SponsorApartment;
+use App\Models\Apartment;
 
 class ApartmentController extends Controller
 {

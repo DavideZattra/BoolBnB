@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\SponsorApartment;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
-use App\Models\SponsorApartment;
 
 class HomeController extends Controller
 {
