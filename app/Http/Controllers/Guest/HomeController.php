@@ -11,6 +11,7 @@ class HomeController extends Controller
 {
     public function home(){
 
+        //Return all the SponsorApartment instances where the attribute ' end' is > of the datetime when the api is called with their relative apartments;
         $sponsorApartments = SponsorApartment::where('end', '>', Carbon::now())->with('apartment')->get();
 
         return view('guests.home', compact('sponsorApartments'));    
