@@ -51,7 +51,7 @@ export default {
         }
 
         .card{
-            // height: 300px;
+            height: 320px;
             border: 3px solid $my_brightyellow;
             border-radius: 5px;
             cursor: pointer;

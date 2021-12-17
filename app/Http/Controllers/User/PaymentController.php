@@ -79,7 +79,7 @@ class PaymentController extends Controller
 
 
 
-            return back()->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            return view('users.braintree.checkout')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
           
         } else {
             $errorString = "";

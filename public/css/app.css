@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;700&family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fira+Sans+Extra+Condensed:wght@200;300;400&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600&family=Lato:wght@300;400;700&family=Lobster&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;600&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;700&family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fira+Sans+Extra+Condensed:wght@200;300;400&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600&family=Lato:wght@300;400;700&family=Lobster&family=Montserrat:wght@100;200;300;400;500&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;600&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10024,6 +10024,13 @@ h3 {
   font-weight: 100;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
 .bg-container {
   background-color: #141414;
 }
@@ -10110,7 +10117,7 @@ footer {
 }
 footer #footer-logo {
   width: 110px;
-  padding-bottom: 40px;
+  margin-top: 25px;
 }
 footer .footer-container {
   width: 80%;
@@ -10123,11 +10130,12 @@ footer .yellow-line {
 }
 footer .yellow {
   color: #899ba5;
+  font-family: "Roboto Slab", serif;
   margin: 25px 0;
 }
 footer h2 {
-  font-size: 2.5rem;
-  font-family: "DM Serif Display", serif;
+  font-size: 2.3rem;
+  color: white;
 }
 footer ul li {
   margin-top: 20px;
@@ -10137,7 +10145,7 @@ footer a {
   color: #FFFFFA;
 }
 footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
   color: #899ba5;
 }
 footer .socials-container {
@@ -10206,6 +10214,7 @@ footer .contacts i {
 }
 .index-wrapper .card {
   border: 3px solid #899ba5;
+  height: 300px;
 }
 .index-wrapper .card img {
   width: 100%;
@@ -10403,6 +10412,10 @@ a:hover {
 #jumbotron #jumbo .jumbo-text img {
   width: 130px;
   margin-bottom: 20px;
+}
+#jumbotron #jumbo .jumbo-text h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 2.3em;
 }
 #jumbotron #jumbo .white-block {
   color: white;
@@ -10652,6 +10665,7 @@ a:hover {
     width: 100%;
     padding: 10px;
   }
+<<<<<<< HEAD
 
   .mobile-title {
     margin: 10px auto 30px auto;
@@ -10671,4 +10685,6 @@ a:hover {
   .mobile-title {
     display: none;
   }
+=======
+>>>>>>> frontend-2
 }
