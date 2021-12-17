@@ -15,10 +15,22 @@
 }
 
 .bg-home-section{
-    background-color: rgb(216, 216, 216);
+    background-color: #f5f7fe;
 }
 
 ul{
     list-style-type: none;
     padding-left: 0;
 }
+
+.fancy-link {
+    color: #333333;
+    text-decoration: none;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+ }
+ 
+ .fancy-link:hover {
+    color: rgb(64, 0, 70);
+ }
