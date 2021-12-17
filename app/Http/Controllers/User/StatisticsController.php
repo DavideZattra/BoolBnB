@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
@@ -13,6 +14,11 @@ use App\Models\View;
 class StatisticsController extends Controller
 {
     public function apartmentStats(Apartment $apartment){
+
+        if(Auth::user()->id != $apartment->user_id){
+            return redirect()->route('users.apartments.index');
+        }
+
 
         $monthlyVisit = View::where('apartment_id', $apartment->id)
             ->where('visited_at', '>', Carbon::now()->subYear()->toDateTimeString())
