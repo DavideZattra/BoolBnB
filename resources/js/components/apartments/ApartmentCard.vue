@@ -1,5 +1,5 @@
 <template>
-    <div class="col-6 col-md-12 col-lg-4 card-wrapper">
+    <div class="col-12 col-sm-6 col-md-12 col-lg-4 card-wrapper">
         <div class="card col-12 p-0 d-flex" @click="goToThisHouse" style="width: 18rem;">
             <img class="card-img-top img-fluid" :src="'/storage/' + apartment.image" :alt="apartment.descriptive_title">
             <div class="card-body">
