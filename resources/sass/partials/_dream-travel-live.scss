@@ -55,4 +55,39 @@
             padding: 10px;
         }
     }
+    .mobile-title{
+        margin: 10px auto 30px auto;
+        h2{
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        p{
+            font-style: italic;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+    }
   }
+
+// @media screen and (max-width: 700px) {
+//     .mobile-title{
+//         margin: 10px auto 30px auto;
+//         h2{
+//             font-weight: bold;
+//             font-size: 1.8rem;
+//             text-align: center;
+//         }
+//         p{
+//             font-style: italic;
+//             font-size: 0.8rem;
+//             text-align: center;
+//         }
+//     }
+//   }
+
+@media screen and (min-width: 975px) {
+    .mobile-title{
+        display: none;
+    }
+}

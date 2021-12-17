@@ -2723,7 +2723,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #d8d8d8;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  height: 170px;\n  border: 3px solid #899ba5;\n  cursor: pointer;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
+exports.push([module.i, "*[data-v-4662a702] {\n  font-family: \"Quicksand\", sans-serif;\n}\n.bg-container[data-v-4662a702] {\n  background-color: #141414;\n}\n.bg-home-section[data-v-4662a702] {\n  background-color: #f5f7fe;\n}\nul[data-v-4662a702] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.fancy-link[data-v-4662a702] {\n  color: #333333;\n  text-decoration: none;\n  transition: all 0.3s linear;\n  -webkit-transition: all 0.3s linear;\n  -moz-transition: all 0.3s linear;\n}\n.fancy-link[data-v-4662a702]:hover {\n  color: #400046;\n}\n.card-wrapper[data-v-4662a702] {\n  padding: 0 20px 40px 20px;\n}\n.card-wrapper a[data-v-4662a702] {\n  color: #899ba5;\n}\n.card-wrapper a[data-v-4662a702]:hover {\n  color: white;\n}\n.card-wrapper .card[data-v-4662a702] {\n  height: 170px;\n  border: 3px solid #899ba5;\n  cursor: pointer;\n}\n.card-wrapper .card a[data-v-4662a702] {\n  font-size: 20px;\n  font-weight: bold;\n  color: #000103;\n}\n.card-wrapper .card span[data-v-4662a702] {\n  color: #141414;\n}", ""]);
 
 // exports
 
@@ -2742,7 +2742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".search-wrapper {\n  height: calc(100vh - 60px);\n}\n.search-wrapper #apartment-list {\n  height: calc(100vh - 60px);\n  overflow-y: scroll;\n}\n#map {\n  height: 300px;\n  width: 100%;\n  border-radius: 15px;\n}", ""]);
+exports.push([module.i, ".search-wrapper {\n  height: calc(100vh - 60px);\n}\n.search-wrapper #apartment-list {\n  height: calc(100vh - 110px);\n  overflow-y: scroll;\n}\n#map {\n  height: 270px;\n  width: 100%;\n  border-radius: 15px;\n}", ""]);
 
 // exports
 
@@ -3888,7 +3888,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "pb-5" }, [_c("ApartmentsList")], 1)
+  return _c("div", [_c("ApartmentsList")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -3970,7 +3970,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "search-wrapper p-5" }, [
+  return _c("div", { staticClass: "search-wrapper px-5 py-4" }, [
     _c("div", { staticClass: "fluid-container" }, [
       _c("div", { staticClass: "row" }, [
         _c(
@@ -4245,7 +4245,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\r\n                    Choose your amenities.\r\n                "
+                "\r\n                    Click here to choose your amenities.\r\n                "
               ),
             ]
           ),
