@@ -18,11 +18,11 @@
         <div class="col-12 d-flex flex-wrap align-items-center mt-5 mb-5">
 
           {{-- Chart --}}
-          <div class="col-12 col-lg-6 position-relative">
+          <div class="col-12 col-lg-8 position-relative">
             <canvas id="myChart"></canvas>
           </div>
 
-          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0">
+          <div class="col-12 col-lg-4 text-center pt-5 pt-lg-0">
             <h2 class="text-white">Monthly visits</h2>
           </div>
         </div>
@@ -32,15 +32,15 @@
 
           {{-- Chart --}}
 
-          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0 d-none d-lg-block">
+          <div class="col-12 col-lg-3 text-center pt-5 pt-lg-0 d-none d-lg-block">
             <h2 class="text-white">Daily Visits</h2>
           </div>
           
-          <div class="col-12 col-lg-6 position-relative">
+          <div class="col-12 col-lg-9 position-relative">
             <canvas id="myOtherChart"></canvas>
           </div>
 
-          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0 d-block d-lg-none">
+          <div class="col-12 col-lg-9 text-center pt-5 pt-lg-0 d-block d-lg-none">
             <h2 class="text-white">Daily Visits</h2>
           </div>
 
@@ -49,7 +49,7 @@
       </div>
       <div class="col-12 text-center pt-5 pb-5">
         <h1 class="text-white text-center pt-5 pb-5">Want to improve your statistics?</h1>
-        <a class="btn btn-outline-secondary text-white" href="{{route('users.braintree.payment', $apartment)}}">To sponsorships</a>
+        <a class="btn btn-outline-secondary text-white" href="{{route('users.braintree.payment', $apartment)}}">Try sponsorships</a>
       </div>
     </div>
   </div>
@@ -63,9 +63,6 @@
   
 const monthlyVisit = {!! json_encode($monthlyVisit, JSON_HEX_TAG) !!};
 const dailyVisit = {!! json_encode($dailyVisit, JSON_HEX_TAG) !!};
-
-console.log(monthlyVisit);
-console.log(dailyVisit);
 
 monthlyVisits();
 dailyVisits();
@@ -105,14 +102,14 @@ function monthlyVisits() {
 }
 
 function dailyVisits() {
-  const labels = dailyVisit.slice(1,13).map(element => element.day);
+  const labels = dailyVisit.map(element => element.day);
   const data = {
     labels: labels,
     datasets: [{
       label: 'Daily Visits',
       backgroundColor: 'rgb(231, 111, 81)',
       borderColor: 'rgb(231, 111, 81)',
-      data: monthlyVisit.slice(1,13).map(element => element.views),
+      data: dailyVisit.map(element => element.views),
     }]
   };
 

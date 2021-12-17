@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
 use App\Models\View;
-use DateTime;
-use Illuminate\Support\Carbon;
+use App\User;
 
 class ApartmentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Apartment.
      *
      * @return \Illuminate\Http\Response
      */
@@ -32,20 +32,21 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Apartment.
      *
      * @return \Illuminate\Http\Response
      */
     public function create(Address $newAddress)
     {
         $newApartment = new Apartment();
+        
         $amenities = Amenity::all();
 
         return view('users.apartments.create', compact('newApartment', 'amenities', 'newAddress'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Apartment in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -95,6 +96,7 @@ class ApartmentController extends Controller
 
         $data = $request->all();
 
+        //this variable take key attribute from $data and format them to make a correct api call
         $apiQuery = str_replace(' ', '-', $data['country']) . '-' .  str_replace(' ', '-', $data['region']) . '-' .  str_replace(' ', '-', $data['city']) . '-' .  str_replace(' ', '-', $data['address']) ;
         $response = file_get_contents('https://api.tomtom.com/search/2/geocode/' . $apiQuery . '.json?key=NLbGYpRnYCS3jxXsynN2IfGsmEgZJJzB');
         $response = json_decode($response);
@@ -104,12 +106,17 @@ class ApartmentController extends Controller
         $data['lat'] = $response->results[0]->position->lat;
         $data['lon'] = $response->results[0]->position->lon;
         
-
+        /**
+         *  This is for the apartment storage
+         */
         $newApartment = new Apartment();
 
         $newApartment->fill($data);
         $newApartment->save();
         
+        /**
+         * this is for the adress of the apartment storage
+         */
         $newAddress = new Address();
 
         $newAddress->fill($data);
@@ -119,21 +126,25 @@ class ApartmentController extends Controller
 
         $apartment = $newApartment;
 
+        /**
+         * this attach the amenities to the apartment model with the sync
+         */
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
         
         return redirect()->route('users.apartments.show', compact('apartment'));
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Apartment.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request, $apartment)
     {
+        
         $apartment = Apartment::findOrFail($apartment);
-        // dd($apartment);
+        
         
         // data to get the array of view il the last 8 hours
         $clientView = View::where('apartment_id', $apartment->id)
@@ -169,7 +180,7 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Apartment.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -183,7 +194,7 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Apartment in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -254,7 +265,7 @@ class ApartmentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Apartment from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Message;
 use App\Models\Apartment;
+use App\Models\Message;
 
 class MessageController extends Controller
 {
@@ -18,6 +18,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             
             'name' => 'required|string|min:4|max:50',
