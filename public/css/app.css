@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;700&family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fira+Sans+Extra+Condensed:wght@200;300;400&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600&family=Lato:wght@300;400;700&family=Lobster&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;600&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;700&family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fira+Sans+Extra+Condensed:wght@200;300;400&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600&family=Lato:wght@300;400;700&family=Lobster&family=Montserrat:wght@100;200;300;400;500&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;600&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10024,12 +10024,19 @@ h3 {
   font-weight: 100;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
 .bg-container {
   background-color: #141414;
 }
 
 .bg-home-section {
-  background-color: #d8d8d8;
+  background-color: #f5f7fe;
 }
 
 ul {
@@ -10110,7 +10117,7 @@ footer {
 }
 footer #footer-logo {
   width: 110px;
-  padding-bottom: 40px;
+  margin-top: 25px;
 }
 footer .footer-container {
   width: 80%;
@@ -10123,11 +10130,12 @@ footer .yellow-line {
 }
 footer .yellow {
   color: #899ba5;
+  font-family: "Roboto Slab", serif;
   margin: 25px 0;
 }
 footer h2 {
-  font-size: 2.5rem;
-  font-family: "DM Serif Display", serif;
+  font-size: 2.3rem;
+  color: white;
 }
 footer ul li {
   margin-top: 20px;
@@ -10404,6 +10412,10 @@ a:hover {
   width: 130px;
   margin-bottom: 20px;
 }
+#jumbotron #jumbo .jumbo-text h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 2.3em;
+}
 #jumbotron #jumbo .white-block {
   color: white;
   margin-top: 0;
@@ -10497,8 +10509,8 @@ a:hover {
 
 @media screen and (max-width: 700px) {
   #promoted-houses {
-    background-color: #FFFFFA;
-    margin: 35px 0;
+    margin: 40px 0;
+    padding: 40px 0;
   }
 
   .flickity-page-dots {
@@ -10508,6 +10520,25 @@ a:hover {
   .carousel-cell {
     height: 250px !important;
     width: 250px !important;
+  }
+
+  .mobile-title {
+    margin: 10px auto 30px auto;
+  }
+  .mobile-title h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .mobile-title p {
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 700px) {
+  .mobile-title {
+    display: none;
   }
 }
 #dashboard {
@@ -10614,9 +10645,23 @@ a:hover {
 #dtl .dtl-text__content p {
   font-size: 1.6rem;
 }
+#dtl .rainbow-shadow {
+  box-shadow: 0px 0px 11px 10px rgba(0, 0, 0, 0.66);
+  background: #000000;
+}
 
 @media screen and (max-width: 975px) {
   .dtl-text__content {
     display: none !important;
+  }
+
+  #dtl {
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+  #dtl .dtl-container {
+    height: 250px;
+    width: 100%;
+    padding: 10px;
   }
 }

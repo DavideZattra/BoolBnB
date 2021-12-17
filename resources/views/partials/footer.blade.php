@@ -3,8 +3,8 @@
         <div class="row justify-content-between">
             <div class="col-12 col-md-6 col-lg-4 mt-2 scroll">
                 <div class="yellow-line"></div>
-                <h2 class="yellow">Dream. Travel. Live.</h2>
                 <img id="footer-logo" src="{{ asset('/img/logo-white.png') }}" alt="logo">
+                <h2 class="yellow">Dream. Travel. Live.</h2>
                 <div class="socials-container justify-content-between d-flex">
                     <a href="#">
                         <i class="fab fa-twitter"></i>

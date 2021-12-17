@@ -5,7 +5,7 @@ footer{
 
     #footer-logo{
         width: 110px;
-        padding-bottom: 40px;
+        margin-top: 25px;
     }
 
     .footer-container{
@@ -21,12 +21,13 @@ footer{
 
     .yellow{
         color: $my_brightyellow;
+        font-family: 'Roboto Slab', serif;
         margin: 25px 0;
     }
 
     h2{
-        font-size: 2.5rem;
-        font-family: 'DM Serif Display', serif;
+        font-size: 2.3rem;
+        color: white;
     }
 
     ul{
