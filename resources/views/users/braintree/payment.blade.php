@@ -24,9 +24,9 @@
                 @csrf 
 
 
-                <div class="form-check mt-4 row w-100 d-flex justify-content-around">
+                <div class="form-check mt-4 row w-100 d-flex justify-content-around justify-content-lg-around">
                     
-                    <div class="input-wrapper amount-wrapper col-4 text-center">
+                    <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center">
                         
                         <div class="card">
                             <img src="https://www.psypost.org/wp-content/uploads/2021/09/poor-homeless-sad-man.jpg" class="card-img-top" alt="">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
 
-                    <div class="input-wrapper amount-wrapper col-4 text-center">
+                    <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center mt-5 mt-lg-0">
 
                         <div class="card">
                             <img src="https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/org/avocyzq5ejtiuxdyj/woman-looking-angry-or-annoyed.jpg" class="card-img-top" alt="">
@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="input-wrapper amount-wrapper col-4 text-center">
+                    <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center mt-5 mt-lg-0">
 
                         <div class="card">
                             <img src="https://i1.wp.com/maximizeminimalism.com/wp-content/uploads/2020/07/Frugal-Rich-People-7-Secrets-Of-Wealthy-People-Who-Live-Humbly.jpg?fit=1000%2C800&ssl=1" class="card-img-top" alt="">
@@ -74,7 +74,7 @@
                 </div>
                 
                 <div class="bt-drop-in-wrapper d-flex justify-content-center w-100 mt-5">
-                    <div class="drop-in-internal-wrapper w-50">
+                    <div class="drop-in-internal-wrapper w-lg-50">
                         <div id="bt-dropin"></div>
                     </div>
                     
@@ -83,7 +83,7 @@
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
                 
                 <div class="payment-button d-flex justify-content-center w-100">
-                    <div class="payment-button-internal-wrapper w-50">
+                    <div class="payment-button-internal-wrapper">
                         <button class="btn btn-outline-secondary text-white mt-4 w-100" type="submit"><span>Pay</span></button>
                     </div>
                     
