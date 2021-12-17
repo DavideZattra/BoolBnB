@@ -35,7 +35,7 @@
     
                     <div class="card-footer">
                         {{-- Button to edit the user profile --}}
-                        <a href='{{ route('users.edit', Auth::user()->id) }}' class="btn btn-custom">
+                        <a href='{{ route('users.profile.edit', Auth::user()->id) }}' class="btn btn-custom">
                             Edit your profile
                         </a>
                     </div>

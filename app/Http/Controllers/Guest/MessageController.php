@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -27,8 +27,9 @@ class MessageController extends Controller
         [
             'name.min' => 'Your name should be long at least 4 characters',
             'name.max' => 'Your name can\'t be longer than 50 characters',
-            'email' => 'The e-mail must be valid',
-            'body' => 'your question should be longer than 15 characters',
+            'email.email' => 'The e-mail must be valid',
+            'body.min' => 'your message should be longer than 15 characters',
+            'body.max' => 'Your message should\'t be longer than 50 characters',
         ]);
 
         $data = $request->all();
@@ -43,6 +44,6 @@ class MessageController extends Controller
 
         $thankMessage = 'Thank you for sending the message, the owner will reply as soon as possible.';
 
-        return redirect()->route('users.apartments.show', $id)->with("thankMessage", $thankMessage);
+        return redirect()->route('guest.apartment', $id)->with("thankMessage", $thankMessage);
     }
 }

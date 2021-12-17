@@ -39,6 +39,6 @@ class StatisticsController extends Controller
         $totalViews = View::where('apartment_id', $apartment->id)->get();
         
 
-        return view('users.statistics.apartment-statistics', compact('monthlyVisit', 'dailyVisit'));
+        return view('users.statistics.apartment-statistics', compact('monthlyVisit', 'dailyVisit', 'apartment'));
     }
 }

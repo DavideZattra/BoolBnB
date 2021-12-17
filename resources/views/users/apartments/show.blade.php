@@ -47,6 +47,7 @@
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                     <a class="text-white" href="{{ route('users.braintree.payment', $apartment) }}">sponsorizza</a>
+                    <a href="{{ route('users.apartment.stats', $apartment) }}">vedi i tuoi grafici</a>
                 @endif
                     
 
@@ -103,7 +104,7 @@
 
                     <h2>Write a message to this host</h2>
 
-                    <form class="p-2 my_form" action="{{ route('users.store', ['apartment_id' => $apartment->id]) }}" method="POST">
+                    <form class="p-2 my_form" action="{{ route('message.store', ['apartment_id' => $apartment->id]) }}" method="POST">
                         @csrf
                         @if ($errors->any())
                             <div class="alert alert-danger">
