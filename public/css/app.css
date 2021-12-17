@@ -10652,4 +10652,26 @@ a:hover {
     width: 100%;
     padding: 10px;
   }
+<<<<<<< HEAD
+=======
+
+  .mobile-title {
+    margin: 10px auto 30px auto;
+  }
+  .mobile-title h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .mobile-title p {
+    font-style: italic;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 975px) {
+  .mobile-title {
+    display: none;
+  }
+>>>>>>> master
 }
