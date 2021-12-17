@@ -117,10 +117,6 @@ class ApartmentController extends Controller
 
         $newAddress->save();
 
-        
-
-        
-
         $apartment = $newApartment;
 
         if(array_key_exists('amenities', $data)) $newApartment->amenities()->sync($data['amenities']);
