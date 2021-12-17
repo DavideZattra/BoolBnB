@@ -10,9 +10,10 @@ header{
         height: 60px;
 
         #logo{
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.5rem;
-            line-height: 47px;
+            width: 80px;
+            img{
+                width: 100%;
+            }
 
             &:hover{
                 border-bottom: 3px solid $my_black;

@@ -5,9 +5,9 @@
             <div class="card-body">
                 <a class="text-center" href="#">{{ apartment.descriptive_title }}</a>
                 <p class="m-0">
-                <span>{{ apartment.addresses.country }}</span>, 
-                <span>{{ apartment.addresses.city }}</span> <br>
-                <span>{{ apartment.addresses.address }}</span>
+                    <span>{{ apartment.addresses.country }}</span>, 
+                    <span>{{ apartment.addresses.city }}</span> <br>
+                    <span>{{ apartment.addresses.address }}</span>
                 </p> 
             </div>
         </div>
@@ -43,6 +43,7 @@ export default {
 
         a{
             color: $my_brightyellow;
+            font-weight: 100;
 
             &:hover{
                 color: white;

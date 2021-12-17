@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fredoka+One&family=Lobster&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;600;700&family=Abril+Fatface&family=DM+Serif+Display&family=Dancing+Script:wght@600&family=Fira+Sans+Extra+Condensed:wght@200;300;400&family=Fredoka+One&family=Inter:wght@100;200;300;400;500;600&family=Lato:wght@300;400;700&family=Lobster&family=Mulish:wght@200;300;400;500&family=Quicksand:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@100;200;300;400;600&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.6.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10020,7 +10020,8 @@ h3 {
   }
 }
 * {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
 }
 
 .bg-container {
@@ -10048,9 +10049,10 @@ header .navbar-custom {
   height: 60px;
 }
 header .navbar-custom #logo {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.5rem;
-  line-height: 47px;
+  width: 80px;
+}
+header .navbar-custom #logo img {
+  width: 100%;
 }
 header .navbar-custom #logo:hover {
   border-bottom: 3px solid #000103;
@@ -10096,6 +10098,10 @@ footer {
   padding-top: 6vw;
   background-color: #000103;
   color: #FFFFFA;
+}
+footer #footer-logo {
+  width: 110px;
+  padding-bottom: 40px;
 }
 footer .footer-container {
   width: 80%;
@@ -10394,9 +10400,9 @@ a:hover {
   background-size: cover;
   background-position: bottom;
 }
-#jumbotron #jumbo .jumbo-text h2 {
-  font-size: 3rem;
-  font-family: "DM Serif Display", serif;
+#jumbotron #jumbo .jumbo-text img {
+  width: 130px;
+  margin-bottom: 20px;
 }
 #jumbotron #jumbo .white-block {
   color: white;
