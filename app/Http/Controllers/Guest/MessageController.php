@@ -18,6 +18,7 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             
             'name' => 'required|string|min:4|max:50',

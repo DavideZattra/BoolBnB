@@ -39,6 +39,7 @@ class ApartmentController extends Controller
     public function create(Address $newAddress)
     {
         $newApartment = new Apartment();
+        
         $amenities = Amenity::all();
 
         return view('users.apartments.create', compact('newApartment', 'amenities', 'newAddress'));
