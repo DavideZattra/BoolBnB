@@ -6,36 +6,50 @@
 
 @section('content')
 
-<section class="bg-container pb-5">
+<section class="bg-container pt-2 pb-5">
   <div class="container">
     <div class="row">
-        <div class="col-12">
+
+        <div class="col-12 pt-5">
           <h1 class="text-white text-center pt-5 pb-5">Up-to-date statistics of your apartments</h1>
         </div>
 
-        <div class="col-12 d-flex align-items-center mt-5 mb-5">
-          <div class="col-6 float-left">
+        {{-- First line --}}
+        <div class="col-12 d-flex flex-wrap align-items-center mt-5 mb-5">
+
+          {{-- Chart --}}
+          <div class="col-12 col-lg-6 position-relative">
             <canvas id="myChart"></canvas>
           </div>
 
-          <div class="col-6 float-right text-center ">
+          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0">
             <h2 class="text-white">Monthly visits</h2>
           </div>
         </div>
 
-        <div class="col-12 d-flex align-items-center mt-5 mb-5">
-          <div class="col-6 float-left text-center ">
+        {{-- Second line --}}
+        <div class="col-12 d-flex flex-wrap align-items-center mt-5 mb-5">
+
+          {{-- Chart --}}
+
+          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0 d-none d-lg-block">
+            <h2 class="text-white">Daily Visits</h2>
+          </div>
+          
+          <div class="col-12 col-lg-6 position-relative">
+            <canvas id="myOtherChart"></canvas>
+          </div>
+
+          <div class="col-12 col-lg-6 text-center pt-5 pt-lg-0 d-block d-lg-none">
             <h2 class="text-white">Daily Visits</h2>
           </div>
 
-          <div class="col-6 float-right">
-            <canvas id="myOtherChart"></canvas>
-          </div>
         </div>
+
       </div>
-      <div class="col-12 text-center">
+      <div class="col-12 text-center pt-5 pb-5">
         <h1 class="text-white text-center pt-5 pb-5">Want to improve your statistics?</h1>
-        <a class="btn btn-primary" href="{{route('users.braintree.payment', $apartment)}}">To sponsorships</a>
+        <a class="btn btn-outline-secondary text-white" href="{{route('users.braintree.payment', $apartment)}}">To sponsorships</a>
       </div>
     </div>
   </div>
@@ -64,8 +78,8 @@ function monthlyVisits() {
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Monthly Visits',
-      backgroundColor: 'rgb(255, 99, 132)',
+      label: 'Views',
+      backgroundColor: 'rgb(137, 155, 165)',
       borderColor: 'rgb(255, 99, 132)',
       data: monthlyVisit.slice(1,13).map(element => element.views),
     }]
@@ -74,7 +88,14 @@ function monthlyVisits() {
   const config = {
     type: 'bar',
     data: data,
-    options: {}
+    options: {
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      responsive: true, 
+    }
   };
 
   const myChart = new Chart(
@@ -89,8 +110,8 @@ function dailyVisits() {
     labels: labels,
     datasets: [{
       label: 'Daily Visits',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgb(231, 111, 81)',
+      borderColor: 'rgb(231, 111, 81)',
       data: monthlyVisit.slice(1,13).map(element => element.views),
     }]
   };
@@ -98,7 +119,14 @@ function dailyVisits() {
   const config = {
     type: 'bar',
     data: data,
-    options: {}
+    options: {
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
+      responsive: true,
+    }
   };
 
   const myChart = new Chart(
