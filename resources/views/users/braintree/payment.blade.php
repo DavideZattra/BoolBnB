@@ -24,40 +24,69 @@
                 @csrf 
 
 
-                <div class="form-check mt-4 row w-100 d-flex justify-content-between">
+                <div class="form-check mt-4 row w-100 d-flex justify-content-around">
                     
                     <div class="input-wrapper amount-wrapper col-4 text-center">
                         
-                        <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="2.99" checked>
-                        <label class="form-check-label text-white" for="amount">
-                            Standard - $2.99
-                        </label>
+                        <div class="card">
+                            <img src="https://www.psypost.org/wp-content/uploads/2021/09/poor-homeless-sad-man.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="2.99" checked>
+                                <label class="form-check-label" for="amount">
+                                    Standard - $2.99
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="input-wrapper amount-wrapper col-4 text-center">
-                        <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="5.99">
-                        <label class="form-check-label text-white" for="amount">
-                            Gold - $5.99
-                        </label>
+
+                        <div class="card">
+                            <img src="https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/org/avocyzq5ejtiuxdyj/woman-looking-angry-or-annoyed.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="5.99">
+                                <label class="form-check-label" for="amount">
+                                    Gold - $5.99
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="input-wrapper amount-wrapper col-4 text-center">
-                        <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="9.99">
-                        <label class="form-check-label text-white" for="amount">
-                            Platinum - $9.99
-                        </label>
+
+                        <div class="card">
+                            <img src="https://i1.wp.com/maximizeminimalism.com/wp-content/uploads/2020/07/Frugal-Rich-People-7-Secrets-Of-Wealthy-People-Who-Live-Humbly.jpg?fit=1000%2C800&ssl=1" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                                <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="9.99">
+                                <label class="form-check-label" for="amount">
+                                    Platinum - $9.99
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
                 
                 <div class="bt-drop-in-wrapper d-flex justify-content-center w-100 mt-5">
-                    <div id="bt-dropin"></div>
+                    <div class="drop-in-internal-wrapper w-50">
+                        <div id="bt-dropin"></div>
+                    </div>
+                    
                 </div>
 
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-
-                <div class="payment-button w-100 d-flex justify-content-center">
-                    <button class="btn btn-outline-secondary text-white mt-4" type="submit"><span>Pay</span></button>
+                
+                <div class="payment-button d-flex justify-content-center w-100">
+                    <div class="payment-button-internal-wrapper w-50">
+                        <button class="btn btn-outline-secondary text-white mt-4 w-100" type="submit"><span>Pay</span></button>
+                    </div>
+                    
                 </div>
                 
             </form>
