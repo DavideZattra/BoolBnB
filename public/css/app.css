@@ -10173,7 +10173,7 @@ footer .contacts i {
   border: 2px solid black;
 }
 .auth-container .card .card-body button:hover {
-  border: 2px solid yellow;
+  border: 2px solid #899ba5;
 }
 .auth-container .card a {
   color: #899ba5;
