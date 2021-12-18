@@ -11,7 +11,7 @@
 
         @forelse ($sponsorApartments as $sponsorApartment)
             <div class="carousel-cell">
-                <a href="{{ route('users.apartments.show', $sponsorApartment->apartment->id) }}"><img class="animation-img" src="{{ asset('storage/'.$sponsorApartment->apartment->image) }}" alt="House image"></a>
+                <a href="{{ route('guest.apartment', $sponsorApartment->apartment->id) }}"><img class="animation-img" src="{{ asset('storage/'.$sponsorApartment->apartment->image) }}" alt="House image"></a>
             </div> 
         @empty
 
