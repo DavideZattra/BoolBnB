@@ -22,6 +22,7 @@ class PaymentController extends Controller
         }
 
         $sponsors = Sponsor::all();
+        $user = Auth::user();
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -39,8 +40,6 @@ class PaymentController extends Controller
     public function checkout(Request $request, $apartment)
     {
         $user = Auth::user();
-        
-        
 
         $gateway = new \Braintree\Gateway([
             'environment' => config('services.braintree.environment'),
@@ -84,7 +83,7 @@ class PaymentController extends Controller
 
 
 
-            return view('users.braintree.checkout')->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
+            return view('users.braintree.checkout', compact('user', 'newSponsorApartment'))->with('success_message', 'Transaction successful. The ID is:'. $transaction->id);
           
         } else {
             $errorString = "";

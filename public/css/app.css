@@ -10689,11 +10689,6 @@ a:hover {
     width: 100%;
     padding: 10px;
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> refactoring-controllers
 
   .mobile-title {
     margin: 10px auto 30px auto;
@@ -10713,10 +10708,8 @@ a:hover {
   .mobile-title {
     display: none;
   }
-<<<<<<< HEAD
-=======
->>>>>>> frontend-2
-=======
->>>>>>> master
->>>>>>> refactoring-controllers
+}
+.checkout-wrapper {
+  background-color: rgba(0, 0, 0, 0.507);
+  border-radius: 10px;
 }
