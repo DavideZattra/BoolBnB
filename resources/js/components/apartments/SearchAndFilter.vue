@@ -65,7 +65,7 @@
                 </button>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">
+                    <button class="my_button dropdown-item" type="button">
                         <div v-for="amenity in amenities" :key="amenity.id">
                             <input 
                                 type="checkbox" 
@@ -107,7 +107,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    
+
+    .my_button:active,
+    .my_button:hover {
+        cursor: default;
+        background: white;
+        color: black;
+    }
 
 </style>
 
