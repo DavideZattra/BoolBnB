@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Input;
 use App\User;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
 class RegisterController extends Controller
 {
     /*
@@ -64,11 +65,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if($data['profile_picture']) {
+            $data['profile_picture'] = Storage::disk('local')->put('public'. 'profile-picture', $data['profile_picture']);
+        } else {
+            $data['profile_picture'] = 0;
+        }
         return User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'email' => $data['email'],
             'birth_date' => $data['birth_date'],
+            'profile_picture' => $data['profile_picture'],
             'password' => Hash::make($data['password']),
         ]);
     }

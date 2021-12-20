@@ -10611,13 +10611,21 @@ a:hover {
     padding: 40px 0;
   }
 
+  .main-carousel {
+    padding: 20px;
+  }
+
   .flickity-page-dots {
     display: none;
   }
 
   .carousel-cell {
-    height: 250px !important;
-    width: 250px !important;
+    height: 200px !important;
+    width: 200px !important;
+  }
+  .carousel-cell a img {
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 #dashboard {
@@ -10743,6 +10751,10 @@ a:hover {
     width: 100%;
     padding: 10px;
   }
+  #dtl .dtl-container img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
 
   .mobile-title {
     margin: 10px auto 30px auto;
@@ -10761,6 +10773,13 @@ a:hover {
 @media screen and (min-width: 975px) {
   .mobile-title {
     display: none;
+  }
+}
+@media screen and (max-width: 575px) {
+  #dtl .dtl-container img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    height: auto;
   }
 }
 .checkout-wrapper {

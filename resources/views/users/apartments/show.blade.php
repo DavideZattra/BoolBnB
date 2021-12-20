@@ -75,7 +75,7 @@
                     </div>
                 @else
                     <div class="d-flex mt-3 justify-content-between">
-                        <a href="#" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Rent apartment</a>
+                        <h4>Send a message below to rent this apartment.</h4>
                     </div>
                 @endif
             </div>
