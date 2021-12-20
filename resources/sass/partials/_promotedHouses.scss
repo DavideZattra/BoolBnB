@@ -40,11 +40,19 @@
         margin: 40px 0;
         padding: 40px 0;
     }
+    .main-carousel{
+        padding: 20px;
+    }
     .flickity-page-dots {
       display: none;
     }
     .carousel-cell{
-        height: 250px !important;
-        width: 250px !important;
+        height: 200px !important;
+        width: 200px !important;
+        a{
+            img{
+                object-fit: contain;
+            }
+        }
     }
 }
