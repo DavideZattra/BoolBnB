@@ -10083,13 +10083,19 @@ header .navbar-custom .my_bars {
   font-size: 1.5rem;
 }
 header .navbar-custom .dropdown-menu {
-  background-color: #FFFFFA;
+  background-color: #000103;
+}
+header .navbar-custom .dropdown-menu:hover {
+  background-color: #000103;
 }
 header .navbar-custom .dropdown-menu a {
-  color: #000103;
+  color: #FFFFFA;
+  border-bottom: 2px solid #000103;
 }
 header .navbar-custom .dropdown-menu a:hover {
-  color: #000103;
+  color: #899ba5;
+  border-bottom: 2px solid #899ba5;
+  background-color: #000103;
 }
 header .navbar-custom .navbar-collapse {
   background-color: #000103;

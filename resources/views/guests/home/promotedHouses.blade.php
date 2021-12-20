@@ -10,6 +10,7 @@
     <div class="main-carousel scroll" data-flickity='{ "cellAlign": "left", "contain": true }'>
 
         @forelse ($sponsorApartments as $sponsorApartment)
+        
             <div class="carousel-cell">
                 <a href="{{ route('guest.apartment', $sponsorApartment->apartment->id) }}"><img class="animation-img" src="{{ asset('storage/'.$sponsorApartment->apartment->image) }}" alt="House image"></a>
             </div> 
