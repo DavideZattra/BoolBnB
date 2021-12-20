@@ -53,6 +53,10 @@
             height: 250px;
             width: 100%;
             padding: 10px;
+            img{
+                object-fit: contain;
+                height: auto;
+            }
         }
     }
     .mobile-title{
