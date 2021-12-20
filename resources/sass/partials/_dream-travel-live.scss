@@ -54,8 +54,7 @@
             width: 100%;
             padding: 10px;
             img{
-                object-fit: contain;
-                height: auto;
+                object-fit: cover;
             }
         }
     }
@@ -77,5 +76,16 @@
 @media screen and (min-width: 975px) {
     .mobile-title{
         display: none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #dtl{
+        .dtl-container{
+            img{
+                object-fit: contain;
+                height: auto;
+            }
+        }
     }
 }
