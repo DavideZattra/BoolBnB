@@ -13,8 +13,8 @@
         transition: all 3s;
     }
     .city-filter:hover{
-        // filter: sepia(0.8);
-        filter: saturate(0.5);
+        filter: opacity(20%);
+        filter: saturate(4);
     }
     .city-title{
         display: flex;
@@ -22,6 +22,7 @@
         align-items: center;
         height: 100%;
         a{
+            transition: all 3s;
             display: none;
             h1{
                 font-size: 2rem;
@@ -34,21 +35,18 @@
     .city-title:hover{
         a{
             display: block;
-            @keyframes drop-in {
+            @keyframes slide-in {
                 from {
-                  transform:
-                    rotate(-30deg) translateY(-100%);
-                  opacity: 0;
+                  transform: translatey(-30%);
                 }
                 to {
-                  transform:
-                    rotate(0deg) translateY(0%);
-                  opacity: 1;
+                  transform: translatey(0%);
                 }
               }
             
-              h1 {
-                animation: drop-in 1000ms;
+                h1{
+                animation: slide-in 800ms;
+                animation-timing-function: linear;
               }
         }
     }
