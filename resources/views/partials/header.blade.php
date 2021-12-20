@@ -24,13 +24,9 @@
 
                     <li class="mx-3"><a class="nav-link"  href="{{ route('apartments.search') }}">Find a house</a></li>
                     @if (Auth::user())
-
                         <li class="mx-3"><a class="nav-link"  href="{{ route('users.profile') }}">Dashboard</a></li>
-                        
                     @else
-                        
                         <li class="mx-3"><a class="nav-link"  href="{{ route('users.profile') }}">Host</a></li>
-
                     @endif
 
 
@@ -42,11 +38,11 @@
                     <!-- Authentication Links -->
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link ml-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link ml-3" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
