@@ -50,19 +50,8 @@
                                             @endforeach
                                         </button>
                                     </div>
-        
+                                    
                                 </div>
-        
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <div class="form-check form-check-inline">
-                                        @foreach ($amenities as $amenity)
-                                            <input type="checkbox" class="form-check-input mx-2" id="{{ $amenity->id }}" value="{{$amenity->id}}" name="amenities[]" 
-                                                @if(in_array($amenity->id, old('amenities', []))) checked @endif>
-                                            <label class="form-check-label" for="{{$amenity->id}}">{{$amenity->name}}</label>    
-                                        @endforeach
-                                    </div>
-                                </div>
-        
                             </div>
                         </div>
         
