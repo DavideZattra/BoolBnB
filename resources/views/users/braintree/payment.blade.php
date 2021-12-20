@@ -24,7 +24,7 @@
             <form method="post" id="payment-form" action="{{route('users.braintree.checkout', $apartment)}}">
                 @csrf 
 
-                <div class="form-check mt-4 row d-flex justify-content-center">
+                <div class="form-check mt-4 p-0 row d-flex justify-content-center">
                     <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-3 text-center">
                         
                         <div class="card murphy-card">
@@ -69,16 +69,12 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <p class="text-white payment-text col-12 col-md-8 px-lg-5 pt-5">Sponsorships help your business increase its credibility and visibility, improve its public image, and build prestige. 
+                        Like any form of marketing, it should be used strategically as a way to reach your target customers.
+                        <br>Our LUXINN team is always up to date with the newest marketing strategies, 
+                        so that our sponsorships are always the upgraded following the newest trends. 
+                    </p>
                 </div>
-
-
-                <p class="text-white payment-text">Sponsorships help your business increase its credibility and visibility, improve its public image, and build prestige. 
-                    Like any form of marketing, it should be used strategically as a way to reach your target customers.
-                    <br>Our LUXINN team is always up to date with the newest marketing strategies, 
-                    so that our sponsorships are always the upgraded following the newest trends. 
-                </p>
-
                 
                 <div class="bt-drop-in-wrapper d-flex justify-content-center w-100 mt-3">
                     <div class="drop-in-internal-wrapper w-lg-50">
