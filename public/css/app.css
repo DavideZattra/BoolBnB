@@ -10266,6 +10266,18 @@ footer .contacts i {
   color: #000103;
   font-size: 14px;
 }
+.show-container .my_sponsored {
+  color: #FFFFFA;
+  padding: 0px;
+  outline: none;
+  box-shadow: none;
+}
+.show-container .my_sponsored:active, .show-container .my_sponsored:active:focus, .show-container .my_sponsored:hover, .show-container .my_sponsored:visited, .show-container .my_sponsored:link {
+  cursor: default;
+  background-color: #000103;
+  outline: none !important;
+  box-shadow: none !important;
+}
 .show-container .btn-yellow {
   background-color: #899ba5;
   color: #000103;
