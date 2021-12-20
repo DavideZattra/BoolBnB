@@ -223,7 +223,7 @@ export default {
                     key: '4plL73VgGOGRuTO2bSvJ1YZFmyuDVVaD',
                     style: 'tomtom://vector/1/basic-main',
                     center: coordinates,
-                    zoom: 3
+                    zoom: 5
                 });
                 map.addControl(new tt.FullscreenControl());
                 map.addControl(new tt.NavigationControl());
@@ -241,7 +241,7 @@ export default {
                     var popup = new tt.Popup({
                         offset: popupOffsets
                     }).setHTML(`${apartment.descriptive_title}<br>${apartment.addresses.city}`);
-                    marker.setPopup(popup).togglePopup();
+                    marker.setPopup().togglePopup();
                 })
             })
 
