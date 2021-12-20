@@ -10471,7 +10471,8 @@ a:hover {
   transition: all 3s;
 }
 .houses .city-filter:hover {
-  filter: saturate(0.5);
+  filter: opacity(20%);
+  filter: saturate(4);
 }
 .houses .city-title {
   display: flex;
@@ -10480,6 +10481,7 @@ a:hover {
   height: 100%;
 }
 .houses .city-title a {
+  transition: all 3s;
   display: none;
 }
 .houses .city-title a h1 {
@@ -10491,29 +10493,27 @@ a:hover {
 .houses .city-title:hover a {
   display: block;
 }
-@-webkit-keyframes drop-in {
+@-webkit-keyframes slide-in {
   from {
-    transform: rotate(-30deg) translateY(-100%);
-    opacity: 0;
+    transform: translatey(-30%);
   }
   to {
-    transform: rotate(0deg) translateY(0%);
-    opacity: 1;
+    transform: translatey(0%);
   }
 }
-@keyframes drop-in {
+@keyframes slide-in {
   from {
-    transform: rotate(-30deg) translateY(-100%);
-    opacity: 0;
+    transform: translatey(-30%);
   }
   to {
-    transform: rotate(0deg) translateY(0%);
-    opacity: 1;
+    transform: translatey(0%);
   }
 }
 .houses .city-title:hover a h1 {
-  -webkit-animation: drop-in 1000ms;
-          animation: drop-in 1000ms;
+  -webkit-animation: slide-in 800ms;
+          animation: slide-in 800ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 .houses .roma {
   background-image: url("../img/roma.jpeg");
