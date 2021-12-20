@@ -11,9 +11,11 @@ use Illuminate\Support\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use App\Models\SponsorApartment;
 use App\Models\Apartment;
 use App\Models\Address;
 use App\Models\Amenity;
+use App\Models\Sponsor;
 use App\Models\View;
 use App\User;
 
@@ -151,13 +153,23 @@ class ApartmentController extends Controller
         ->where('ip_address', $request->ip())
         ->where('created_at', '>', Carbon::now()->subHours(8)->toDateTimeString())->get(); 
         
+        $sponsored = SponsorApartment::where('apartment_id', $apartment->id)->where('end', '>', Carbon::now()->toDateTimeString())->get();
+
+        
+
         $amenities = $apartment->amenities->pluck('name')->toArray();
         
         $messages = $apartment->messages->toArray();
 
+        // if (count($sponsored)) {
+        //     dd('sponsorizzato');
+        // } else {
+        //     dd('non sposorizzato');
+        // }
+
         if (Auth::user() && Auth::user()->id == $apartment->user_id):
 
-            return view('users.apartments.show', compact('apartment', 'amenities', 'messages'));
+            return view('users.apartments.show', compact('apartment', 'amenities', 'messages', 'sponsored'));
 
         elseif (!count($clientView) ): 
 
