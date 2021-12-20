@@ -40,8 +40,8 @@
 
         <div class="row mb-3">
             <div class="col-6 col-md-5 city-filter">
-                <div class="tokyo t-ideas">
-                    <div class="city-title"><a href="{{ route('apartments.search') }}"><h1>Tokyo</h1></a></div>                
+                <div class="barcellona t-ideas">
+                    <div class="city-title"><a href="{{ route('apartments.search') }}"><h1>Barcellona</h1></a></div>                
                 </div>
             </div>
             <div class="col-6 col-md-4 city-filter">
@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="col-md-3 d-none d-md-block city-filter">
-                <div class="barcellona t-ideas">
-                    <div class="city-title"><a href="{{ route('apartments.search') }}"><h1>Barcellona</h1></a></div>              
+                <div class="tokyo t-ideas">
+                    <div class="city-title"><a href="{{ route('apartments.search') }}"><h1>Tokyo</h1></a></div>              
                 </div>
             </div>
         </div>  
