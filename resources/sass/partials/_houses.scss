@@ -13,7 +13,8 @@
         transition: all 3s;
     }
     .city-filter:hover{
-        filter: sepia(0.8);
+        filter: opacity(20%);
+        filter: saturate(4);
     }
     .city-title{
         display: flex;
@@ -21,16 +22,32 @@
         align-items: center;
         height: 100%;
         a{
+            transition: all 3s;
             display: none;
             h1{
                 font-size: 2rem;
                 color: $my_white;
+                background-color: rgba(0, 0, 0, 0.424);
+                padding: 18px;
             }
         }
     }
     .city-title:hover{
         a{
             display: block;
+            @keyframes slide-in {
+                from {
+                  transform: translatey(-30%);
+                }
+                to {
+                  transform: translatey(0%);
+                }
+              }
+            
+                h1{
+                animation: slide-in 800ms;
+                animation-timing-function: linear;
+              }
         }
     }
 
@@ -60,5 +77,19 @@
     }
     .barcellona{
         background-image: url('../img/barcellona.jpg');
+    }
+}
+@media screen and (max-width: 700px) {
+    .houses{
+        .city-title{
+            a{
+                h1{
+                    font-size: 1rem;
+                    color: $my_white;
+                    background-color: rgba(0, 0, 0, 0.424);
+                    padding: 8px;
+                }
+            }
+        }
     }
 }
