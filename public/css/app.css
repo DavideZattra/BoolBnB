@@ -10471,7 +10471,7 @@ a:hover {
   transition: all 3s;
 }
 .houses .city-filter:hover {
-  filter: sepia(0.8);
+  filter: saturate(0.5);
 }
 .houses .city-title {
   display: flex;
@@ -10485,6 +10485,8 @@ a:hover {
 .houses .city-title a h1 {
   font-size: 2rem;
   color: #FFFFFA;
+  background-color: rgba(0, 0, 0, 0.424);
+  padding: 18px;
 }
 .houses .city-title:hover a {
   display: block;
@@ -10517,6 +10519,14 @@ a:hover {
   background-image: url("../img/barcellona.jpg");
 }
 
+@media screen and (max-width: 700px) {
+  .houses .city-title a h1 {
+    font-size: 1rem;
+    color: #FFFFFA;
+    background-color: rgba(0, 0, 0, 0.424);
+    padding: 8px;
+  }
+}
 #promoted-houses {
   margin: 100px 0;
   padding: 100px 0;

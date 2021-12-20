@@ -13,7 +13,8 @@
         transition: all 3s;
     }
     .city-filter:hover{
-        filter: sepia(0.8);
+        // filter: sepia(0.8);
+        filter: saturate(0.5);
     }
     .city-title{
         display: flex;
@@ -25,6 +26,8 @@
             h1{
                 font-size: 2rem;
                 color: $my_white;
+                background-color: rgba(0, 0, 0, 0.424);
+                padding: 18px;
             }
         }
     }
@@ -60,5 +63,19 @@
     }
     .barcellona{
         background-image: url('../img/barcellona.jpg');
+    }
+}
+@media screen and (max-width: 700px) {
+    .houses{
+        .city-title{
+            a{
+                h1{
+                    font-size: 1rem;
+                    color: $my_white;
+                    background-color: rgba(0, 0, 0, 0.424);
+                    padding: 8px;
+                }
+            }
+        }
     }
 }
