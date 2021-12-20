@@ -32,13 +32,13 @@ header{
         }
 
         .dropdown-menu{
-            background-color: $my_white;
+            background-color: $my_black;
 
             a{
-                color: $my_black;
+                color: $my_white;
 
                 &:hover{
-                    color: $my_black;
+                    color: $my_brightyellow;
                 }
             }
         }
