@@ -115,7 +115,7 @@ export default {
             this.apartments.forEach((apartment) => {
                 if (this.getDistanceFromLatLonInKm(this.searchLat, this.searchLon, apartment.addresses.lat, apartment.addresses.lon) < this.radius) {
                     this.searchedApartments.push(apartment);
-                    this.apartments = [...this.searchedApartments];
+                    // this.apartments = [...this.searchedApartments];
                 }
             });
             

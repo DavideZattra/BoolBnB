@@ -627,7 +627,6 @@ Axios.prototype.request = function request(config) {
   }
 
   var transitional = config.transitional;
-<<<<<<< HEAD
 
   if (transitional !== undefined) {
     validator.assertOptions(transitional, {
@@ -637,17 +636,6 @@ Axios.prototype.request = function request(config) {
     }, false);
   }
 
-=======
-
-  if (transitional !== undefined) {
-    validator.assertOptions(transitional, {
-      silentJSONParsing: validators.transitional(validators.boolean),
-      forcedJSONParsing: validators.transitional(validators.boolean),
-      clarifyTimeoutError: validators.transitional(validators.boolean)
-    }, false);
-  }
-
->>>>>>> CityToVisit
   // filter out skipped interceptors
   var requestInterceptorChain = [];
   var synchronousRequestInterceptors = true;
@@ -2476,9 +2464,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       this.apartments.forEach(function (apartment) {
         if (_this2.getDistanceFromLatLonInKm(_this2.searchLat, _this2.searchLon, apartment.addresses.lat, apartment.addresses.lon) < _this2.radius) {
-          _this2.searchedApartments.push(apartment);
+          _this2.searchedApartments.push(apartment); // this.apartments = [...this.searchedApartments];
 
-          _this2.apartments = _toConsumableArray(_this2.searchedApartments);
         }
       });
       var coordinates = [this.searchLon, this.searchLat];
@@ -4314,7 +4301,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\r\n                    Click here to choose your amenities.\r\n                "
+                "\n                    Click here to choose your amenities.\n                "
               ),
             ]
           ),
@@ -16969,11 +16956,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/eugenio/Desktop/Coding/Boolean Careers/Final Project/BoolBnB/resources/js/front.js */"./resources/js/front.js");
-=======
-module.exports = __webpack_require__(/*! C:\Boolean_\BoolBnB\resources\js\front.js */"./resources/js/front.js");
->>>>>>> CityToVisit
 
 
 /***/ })
