@@ -10507,40 +10507,29 @@ a:hover {
   align-items: center;
   height: 100%;
 }
-.houses .city-title a {
-  transition: all 3s;
+.houses .city-title:hover h3 {
   display: none;
 }
-.houses .city-title a h1 {
-  font-size: 2rem;
-  color: #FFFFFA;
-  background-color: rgba(0, 0, 0, 0.424);
-  padding: 18px;
+.houses .city-title:hover h3 p {
+  display: none;
 }
-.houses .city-title:hover a {
+.houses .city-title a {
   display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 3s;
 }
-@-webkit-keyframes slide-in {
-  from {
-    transform: translatey(-30%);
-  }
-  to {
-    transform: translatey(0%);
-  }
+.houses .city-title a h3 {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.534);
+  padding: 18px;
+  color: white;
 }
-@keyframes slide-in {
-  from {
-    transform: translatey(-30%);
-  }
-  to {
-    transform: translatey(0%);
-  }
-}
-.houses .city-title:hover a h1 {
-  -webkit-animation: slide-in 800ms;
-          animation: slide-in 800ms;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+.houses .city-title a h3 p {
+  font-size: 13px;
 }
 .houses .roma {
   background-image: url("../img/roma.jpeg");
@@ -10570,14 +10559,6 @@ a:hover {
   background-image: url("../img/barcellona.jpg");
 }
 
-@media screen and (max-width: 700px) {
-  .houses .city-title a h1 {
-    font-size: 1rem;
-    color: #FFFFFA;
-    background-color: rgba(0, 0, 0, 0.424);
-    padding: 8px;
-  }
-}
 #promoted-houses {
   margin: 100px 0;
   padding: 100px 0;
@@ -10783,7 +10764,6 @@ a:hover {
 }
 
 .payment-text {
-  padding: 50px 250px 0;
   text-align: center;
 }
 

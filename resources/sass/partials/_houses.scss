@@ -21,33 +21,59 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        a{
-            transition: all 3s;
-            display: none;
-            h1{
-                font-size: 2rem;
-                color: $my_white;
-                background-color: rgba(0, 0, 0, 0.424);
-                padding: 18px;
+        // a{
+        //     transition: all 3s;
+        //     display: none;
+        //     p{
+        //         font-size: 1.2rem;
+        //         color: $my_white;
+        //         background-color: rgba(0, 0, 0, 0.424);
+        //         padding: 18px;
+        //     }
+        // }
+
+            &:hover{
+                h3{
+                    display: none;
+
+                    p{
+                        display: none;
+                    }
+                }
             }
-        }
-    }
-    .city-title:hover{
-        a{
-            display: block;
-            @keyframes slide-in {
-                from {
-                  transform: translatey(-30%);
+
+            a{
+                display: block;
+                height: 100%;
+                width: 100%;
+                border-radius: 8px;
+                transition: all 3s;
+
+                h3{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 8px;
+                    background-color: rgba(0, 0, 0, 0.534);
+                    padding: 18px;
+                    color: white;
+
+                    p{
+                        font-size: 13px;
+                    }
                 }
-                to {
-                  transform: translatey(0%);
-                }
-              }
-            
-                h1{
-                animation: slide-in 800ms;
-                animation-timing-function: linear;
-              }
+                // @keyframes slide-in {
+                //     from {
+                //       transform: translatey(-30%);
+                //     }
+                //     to {
+                //       transform: translatey(0%);
+                //     }
+                //   }
+                
+                //     p{
+                //     animation: slide-in 800ms;
+                //     animation-timing-function: linear;
+                //   }
         }
     }
 
@@ -79,17 +105,17 @@
         background-image: url('../img/barcellona.jpg');
     }
 }
-@media screen and (max-width: 700px) {
-    .houses{
-        .city-title{
-            a{
-                h1{
-                    font-size: 1rem;
-                    color: $my_white;
-                    background-color: rgba(0, 0, 0, 0.424);
-                    padding: 8px;
-                }
-            }
-        }
-    }
-}
+// @media screen and (max-width: 700px) {
+//     .houses{
+//         .city-title{
+//             a{
+//                 p{
+//                     font-size: 1rem;
+//                     color: $my_white;
+//                     background-color: rgba(0, 0, 0, 0.424);
+//                     padding: 8px;
+//                 }
+//             }
+//         }
+//     }
+// }
