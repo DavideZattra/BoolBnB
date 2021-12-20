@@ -51,7 +51,7 @@
                     {{-- @dd(count($apartment->sponsor)) --}}
                     @if (count($sponsored))
                     
-                        <p>This apartment is currently sposored</p>
+                        <button class="my_sponsored btn btn-outline-success">This apartment is currently sposored</button>
                         
                     @else
 

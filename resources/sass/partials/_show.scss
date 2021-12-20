@@ -37,6 +37,25 @@
             font-size: 14px;
         }
     }
+
+    .my_sponsored {
+        color: $my_white;
+        padding: 0px;
+        outline: none;
+        box-shadow: none;
+
+        &:active,
+        &:active:focus,
+        &:hover,
+        &:visited,
+        &:link {
+            cursor: default;
+            background-color: $my_black;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+
     .btn-yellow{
         background-color: $my_brightyellow;
         color: $my_black;

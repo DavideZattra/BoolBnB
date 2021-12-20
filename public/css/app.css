@@ -10021,7 +10021,7 @@ h3 {
 }
 * {
   font-family: "Roboto Slab", serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 
 h1,
@@ -10271,6 +10271,18 @@ footer .contacts i {
 .show-container .card .mail {
   color: #000103;
   font-size: 14px;
+}
+.show-container .my_sponsored {
+  color: #FFFFFA;
+  padding: 0px;
+  outline: none;
+  box-shadow: none;
+}
+.show-container .my_sponsored:active, .show-container .my_sponsored:active:focus, .show-container .my_sponsored:hover, .show-container .my_sponsored:visited, .show-container .my_sponsored:link {
+  cursor: default;
+  background-color: #000103;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .show-container .btn-yellow {
   background-color: #899ba5;
