@@ -56,19 +56,21 @@
                             </a>
     
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                
+                                <a class="dropdown-item no-border" href="{{ route('users.profile') }}">
+                                    {{ __('My Dashboard') }}
+                                </a>
+                                
                                 <a class="dropdown-item no-border" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
 
-                                <a class="dropdown-item no-border" href="{{ route('users.profile') }}">
-                                    {{ __('My Dashboard') }}
-                                </a>
-    
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+                                
                             </div>
                         </li>
                     @endguest

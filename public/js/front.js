@@ -16528,7 +16528,11 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! /Users/camillasassoli/Desktop/boolean/final_project/BoolBnB/resources/js/front.js */"./resources/js/front.js");
+=======
+module.exports = __webpack_require__(/*! /home/davide/Documents/Repository/BoolBnB/resources/js/front.js */"./resources/js/front.js");
+>>>>>>> 76e357fc537e19c8ff25a5bf52df4e511dbf9350
 
 
 /***/ })

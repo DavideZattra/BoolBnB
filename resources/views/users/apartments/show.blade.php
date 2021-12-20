@@ -47,7 +47,17 @@
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                 <div class="d-flex mt-3 justify-content-between">
+
+                    {{-- @dd(count($apartment->sponsor)) --}}
+                    @if (count($sponsored))
+                    
+                        <p>This apartment is currently sposored</p>
+                        
+                    @else
+
                         <a href="{{ route('users.braintree.payment', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Promote this apartment</a>
+                        
+                    @endif
                         <a href="{{ route('users.apartment.stats', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Statistics of this apartment</a>
                     </div>
                 @endif
