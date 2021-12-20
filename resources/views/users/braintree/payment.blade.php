@@ -29,7 +29,7 @@
                     <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center">
                         
                         <div class="card">
-                            <img src="https://www.psypost.org/wp-content/uploads/2021/09/poor-homeless-sad-man.jpg" class="card-img-top" alt="">
+                            <img class="murphy" src="https://www.noidegli8090.com/wp-content/uploads/2017/12/una-poltrona-per-due-eddie-murphy-1.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
@@ -44,7 +44,7 @@
                     <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center mt-5 mt-lg-0">
 
                         <div class="card">
-                            <img src="https://mindbodygreen-res.cloudinary.com/images/w_767,q_auto:eco,f_auto,fl_lossy/org/avocyzq5ejtiuxdyj/woman-looking-angry-or-annoyed.jpg" class="card-img-top" alt="">
+                            <img class="murphy" src="https://www.nonsonsolofilm.it/wp-content/uploads/2020/11/Una-poltrona-per-due-Trading-Places-John-Landis-Dan-Aykroyd-Eddie-Murphy-Jamie-Lee-Curtis-Ralph-Bellamy-Don-Ameche.jpg" class="card-img-top" alt="">
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
@@ -59,7 +59,7 @@
                     <div class="input-wrapper amount-wrapper col-12 col-md-6 col-lg-4 text-center mt-5 mt-lg-0">
 
                         <div class="card">
-                            <img src="https://i1.wp.com/maximizeminimalism.com/wp-content/uploads/2020/07/Frugal-Rich-People-7-Secrets-Of-Wealthy-People-Who-Live-Humbly.jpg?fit=1000%2C800&ssl=1" class="card-img-top" alt="">
+                            <img class="murphy" src="https://i.ytimg.com/vi/FpYHwjqf22Y/maxresdefault.jpg" alt="">
                             <div class="card-body">
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 
