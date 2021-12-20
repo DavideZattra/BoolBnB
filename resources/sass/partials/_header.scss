@@ -34,11 +34,18 @@ header{
         .dropdown-menu{
             background-color: $my_black;
 
+            &:hover{
+                background-color: $my_black;
+            }
+
             a{
                 color: $my_white;
+                border-bottom: 2px solid $my_black;
 
                 &:hover{
                     color: $my_brightyellow;
+                    border-bottom: 2px solid $my_brightyellow;
+                    background-color: $my_black;
                 }
             }
         }
