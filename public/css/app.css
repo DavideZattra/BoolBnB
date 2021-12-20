@@ -10615,7 +10615,7 @@ a:hover {
   }
 }
 #dashboard {
-  padding-top: 5%;
+  padding: 5% 0;
 }
 #dashboard .wrapper {
   background-color: rgba(0, 0, 0, 0.507);
