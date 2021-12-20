@@ -26,8 +26,8 @@ class Apartment extends Model
         return $this->hasMany('App\Models\view');
     }
 
-    public function sponsorApartment(){
-        return $this->hasMany('App\Models\SponsorApartment');
+    public function sponsor(){
+        return $this->hasMany('App\Models\SponsorApartment', 'apartment_id');
     }
 
     public function amenities(){

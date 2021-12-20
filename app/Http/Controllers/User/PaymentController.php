@@ -17,8 +17,15 @@ class PaymentController extends Controller
 {
     public function payment($apartment)
     {   
-        if(Auth::user()->id != Apartment::findOrFail($apartment)->user_id){
+        $sApartment = Apartment::findOrFail($apartment);
+
+        if(Auth::user()->id != $sApartment->user_id){
             return redirect()->route('users.apartments.index');
+        }
+
+        if(count($sApartment->sponsor)){
+
+            return redirect()->route('users.apartments.show', compact('apartment'));
         }
 
         $sponsors = Sponsor::all();
@@ -76,7 +83,7 @@ class PaymentController extends Controller
             $newSponsorApartment->sponsor_id = $sponsor[0]->id;
             $newSponsorApartment->transaction_id = $transaction->id; 
             $newSponsorApartment->start = Carbon::now()->toDateTimeString();
-            $newSponsorApartment->end = Carbon::now()->addDays($sponsor[0]->duration)->toDateTimeString();
+            $newSponsorApartment->end = Carbon::now()->addHours($sponsor[0]->duration)->toDateTimeString();
 
             // dd($newSponsorApartment);
             $newSponsorApartment->save();
