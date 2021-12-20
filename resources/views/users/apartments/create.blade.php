@@ -40,7 +40,7 @@
                                     </button>
         
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item" type="button">
+                                        <button class="my_button dropdown-item" type="button">
                                             @foreach ($amenities as $amenity)
                                                 <div>
                                                     <input type="checkbox" class="form-check-input" id="{{ $amenity->id }}" value="{{$amenity->id}}" name="amenities[]" 

@@ -10365,6 +10365,13 @@ footer .contacts i {
   width: 24px;
 }
 
+.my_button:active,
+.my_button:hover {
+  cursor: default;
+  background: white;
+  color: black;
+}
+
 .user-edit-container {
   height: calc(100vh - 60px);
   padding-top: 2%;
