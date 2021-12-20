@@ -10491,6 +10491,30 @@ a:hover {
 .houses .city-title:hover a {
   display: block;
 }
+@-webkit-keyframes drop-in {
+  from {
+    transform: rotate(-30deg) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) translateY(0%);
+    opacity: 1;
+  }
+}
+@keyframes drop-in {
+  from {
+    transform: rotate(-30deg) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) translateY(0%);
+    opacity: 1;
+  }
+}
+.houses .city-title:hover a h1 {
+  -webkit-animation: drop-in 1000ms;
+          animation: drop-in 1000ms;
+}
 .houses .roma {
   background-image: url("../img/roma.jpeg");
 }

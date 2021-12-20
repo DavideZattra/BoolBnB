@@ -34,6 +34,22 @@
     .city-title:hover{
         a{
             display: block;
+            @keyframes drop-in {
+                from {
+                  transform:
+                    rotate(-30deg) translateY(-100%);
+                  opacity: 0;
+                }
+                to {
+                  transform:
+                    rotate(0deg) translateY(0%);
+                  opacity: 1;
+                }
+              }
+            
+              h1 {
+                animation: drop-in 1000ms;
+              }
         }
     }
 
