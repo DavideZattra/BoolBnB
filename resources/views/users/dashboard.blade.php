@@ -19,7 +19,7 @@
                     <div class="card-body d-md-flex align-items-center">
                         <div class="col-12 col-md-6 d-flex align-items-center">
                             <div class="profile-pic">
-                                <img src="{{ asset('storage/'. $user->profile_picture) }}" alt="" >
+                                <img src="{{ asset('storage/'. $user->profile_picture) }}" alt="user profile" >
                             </div>
                         </div>
     

@@ -10441,19 +10441,33 @@ a:hover {
   color: #000103;
   margin-top: 100px;
 }
-#jumbotron #jumbo .black-block button {
+#jumbotron #jumbo .black-block .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  padding: 8px 18px;
+  margin-top: 20px;
   background-color: #000103;
-  border: 1px solid #FFFFFA;
-  margin: 20px;
-}
-#jumbotron #jumbo .black-block button:hover a {
-  text-decoration: none;
-  font-size: 20px;
-}
-#jumbotron #jumbo .black-block button a {
   color: #FFFFFA;
-  font-weight: 600;
-  font-size: 1.2rem;
+  border: 1px solid transparent;
+  transition: all 300ms, ease-in-out 300ms;
+}
+#jumbotron #jumbo .black-block .btn a {
+  color: #FFFFFA;
+  font-weight: 300;
+  text-decoration: none;
+}
+#jumbotron #jumbo .black-block .btn:hover {
+  background-color: #FFFFFA;
+  color: #000103;
+  border: 1px solid #000103;
+}
+#jumbotron #jumbo .black-block .btn:hover a {
+  color: #000103;
+  text-decoration: none;
 }
 
 .houses {
@@ -10753,4 +10767,13 @@ a:hover {
   height: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.payment-text {
+  padding: 50px 250px 0;
+  text-align: center;
+}
+
+.payment-button span {
+  font-weight: 400;
 }
