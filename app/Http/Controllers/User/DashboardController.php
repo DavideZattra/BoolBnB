@@ -76,7 +76,6 @@ class DashboardController extends Controller
         $data = $request->all();
         
         if (array_key_exists('profile_picture', $data)) {
-            
             $data['profile_picture'] = Storage::put('profile-picture', $data['profile_picture']);
         }
         
