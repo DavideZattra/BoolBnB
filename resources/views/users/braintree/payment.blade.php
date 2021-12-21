@@ -30,7 +30,7 @@
                         <div class="card murphy-card">
                             <img class="murphy" src="https://www.noidegli8090.com/wp-content/uploads/2017/12/una-poltrona-per-due-eddie-murphy-1.jpg" class="card-img-top" alt="">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Lasts 24 hours</p>
 
                                 <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="2.99" checked>
                                 <label class="form-check-label" for="amount">
@@ -45,7 +45,7 @@
                         <div class="card murphy-card">
                             <img class="murphy" src="https://www.nonsonsolofilm.it/wp-content/uploads/2020/11/Una-poltrona-per-due-Trading-Places-John-Landis-Dan-Aykroyd-Eddie-Murphy-Jamie-Lee-Curtis-Ralph-Bellamy-Don-Ameche.jpg" class="card-img-top" alt="">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Lasts 72 hours</p>
 
                                 <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="5.99">
                                 <label class="form-check-label" for="amount">
@@ -60,7 +60,7 @@
                         <div class="card murphy-card">
                             <img class="murphy" src="https://i.ytimg.com/vi/FpYHwjqf22Y/maxresdefault.jpg" alt="">
                             <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Lasts 144 hours</p>
 
                                 <input class="form-check-input" type="radio" name="amount" min="1" id="amount" value="9.99">
                                 <label class="form-check-label" for="amount">

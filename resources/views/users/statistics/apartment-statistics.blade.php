@@ -11,7 +11,7 @@
     <div class="row">
 
         <div class="col-12 pt-5">
-          <h1 class="text-white text-center pt-5 pb-5">Up-to-date statistics of your apartments</h1>
+          <h1 class="text-white text-center pt-5 pb-5">Up-to-date statistics of your apartment</h1>
         </div>
 
         {{-- First line --}}
