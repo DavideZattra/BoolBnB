@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            // 'profile_picture' => ['file', 'image'],
         ]);
     }
 
@@ -66,7 +67,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         if($data['profile_picture']) {
-            $data['profile_picture'] = Storage::disk('local')->put('public'. 'profile-picture', $data['profile_picture']);
+            $data['profile_picture'] = Storage::put('profile-picture', $data['profile_picture']);
         } else {
             $data['profile_picture'] = 0;
         }
