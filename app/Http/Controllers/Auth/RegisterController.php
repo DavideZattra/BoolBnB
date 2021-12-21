@@ -51,10 +51,23 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-            // 'profile_picture' => ['file', 'image'],
+            'name' => 'required|string|min:3|max:40',
+            'surname' => 'required|string|min:3|max:40',
+            'email' => 'required|email|min:5',
+            'profile_picture' => 'required|image|mimes:jpeg,jpg,png',
+            'birth_date' => 'required|date|before:today',
+        ],
+        [
+            'required' => ':attribute is required',
+            'name.min' => 'The name should be at least 3 characters long',
+            'name.max' => 'the name should not exceed 40 characters',
+            'surname.min' => 'The surname should be at least 3 characters long',
+            'surname.max' => 'The surname should not exceed 40 characters',
+            'email.email' => 'The email should be an email',
+            'email.min' => 'The email should be at least 3 characters long',
+            'profile_picture.image' => 'The profile picture should be an image',
+            'profile_picture.mimes' => 'The image format must be a jpeg,jpg or png',
+            'birth_date.before' => 'Are you coding from the future?'
         ]);
     }
 

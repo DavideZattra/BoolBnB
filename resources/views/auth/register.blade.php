@@ -3,6 +3,15 @@
 @section('content')
     <section class="bg-container">
         <div class="container auth-container">
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>    
+        @endif 
             <div class="row justify-content-center my_row">
                 <div class="col-md-8 my_card">
                     <div class="card col-12">

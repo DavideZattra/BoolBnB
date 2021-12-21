@@ -64,8 +64,6 @@ class DashboardController extends Controller
             'profile_picture.image' => 'The profile picture should be an image',
             'profile_picture.mimes' => 'The image format must be a jpeg,jpg or png',
             'birth_date.before' => 'Are you coding from the future?'
-
-
         ]);
 
         // Get current user
