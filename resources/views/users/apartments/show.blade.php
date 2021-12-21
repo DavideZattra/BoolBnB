@@ -111,42 +111,42 @@
                     @if (session('thankMessage'))
                         <div class="my_message">
                             <h3>{{session('thankMessage')}}</h3>
+                            <h4>Reload to send another message.</h4>
                         </div>
+                    @else
+                        <h2>Write a message to this host</h2>
+
+                        <form class="p-2 my_form" action="{{ route('message.store', ['apartment_id' => $apartment->id]) }}" method="POST">
+                            @csrf
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>        
+                            @endif
+
+                            <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            
+                            <div class="form-group">
+                            <label for="body">Ask anything you need to the host</label>
+                            <textarea name="body" class="form-control" id="body" rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-custom mt-3">Send message</button>
+                            
+                        </form>
                     @endif
-
-                    <h2>Write a message to this host</h2>
-
-                    <form class="p-2 my_form" action="{{ route('message.store', ['apartment_id' => $apartment->id]) }}" method="POST">
-                        @csrf
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>        
-                        @endif
-
-                        <div class="form-group">
-                          <label for="email">Email address</label>
-                          <input name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
-                        </div>
-                        
-                        <div class="form-group">
-                          <label for="body">Ask anything you need to the host</label>
-                          <textarea name="body" class="form-control" id="body" rows="3"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-custom mt-3">Send message</button>
-                        
-                      </form>
-                    
                 @endif
             </div>
             <div class="col-12 col-md-12 col-lg-6 map-show">

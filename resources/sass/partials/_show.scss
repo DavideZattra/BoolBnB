@@ -104,12 +104,15 @@
 }
 
 .my_message{
-    background-color: $my_brightyellow;
+    // background-color: $my_black;
     padding: 10px;
     border-radius: 10px;
 
     h3{
-        color: black;
+        color: white;
+    }
+    h4{
+        color: white;
     }
 }
 
