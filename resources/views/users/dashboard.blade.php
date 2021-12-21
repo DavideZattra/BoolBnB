@@ -56,7 +56,7 @@
                             {{-- @dd($apartment) --}}
                                 <li class="list-group-item"><a href="{{ route('users.apartments.show', $apartment['id'] ) }}">{{ ucfirst($apartment['descriptive_title']) }}</a></li>
                             @empty
-                                <li class="list-group-item">Insert a new apartment and become a member of our family!</li>
+                                <li class="list-group-item">Insert a new apartment and become a member of LuxInn.</li>
                             @endforelse
                         </ul>
                     </div>
