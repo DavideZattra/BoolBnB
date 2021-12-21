@@ -11,7 +11,7 @@
                     @if (Auth::check())
                         <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My profile</a></button>
                     @else
-                        <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
+                        <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile</a></button>
                     @endif
                 </div>
             </div>
@@ -27,7 +27,7 @@
                 @if (Auth::check())
                     <button type="button" class="btn btn-sm"><a href="{{route("users.apartments.index")}}">My profile</a></button>
                 @else
-                    <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile.</a></button>
+                    <button type="button" class="btn btn-sm"><a href="{{route("register")}}">Create a profile</a></button>
                 @endif
             </div>
         </div>

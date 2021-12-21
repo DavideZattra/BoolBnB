@@ -14,13 +14,14 @@
     }
     .city-filter:hover{
         filter: opacity(20%);
-        filter: saturate(4);
+        filter: saturate(1.5);
     }
     .city-title{
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+
         // a{
         //     transition: all 3s;
         //     display: none;
@@ -33,12 +34,13 @@
         // }
 
             &:hover{
+                
                 h3{
                     display: none;
+                }
 
-                    p{
-                        display: none;
-                    }
+                p{
+                    display: none;
                 }
             }
 

@@ -4045,7 +4045,7 @@ var render = function () {
         _c(
           "div",
           {
-            staticClass: "justify-content-center col-12 col-md-6 col-lg-8 pl-4",
+            staticClass: "justify-content-center col-12 col-md-6 col-lg-8 ps-4",
           },
           [
             _c("div", { staticClass: "fluid-container" }, [
@@ -4301,7 +4301,7 @@ var render = function () {
             },
             [
               _vm._v(
-                "\n                    Click here to choose your amenities.\n                "
+                "\n                    Choose your amenities\n                "
               ),
             ]
           ),

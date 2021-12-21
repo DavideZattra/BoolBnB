@@ -73,10 +73,6 @@
                             <button class="font-weight-bold btn btn-md-sm btn-custom delete-message" type="submit">Delete this apartment</a>
                         </form>
                     </div>
-                @else
-                    <div class="d-flex mt-3 justify-content-between">
-                        <a href="#" class="font-weight-bold btn btn-md -sm btn-yellow edit-message">Rent apartment</a>
-                    </div>
                 @endif
             </div>
         </div>

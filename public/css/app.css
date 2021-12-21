@@ -10383,6 +10383,22 @@ footer .contacts i {
   width: 24px;
 }
 
+@media screen and (max-width: 700px) {
+  .show-img {
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .map-show {
+    height: 200px;
+  }
+  .map-show #map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 3px solid #899ba5;
+  }
+}
 .my_button:active,
 .my_button:hover {
   cursor: default;
@@ -10511,7 +10527,7 @@ a:hover {
 }
 .houses .city-filter:hover {
   filter: opacity(20%);
-  filter: saturate(4);
+  filter: saturate(1.5);
 }
 .houses .city-title {
   display: flex;
@@ -10522,7 +10538,7 @@ a:hover {
 .houses .city-title:hover h3 {
   display: none;
 }
-.houses .city-title:hover h3 p {
+.houses .city-title:hover p {
   display: none;
 }
 .houses .city-title a {
