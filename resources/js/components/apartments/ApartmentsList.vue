@@ -15,7 +15,7 @@
                         :amenities="amenities"/>
                 </div>
 
-                <div class="justify-content-center col-12 col-md-6 col-lg-8 pl-4">
+                <div class="justify-content-center col-12 col-md-6 col-lg-8 ps-4">
                     <div class="fluid-container">
                         <div id="apartment-list" class="d-flex align-content-stretch flex-wrap justify-content-center">
                             <ApartmentCard 
