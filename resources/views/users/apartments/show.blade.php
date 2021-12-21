@@ -51,26 +51,26 @@
                     {{-- @dd(count($apartment->sponsor)) --}}
                     @if (count($sponsored))
                     
-                        <button class="my_sponsored btn btn-outline-success">This apartment is currently sposored</button>
+                        <button class="my_sponsored btn btn-outline-secondary px-3 btn-width">Sposored</button>
                         
                     @else
 
-                        <a href="{{ route('users.braintree.payment', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Promote this apartment</a>
+                        <a href="{{ route('users.braintree.payment', $apartment) }}" class="font-weight-bold btn btn-md btn-custom btn-width">Promote</a>
                         
                     @endif
-                        <a href="{{ route('users.apartment.stats', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom">Statistics of this apartment</a>
+                        <a href="{{ route('users.apartment.stats', $apartment) }}" class="font-weight-bold btn btn-md btn-custom btn-width">Statistics</a>
                     </div>
                 @endif
                     
 
                 @if (Auth::user() && Auth::user()->id == $apartment->user_id)
                     <div class="d-flex mt-3 justify-content-between">
-                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md -sm btn-custom edit-message">Modify your apartment details</a>
-                        <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST">
+                        <a href="{{ route('users.apartments.edit', $apartment) }}" class="font-weight-bold btn btn-md btn-custom edit-message btn-width">Modify</a>
+                        <form action="{{route('users.apartments.destroy', $apartment->id )}}" method="POST" class="btn-width">
                             @csrf
                             @method('DELETE')
             
-                            <button class="font-weight-bold btn btn-md-sm btn-custom delete-message" type="submit">Delete this apartment</a>
+                            <button class="font-weight-bold btn btn-md-sm btn-custom delete-message w-100" type="submit">Delete</button>
                         </form>
                     </div>
                 @endif
