@@ -10305,6 +10305,10 @@ footer .contacts i {
   overflow-y: scroll;
 }
 
+.btn-width {
+  width: 240px;
+}
+
 .map-link a {
   color: #FFFFFA;
   text-decoration: none;
@@ -10326,12 +10330,14 @@ footer .contacts i {
 }
 
 .my_message {
-  background-color: #899ba5;
   padding: 10px;
   border-radius: 10px;
 }
 .my_message h3 {
-  color: black;
+  color: white;
+}
+.my_message h4 {
+  color: white;
 }
 
 .hr {

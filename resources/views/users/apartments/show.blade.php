@@ -26,7 +26,7 @@
             </div>
 
             <div class="col-12 col-md-6 apartment-description">
-                <h4 class="mt-0">Description of your apartment:</h4>
+                <h4 class="mt-0">Description of this apartment</h4>
                 <p>{{ $apartment->description }}</p>
 
                 <div class="hr mb-3"></div>
